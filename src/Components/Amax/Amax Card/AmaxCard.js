@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./AmaxCard.css";
+import classes from "./AmaxCard.module.css";
 import Button from "../../UI/Button/Button";
 
 const amaxCard = () => {
