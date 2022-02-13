@@ -1,0 +1,254 @@
+.bannerGutter {
+  width: 100%;
+  height: 550px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(20px);
+  overflow: hidden;
+  border-bottom: 1px solid black;
+  background-color: lightgray;
+}
+.main {
+  position: relative;
+  background-color: white;
+  width: 100%;
+  padding: 0 0 200px 0;
+}
+.bannerGutterImage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 700;
+  max-width: 900px;
+  height: 550px;
+  margin: 0 auto;
+}
+.wrapper {
+  position: relative;
+}
+.loadingWrapper {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.SingleEventSection {
+  position: relative;
+}
+.AboutEventWrapper {
+  width: 900px;
+  height: 500px;
+  margin: 0 auto;
+  background-color: white;
+}
+.AboutEvent_left {
+  /* background-color: yellow; */
+}
+.AboutEvent_left h2 {
+  margin: 30px 0 10px 0;
+  color: #56566b;
+}
+.AboutEvent {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.price {
+  font-size: 25px;
+  margin-top: 30px;
+  color: #6584ad;
+}
+.date {
+  font-size: 25px;
+  color: #56566b;
+}
+.getTicket {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #08b4b6;
+  color: white;
+  margin-top: 30px;
+  cursor: pointer;
+}
+.getTicket:hover {
+  background-color: rgba(8, 180, 182, 0.8);
+}
+.AboutEvent_right {
+  text-align: right;
+}
+.About {
+  line-height: 1.9;
+  font-size: 20px;
+  margin-top: -5px;
+  color: #626262;
+}
+.AboutWrapper {
+  display: flex;
+  margin-top: 50px;
+}
+.label {
+  margin-right: 30px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.SingleEventSection {
+  min-height: 100vh;
+}
+.MoreInfoWrapper {
+  margin-right: 10px;
+}
+.ChooseTicket {
+  padding: 25px 50px;
+  width: 700px;
+  height: auto;
+  border-radius: 10px;
+  background-color: white;
+}
+.VipWrapper,
+.ParkingWrapper,
+.GeneralWrapper,
+.Date_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 30px 0;
+  border-bottom: 2px lightgray solid;
+}
+.moreInfo {
+  color: #7c828c;
+  margin-top: 10px;
+}
+.ChooseTicketHeader {
+  font-size: 30px;
+  color: #1c232b;
+}
+.form_input {
+  -webkit-text-size-adjust: 100%;
+  font-size: 13px;
+  line-height: 18px;
+  color: #1c232b;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 45px;
+  border: 1px solid #e2e5e7;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition-duration: 0.24s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-property: border-color;
+  position: relative;
+  cursor: text;
+  margin-left: 10px;
+}
+.select {
+  padding: 13px 10px;
+  border: none;
+  background-color: transparent;
+}
+.totalPriceWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.totalPrice {
+  font-size: 25px;
+}
+.ticketPriceWrapper {
+  display: flex;
+  align-items: center;
+}
+.poweredBy {
+  position: absolute;
+  top: 101%;
+  right: 0;
+  color: white;
+  font-size: 15px;
+}
+.poweredBy span {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  /* text-transform: uppercase; */
+}
+.continueBtnWrapper {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.continueBtn {
+  width: 100%;
+  padding: 20px;
+  background-color: #00b4b3;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1200px) {
+  /*Tablets [601px -> 1200px]*/
+  .events_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 900px) {
+  /*Big smartphones [426px -> 600px]*/
+  .AboutEventWrapper {
+    width: 90%;
+  }
+  .bannerGutterImage {
+    width: 100%;
+    height: 100%;
+  }
+  .ChooseTicket {
+    width: auto;
+  }
+  /* .continueBtnWrapper {
+    width: 100px;
+  } */
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  .ChooseTicket {
+    height: 100%;
+    overflow-y: scroll;
+    padding: 25px 20px;
+  }
+  .bannerGutter {
+    height: 300px;
+  }
+
+  .AboutEventWrapper {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    height: auto;
+  }
+  .AboutEvent {
+    flex-direction: column;
+  }
+  .poweredBy {
+    top: 111%;
+    right: 0;
+    font-size: 12;
+  }
+  .poweredBy span {
+    font-size: 14px;
+  }
+  .select {
+    padding: 10px 7px;
+  }
+  .moreInfo {
+    font-size: 9px;
+  }
+  .ticketPriceWrapper p {
+    font-size: 12px;
+  }
+}

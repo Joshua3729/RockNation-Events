@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./EventCard.css";
+import classes from "./EventCard.module.css";
 const eventCard = (props) => {
   return (
     <div className={classes.EventCard}>
