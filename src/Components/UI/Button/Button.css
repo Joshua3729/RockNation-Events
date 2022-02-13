@@ -1,0 +1,17 @@
+.button {
+  padding: 10px 20px;
+  border: none;
+  outline: white 2px solid;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+.button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.2);
+}
