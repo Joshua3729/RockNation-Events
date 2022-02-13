@@ -1,0 +1,7 @@
+.NavLink {
+  padding: 10px;
+  cursor: pointer;
+}
+.NavLink:hover {
+  color: orangered;
+}
