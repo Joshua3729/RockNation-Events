@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./SolidButton.css";
+import classes from "./SolidButton.module.css";
 
 const solidButton = (props) => {
   return (
