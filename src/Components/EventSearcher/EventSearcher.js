@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
-import classes from "./EventSearcher.css";
+import classes from "./EventSearcher.nodule.css";
 import Location from "../Location/Location";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
-import CFA from "./CallForAction/CFA";
+import CFA from "./CallToAction/CTA";
 import { useParams, withRouter } from "react-router";
 import verified from "./verified.svg";
 import Navigation from "../Navigation/Navigation";
