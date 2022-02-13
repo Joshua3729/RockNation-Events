@@ -1,0 +1,192 @@
+.EventSearcher {
+  position: relative;
+  /* background-color: white; */
+  /* background-color: white; */
+  padding: 50px 20px;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4) /* rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) */
+    ),
+    url("https://images.unsplash.com/photo-1619229665486-19f7ee2987a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.SearchArea {
+  background-color: red;
+  height: 200px;
+  position: relative;
+}
+.SearchResults {
+  background-color: white;
+  min-height: 600px;
+  max-width: 900px;
+  /* width: 100%; */
+  margin: 0 auto;
+  /* overflow: hidden; */
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 500px) {
+  .Wrapper {
+    width: 100%;
+  }
+  .Heading {
+    font-size: 20px !important;
+  }
+  .EventSearcher {
+    padding: 10px;
+  }
+}
+.ThumbNail {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 400;
+  background-color: lightgray;
+}
+.ThumbNail img {
+  width: 100%;
+  height: 100%;
+}
+.ResultsHeader {
+  position: relative;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  /* border-radius: 10px; */
+  /* overflow: hidden; */
+  padding: 50px;
+  display: flex;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 200;
+}
+.ResultsHeader ul li {
+  margin-bottom: 10px;
+}
+
+.Events {
+  min-height: 440px;
+  position: relative;
+}
+.Gutter {
+  height: 30px;
+  /* background-color: violet; */
+}
+.Heading {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 30px;
+}
+.ArtistStats {
+  list-style: none;
+
+  z-index: 400;
+}
+.Bold {
+  font-weight: bold;
+}
+/* .Results_footer {
+  height: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-top: rgba(0, 0, 0, 0.4) solid 3px;
+  box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.2);
+} */
+.Heading {
+  margin: 50px 0 20px 0;
+}
+.BackgroundIMG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  overflow: hidden;
+}
+.backDrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 300;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.BackgroundIMG img {
+  width: 100%;
+  height: 100%;
+  filter: blur(8px);
+  transform: scale(2);
+}
+.Name {
+  font-weight: 900;
+  font-size: 30px;
+  margin-right: 10px;
+}
+.VerifiedCheck {
+  width: 30px;
+}
+.ArtistDetailsWrapper {
+  display: flex;
+  align-items: center;
+}
+.UpcomingEventsWrapper {
+  font-size: 25px;
+  font-weight: 600;
+}
+.breadCrumbsWrapper {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  /* transform: translate(-50%, -50%); */
+}
+.breadCrumbs {
+  display: flex;
+  list-style: none;
+}
+.breadCrumbs li {
+  margin-right: 5px;
+  font-size: 13px;
+}
+.breadCrumbs li:last-child {
+  margin-right: 0;
+}
+.breadCrumbs a {
+  text-decoration: none;
+  color: black;
+}
+.breadCrumbs a:hover {
+  color: yellow;
+}
+.active {
+  color: yellow !important;
+  text-shadow: 2px 2px 5px blue;
+}
+
+.loadingWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 900px) {
+  /*Tablets [601px -> 1200px]*/
+}
+@media only screen and (max-width: 700px) {
+  /*Big smartphones [426px -> 600px]*/
+}
+@media only screen and (max-width: 500px) {
+  /*Small smartphones [325px -> 425px]*/
+  .ResultsHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+}
