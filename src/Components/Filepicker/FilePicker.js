@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./FilePicker.css";
+import classes from "./FilePicker.module.css";
 
 const filePicker = (props) => (
   <div className={classes.FilePicker}>

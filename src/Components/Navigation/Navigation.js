@@ -1,4 +1,4 @@
-import classes from "./Navigation.css";
+import classes from "./Navigation.module.css";
 import React, { Component, Fragment } from "react";
 import Logo from "../UI/Spinner/Logo/Logo";
 import NavLink from "./NavLink/NavLink";

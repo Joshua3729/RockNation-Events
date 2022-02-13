@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Amax.css";
+import classes from "./Amax.module.css";
 import AmaxCard from "./Amax Card/AmaxCard";
 
 const amax = () => {
