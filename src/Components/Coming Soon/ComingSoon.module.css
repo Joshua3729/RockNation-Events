@@ -1,0 +1,32 @@
+.ComingSoon {
+  padding: 100px 50px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* background-color: black; */
+  box-sizing: border-box;
+}
+.Wrapper {
+  /* background-color: blue; */
+  margin-left: 30px;
+}
+@media only screen and (max-width: 900px) {
+  /*Tablets [601px -> 1200px]*/
+  .ComingSoon {
+    flex-direction: column;
+    padding: 50px 30px;
+  }
+  .Wrapper {
+    margin: 20px 0 0 0;
+  }
+}
+@media only screen and (max-width: 700px) {
+  /*Big smartphones [426px -> 600px]*/
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  .ComingSoon {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+}
