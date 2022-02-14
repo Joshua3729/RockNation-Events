@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap");
+.Footer {
+  padding: 30px;
+  background-color: #27374d;
+  color: white;
+}
+
+.footerContent {
+  display: grid;
+  max-width: 1140px;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.footerContent_item {
+  height: 300px;
+}
+.footerLinks {
+  list-style: none;
+  padding: 0;
+}
+.header {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #767676;
+}
+.footerLinks li {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.footerLinks li:last-child {
+  margin-bottom: 0;
+}
+.copyrightWrapper {
+  display: flex;
+  max-width: 1140px;
+  justify-content: space-between;
+  padding: 30px 0;
+  margin: 0 auto;
+  border-top: 2px #767676 solid;
+  align-items: center;
+}
+.Logo {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  font-style: italic;
+  margin-right: 10px;
+}
+.miniLogo {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  font-style: italic;
+}
+.sociallinks {
+  list-style: none;
+  display: flex;
+}
+.sociallinks li {
+  margin-right: 10px;
+  font-size: 20px;
+}
+.sociallinks li a {
+  text-decoration: none;
+  color: white;
+}
+.sociallinks li:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 900px) {
+  /*Tablets [601px -> 1200px]*/
+  .ComingSoon {
+    flex-direction: column;
+    padding: 50px 30px;
+  }
+  .Wrapper {
+    margin: 20px 0 0 0;
+  }
+}
+@media only screen and (max-width: 700px) {
+  /*Big smartphones [426px -> 600px]*/
+  /* .Logo {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    font-style: italic;
+    margin-right: 10px;
+  }
+  .miniLogo {
+    font-size: 10px;
+  }
+  .sociallinks li {
+    margin-right: 10px;
+    font-size: 20px;
+  } */
+
+  .copyrightWrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  .copyrightWrapper p {
+    margin-bottom: 10px;
+  }
+  .agreement {
+    font-size: 25px;
+    margin-bottom: 20px !important;
+  }
+  .miniLogo {
+    font-size: 20px;
+  }
+  .footerContent {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+  }
+  .footerContent_item {
+    text-align: center;
+    height: 230px;
+  }
+  .sociallinks li {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  .footerContent {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  }
+}
