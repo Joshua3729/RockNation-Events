@@ -1,0 +1,208 @@
+.CheckOutWrapper {
+  position: relative;
+  width: 700px;
+  padding: 20px 100px;
+  background-color: white;
+  height: 500px;
+}
+.ProgressWrapper {
+  width: 500px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  /* background-color: red; */
+}
+.ProgressWrapper_item {
+  /* background-color: lightgray; */
+  text-align: center;
+}
+.ProgressWrapper_item p {
+  font-size: 15px;
+}
+.icon {
+  /* background-color: yellow; */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: #38e038 solid 1px;
+  background-color: white;
+  color: #38e038;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.confirm_btn {
+  border: none;
+  padding: 10px 20px;
+  background-color: #38e038;
+  color: white;
+  margin-top: 70px;
+  cursor: pointer;
+}
+.confirm_btn:hover {
+  background-color: #07dd07;
+}
+.confirmPayment_btn {
+  border: none;
+  padding: 15px 50px;
+  background-color: #07dd07;
+  color: white;
+  margin-top: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.confirmPayment_btn:hover {
+  background-color: #38e038;
+  transform: translateY(-7px);
+}
+.confirmPayment_btn:active {
+  transform: translateY(0px);
+}
+.pageWrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+.chooseWrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+.visaWrapper {
+  width: 70%;
+  height: 70px;
+  border: 1px solid #c0c0c0;
+  margin-left: 20px;
+}
+.visaWrapper img {
+  width: 100%;
+  height: 100%;
+}
+.chooseWrapper_item {
+  display: flex;
+  align-items: center;
+}
+.PaymentMethodWrapper {
+  margin-top: 30px;
+  text-align: center;
+}
+.totalPriceWrapper {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ededed;
+  padding: 20px 5px;
+}
+.formWrapper {
+  width: 100%;
+  height: 70px;
+}
+/* .paymentConfirm_btn {
+    max-width: 200px;
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    background-color: #38e038;
+    font-size: 15px;
+    margin-top: 20px;
+  } */
+.form_item label {
+  margin-right: 5px;
+  font-size: 15px;
+}
+.form_item input {
+  padding: 5px;
+}
+.form {
+  display: flex;
+  justify-content: space-between;
+}
+.formWrapper {
+  margin-top: 50px;
+}
+.loading_modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 800;
+  background-color: rgba(255, 255, 255, 0.4);
+  top: 0;
+  left: 0;
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 100px;
+}
+.confirmationPage {
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 50px;
+}
+.confirmationPage p {
+  font-size: 20px;
+  color: gray;
+}
+.imageWrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (max-width: 900px) {
+  /*Tablets [601px -> 1200px]*/
+
+  .Modal {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  /*Big smartphones [426px -> 600px]*/
+  .CheckOutWrapper {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+
+  .ProgressWrapper {
+    width: 100%;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    /* background-color: red; */
+  }
+  .CheckOutWrapper {
+    padding: 20px 20px;
+    overflow-y: scroll;
+    height: 400px;
+  }
+  .ProgressWrapper_item p {
+    font-size: 10px;
+  }
+  .chooseWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .form {
+    flex-direction: column;
+  }
+  .form_item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .totalPriceWrapper {
+    margin-top: 55px;
+  }
+  .form_item label {
+    margin-bottom: 5px;
+  }
+}
