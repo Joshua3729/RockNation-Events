@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "./PageGutter.css";
+import classes from "./PageGutter.module.css";
 
 const pageGutter = (props) => {
   console.log(props.links);
@@ -19,14 +19,6 @@ const pageGutter = (props) => {
                 </Link>
               </li>
             ))}
-          {/* <li className={classes.navigation_item}>
-            <Link exact to="/comedy" className={classes.active}>
-              Comedy
-            </Link>
-          </li>
-          <li className={classes.navigation_item}>
-            <Link exact>This Event</Link>
-          </li> */}
         </ul>
       </div>
       <h2>{props.name}</h2>
