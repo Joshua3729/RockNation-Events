@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import classes from "./paymentModal.css";
+import classes from "./paymentModal.module.css";
 import LoadingSpinner from "../UI/LoadingSpinner/LoadingSpinner";
 import CheckMark from "../CheckMark/CheckMark";
 import agreement from "../Image/agreement.png";
