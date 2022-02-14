@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import classes from "./Location.css";
+import classes from "./Location.module.css";
 class Location extends Component {
   render() {
     var strToDate = new Date(this.props.date);
