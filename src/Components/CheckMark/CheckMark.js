@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./CheckMark.css";
+import classes from "./CheckMark.module.css";
 
 const checkMark = () => {
   return (

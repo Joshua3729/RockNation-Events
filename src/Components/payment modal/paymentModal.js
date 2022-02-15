@@ -39,13 +39,6 @@ class PaymentModal extends Component {
         this.state.cardNumber === 1234567891234 &&
         this.state.cardHolder === "joshua khumalo"
       ) {
-        // setTimeout(() => {
-        //   this.setState({ verifyed: true });
-        //   setTimeout(() => {
-        //     this.setState({ verifying: false, modalPage: 3, confirmed2: true });
-        //   }, 3000);
-        // }, 5000);
-
         fetch(
           "https://powerbrains-events.herokuapp.com/feed/events/buyticket",
           {
