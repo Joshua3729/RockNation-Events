@@ -1,6 +1,6 @@
 import React from "react";
 import Spinner from "../UI/Spinner/Spinner";
-import classes from "./LoadingModal.css";
+import classes from "./LoadingModal.module.css";
 import loading from "../Image/loading.svg";
 import Background from "../Background/Background";
 
