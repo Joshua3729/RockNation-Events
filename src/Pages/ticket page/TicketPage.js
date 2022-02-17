@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import Navigation from "../../Components/Navigation/Navigation";
-import classes from "./TicketPage.css";
+import classes from "./TicketPage.module.css";
 import location from "../../Assets/images/location.png";
 import calender from "../../Assets/images/calendar.png";
 import axios from "axios";
