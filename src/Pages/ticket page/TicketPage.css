@@ -1,0 +1,482 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
+.TicketPage {
+  position: relative;
+  padding: 100px 0;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.4) /* rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3) */
+    ),
+    url("https://images.unsplash.com/photo-1619229665486-19f7ee2987a5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.Wrapper {
+  position: relative;
+  background-color: white;
+  min-height: 600px;
+  width: 1100px;
+  margin: 0 auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+/* .boxShadow {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+} */
+.Header {
+  width: 100%;
+  height: 270px;
+  background-color: lightskyblue;
+  padding: 10px;
+  box-sizing: border-box;
+  position: relative;
+}
+.ArtistImage {
+  width: 330px;
+  height: 330px;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  z-index: 400;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.ArtistImage img {
+  width: 100%;
+  height: 100%;
+}
+.BackgroundIMG {
+  width: 100%;
+}
+.BackgroundIMG img {
+  width: 100%;
+  height: 100%;
+  filter: blur(8px);
+  transform: scale(1.5);
+}
+.BackgroundIMG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  overflow: hidden;
+}
+.HeaderText {
+  position: absolute;
+  z-index: 400;
+  top: 40px;
+  left: 20px;
+  color: white;
+}
+.HeaderText h2 {
+  font-size: 35px;
+  margin: 0 0 30px 0;
+}
+.BackDrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 350;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.nameOfVenue {
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+.eventDate {
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.getTicket {
+  width: 200px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: none;
+  background-color: #00b4b3;
+  color: white;
+  cursor: pointer;
+}
+.getTicket:hover {
+  background-color: #0cf5f5;
+}
+.setReminder {
+  width: 200px;
+  margin-left: 10px;
+  padding: 15px 25px;
+  border-radius: 5px;
+  border: none;
+  color: #00b4b3;
+  background-color: white;
+}
+.venueDetails {
+  display: flex;
+  box-sizing: border-box;
+  height: 120px;
+  width: 100%;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.VenueWrapper {
+  display: flex;
+  /* background-color: tomato; */
+  margin-right: 20px;
+  width: 400px;
+  align-items: center;
+}
+.VenueWrapper p {
+  font-size: 20px;
+  margin: 0 0 5px 30px;
+  color: #00b4b3;
+}
+
+.DateWrapper {
+  /* background-color: turquoise; */
+  width: 400px;
+  display: flex;
+  /* background-color: tomato; */
+  margin-right: 20px;
+  width: 400px;
+  align-items: center;
+}
+.DateWrapper p {
+  font-size: 20px;
+  margin: 0 0 5px 30px;
+}
+.locationWrapper {
+  width: 50px;
+  height: 50px;
+}
+
+.locationWrapper img {
+  width: 100%;
+  height: 100%;
+}
+.LineUp {
+  position: relative;
+  display: grid;
+  width: 1000px;
+  height: 300px;
+  padding: 5px;
+  margin: 0 auto;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: white;
+  grid-gap: 10px;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+.artistFT {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  box-sizing: border-box;
+}
+.artistImgWrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+  overflow: hidden;
+}
+.artistImgWrapper img {
+  width: 100%;
+  height: 100%;
+}
+.LineUpWrapper {
+  width: 100%;
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  background-color: white;
+  padding: 50px 0;
+  margin-top: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.loadingWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.buttonWrapper {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  z-index: 700;
+}
+.ChooseTicket {
+  padding: 25px 50px;
+  width: 700px;
+  height: auto;
+  border-radius: 10px;
+  background-color: white;
+}
+.VipWrapper,
+.ParkingWrapper,
+.GeneralWrapper,
+.Date_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 30px 0;
+  border-bottom: 2px lightgray solid;
+}
+.moreInfo {
+  color: #7c828c;
+  margin-top: 10px;
+}
+.ChooseTicketHeader {
+  font-size: 30px;
+  color: #1c232b;
+}
+.form_input {
+  -webkit-text-size-adjust: 100%;
+  font-size: 13px;
+  line-height: 18px;
+  color: #1c232b;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  height: 45px;
+  border: 1px solid #e2e5e7;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #fff;
+  background-clip: padding-box;
+  transition-duration: 0.24s;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-property: border-color;
+  position: relative;
+  cursor: text;
+  margin-left: 10px;
+}
+.select {
+  padding: 13px 10px;
+  border: none;
+  background-color: transparent;
+}
+.totalPriceWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+.totalPrice {
+  font-size: 25px;
+}
+.ticketPriceWrapper {
+  display: flex;
+  align-items: center;
+}
+.poweredBy {
+  position: absolute;
+  top: 101%;
+  right: 0;
+  color: white;
+  font-size: 15px;
+}
+.poweredBy span {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  /* text-transform: uppercase; */
+}
+.continueBtnWrapper {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+.continueBtn {
+  width: 100%;
+  padding: 20px;
+  background-color: #00b4b3;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.breadCrumbsWrapper {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  /* transform: translate(-50%, -50%); */
+}
+.breadCrumbs {
+  display: flex;
+  list-style: none;
+}
+.breadCrumbs li {
+  margin-right: 5px;
+  font-size: 13px;
+}
+.breadCrumbs li:last-child {
+  margin-right: 0;
+}
+.breadCrumbs a {
+  text-decoration: none;
+  color: black;
+}
+.breadCrumbs a:hover {
+  color: yellow;
+}
+.active {
+  color: yellow !important;
+  text-shadow: 2px 2px 5px blue;
+}
+.artistImageWrapper {
+  display: none;
+}
+@media only screen and (max-width: 950px) {
+  /*Tablets [601px -> 1200px]*/
+  .LineUp {
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .ArtistImage {
+    /* width: 330px;
+    height: 330px;
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    z-index: 400;
+    border-radius: 5px;
+    overflow: hidden; */
+    display: none;
+  }
+  .ArtistImage img {
+    width: 100%;
+    height: 100%;
+  }
+  .continueBtnWrapper {
+    flex-direction: column;
+  }
+  .Header {
+    text-align: center;
+    height: 700px;
+  }
+  .HeaderText {
+    position: absolute;
+    z-index: 400;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  .setReminder {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .artistImageWrapper {
+    display: block;
+    max-width: 300px;
+    height: 300px;
+    margin: 0 auto 10px auto;
+  }
+  .artistImageWrapper img {
+    width: 100%;
+    height: 100%;
+  }
+  .HeaderText h2 {
+    margin: 0 0 10px 0;
+  }
+  .Wrapper {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  /*Big smartphones [426px -> 600px]*/
+  .ChooseTicket {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 700px) {
+  /*Big smartphones [426px -> 600px]*/
+  .TicketPage {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  .LineUp {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .artistImageWrapper {
+    max-width: 300px;
+    height: 250px;
+    margin: 0 auto 10px auto;
+  }
+  .breadCrumbsWrapper {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    /* transform: translate(-50%, -50%); */
+  }
+  .breadCrumbs li {
+    font-size: 12px;
+  }
+  .breadCrumbs {
+    justify-content: center;
+  }
+  .venueDetails {
+    flex-direction: column;
+    height: 190px;
+    width: 100%;
+  }
+  .DateWrapper,
+  .VenueWrapper {
+    width: 100%;
+  }
+  .ChooseTicket {
+    height: 90%;
+    overflow-y: scroll;
+    padding: 25px 20px;
+  }
+
+  .AboutEventWrapper {
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    height: auto;
+  }
+  .AboutEvent {
+    flex-direction: column;
+  }
+  .poweredBy {
+    top: 105%;
+    right: 0;
+    font-size: 12;
+  }
+  .poweredBy span {
+    font-size: 14px;
+  }
+  .select {
+    padding: 10px 7px;
+  }
+  .moreInfo {
+    font-size: 9px;
+  }
+  .ticketPriceWrapper p {
+    font-size: 12px;
+  }
+}
