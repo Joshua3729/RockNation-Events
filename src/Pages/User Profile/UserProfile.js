@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import classes from "./UserProfile.css";
+import classes from "./UserProfile.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import Modal from "../../Components/Modal/Modal";
 import LoadingSpinner from "../../Components/UI/LoadingSpinner/LoadingSpinner";
