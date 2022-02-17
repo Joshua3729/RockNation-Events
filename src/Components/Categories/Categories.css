@@ -1,0 +1,76 @@
+.categories {
+  padding: 0 50px 100px 50px;
+}
+.categoriesText {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.categories_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+.grid_item {
+  position: relative;
+  height: 200px;
+  background-color: lightgray;
+  overflow: hidden;
+}
+.grid_item img {
+  height: 100%;
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.grid_item img:hover {
+  transform: scale(2);
+}
+.EventLabel {
+  text-transform: capitalize;
+  position: absolute;
+  top: 70%;
+  font-size: 20px;
+  font-weight: 700;
+  right: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 900px) {
+  /*Tablets [601px -> 1200px]*/
+  .categories_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .categories {
+    padding: 0 30px 100px 30px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  /*Big smartphones [426px -> 600px]*/
+  .categories_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .grid_item {
+    height: 400px;
+  }
+  .EventLabel {
+    font-size: 30px;
+    padding: 20px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  .grid_item {
+    height: 300px;
+  }
+  .EventLabel {
+    font-size: 20px;
+    padding: 20px;
+  }
+  .categories {
+    padding: 0 20px 100px 20px;
+  }
+}
