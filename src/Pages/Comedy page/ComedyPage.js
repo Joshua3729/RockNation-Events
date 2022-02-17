@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import classes from "./ComedyPage.css";
+import classes from "./ComedyPage.module.css";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import Navigation from "../../Components/Navigation/Navigation";
 import Event from "../../Components/Event/Event";
