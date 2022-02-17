@@ -1,38 +1,189 @@
-.App {
-  text-align: center;
+.logInModal {
+  display: flex;
+  width: 900px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: blue;
+}
+.leftpane {
+  width: 40%;
+  height: 100%;
+  background-color: red;
+  background-image: url("https://images.unsplash.com/photo-1563841930606-67e2bce48b78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=436&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+
+  color: aqua;
+}
+.leftpane h1 {
+  font-weight: 900;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.rightpane {
+  width: 60%;
+  height: 100%;
+  background-color: white;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.welcome {
+  font-size: 40px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loginDescription {
+  color: white;
+  font-size: 20px;
+  line-height: 1.7;
+}
+.poweredBy {
+  position: absolute;
+  top: 101%;
+  right: 0;
+  color: white;
+  font-size: 15px;
+}
+.poweredBy span {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  /* text-transform: uppercase; */
+}
+.SignInHeader {
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.SignUpHeaderWrapper {
+  display: flex;
+  margin-right: 10px;
+}
+.SignUpHeaderWrapper button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  color: #00b4b3;
+}
+.SignUpHeader {
+  margin-right: 10px;
+}
+.SignInForm {
+  margin-top: 50px;
+}
+.formItemWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+.label {
+  margin-bottom: 10px;
+}
+.formItemWrapper input {
+  padding: 10px 5px;
+}
+.LogIn {
+  padding: 10px 20px;
+  border: none;
   color: white;
+  background-color: #00b4b3;
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.LogIn:hover {
+  background-color: #68ecec;
+}
+.SignUpPane {
+  box-sizing: border-box;
+  padding: 50px 40px;
+  height: 100%;
+  overflow-y: scroll;
+}
+.SignInPane {
+  padding: 50px 40px;
+}
+.formItemWrapper_signup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.userDetails {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+.formItemWrapper_signup input {
+  box-sizing: border-box;
+  padding: 10px 5px;
+}
+.chooseImageTextWrapper {
+  text-align: center;
+  margin: 20px 0;
+  background-color: lightgray;
+  padding: 20px;
+}
+.imagePreviewWrapper {
+  width: 100%;
+  height: 200px;
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (max-width: 900px) {
+  /*Tablets [601px -> 1200px]*/
+  .logInModal {
+    width: 800px;
+  }
+  .leftpane {
+    width: 35%;
+  }
+  .rightpane {
+    width: 65%;
+  }
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 800px) {
+  /*Big smartphones [426px -> 600px]*/
+  .logInModal {
+    width: 680px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media only screen and (max-width: 700px) {
+  /*Big smartphones [426px -> 600px]*/
+  .logInModal {
+    width: 100%;
   }
+  .leftpane {
+    display: none;
+  }
+  .rightpane {
+    width: 100%;
+  }
+  .userDetails {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media only screen and (max-width: 425px) {
+  /*Small smartphones [325px -> 425px]*/
+  .logInModal {
+    height: 450px;
+  }
+  .rightpane {
+    height: 100%;
+  }
+  .SignUpPane,
+  .SignInPane {
+    padding: 30px 20px;
+  }
+  .SignInForm p {
+    font-size: 10px;
+  }
+  .label {
+    font-size: 15px;
+  }
+  /* .SignInHeader,
+  .SignUpHeader {
+    font-size: 20px;
+  } */
 }
