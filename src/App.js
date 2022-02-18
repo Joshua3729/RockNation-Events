@@ -1,22 +1,22 @@
 import React, { Component } from "react";
 import EventSearcher from "./Components/EventSearcher/EventSearcher";
-import Home from "./Container/Landing page/Home";
+import Home from "./Pages/Landing page/Home";
 import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
-import Aux from "./hoc/Auxiliary/Auxiliary";
-import TicketPage from "./Container/ticket page/TicketPage";
+// import Aux from "./hoc/Auxiliary/Auxiliary";
+import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
 import { required, email, length } from "./util/validators";
-import ComedyPage from "./Container/Comedy page/ComedyPage";
-import ArtsAndTheaterPage from "./Container/Arts And Theater Page/ArtsAndTheater";
+import ComedyPage from "./Pages/Comedy page/ComedyPage";
+import ArtsAndTheaterPage from "./Pages/Arts And Theater Page/ArtsAndTheater";
 import FilePicker from "./Components/Filepicker/FilePicker";
 import { generateBase64FromImage } from "./util/image";
 import Image from "./Components/Image/Image";
 import SingleEvent from "./Components/SingleEvent/SingleEvent";
 import Footer from "./Components/Footer/Footer";
 import CheckOutPage from "./Components/Checkout page/CheckOutPage";
-import UserProfile from "./Container/User Profile/UserProfile";
-import MusicConcerts from "./Container/Music Page/MusicConcerts";
+import UserProfile from "./Pages/User Profile/UserProfile";
+import MusicConcerts from "./Pages/Music Page/MusicConcerts";
 import ScrollToTop from "./util/ScrollToTop";
 
 class App extends Component {
