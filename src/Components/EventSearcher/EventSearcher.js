@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import axios from "axios";
-import classes from "./EventSearcher.nodule.css";
+import classes from "./EventSearcher.module.css";
 import Location from "../Location/Location";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import CFA from "./CallToAction/CTA";
