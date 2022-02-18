@@ -14,7 +14,6 @@ import { generateBase64FromImage } from "./util/image";
 import Image from "./Components/Image/Image";
 import SingleEvent from "./Components/SingleEvent/SingleEvent";
 import Footer from "./Components/Footer/Footer";
-import CheckOutPage from "./Components/Checkout page/CheckOutPage";
 import UserProfile from "./Pages/User Profile/UserProfile";
 import MusicConcerts from "./Pages/Music Page/MusicConcerts";
 import ScrollToTop from "./util/ScrollToTop";
@@ -684,21 +683,7 @@ class App extends Component {
             />
           )}
         />
-        <Route
-          path="/checkout"
-          exact
-          render={(props) => (
-            <CheckOutPage
-              {...props}
-              loginModal={this.openModalHandler}
-              isAuth={this.state.isAuth}
-              token={this.state.token}
-              logout={this.logoutHandler}
-              fullname={this.state.fullname}
-              userImage={this.state.userImage}
-            />
-          )}
-        />
+
         <Route
           path="/musicevents"
           exact
