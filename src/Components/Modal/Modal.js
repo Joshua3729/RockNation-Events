@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import ReactDOM from "react-dom";
 import Background from "../Background/Background";
-import classes from "./Modal.css";
+import classes from "./Modal.module.css";
 const Modal = (props) => {
   return ReactDOM.createPortal(
     <Fragment>
