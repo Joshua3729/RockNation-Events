@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import EventSearcher from "./Components/EventSearcher/EventSearcher";
 import Home from "./Pages/Landing page/Home";
-import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
+import { Route, BrowserRouter as Router, Navigate } from "react-router-dom";
 import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
@@ -699,7 +699,7 @@ class App extends Component {
             />
           )}
         />
-        <Redirect to="/" />
+        <Navigate to="/" />
       </Router>
     );
 
