@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import EventSearcher from "./Components/EventSearcher/EventSearcher";
 import Home from "./Pages/Landing page/Home";
-import { Route, BrowserRouter as Router, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
@@ -561,8 +561,9 @@ class App extends Component {
     );
 
     let routes = (
-      <Router>
-        <ScrollToTop />
+      <Routes>
+        {/* <Fragment>
+          <ScrollToTop /> */}
         <Route
           path="/"
           exact
@@ -699,14 +700,15 @@ class App extends Component {
             />
           )}
         />
-        <Navigate to="/" />
-      </Router>
+        {/* <Navigate to="/" />
+        </Fragment> */}
+      </Routes>
     );
 
     if (this.state.isAuth) {
       routes = (
-        <Router>
-          <ScrollToTop />
+        <Routes>
+          {/* <ScrollToTop /> */}
           <Route
             path="/"
             exact
@@ -859,7 +861,7 @@ class App extends Component {
               />
             )}
           />
-        </Router>
+        </Routes>
       );
     }
 
