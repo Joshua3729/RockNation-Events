@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./Hero.css";
+import classes from "./Hero.module.css";
 import video from "../../Assets/Video/bg.mp4";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button/Button";
