@@ -1,0 +1,54 @@
+.eventCard {
+  width: 100%;
+  height: 350px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.gutter {
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+.eventCard p {
+  margin-bottom: 5px;
+}
+.eventCard p:last-child {
+  margin-bottom: 0;
+}
+.gutter {
+  width: 100%;
+  height: 40%;
+}
+.imageWrapper {
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+}
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: all 1s;
+}
+.imageWrapper img:hover {
+  transform: scale(2);
+}
+.eventDate {
+  color: #6584ad;
+  font-size: 15px;
+}
+
+.eventPrice {
+  color: #6584ad;
+  font-size: 17px;
+}
+.eventName {
+  font-size: 17px;
+  color: #767676;
+}
+.eventVenue {
+  font-size: 15px;
+}
+.ticketsRemaining {
+  color: white;
+  background-color: turquoise;
+  padding: 2px 20px;
+}
