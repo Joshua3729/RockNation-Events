@@ -583,7 +583,6 @@ class App extends Component {
           exact
           element={
             <EventSearcher
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -598,7 +597,6 @@ class App extends Component {
           exact
           element={
             <EventSearcher
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -613,7 +611,6 @@ class App extends Component {
           exact
           element={
             <TicketPage
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -628,7 +625,6 @@ class App extends Component {
           exact
           element={
             <ComedyPage
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -643,7 +639,6 @@ class App extends Component {
           exact
           element={
             <ArtsAndTheaterPage
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -658,7 +653,6 @@ class App extends Component {
           exact
           element={
             <SingleEvent
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -673,7 +667,6 @@ class App extends Component {
           exact
           element={
             <SingleEvent
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -689,7 +682,6 @@ class App extends Component {
           exact
           element={
             <MusicConcerts
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -728,7 +720,6 @@ class App extends Component {
             exact
             element={
               <EventSearcher
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -743,7 +734,6 @@ class App extends Component {
             exact
             element={
               <EventSearcher
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -758,7 +748,6 @@ class App extends Component {
             exact
             element={
               <TicketPage
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -773,7 +762,6 @@ class App extends Component {
             exact
             element={
               <ComedyPage
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -788,7 +776,6 @@ class App extends Component {
             exact
             element={
               <ArtsAndTheaterPage
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -803,7 +790,6 @@ class App extends Component {
             exact
             element={
               <SingleEvent
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -818,7 +804,6 @@ class App extends Component {
             exact
             element={
               <SingleEvent
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -834,7 +819,6 @@ class App extends Component {
             exact
             element={
               <UserProfile
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -850,7 +834,6 @@ class App extends Component {
             exact
             element={
               <MusicConcerts
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
