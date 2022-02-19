@@ -16,6 +16,7 @@ import Footer from "./Components/Footer/Footer";
 import UserProfile from "./Pages/User Profile/UserProfile";
 import MusicConcerts from "./Pages/Music Page/MusicConcerts";
 import ScrollToTop from "./util/ScrollToTop";
+import Aux from "./hoc/Auxiliary/Auxiliary";
 
 class App extends Component {
   state = {
