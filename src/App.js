@@ -567,9 +567,8 @@ class App extends Component {
         <Route
           path="/"
           exact
-          render={(props) => (
+          element={
             <Home
-              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -577,12 +576,12 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
         <Route
           path="/eventmanager"
           exact
-          render={(props) => (
+          element={
             <EventSearcher
               {...props}
               loginModal={this.openModalHandler}
@@ -592,12 +591,12 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
         <Route
           path="/eventmanager/:name"
           exact
-          render={(props) => (
+          element={
             <EventSearcher
               {...props}
               loginModal={this.openModalHandler}
@@ -607,12 +606,12 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
         <Route
           path="/ticket"
           exact
-          render={(props) => (
+          element={
             <TicketPage
               {...props}
               loginModal={this.openModalHandler}
@@ -622,12 +621,12 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
         <Route
           path="/comedy"
           exact
-          render={(props) => (
+          element={
             <ComedyPage
               {...props}
               loginModal={this.openModalHandler}
@@ -637,12 +636,12 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
         <Route
           path="/artsandtheater"
           exact
-          render={(props) => (
+          element={
             <ArtsAndTheaterPage
               {...props}
               loginModal={this.openModalHandler}
@@ -652,12 +651,12 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
         <Route
           path="/artsandtheater/:id"
           exact
-          render={(props) => (
+          element={
             <SingleEvent
               {...props}
               loginModal={this.openModalHandler}
@@ -667,12 +666,12 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
         <Route
           path="/comedy/:id"
           exact
-          render={(props) => (
+          element={
             <SingleEvent
               {...props}
               loginModal={this.openModalHandler}
@@ -682,13 +681,13 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
 
         <Route
           path="/musicevents"
           exact
-          render={(props) => (
+          element={
             <MusicConcerts
               {...props}
               loginModal={this.openModalHandler}
@@ -698,7 +697,7 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          )}
+          }
         />
         {/* <Navigate to="/" />
         </Fragment> */}
@@ -709,12 +708,12 @@ class App extends Component {
       routes = (
         <Routes>
           {/* <ScrollToTop /> */}
+
           <Route
             path="/"
             exact
-            render={(props) => (
+            element={
               <Home
-                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -722,12 +721,12 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
           <Route
             path="/eventmanager"
             exact
-            render={(props) => (
+            element={
               <EventSearcher
                 {...props}
                 loginModal={this.openModalHandler}
@@ -737,12 +736,12 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
           <Route
             path="/eventmanager/:name"
             exact
-            render={(props) => (
+            element={
               <EventSearcher
                 {...props}
                 loginModal={this.openModalHandler}
@@ -752,12 +751,12 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
           <Route
             path="/ticket"
             exact
-            render={(props) => (
+            element={
               <TicketPage
                 {...props}
                 loginModal={this.openModalHandler}
@@ -767,12 +766,12 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
           <Route
             path="/comedy"
             exact
-            render={(props) => (
+            element={
               <ComedyPage
                 {...props}
                 loginModal={this.openModalHandler}
@@ -782,12 +781,12 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
           <Route
             path="/artsandtheater"
             exact
-            render={(props) => (
+            element={
               <ArtsAndTheaterPage
                 {...props}
                 loginModal={this.openModalHandler}
@@ -797,12 +796,12 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
           <Route
             path="/artsandtheater/:id"
             exact
-            render={(props) => (
+            element={
               <SingleEvent
                 {...props}
                 loginModal={this.openModalHandler}
@@ -812,12 +811,12 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
           <Route
             path="/comedy/:id"
             exact
-            render={(props) => (
+            element={
               <SingleEvent
                 {...props}
                 loginModal={this.openModalHandler}
@@ -827,13 +826,13 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
 
           <Route
             path="/profile"
             exact
-            render={(props) => (
+            element={
               <UserProfile
                 {...props}
                 loginModal={this.openModalHandler}
@@ -844,12 +843,12 @@ class App extends Component {
                 userImage={this.state.userImage}
                 userAddress={this.state.userAddress}
               />
-            )}
+            }
           />
           <Route
             path="/musicevents"
             exact
-            render={(props) => (
+            element={
               <MusicConcerts
                 {...props}
                 loginModal={this.openModalHandler}
@@ -859,7 +858,7 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            )}
+            }
           />
         </Routes>
       );
