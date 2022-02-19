@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./ExclusiveEventCard.css";
+import classes from "./ExclusiveEventCard.module.css";
 import SolidButton from "../../UI/SolidButton/SolidButton";
 
 const exclusiveEventCard = (props) => {

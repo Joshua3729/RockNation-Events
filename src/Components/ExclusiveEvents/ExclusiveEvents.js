@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./ExclusiveEvents.css";
+import classes from "./ExclusiveEvents.module.css";
 import ExclusiveEventCard from "./ExclusiveEventCard/ExclusiveEventCard";
 const exclusiveEvents = () => {
   return (
