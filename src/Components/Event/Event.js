@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classes from "./Event.css";
+import classes from "./Event.module.css";
 
 const event = (props) => {
   return (
