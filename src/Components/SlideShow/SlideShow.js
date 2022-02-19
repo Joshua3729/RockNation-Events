@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./SlideShow.module.css";
 import TN from "../Image/trevornoah.png";
 
-const slideShow = (props) => {
+const SlideShow = (props) => {
   const images = [
     {
       imageUrl:
@@ -128,4 +128,4 @@ const slideShow = (props) => {
   );
 };
 
-export default slideShow;
+export default SlideShow;
