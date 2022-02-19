@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import EventSearcher from "./Components/EventSearcher/EventSearcher";
 import Home from "./Pages/Landing page/Home";
-import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
-// import Aux from "./hoc/Auxiliary/Auxiliary";
+import { Route, BrowserRouter as Router, Redirect } from "react-router-dom;
 import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
@@ -827,21 +826,7 @@ class App extends Component {
               />
             )}
           />
-          <Route
-            path="/checkout"
-            exact
-            render={(props) => (
-              <CheckOutPage
-                {...props}
-                loginModal={this.openModalHandler}
-                isAuth={this.state.isAuth}
-                token={this.state.token}
-                logout={this.logoutHandler}
-                fullname={this.state.fullname}
-                userImage={this.state.userImage}
-              />
-            )}
-          />
+
           <Route
             path="/profile"
             exact
