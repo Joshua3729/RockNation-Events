@@ -5,7 +5,6 @@ import location from "../../Assets/images/location.png";
 import calender from "../../Assets/images/calendar.png";
 import axios from "axios";
 import Loading from "../../Components/UI/loading/loading";
-import SeatPicker from "../../Components/SeatPicker/SeatPicker";
 import Modal from "../../Components/Modal/Modal";
 import { Link } from "react-router-dom";
 import PaymentModal from "../../Components/payment modal/paymentModal";
