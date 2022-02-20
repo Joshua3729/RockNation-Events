@@ -4,8 +4,8 @@ import classes from "./EventSearcher.module.css";
 import Location from "../Location/Location";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import CFA from "./CallToAction/CTA";
-// import { useParams, withRouter } from "react-router";
-import { withRouter } from "../../util/withRouter";
+import { useParams, withRouter } from "react-router";
+// import { withRouter } from "../../util/withRouter";
 import verified from "./verified.svg";
 import Navigation from "../Navigation/Navigation";
 import { Link } from "react-router-dom";
@@ -24,11 +24,11 @@ class EventSearcher extends Component {
   };
 
   componentDidMount() {
-    const name = this.props.match.params.name;
-    const query = new URLSearchParams(this.props.location.search);
-    console.log(query.entries());
+    const name = this.props.match?.params.name;
+    console.log(this.props.location);
+    const query = new URLSearchParams(this.props.location?.search);
     const ArtistArray = [];
-    for (let param of query.entries()) {
+    for (let param of query?.entries()) {
       console.log(param);
       ArtistArray.push(param[0]);
       this.setState({ Name: ArtistArray });
@@ -215,9 +215,9 @@ class EventSearcher extends Component {
                 <Link
                   to={`/eventmanager`}
                   className={
-                    !this.props.match.params.name &&
+                    !this.props.match?.params.name &&
                     !this.state.Name &&
-                    !this.props.location.search
+                    !this.props.location?.search
                       ? classes.active
                       : null
                   }
@@ -226,7 +226,8 @@ class EventSearcher extends Component {
                 </Link>
               </li>
               {/* {this.props.match.params.name.length || */}
-              {(this.props.location.search || this.props.match.params.name) && (
+              {(this.props.location?.search ||
+                this.props.match?.params.name) && (
                 <Fragment>
                   <li style={{ color: "black" }}>{">"}</li>
 
@@ -234,8 +235,8 @@ class EventSearcher extends Component {
                     <Link
                       className={classes.active}
                       to={`/eventmanager/${
-                        this.props.match.params.name
-                          ? this.props.match.params.name
+                        this.props.match?.params.name
+                          ? this.props.match?.params.name
                           : this.state.Name && this.state.Name[0]
                       }`}
                     >
@@ -253,5 +254,4 @@ class EventSearcher extends Component {
     );
   }
 }
-
 export default withRouter(EventSearcher);

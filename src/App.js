@@ -597,6 +597,7 @@ class App extends Component {
           exact
           element={
             <EventSearcher
+              {...this.props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}

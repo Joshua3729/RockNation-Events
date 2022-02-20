@@ -6,8 +6,7 @@
   padding: 100px 50px 100px 50px;
   background-color: #ecedee;
 }
-.GridItem {
-}
+
 @media only screen and (max-width: 900px) {
   /*Tablets [601px -> 1200px]*/
   .ExclusiveEvents {
