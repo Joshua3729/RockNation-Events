@@ -971,21 +971,6 @@ class App extends Component {
           )}
         />
         <Route
-          path="/checkout"
-          exact
-          render={(props) => (
-            <CheckOutPage
-              {...props}
-              loginModal={this.openModalHandler}
-              isAuth={this.state.isAuth}
-              token={this.state.token}
-              logout={this.logoutHandler}
-              fullname={this.state.fullname}
-              userImage={this.state.userImage}
-            />
-          )}
-        />
-        <Route
           path="/musicevents"
           exact
           render={(props) => (
@@ -1128,21 +1113,7 @@ class App extends Component {
               />
             )}
           />
-          <Route
-            path="/checkout"
-            exact
-            render={(props) => (
-              <CheckOutPage
-                {...props}
-                loginModal={this.openModalHandler}
-                isAuth={this.state.isAuth}
-                token={this.state.token}
-                logout={this.logoutHandler}
-                fullname={this.state.fullname}
-                userImage={this.state.userImage}
-              />
-            )}
-          />
+
           <Route
             path="/profile"
             exact

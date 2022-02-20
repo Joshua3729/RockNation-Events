@@ -5,7 +5,6 @@ import Location from "../Location/Location";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import CFA from "./CallToAction/CTA";
 import { useParams, withRouter } from "react-router";
-// import { withRouter } from "../../util/withRouter";
 import verified from "./verified.svg";
 import Navigation from "../Navigation/Navigation";
 import { Link } from "react-router-dom";
