@@ -3,7 +3,7 @@ import classes from "./loading.module.css";
 
 const loading = () => {
   return (
-    <div class={classes.loading}>
+    <div className={classes.loading}>
       <div></div>
       <div></div>
     </div>

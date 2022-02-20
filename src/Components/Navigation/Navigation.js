@@ -96,7 +96,7 @@ class Navigation extends Component {
     ) : (
       <button className={classes.signin} onClick={this.props.login}>
         {" "}
-        <i class="fas fa-user" style={{ marginRight: "10px" }}></i>SIGN IN
+        <i className="fas fa-user" style={{ marginRight: "10px" }}></i>SIGN IN
       </button>
     );
 
