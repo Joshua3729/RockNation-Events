@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import EventSearcher from "./Components/EventSearcher/EventSearcher";
 import Home from "./Pages/Landing page/Home";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
 import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
@@ -560,15 +560,302 @@ class App extends Component {
       </div>
     );
 
+    // let routes = (
+    //   <Routes>
+    //     {/* <Fragment>
+    //       <ScrollToTop /> */}
+    //     <Route
+    //       path="/"
+    //       exact
+    //       element={
+    //         <Home
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/eventmanager"
+    //       exact
+    //       element={
+    //         <EventSearcher
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/eventmanager/:name"
+    //       exact
+    //       element={
+    //         <EventSearcher
+    //           {...this.props}
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/ticket"
+    //       exact
+    //       element={
+    //         <TicketPage
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/comedy"
+    //       exact
+    //       element={
+    //         <ComedyPage
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/artsandtheater"
+    //       exact
+    //       element={
+    //         <ArtsAndTheaterPage
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/artsandtheater/:id"
+    //       exact
+    //       element={
+    //         <SingleEvent
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+    //     <Route
+    //       path="/comedy/:id"
+    //       exact
+    //       element={
+    //         <SingleEvent
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+
+    //     <Route
+    //       path="/musicevents"
+    //       exact
+    //       element={
+    //         <MusicConcerts
+    //           loginModal={this.openModalHandler}
+    //           isAuth={this.state.isAuth}
+    //           token={this.state.token}
+    //           logout={this.logoutHandler}
+    //           fullname={this.state.fullname}
+    //           userImage={this.state.userImage}
+    //         />
+    //       }
+    //     />
+    //     {/* <Navigate to="/" />
+    //     </Fragment> */}
+    //   </Routes>
+    // );
+
+    // if (this.state.isAuth) {
+    //   routes = (
+    //     <Routes>
+    //       {/* <ScrollToTop /> */}
+
+    //       <Route
+    //         path="/"
+    //         exact
+    //         element={
+    //           <Home
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+    //       <Route
+    //         path="/eventmanager"
+    //         exact
+    //         element={
+    //           <EventSearcher
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+    //       <Route
+    //         path="/eventmanager/:name"
+    //         exact
+    //         element={
+    //           <EventSearcher
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+    //       <Route
+    //         path="/ticket"
+    //         exact
+    //         element={
+    //           <TicketPage
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+    //       <Route
+    //         path="/comedy"
+    //         exact
+    //         element={
+    //           <ComedyPage
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+    //       <Route
+    //         path="/artsandtheater"
+    //         exact
+    //         element={
+    //           <ArtsAndTheaterPage
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+    //       <Route
+    //         path="/artsandtheater/:id"
+    //         exact
+    //         element={
+    //           <SingleEvent
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+    //       <Route
+    //         path="/comedy/:id"
+    //         exact
+    //         element={
+    //           <SingleEvent
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+
+    //       <Route
+    //         path="/profile"
+    //         exact
+    //         element={
+    //           <UserProfile
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //             userAddress={this.state.userAddress}
+    //           />
+    //         }
+    //       />
+    //       <Route
+    //         path="/musicevents"
+    //         exact
+    //         element={
+    //           <MusicConcerts
+    //             loginModal={this.openModalHandler}
+    //             isAuth={this.state.isAuth}
+    //             token={this.state.token}
+    //             logout={this.logoutHandler}
+    //             fullname={this.state.fullname}
+    //             userImage={this.state.userImage}
+    //           />
+    //         }
+    //       />
+    //     </Routes>
+    // );
+
     let routes = (
-      <Routes>
-        {/* <Fragment>
-          <ScrollToTop /> */}
+      <Router>
+        <ScrollToTop />
         <Route
           path="/"
           exact
-          element={
+          render={(props) => (
             <Home
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -576,13 +863,14 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
         <Route
           path="/eventmanager"
           exact
-          element={
+          render={(props) => (
             <EventSearcher
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -590,14 +878,14 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
         <Route
           path="/eventmanager/:name"
           exact
-          element={
+          render={(props) => (
             <EventSearcher
-              {...this.props}
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -605,13 +893,14 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
         <Route
           path="/ticket"
           exact
-          element={
+          render={(props) => (
             <TicketPage
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -619,13 +908,14 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
         <Route
           path="/comedy"
           exact
-          element={
+          render={(props) => (
             <ComedyPage
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -633,13 +923,14 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
         <Route
           path="/artsandtheater"
           exact
-          element={
+          render={(props) => (
             <ArtsAndTheaterPage
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -647,13 +938,14 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
         <Route
           path="/artsandtheater/:id"
           exact
-          element={
+          render={(props) => (
             <SingleEvent
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -661,13 +953,14 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
         <Route
           path="/comedy/:id"
           exact
-          element={
+          render={(props) => (
             <SingleEvent
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -675,14 +968,29 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
-
+        <Route
+          path="/checkout"
+          exact
+          render={(props) => (
+            <CheckOutPage
+              {...props}
+              loginModal={this.openModalHandler}
+              isAuth={this.state.isAuth}
+              token={this.state.token}
+              logout={this.logoutHandler}
+              fullname={this.state.fullname}
+              userImage={this.state.userImage}
+            />
+          )}
+        />
         <Route
           path="/musicevents"
           exact
-          element={
+          render={(props) => (
             <MusicConcerts
+              {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
               token={this.state.token}
@@ -690,23 +998,22 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
             />
-          }
+          )}
         />
-        {/* <Navigate to="/" />
-        </Fragment> */}
-      </Routes>
+        <Redirect to="/" />
+      </Router>
     );
 
     if (this.state.isAuth) {
       routes = (
-        <Routes>
-          {/* <ScrollToTop /> */}
-
+        <Router>
+          <ScrollToTop />
           <Route
             path="/"
             exact
-            element={
+            render={(props) => (
               <Home
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -714,13 +1021,14 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
           <Route
             path="/eventmanager"
             exact
-            element={
+            render={(props) => (
               <EventSearcher
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -728,13 +1036,14 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
           <Route
             path="/eventmanager/:name"
             exact
-            element={
+            render={(props) => (
               <EventSearcher
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -742,13 +1051,14 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
           <Route
             path="/ticket"
             exact
-            element={
+            render={(props) => (
               <TicketPage
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -756,13 +1066,14 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
           <Route
             path="/comedy"
             exact
-            element={
+            render={(props) => (
               <ComedyPage
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -770,13 +1081,14 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
           <Route
             path="/artsandtheater"
             exact
-            element={
+            render={(props) => (
               <ArtsAndTheaterPage
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -784,13 +1096,14 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
           <Route
             path="/artsandtheater/:id"
             exact
-            element={
+            render={(props) => (
               <SingleEvent
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -798,13 +1111,14 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
           <Route
             path="/comedy/:id"
             exact
-            element={
+            render={(props) => (
               <SingleEvent
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -812,14 +1126,29 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
-
+          <Route
+            path="/checkout"
+            exact
+            render={(props) => (
+              <CheckOutPage
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+              />
+            )}
+          />
           <Route
             path="/profile"
             exact
-            element={
+            render={(props) => (
               <UserProfile
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -828,13 +1157,14 @@ class App extends Component {
                 userImage={this.state.userImage}
                 userAddress={this.state.userAddress}
               />
-            }
+            )}
           />
           <Route
             path="/musicevents"
             exact
-            element={
+            render={(props) => (
               <MusicConcerts
+                {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
                 token={this.state.token}
@@ -842,9 +1172,9 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
               />
-            }
+            )}
           />
-        </Routes>
+        </Router>
       );
     }
 
