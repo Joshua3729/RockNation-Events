@@ -88,7 +88,7 @@ class TicketPage extends Component {
         artists = event[0].lineup;
       }
 
-      artists.map((artist) => {
+      artists.forEach((artist) => {
         axios(`https://rest.bandsintown.com/artists/${artist}?app_id=510`)
           .then((response) => {
             data = response.data;
@@ -110,9 +110,7 @@ class TicketPage extends Component {
       });
     });
   }
-  closeModalhandler = () => {
-    this.setState({ showModal: false });
-  };
+
   closeModalhandler = () => {
     this.setState({ showModal: false });
   };

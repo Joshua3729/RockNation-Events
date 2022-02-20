@@ -191,7 +191,7 @@ class topSelling extends Component {
         if (i < 8) {
           return (
             <Link to={`/artsandtheater/${event._id}`}>
-              <EventCard key={i} img={event.imageUrl} Name={event.name} />
+              <EventCard key={i + 11} img={event.imageUrl} Name={event.name} />
             </Link>
           );
         }
@@ -199,7 +199,7 @@ class topSelling extends Component {
       EventsFamily = this.state.Family.map((event, i) => {
         return (
           <EventCard
-            key={i}
+            key={i + 222}
             img={event.image}
             Name={event.name}
             events={event.events}
@@ -211,7 +211,7 @@ class topSelling extends Component {
           return (
             <Link to={`/comedy/${event._id}`}>
               <EventCard
-                key={i}
+                key={i + 3333}
                 img={event.banner}
                 Name={event.name}
                 events={event.events}
