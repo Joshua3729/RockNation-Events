@@ -4,11 +4,14 @@ import video from "../../Assets/Video/bg.mp4";
 import { Link } from "react-router-dom";
 import Button from "../UI/Button/Button";
 import hero from "../Image/hero.png";
+import heroBg from "../Image/herobg.png";
+
 const Hero = () => {
   return (
     <div className={classes.Hero}>
       <div className={classes.backDrop}></div>
-      <video src={video} autoPlay loop muted />
+      {/* <video src={video} autoPlay loop muted /> */}
+      <img src={heroBg} alt="" className={classes.heroBg} />
       <div className={classes.Wrapper}>
         {/* <h1 className={classes.primary_header}>LET'S GET THE PARTY STARTED!</h1>
         <p className={classes.Hero_description}>
