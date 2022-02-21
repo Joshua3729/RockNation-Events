@@ -7,7 +7,7 @@ import hero from "../Image/hero.png";
 import heroBg from "../Image/herobg.png";
 import espn from "../Image/espn.png";
 import livenation from "../Image/livenation.png";
-import multichoice from "../Image/multichoice.png";
+import location from "../Image/location.png";
 
 const Hero = () => {
   return (
