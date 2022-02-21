@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import Button from "../UI/Button/Button";
 import hero from "../Image/hero.png";
 import heroBg from "../Image/herobg.png";
+import espn from "../Image/espn.png";
+import livenation from "../Image/livenation.png";
+import multichoice from "../Image/multichoice.png";
 
 const Hero = () => {
   return (
