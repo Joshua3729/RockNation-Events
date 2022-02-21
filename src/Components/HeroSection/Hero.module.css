@@ -61,7 +61,5 @@
   overflow: hidden;
 }
 .heroImg {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  object-fit: cover;
 }

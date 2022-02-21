@@ -22,6 +22,9 @@ const Hero = () => {
           <Button label="GET STARTED" />
         </Link> */}
       </div>
+      <div className={classes.TextWrapper}>
+        <h1>Shop for millions of tickets to your favorite events</h1>
+      </div>
       <div className={classes.heroImgWrapper}>
         <img src={hero} alt="" className={classes.heroImg} />
       </div>
