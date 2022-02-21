@@ -39,10 +39,16 @@ const Hero = () => {
           <img src={livenation} alt="" />
         </div>
         <div className={classes.partnerWrapper}>
-          <img src={espn} alt="" />
+          <img
+            src="https://i.pinimg.com/originals/8b/89/b6/8b89b6200b9ee0501fea8685dd9da5ac.jpg"
+            alt=""
+          />
         </div>
         <div className={classes.partnerWrapper}>
-          {/* <img src={} alt="" /> */}
+          <img
+            src="https://www.freepnglogos.com/uploads/espn-png-logo/pn-white-png-logo-18.png"
+            alt=""
+          />
         </div>
       </div>
     </div>
