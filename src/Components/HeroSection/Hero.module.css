@@ -66,8 +66,11 @@
 .TextWrapper {
   position: absolute;
   top: 25%;
-  font-size: 40px;
+  font-size: 30px;
   width: 50%;
   left: 20px;
   color: white;
+}
+.TextWrapper h1 {
+  font-weight: 700;
 }

@@ -24,6 +24,9 @@ const Hero = () => {
       </div>
       <div className={classes.TextWrapper}>
         <h1>Shop for millions of tickets to your favorite events</h1>
+        <p>
+          Plus secure effortless ticketing and many more with RockNation Events
+        </p>
       </div>
       <div className={classes.heroImgWrapper}>
         <img src={hero} alt="" className={classes.heroImg} />
