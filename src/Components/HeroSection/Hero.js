@@ -31,6 +31,7 @@ const Hero = () => {
       <div className={classes.heroImgWrapper}>
         <img src={hero} alt="" className={classes.heroImg} />
       </div>
+      <div className={classes.partnersBanner}></div>
     </div>
   );
 };

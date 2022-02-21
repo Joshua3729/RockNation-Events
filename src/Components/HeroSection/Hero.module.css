@@ -74,3 +74,11 @@
 .TextWrapper h1 {
   font-weight: 700;
 }
+.partnersBanner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 15%;
+  background-color: black;
+}
