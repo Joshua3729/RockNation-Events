@@ -126,4 +126,10 @@
 .locationPicker,
 .datePicker {
   border-right: 2px solid white;
+  display: flex;
+  align-items: center;
+}
+
+.location_icon {
+  width: 20px;
 }
