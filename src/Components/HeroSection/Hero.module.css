@@ -44,11 +44,15 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
 }
-.heroImg {
+.heroImgWrapper {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 428px;
-  height: 537px;
+  width: 528px;
+  height: 637px;
   z-index: 800;
 }
+/* .heroImg{
+  width: 100%;
+  height: ;
+} */

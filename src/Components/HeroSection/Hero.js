@@ -19,7 +19,9 @@ const Hero = () => {
           <Button label="GET STARTED" />
         </Link> */}
       </div>
-      <img src={hero} alt="" className={classes.heroImg} />
+      <div className={classes.heroImgWrapper}>
+        <img src={hero} alt="" className={classes.heroImg} />
+      </div>
     </div>
   );
 };
