@@ -42,7 +42,7 @@ const Hero = () => {
           <img src={espn} alt="" />
         </div>
         <div className={classes.partnerWrapper}>
-          <img src={multichoice} alt="" />
+          {/* <img src={} alt="" /> */}
         </div>
       </div>
     </div>
