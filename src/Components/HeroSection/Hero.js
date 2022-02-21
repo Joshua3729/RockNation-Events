@@ -35,6 +35,8 @@ const Hero = () => {
         <img src={hero} alt="" className={classes.heroImg} />
       </div>
       <div className={classes.searchTool}>
+        <div className={classes.datePicker}></div>
+        <div className={classes.locationPicker}></div>
         <button className={classes.searchBtn}>Search</button>
       </div>
       <div className={classes.partnersBanner}>
