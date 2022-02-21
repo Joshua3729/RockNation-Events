@@ -34,7 +34,17 @@ const Hero = () => {
       <div className={classes.heroImgWrapper}>
         <img src={hero} alt="" className={classes.heroImg} />
       </div>
-      <div className={classes.partnersBanner}></div>
+      <div className={classes.partnersBanner}>
+        <div className={classes.partnerWrapper}>
+          <img src={livenation} alt="" />
+        </div>
+        <div className={classes.partnerWrapper}>
+          <img src={espn} alt="" />
+        </div>
+        <div className={classes.partnerWrapper}>
+          <img src={multichoice} alt="" />
+        </div>
+      </div>
     </div>
   );
 };
