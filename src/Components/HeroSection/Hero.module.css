@@ -42,17 +42,19 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 .heroImgWrapper {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 528px;
-  height: 637px;
+  height: 100vh;
   z-index: 800;
+  overflow: hidden;
 }
-/* .heroImg{
-  width: 100%;
-  height: ;
-} */
+.heroImg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
