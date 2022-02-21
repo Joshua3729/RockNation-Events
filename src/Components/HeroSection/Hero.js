@@ -34,6 +34,9 @@ const Hero = () => {
       <div className={classes.heroImgWrapper}>
         <img src={hero} alt="" className={classes.heroImg} />
       </div>
+      <div className={classes.searchTool}>
+        <button className={classes.searchBtn}>Search</button>
+      </div>
       <div className={classes.partnersBanner}>
         <div className={classes.partnerWrapper}>
           <img src={livenation} alt="" />
