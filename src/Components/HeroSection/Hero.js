@@ -38,9 +38,16 @@ const Hero = () => {
         <form>
           <div className={classes.locationPicker}>
             <img src={location} alt="" className={classes.location_icon} />
-            <input type="text" placeholder="City/Zip Code" />
+            <input
+              type="text"
+              placeholder="City/Zip Code"
+              className={classes.city}
+              id="city"
+            />
           </div>
-          <div className={classes.datePicker}></div>
+          <div className={classes.datePicker}>
+            <input type="date" name="date" id="date" />
+          </div>
           <button className={classes.searchBtn}>Search</button>
         </form>
       </div>
