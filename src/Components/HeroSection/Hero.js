@@ -48,6 +48,14 @@ const Hero = () => {
           <div className={classes.datePicker}>
             <input type="date" name="date" id="date" />
           </div>
+          <div className={classes.searchInput}>
+            <input
+              type="text"
+              id="search"
+              name="search"
+              placeholder="Search for evets, artists, venues"
+            />
+          </div>
           <button className={classes.searchBtn}>Search</button>
         </form>
       </div>
