@@ -35,12 +35,14 @@ const Hero = () => {
         <img src={hero} alt="" className={classes.heroImg} />
       </div>
       <div className={classes.searchTool}>
-        <div className={classes.locationPicker}>
-          <img src={location} alt="" className={classes.location_icon} />
-          <p>City/Zip Code</p>
-        </div>
-        <div className={classes.datePicker}></div>
-        <button className={classes.searchBtn}>Search</button>
+        <form>
+          <div className={classes.locationPicker}>
+            <img src={location} alt="" className={classes.location_icon} />
+            <input type="text" placeholder="City/Zip Code" />
+          </div>
+          <div className={classes.datePicker}></div>
+          <button className={classes.searchBtn}>Search</button>
+        </form>
       </div>
       <div className={classes.partnersBanner}>
         <div className={classes.partnerWrapper}>

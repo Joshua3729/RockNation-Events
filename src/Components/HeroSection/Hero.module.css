@@ -122,6 +122,8 @@
   color: white;
   border-radius: 100px;
   margin-left: auto;
+  font-weight: 900;
+  font-size: 20px;
 }
 .locationPicker,
 .datePicker {
