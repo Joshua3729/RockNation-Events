@@ -132,7 +132,9 @@
   align-items: center;
   color: white;
 }
-
+.datePicker {
+  position: relative;
+}
 .location_icon {
   width: 30px;
   margin-right: 40px;
@@ -161,6 +163,8 @@
   outline: none;
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
   cursor: pointer;
   border-radius: 4px;
   margin-right: 2px;
@@ -170,4 +174,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
   opacity: 0.6;
+}
+
+input::-webkit-datetime-edit {
+  position: relative;
+  left: 15px;
+}
+
+input::-webkit-datetime-edit-fields-wrapper {
+  position: relative;
+  left: 15px;
 }
