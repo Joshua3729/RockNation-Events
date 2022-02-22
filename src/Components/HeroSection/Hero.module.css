@@ -114,14 +114,16 @@
   box-sizing: border-box;
 }
 .searchBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
   background-color: #fe8002;
   border: none;
   padding: 10px 20px;
   width: 120px;
-  height: 100%;
+  height: calc(100% - 40px);
   color: white;
   border-radius: 100px;
-  margin-left: auto;
   font-weight: 900;
   font-size: 20px;
 }
@@ -184,4 +186,18 @@ input::-webkit-datetime-edit {
 input::-webkit-datetime-edit-fields-wrapper {
   position: relative;
   left: 15px;
+}
+.searchInput {
+  margin-left: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput input {
+  background-color: transparent;
+  color: gray;
+  border: none;
+  outline: none;
+  font-size: 25px;
+  width: 70%;
 }
