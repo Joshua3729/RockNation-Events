@@ -37,6 +37,7 @@ const Hero = () => {
       <div className={classes.searchTool}>
         <div className={classes.locationPicker}>
           <img src={location} alt="" className={classes.location_icon} />
+          <p>City/Zip Code</p>
         </div>
         <div className={classes.datePicker}></div>
         <button className={classes.searchBtn}>Search</button>

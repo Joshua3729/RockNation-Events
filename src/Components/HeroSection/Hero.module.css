@@ -108,7 +108,7 @@
   z-index: 900;
   width: calc(100% - 100px);
   padding: 20px;
-  height: 80px;
+  height: 90px;
   border-radius: 100px;
   background-color: #030406;
   box-sizing: border-box;
@@ -125,11 +125,14 @@
 }
 .locationPicker,
 .datePicker {
-  border-right: 2px solid white;
+  border-right: 5px solid white;
   display: flex;
   align-items: center;
+  color: white;
+  font-size: 25px;
 }
 
 .location_icon {
-  width: 20px;
+  width: 30px;
+  margin-right: 40px;
 }
