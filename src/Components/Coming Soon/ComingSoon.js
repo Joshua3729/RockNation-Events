@@ -28,7 +28,15 @@ const ComingSoon = (props) => {
     <section className={classes.upcomingEvents}>
       <h2 className={classes.header}>Our top picks this week</h2>
       <div className={classes.OurPicksGrid}>
-        <div className={classes.card}></div>
+        <div
+          className={classes.card}
+          style={{
+            backgroundImage:
+              "url(https://dynamicmedia.livenationinternational.com/Media/d/h/l/1f0ba3b9-fce7-49e2-a189-fc300525d3f2.png)",
+          }}
+        >
+          <div className={classes.eventInfo}></div>
+        </div>
         <div className={classes.card}></div>
         <div className={classes.card}></div>
         <div className={classes.card}></div>
