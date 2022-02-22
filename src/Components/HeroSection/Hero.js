@@ -13,18 +13,9 @@ const Hero = () => {
   return (
     <div className={classes.Hero}>
       <div className={classes.backDrop}></div>
-      {/* <video src={video} autoPlay loop muted /> */}
+
       <img src={heroBg} alt="" className={classes.heroBg} />
-      <div className={classes.Wrapper}>
-        {/* <h1 className={classes.primary_header}>LET'S GET THE PARTY STARTED!</h1>
-        <p className={classes.Hero_description}>
-          Shop for millions of tickets for music events from your favourite
-          artist
-        </p>
-        <Link to="/eventmanager">
-          <Button label="GET STARTED" />
-        </Link> */}
-      </div>
+      <div className={classes.Wrapper}></div>
       <div className={classes.TextWrapper}>
         <h1>Shop for millions of tickets to your favorite events</h1>
         <p>
