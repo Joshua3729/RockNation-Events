@@ -25,7 +25,14 @@ const ComingSoon = (props) => {
     //     />
     //   </div>
     // </section>
-    <section className={classes.upcomingEvents}></section>
+    <section className={classes.upcomingEvents}>
+      <div className={classes.OurPicksGrid}>
+        <div className={classes.card}></div>
+        <div className={classes.card}></div>
+        <div className={classes.card}></div>
+        <div className={classes.card}></div>
+      </div>{" "}
+    </section>
   );
 };
 export default ComingSoon;
