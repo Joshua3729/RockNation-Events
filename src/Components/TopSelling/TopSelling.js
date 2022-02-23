@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import EventCard from "./EventCard/EventCard";
+// import EventCard from "./EventCard/EventCard";
 import classes from "./TopSelling.module.css";
 import axios from "axios";
 import Spinner from "../UI/Spinner/Spinner";
 import LoadingModal from "../Loading Modal/LoadingModal";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import { Link } from "react-router-dom";
+import EventCard from "../EventCard/EventCard";
 
 class topSelling extends Component {
   state = {
@@ -176,22 +177,22 @@ class topSelling extends Component {
       console.log(this.state.artist);
       cards = this.state.artist.map((card, i) => {
         return (
-          <Link key={i} to={`/eventmanager/${card.name}`}>
-            <EventCard
-              events={card.events}
-              Name={card.name}
-              //   img="https://variety.com/wp-content/uploads/2020/07/ap_19206704285722.jpg"
-              img={card.image}
-            />
-          </Link>
+          // <Link key={i} to={`/eventmanager/${card.name}`}>
+          <EventCard
+            events={card.events}
+            Name={card.name}
+            //   img="https://variety.com/wp-content/uploads/2020/07/ap_19206704285722.jpg"
+            img={card.image}
+          />
+          // </Link>
         );
       });
       EventsArtsAndTheater = this.state.ArtsAndTheater.map((event, i) => {
         if (i < 8) {
           return (
-            <Link key={i} to={`/artsandtheater/${event._id}`}>
-              <EventCard img={event.imageUrl} Name={event.name} />
-            </Link>
+            // <Link key={i} to={`/artsandtheater/${event._id}`}>
+            <EventCard img={event.imageUrl} Name={event.name} />
+            //</Link>
           );
         }
       });
@@ -208,13 +209,13 @@ class topSelling extends Component {
       Comedy = this.state.comedy.map((event, i) => {
         if (i < 8) {
           return (
-            <Link key={i} to={`/comedy/${event._id}`}>
-              <EventCard
-                img={event.banner}
-                Name={event.name}
-                events={event.events}
-              />
-            </Link>
+            // <Link key={i} to={`/comedy/${event._id}`}>
+            <EventCard
+              img={event.banner}
+              Name={event.name}
+              events={event.events}
+            />
+            // </Link>
           );
         }
       });

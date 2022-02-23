@@ -6,7 +6,7 @@ const eventCard = (props) => {
     <div
       className={classes.card}
       style={{
-        backgroundImage: `url(${badbunny})`,
+        backgroundImage: `url(${props.img})`,
       }}
     >
       <div className={classes.eventInfo}>
