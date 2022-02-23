@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "./Card/Card";
 import classes from "./ComingSoon.module.css";
 import beiber from "../Image/top_picks/beiber.jpg";
 import badbunny from "../Image/top_picks/badbunny.jpg";
