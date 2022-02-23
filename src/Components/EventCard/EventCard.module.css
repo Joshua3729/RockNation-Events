@@ -1,0 +1,38 @@
+.card {
+  position: relative;
+  background-color: lightgray;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+}
+
+.eventInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 46%;
+  background-color: white;
+  padding: 10px 20px;
+}
+.artist {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 900;
+}
+.date {
+  margin-bottom: 10px;
+  color: #1c94a5;
+}
+.venue {
+  font-weight: 700;
+  color: #717488;
+}
+.description {
+  margin-top: 20px;
+  width: calc(100% - 10px);
+}
