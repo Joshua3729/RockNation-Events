@@ -3,6 +3,10 @@
   height: 350px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+.eventCard:hover{
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+
+}
 .gutter {
   padding: 5px 10px;
   box-sizing: border-box;

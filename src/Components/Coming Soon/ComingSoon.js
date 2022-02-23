@@ -6,6 +6,7 @@ import beiber from "../Image/top_picks/beiber.jpg";
 import badbunny from "../Image/top_picks/badbunny.jpg";
 import billie from "../Image/top_picks/billie.jpg";
 import khalid from "../Image/top_picks/khalid.jpg";
+import EventCard from "../EventCard/EventCard";
 
 const ComingSoon = (props) => {
   return (
@@ -32,71 +33,11 @@ const ComingSoon = (props) => {
     <section className={classes.upcomingEvents}>
       <h2 className={classes.header}>Our top picks this week</h2>
       <div className={classes.OurPicksGrid}>
-        <div
-          className={classes.card}
-          style={{
-            backgroundImage: `url(${beiber})`,
-          }}
-        >
-          <div className={classes.eventInfo}>
-            <h4 className={classes.artist}>Justin Beiber</h4>
-            <p className={classes.date}>23 February 2022</p>
-            <p className={classes.venue}>The Staple Center, New York, NY</p>
-            <p className={classes.description}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              mollitia, molestiae quas vel sint{" "}
-            </p>
-          </div>
-        </div>
-        <div
-          className={classes.card}
-          style={{
-            backgroundImage: `url(${badbunny})`,
-          }}
-        >
-          <div className={classes.eventInfo}>
-            <h4 className={classes.artist}>Bad Bunny</h4>
-            <p className={classes.date}>23 February 2022</p>
-            <p className={classes.venue}>The Staple Center, New York, NY</p>
-            <p className={classes.description}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              mollitia, molestiae quas vel sint{" "}
-            </p>
-          </div>
-        </div>
-        <div
-          className={classes.card}
-          style={{
-            backgroundImage: `url(${billie})`,
-          }}
-        >
-          <div className={classes.eventInfo}>
-            <h4 className={classes.artist}>Billie Eillish</h4>
-            <p className={classes.date}>23 February 2022</p>
-            <p className={classes.venue}>The Staple Center, New York, NY</p>
-            <p className={classes.description}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              mollitia, molestiae quas vel sint{" "}
-            </p>
-          </div>
-        </div>
-        <div
-          className={classes.card}
-          style={{
-            backgroundImage: `url(${khalid})`,
-          }}
-        >
-          <div className={classes.eventInfo}>
-            <h4 className={classes.artist}>Khalid</h4>
-            <p className={classes.date}>23 February 2022</p>
-            <p className={classes.venue}>The Staple Center, New York, NY</p>
-            <p className={classes.description}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-              mollitia, molestiae quas vel sint{" "}
-            </p>
-          </div>
-        </div>
-      </div>{" "}
+        <EventCard img={beiber} />
+        <EventCard img={badbunny} />
+        <EventCard img={billie} />
+        <EventCard img={khalid} />
+      </div>
     </section>
   );
 };
