@@ -103,6 +103,7 @@
   height: 90px;
   border-radius: 100px;
   background-color: #030406;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
   box-sizing: border-box;
 }
 .searchBtn {
