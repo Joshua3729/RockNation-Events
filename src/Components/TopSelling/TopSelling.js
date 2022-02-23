@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import EventCard from "./EventCard/EventCard";
 import classes from "./TopSelling.module.css";
 import axios from "axios";
 import Spinner from "../UI/Spinner/Spinner";
