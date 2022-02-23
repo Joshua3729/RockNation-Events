@@ -69,3 +69,16 @@
   background-color: white;
   padding: 10px;
 }
+.artist {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 900;
+}
+.date {
+  margin-bottom: 10px;
+  color: #1c94a5;
+}
+.venue {
+  font-weight: 700;
+  color: #717488;
+}
