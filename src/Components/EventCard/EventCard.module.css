@@ -37,7 +37,6 @@
   margin-top: 20px;
   width: calc(100% - 10px);
 }
-.eventInfo:hover,
 .card:hover{
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
