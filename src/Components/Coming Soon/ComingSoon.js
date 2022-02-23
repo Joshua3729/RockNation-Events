@@ -3,6 +3,9 @@ import Card from "./Card/Card";
 import classes from "./ComingSoon.module.css";
 import FlexedCard from "./FlexedCard/FlexedCard";
 import beiber from "../Image/top_picks/beiber.jpg";
+import badbunny from "../Image/top_picks/badbunny.jpg";
+import billie from "../Image/top_picks/billie.jpg";
+import khalid from "../Image/top_picks/khalid.jpg";
 
 const ComingSoon = (props) => {
   return (
@@ -40,8 +43,7 @@ const ComingSoon = (props) => {
         <div
           className={classes.card}
           style={{
-            backgroundImage:
-              "url(https://www.billboard.com/wp-content/uploads/2020/03/Bad-Bunny-press-2020-u-billboard-1548-1583960456.jpg)",
+            backgroundImage: `url(${badbunny})`,
           }}
         >
           <div className={classes.eventInfo}></div>
@@ -49,8 +51,7 @@ const ComingSoon = (props) => {
         <div
           className={classes.card}
           style={{
-            backgroundImage:
-              "url(http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRcY_v8O01M9FPSq0eaZy6kJHrL2QBb6LHRRWzYXvUfHZXy-Gb-uL55WvBK-aUt)",
+            backgroundImage: `url(${billie})`,
           }}
         >
           <div className={classes.eventInfo}></div>
@@ -58,8 +59,7 @@ const ComingSoon = (props) => {
         <div
           className={classes.card}
           style={{
-            backgroundImage:
-              "url(http://riffmagazine.com/wp-content/uploads/2019/06/1-Khalid_062819_SteveCarlson-14.jpg)",
+            backgroundImage: `url(${khalid})`,
           }}
         >
           <div className={classes.eventInfo}></div>
