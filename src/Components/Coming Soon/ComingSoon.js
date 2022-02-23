@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./Card/Card";
 import classes from "./ComingSoon.module.css";
 import FlexedCard from "./FlexedCard/FlexedCard";
+import beiber from "../Image/top_picks/beiber.jpg";
 
 const ComingSoon = (props) => {
   return (
@@ -31,8 +32,7 @@ const ComingSoon = (props) => {
         <div
           className={classes.card}
           style={{
-            backgroundImage:
-              "url(https://dynamicmedia.livenationinternational.com/Media/d/h/l/1f0ba3b9-fce7-49e2-a189-fc300525d3f2.png)",
+            backgroundImage: `url(${beiber})`,
           }}
         >
           <div className={classes.eventInfo}></div>
@@ -50,7 +50,7 @@ const ComingSoon = (props) => {
           className={classes.card}
           style={{
             backgroundImage:
-              "url(https://dynamicmedia.livenationinternational.com/Media/d/h/l/1f0ba3b9-fce7-49e2-a189-fc300525d3f2.png)",
+              "url(http://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRcY_v8O01M9FPSq0eaZy6kJHrL2QBb6LHRRWzYXvUfHZXy-Gb-uL55WvBK-aUt)",
           }}
         >
           <div className={classes.eventInfo}></div>
@@ -59,7 +59,7 @@ const ComingSoon = (props) => {
           className={classes.card}
           style={{
             backgroundImage:
-              "url(https://dynamicmedia.livenationinternational.com/Media/d/h/l/1f0ba3b9-fce7-49e2-a189-fc300525d3f2.png)",
+              "url(http://riffmagazine.com/wp-content/uploads/2019/06/1-Khalid_062819_SteveCarlson-14.jpg)",
           }}
         >
           <div className={classes.eventInfo}></div>
