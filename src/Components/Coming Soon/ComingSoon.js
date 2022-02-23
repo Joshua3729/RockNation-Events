@@ -54,7 +54,15 @@ const ComingSoon = (props) => {
             backgroundImage: `url(${badbunny})`,
           }}
         >
-          <div className={classes.eventInfo}></div>
+          <div className={classes.eventInfo}>
+            <h4 className={classes.artist}>Bad Bunny</h4>
+            <p className={classes.date}>23 February 2022</p>
+            <p className={classes.venue}>The Staple Center, New York, NY</p>
+            <p className={classes.description}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia, molestiae quas vel sint{" "}
+            </p>
+          </div>
         </div>
         <div
           className={classes.card}
@@ -62,7 +70,15 @@ const ComingSoon = (props) => {
             backgroundImage: `url(${billie})`,
           }}
         >
-          <div className={classes.eventInfo}></div>
+          <div className={classes.eventInfo}>
+            <h4 className={classes.artist}>Billie Eillish</h4>
+            <p className={classes.date}>23 February 2022</p>
+            <p className={classes.venue}>The Staple Center, New York, NY</p>
+            <p className={classes.description}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia, molestiae quas vel sint{" "}
+            </p>
+          </div>
         </div>
         <div
           className={classes.card}
@@ -70,7 +86,15 @@ const ComingSoon = (props) => {
             backgroundImage: `url(${khalid})`,
           }}
         >
-          <div className={classes.eventInfo}></div>
+          <div className={classes.eventInfo}>
+            <h4 className={classes.artist}>Khalid</h4>
+            <p className={classes.date}>23 February 2022</p>
+            <p className={classes.venue}>The Staple Center, New York, NY</p>
+            <p className={classes.description}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+              mollitia, molestiae quas vel sint{" "}
+            </p>
+          </div>
         </div>
       </div>{" "}
     </section>

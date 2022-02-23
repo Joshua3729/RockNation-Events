@@ -59,6 +59,7 @@
 .header {
   color: white;
   margin-bottom: 50px;
+  font-size: 40px;
 }
 .eventInfo {
   position: absolute;
@@ -67,7 +68,7 @@
   width: 100%;
   height: 46%;
   background-color: white;
-  padding: 10px;
+  padding: 10px 20px;
 }
 .artist {
   margin-bottom: 10px;
@@ -81,4 +82,8 @@
 .venue {
   font-weight: 700;
   color: #717488;
+}
+.description {
+  margin-top: 20px;
+  width: calc(100% - 10px);
 }
