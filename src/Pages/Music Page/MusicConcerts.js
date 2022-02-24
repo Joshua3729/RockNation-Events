@@ -16,7 +16,6 @@ class MusicConcerts extends Component {
 
     return (
       <Fragment>
-        {loading}
         <Navigation
           scrollEffect={false}
           searchBar={false}
