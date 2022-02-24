@@ -25,7 +25,10 @@ class MusicConcerts extends Component {
           userImage={this.props.userImage}
         />
         <section className={classes.MusicConcerts}>
-          <div className={classes.banner}></div>
+          <div className={classes.banner}>
+            <div className={classes.backDrop}></div>
+            <h2 className={classes.header}>All Concert Events</h2>
+          </div>
         </section>
       </Fragment>
     );
