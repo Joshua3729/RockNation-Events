@@ -35,10 +35,11 @@
 .event {
   width: 60%;
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr 1fr 3fr 1fr;
   grid-gap: 20px;
-  height: 100px;
-  background-color: lightgray;
+  height: 80px;
+  /* box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%); */
+  border-bottom: solid 1px lightgray;
   padding: 10px 20px;
   box-sizing: border-box;
 }
@@ -49,6 +50,39 @@
 }
 .imgWrapper {
   width: 100%;
-  height: calc(100px - 40px);
-  background-color: aqua;
+  height: calc(80px - 20px);
+}
+.date,
+.eventName {
+  margin-bottom: 5px;
+}
+.btnWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.seeTickets {
+  color: white;
+  background-color: rgb(2, 108, 223);
+  border: none;
+  width: 100%;
+  padding: 10px;
+  cursor: pointer;
+}
+.vanueWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.date,
+.eventName {
+  font-size: 20px;
+  font-weight: 500;
+}
+.date {
+  color: rgb(144, 78, 186);
+}
+.venue,
+.time {
+  color: rgba(38, 38, 38, 0.65);
 }
