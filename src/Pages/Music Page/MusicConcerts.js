@@ -27,7 +27,9 @@ class MusicConcerts extends Component {
         <section className={classes.MusicConcerts}>
           <div className={classes.banner}>
             <div className={classes.backDrop}></div>
-            <h2 className={classes.header}>All Concert Events</h2>
+          </div>
+          <div className={classes.mainContent}>
+            <h2 className={classes.header}>All Concert Events (783)</h2>
           </div>
         </section>
       </Fragment>
