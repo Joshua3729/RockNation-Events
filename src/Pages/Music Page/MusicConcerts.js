@@ -13,7 +13,6 @@ class MusicConcerts extends Component {
   };
 
   render() {
-
     return (
       <Fragment>
         <Navigation
@@ -26,7 +25,7 @@ class MusicConcerts extends Component {
           userImage={this.props.userImage}
         />
         <section className={classes.MusicConcerts}>
-          
+          <div className={classes.banner}></div>
         </section>
       </Fragment>
     );
