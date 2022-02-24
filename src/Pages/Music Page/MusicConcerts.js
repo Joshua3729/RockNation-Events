@@ -3,7 +3,7 @@ import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import classes from "./MusicConcerts.module.css";
 import axios from "axios";
 import Navigation from "../../Components/Navigation/Navigation";
-import EventCard from "../../Components/TopSelling/EventCard/EventCard";
+import EventCard from "../../Components/EventCard/EventCard";
 
 class MusicConcerts extends Component {
   state = {
