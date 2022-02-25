@@ -75,7 +75,6 @@ class MusicConcerts extends Component {
               ]}
               parent={"musicConcerts"}
             />
-            <div className={classes.backDrop}></div>
           </div>
           <div className={classes.mainContent}>
             <h2 className={classes.header}>All Concert Events (783)</h2>
