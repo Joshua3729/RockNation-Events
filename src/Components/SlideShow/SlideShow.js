@@ -91,7 +91,13 @@ const SlideShow = (props) => {
       <div
         className={classes.slide2}
         style={{ backgroundImage: `url(${slide.img})` }}
-      ></div>
+      >
+        <div className={classes.eventInfo}>
+          <p className={classes.date}></p>
+          <p className={classes.city}></p>
+          <button className={classes.getTickets}>Get Tickets</button>
+        </div>
+      </div>
     ));
   }
 

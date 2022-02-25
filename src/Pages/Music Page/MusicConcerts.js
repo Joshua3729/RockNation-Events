@@ -63,6 +63,15 @@ class MusicConcerts extends Component {
                 {
                   img: "https://www.geo.tv/assets/uploads/updates/2021-11-21/383374_7584402_updates.jpg",
                 },
+                {
+                  img: "https://149366112.v2.pressablecdn.com/wp-content/uploads/2019/10/shutterstock_1488792806.jpg",
+                },
+                {
+                  img: "https://i0.wp.com/leafrinique.co.za/wp-content/uploads/2019/12/DSC3715-scaled.jpeg?fit=2560%2C1709&ssl=1",
+                },
+                {
+                  img: "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191001102612-burna-boy-at-coachella.jpg",
+                },
               ]}
               parent={"musicConcerts"}
             />
