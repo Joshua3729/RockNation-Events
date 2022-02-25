@@ -59,7 +59,7 @@ class MusicConcerts extends Component {
                 className={classes.slideshowSlider}
                 style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
               >
-                {props.images.map((slide, index) => (
+                {images.map((slide, index) => (
                   <div
                     className={classes.slide}
                     key={index}
@@ -70,7 +70,7 @@ class MusicConcerts extends Component {
                 ))}
               </div>
               <div className={classes.slideshowDots}>
-                {props.images.map((_, idx) => (
+                {images.map((_, idx) => (
                   <div
                     key={idx}
                     className={
