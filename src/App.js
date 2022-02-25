@@ -985,7 +985,6 @@ class App extends Component {
             />
           )}
         />
-        <Redirect to="/" />
       </Router>
     );
 
