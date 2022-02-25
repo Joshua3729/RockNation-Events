@@ -58,6 +58,9 @@ class MusicConcerts extends Component {
             <SlideShow
               images={[
                 {
+                  img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGn3XTysmzUKcZBeiACppZdTv_tFGX3ka4YA&usqp=CAU",
+                },
+                {
                   img: "https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://static.onecms.io/wp-content/uploads/sites/6/2021/11/17/GettyImages-1313060346.jpg&w=1280&h=720&q=90&c=cc",
                 },
                 {

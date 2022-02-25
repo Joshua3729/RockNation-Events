@@ -87,19 +87,25 @@ const SlideShow = (props) => {
     </div>
   ));
   if (props.parent == "musicConcerts") {
-    slides = props.images.map((slide, index) => (
-      <div
-        className={classes.slide2}
-        style={{ backgroundImage: `url(${slide.img})` }}
-      >
-        <div className={classes.eventInfo}>
-          <h2 className={classes.eventName}>Justin Beiber: Lights Tour</h2>
-          <p className={classes.date}>Sun, 30 Aug 2021</p>
-          <p className={classes.city}>Gauteng</p>
-          <button className={classes.getTickets}>Get Tickets</button>
+    slides = props.images.map((slide, index) =>
+      index == 0 ? (
+        <div className={classes.slide2}>
+          <img className={classes.bannerImg} src={slide.img} alt="" />
         </div>
-      </div>
-    ));
+      ) : (
+        <div
+          className={classes.slide2}
+          style={{ backgroundImage: `url(${slide.img})` }}
+        >
+          <div className={classes.eventInfo}>
+            <h2 className={classes.eventName}>Justin Beiber: Lights Tour</h2>
+            <p className={classes.date}>Sun, 30 Aug 2021</p>
+            <p className={classes.city}>Gauteng</p>
+            <button className={classes.getTickets}>Get Tickets</button>
+          </div>
+        </div>
+      )
+    );
   }
 
   return (
