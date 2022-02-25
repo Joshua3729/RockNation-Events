@@ -54,40 +54,6 @@ class MusicConcerts extends Component {
         />
         <section className={classes.MusicConcerts}>
           <div className={classes.banner}>
-            <div className={classes.slideshow}>
-              <div
-                className={classes.slideshowSlider}
-                style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
-              >
-                {images.map((slide, index) => (
-                  <div
-                    className={classes.slide}
-                    key={index}
-                    style={{
-                      backgroundImage: `url(${slide.img})`,
-                    }}
-                  ></div>
-                ))}
-              </div>
-              <div className={classes.slideshowDots}>
-                {images.map((_, idx) => (
-                  <div
-                    key={idx}
-                    className={
-                      index === idx
-                        ? [
-                            classes.slideshowDotactive,
-                            classes.slideshowDot,
-                          ].join(" ")
-                        : classes.slideshowDot
-                    }
-                    onClick={() => {
-                      setIndex(idx);
-                    }}
-                  ></div>
-                ))}
-              </div>
-            </div>
             <div className={classes.backDrop}></div>
           </div>
           <div className={classes.mainContent}>
