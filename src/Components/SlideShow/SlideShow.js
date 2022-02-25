@@ -86,12 +86,16 @@ const SlideShow = (props) => {
       </div>
     </div>
   ));
-  if (props.parent === "musicConcerts") {
+  if (props.parent == "musicConcerts") {
     slides = props.images.map((slide, index) => (
       <div
         className={classes.slide2}
-        style={{ backgroundImage: `url(${slide.img})` }}
-      ></div>
+        style={{
+          backgroundImage: `url(https://www.geo.tv/assets/uploads/updates/2021-11-21/383374_7584402_updates.jpg)`,
+        }}
+      >
+        BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBb
+      </div>
     ));
   }
 

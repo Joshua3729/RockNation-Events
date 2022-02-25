@@ -4,6 +4,7 @@ import classes from "./MusicConcerts.module.css";
 import axios from "axios";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventCard from "../../Components/EventCard/EventCard";
+import SlideShow from "../../Components/SlideShow/SlideShow";
 
 class MusicConcerts extends Component {
   state = {
@@ -54,6 +55,17 @@ class MusicConcerts extends Component {
         />
         <section className={classes.MusicConcerts}>
           <div className={classes.banner}>
+            <SlideShow
+              images={[
+                {
+                  img: "https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://static.onecms.io/wp-content/uploads/sites/6/2021/11/17/GettyImages-1313060346.jpg&w=1280&h=720&q=90&c=cc",
+                },
+                {
+                  img: "https://www.geo.tv/assets/uploads/updates/2021-11-21/383374_7584402_updates.jpg",
+                },
+              ]}
+              parent={"musicConcerts"}
+            />
             <div className={classes.backDrop}></div>
           </div>
           <div className={classes.mainContent}>
