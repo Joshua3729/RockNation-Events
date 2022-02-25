@@ -13,7 +13,10 @@ class MusicConcerts extends Component {
   };
 
   render() {
-    let events = [1, 2, 3, 4, 5, 6, 7, 8].map((event, i) => {
+    let events = [
+      1, 2, 3, 4, 5, 6, 7, 81, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+      1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 11, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1,
+    ].map((event, i) => {
       return (
         <div className={classes.event} key={i}>
           <div className={classes.imgWrapper}>
