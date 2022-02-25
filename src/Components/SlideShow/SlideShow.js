@@ -65,49 +65,43 @@ const SlideShow = (props) => {
     };
   }, [index]);
 
+  let slides = props.images.map((slide, index) => (
+    <div
+      className={classes.slide}
+      key={index}
+      style={{
+        background: "#373b44" /* fallback for old browsers */,
+        background: `-webkit-linear-gradient(to right,${slide.color1},${slide.color2})`,
+        background: `linear-gradient(to right,${slide.color1},${slide.color2})`,
+      }}
+    >
+      <div className={classes.backDrop}></div>
+      <div className={classes.imageWrapper}>
+        <img src={slide.image} alt="" />
+      </div>
+      <div className={classes.slideDescription}>
+        <h1>{slide.eventName && slide.eventName[0]}:</h1>
+        <h2>{slide.eventName && slide.eventName[1]}</h2>
+        <p className={classes.buyTicket}>COMING SOON</p>
+      </div>
+    </div>
+  ));
+  if (props.parent === "musicConcerts") {
+    slides = props.images.map((slide, index) => (
+      <div
+        className={classes.slide2}
+        style={{ backgroundImage: `url(${slide.img})` }}
+      ></div>
+    ));
+  }
+
   return (
     <div className={classes.slideshow}>
       <div
         className={classes.slideshowSlider}
         style={{ transform: `translate3d(${-index * 100}%, 0, 0)` }}
       >
-        {props.images.map((slide, index) => (
-          <div
-            className={classes.slide}
-            key={index}
-            style={{
-              background: "#373b44" /* fallback for old browsers */,
-              background: `-webkit-linear-gradient(to right,${slide.color1},${slide.color2})`,
-              background: `linear-gradient(to right,${slide.color1},${slide.color2})`,
-            }}
-          >
-            <div className={classes.backDrop}></div>
-            <div className={classes.imageWrapper}>
-              <img src={slide.image} alt="" />
-            </div>
-            <div className={classes.slideDescription}>
-              <h1>{slide.eventName && slide.eventName[0]}:</h1>
-              <h2>{slide.eventName && slide.eventName[1]}</h2>
-              <p className={classes.buyTicket}>COMING SOON</p>
-            </div>
-            {/* {props.for !== "A&T" ? (
-              <div className={classes.slideInfoWrapper}>
-                {slide.description1 ? (
-                  <div className={classes.slideTextWrapper}>
-                    <p className={classes.description}>
-                      {slide.description1} <br /> {slide.description2}
-                    </p>
-                    <h1>{slide.name}</h1>
-                  </div>
-                ) : (
-                  <div className={classes.slideTextWrapper}>
-                    <h1>{slide.name}</h1>
-                  </div>
-                )}
-              </div>
-            ) : null} */}
-          </div>
-        ))}
+        {slides}
       </div>
       <div className={classes.slideshowDots}>
         {props.images.map((_, idx) => (
