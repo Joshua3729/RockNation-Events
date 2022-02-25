@@ -93,8 +93,8 @@ const SlideShow = (props) => {
         style={{ backgroundImage: `url(${slide.img})` }}
       >
         <div className={classes.eventInfo}>
-          <p className={classes.date}></p>
-          <p className={classes.city}></p>
+          <p className={classes.date}>Sun, 30 Aug 2021</p>
+          <p className={classes.city}>Gauteng</p>
           <button className={classes.getTickets}>Get Tickets</button>
         </div>
       </div>
