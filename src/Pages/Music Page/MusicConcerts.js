@@ -10,15 +10,35 @@ class MusicConcerts extends Component {
     artists: null,
     eventslength: null,
     more: 12,
+    events: null,
+  };
+
+  componentDidMount = () => {
+    fetch("https://powerbrains-events.herokuapp.com/feed/events/concerts")
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to fetch concerts.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          events: resData.events,
+          eventsLoading: false,
+        });
+      })
+      .catch((err) => console.log(err));
   };
 
   render() {
-    let events = [
-      1, 2, 3, 4, 5, 6, 7, 81, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-      1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 11, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1,
-    ].map((event, i) => {
-      return <EventInfo key={i} />;
-    });
+    let events = null;
+
+    if (this.state.events)
+      events = this.events.map((event, i) => {
+        return <EventInfo key={i} events={this.state.events} />;
+      });
     return (
       <Fragment>
         <Navigation
@@ -61,8 +81,6 @@ class MusicConcerts extends Component {
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
               <div className={classes.AdCard}>
-                {/* <img src="https://images.unsplash.com/photo-1541126274323-dbac58d14741?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
-                <div className={classes.backDrop}></div> */}
                 <video src={video} autoPlay loop muted />
               </div>
             </div>
