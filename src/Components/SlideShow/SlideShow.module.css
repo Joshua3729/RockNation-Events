@@ -142,6 +142,7 @@
   color: white;
   padding: 20px;
   z-index: 700;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
 .getTickets {
   background-color: rgb(2, 108, 223);

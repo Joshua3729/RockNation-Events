@@ -5,6 +5,7 @@ import axios from "axios";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventCard from "../../Components/EventCard/EventCard";
 import SlideShow from "../../Components/SlideShow/SlideShow";
+import video from "../../Assets/Video/AD.mp4";
 
 class MusicConcerts extends Component {
   state = {
@@ -84,8 +85,9 @@ class MusicConcerts extends Component {
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
               <div className={classes.AdCard}>
-                <img src="https://images.unsplash.com/photo-1541126274323-dbac58d14741?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
-                <div className={classes.backDrop}></div>
+                {/* <img src="https://images.unsplash.com/photo-1541126274323-dbac58d14741?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" />
+                <div className={classes.backDrop}></div> */}
+                <video src={video} autoPlay loop muted />
               </div>
             </div>
           </div>
