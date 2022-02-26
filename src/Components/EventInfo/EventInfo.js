@@ -3,7 +3,7 @@ import classes from "./EventInfo.module.css";
 
 const eventInfo = (props) => {
   return (
-    <div className={classes.event} key={i}>
+    <div className={classes.event}>
       <div className={classes.imgWrapper}>
         <img
           src="https://www.aceshowbiz.com/images/photo/coldplay.jpg"

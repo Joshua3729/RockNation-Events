@@ -3,7 +3,7 @@ import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import classes from "./MusicConcerts.module.css";
 import axios from "axios";
 import Navigation from "../../Components/Navigation/Navigation";
-import EventCard from "../../Components/EventCard/EventCard";
+import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import video from "../../Assets/Video/AD.mp4";
 
@@ -19,29 +19,7 @@ class MusicConcerts extends Component {
       1, 2, 3, 4, 5, 6, 7, 81, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
       1, 1, 1, 1, 1, 1, 1, 1, 1, 11, 11, 1, 1, 1, 1, 1, 1, 1, 1, 11, 1, 1,
     ].map((event, i) => {
-      return (
-        <div className={classes.event} key={i}>
-          <div className={classes.imgWrapper}>
-            <img
-              src="https://www.aceshowbiz.com/images/photo/coldplay.jpg"
-              alt=""
-              className={classes.eventImg}
-            />
-          </div>
-
-          <div className={classes.dateWrapper}>
-            <p className={classes.date}>FEB 10</p>
-            <div className={classes.time}>Thu . 6:30PM</div>
-          </div>
-          <div className={classes.vanueWrapper}>
-            <p className={classes.eventName}>Andres, Colleta, I met a Yeti</p>
-            <p className={classes.venue}>Staple Center, New York, NY</p>
-          </div>
-          <div className={classes.btnWrapper}>
-            <button className={classes.seeTickets}>See Tickets</button>
-          </div>
-        </div>
-      );
+      return <EventInfo key={i} />;
     });
     return (
       <Fragment>
