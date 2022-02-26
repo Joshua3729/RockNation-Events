@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from "react";
-import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import classes from "./MusicConcerts.module.css";
-import axios from "axios";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
