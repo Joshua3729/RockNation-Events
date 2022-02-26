@@ -14,7 +14,7 @@ class MusicConcerts extends Component {
   };
 
   componentDidMount = () => {
-    fetch("https://powerbrains-events.herokuapp.com/feed/events/concerts")
+    fetch("http://localhost:5000/feed/events/concerts")
       .then((res) => {
         if (res.status !== 200) {
           throw new Error("Failed to fetch concerts.");
@@ -33,11 +33,11 @@ class MusicConcerts extends Component {
   };
 
   render() {
-    let events = null;
+    let events = "loading";
 
     if (this.state.events)
-      events = this.events.map((event, i) => {
-        return <EventInfo key={i} events={this.state.events} />;
+      events = this.state.events.map((event, i) => {
+        return <EventInfo key={i} event={event} />;
       });
     return (
       <Fragment>
