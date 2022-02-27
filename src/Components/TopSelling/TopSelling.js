@@ -67,7 +67,7 @@ class topSelling extends Component {
     Family: [
       {
         image:
-          "https://seatgeek.com/images/performers-landscape/usher-c42a7f/1969/1100x1900.jpg",
+          "https://media.npr.org/assets/img/2021/07/30/ap21209227085893-2f21232dfb9d6cc4892782447363097da7e3c860.jpg",
         name: "Simon Biles tour ",
         events: 50,
       },
