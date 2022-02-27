@@ -51,12 +51,26 @@
 } */
 .SearchInput {
   display: block;
-  padding: 20px 40px;
-  /* position: absolute; */
+  padding: 10px 40px;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 5px;
+  color: white;
   width: 100%;
   box-sizing: border-box;
   border: none;
   outline: none;
+}
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+::-ms-input-placeholder {
+  color: white;
 }
 .SearchIcon {
   background-color: transparent;
@@ -65,7 +79,7 @@
   cursor: pointer;
   color: white;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 10px;
   transform: translateY(-50%);
 }
@@ -96,11 +110,9 @@
 }
 .Wrapper {
   position: relative;
-  width: 500px;
-  top: 40%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-  height: 55px;
+  width: 320px;
+  height: 30px;
+  margin: 0 20px;
 }
 .gutter {
   height: 70px;
