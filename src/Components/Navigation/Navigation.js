@@ -94,10 +94,9 @@ class Navigation extends Component {
         </div>
       </div>
     ) : (
-      <button className={classes.signin} onClick={this.props.login}>
-        {" "}
-        <i className="fas fa-user" style={{ marginRight: "10px" }}></i>SIGN IN
-      </button>
+      <li onClick={this.props.login}>
+        <i className="fas fa-user" style={{ marginRight: "10px" }}></i>Sign in
+      </li>
     );
 
     return ReactDOM.createPortal(
