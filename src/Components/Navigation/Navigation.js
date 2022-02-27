@@ -123,7 +123,7 @@ class Navigation extends Component {
           <div className={classes.leftNavLinks}>
             <div className={classes.Logo}>
               <Link to="/">
-                <Logo />
+                <Logo color={this.state.scroll ? "#27374d" : null} />
               </Link>
             </div>
             <ul className={classes.NavLinks}>

@@ -24,9 +24,7 @@
     linear-gradient(to right, lightgrey, white, grey); */
   /* color: black; */
 }
-.scrollLogo {
-  color: #27374d !important;
-}
+
 .NoScroll {
   background-color: rgb(39, 55, 77);
   box-shadow: 2px 4px 2px 1px rgba(0, 0, 0, 0.2);
