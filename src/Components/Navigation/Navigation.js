@@ -6,6 +6,7 @@ import Aux from "../../hoc/Auxiliary/Auxiliary";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import MenuButton from "./MenuButton/MenuButton";
+import searchIcon from "../Image/searchIcon.png";
 
 class Navigation extends Component {
   state = {
@@ -94,9 +95,7 @@ class Navigation extends Component {
         </div>
       </div>
     ) : (
-      <li onClick={this.props.login}>
-        <i className="fas fa-user" style={{ marginRight: "10px" }}></i>Sign in
-      </li>
+      <li onClick={this.props.login}>Sign in</li>
     );
 
     return ReactDOM.createPortal(
@@ -132,13 +131,21 @@ class Navigation extends Component {
                   <input
                     type="text"
                     placeholder="Search for events by your favourite artists"
-                    className={classes.SearchInput}
+                    className={[
+                      classes.SearchInput,
+                      !this.state.scroll
+                        ? classes.searchPlaceHolder1
+                        : classes.searchPlaceHolder2,
+                    ].join(" ")}
                     id="name"
                   />
                   <button className={classes.SearchIcon}>
                     <img
-                      src="https://assets.prod.bandsintown.com/images/loupe.svg"
-                      alt=""
+                      src={
+                        this.state.scroll
+                          ? "https://assets.prod.bandsintown.com/images/loupe.svg"
+                          : searchIcon
+                      }
                     />
                   </button>
                 </form>
