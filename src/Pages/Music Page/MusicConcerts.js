@@ -4,7 +4,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import video from "../../Assets/Video/AD.mp4";
-import billie from "../Image/billie.jpeg";
+import billie from "../../Components/Image/billie.jpeg";
 
 class MusicConcerts extends Component {
   state = {
@@ -38,7 +38,7 @@ class MusicConcerts extends Component {
 
     if (this.state.events)
       events = this.state.events.map((event, i) => {
-        return <EventInfo key={i} event={event} />;
+        return <EventInfo key={i} event={event}  />;
       });
     return (
       <Fragment>
