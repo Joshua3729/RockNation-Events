@@ -123,9 +123,27 @@ class Navigation extends Component {
           <div className={classes.leftNavLinks}>
             <div className={classes.Logo}>
               <Link to="/">
-                <Logo color={this.state.scroll ? "#27374d" : null} />
+                <Logo scroll={this.state.scroll} />
               </Link>
             </div>
+            {this.props.searchBar && (
+              <div className={classes.Wrapper}>
+                <form id="form">
+                  <input
+                    type="text"
+                    placeholder="Search for events by your favourite artists"
+                    className={classes.SearchInput}
+                    id="name"
+                  />
+                  <button className={classes.SearchIcon}>
+                    <img
+                      src="https://assets.prod.bandsintown.com/images/loupe.svg"
+                      alt=""
+                    />
+                  </button>
+                </form>
+              </div>
+            )}
             <ul className={classes.NavLinks}>
               <li>
                 <NavLink>Concerts</NavLink>
@@ -135,24 +153,7 @@ class Navigation extends Component {
               </li>
             </ul>
           </div>
-          {this.props.searchBar && (
-            <div className={classes.Wrapper}>
-              <form onSubmit={this.props.submit} id="form">
-                <input
-                  type="text"
-                  placeholder="Search for events by your favourite artists"
-                  className={classes.SearchInput}
-                  id="name"
-                />
-                <button className={classes.SearchIcon}>
-                  <img
-                    src="https://assets.prod.bandsintown.com/images/loupe.svg"
-                    alt=""
-                  />
-                </button>
-              </form>
-            </div>
-          )}
+
           <MenuButton
             clicked={this.sideDrawerHandler}
             menuButton={this.state.menuButton}

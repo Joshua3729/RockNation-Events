@@ -43,7 +43,7 @@ class MusicConcerts extends Component {
       <Fragment>
         <Navigation
           scrollEffect={true}
-          searchBar={false}
+          searchBar={true}
           isAuth={this.props.isAuth}
           logout={this.props.logout}
           login={this.props.loginModal}
