@@ -125,7 +125,7 @@ class Navigation extends Component {
                 <Logo scroll={this.state.scroll} />
               </Link>
             </div>
-            {this.props.searchBar && (
+            {(this.props.searchBar || this.state.scroll) && (
               <div className={classes.Wrapper}>
                 <form id="form">
                   <input
@@ -157,6 +157,9 @@ class Navigation extends Component {
               </li>
               <li>
                 <NavLink>Sports</NavLink>
+              </li>
+              <li>
+                <NavLink>More</NavLink>
               </li>
             </ul>
           </div>
