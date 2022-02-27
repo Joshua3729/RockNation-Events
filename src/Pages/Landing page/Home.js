@@ -15,24 +15,22 @@ class Home extends Component {
   };
 
   getConcerts = () => {
-    componentDidMount = () => {
-      fetch("http://localhost:5000/feed/events/concerts")
-        .then((res) => {
-          if (res.status !== 200) {
-            throw new Error("Failed to fetch concerts.");
-          }
+    fetch("http://localhost:5000/feed/events/concerts")
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to fetch concerts.");
+        }
 
-          return res.json();
-        })
-        .then((resData) => {
-          console.log(resData);
-          this.setState({
-            concerts: resData.events,
-            eventsLoading: false,
-          });
-        })
-        .catch((err) => console.log(err));
-    };
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          concerts: resData.events,
+          eventsLoading: false,
+        });
+      })
+      .catch((err) => console.log(err));
   };
   render() {
     return (

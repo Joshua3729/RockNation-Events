@@ -168,20 +168,20 @@ class topSelling extends Component {
     let EventsFamily = null;
     if (
       !this.state.loading &&
-      this.state.artist &&
+      this.props.concerts &&
       this.state.events &&
       this.state.ArtsAndTheater &&
       this.state.comedy
     ) {
-      console.log(this.state.artist);
-      cards = this.state.artist.map((card, i) => {
+      console.log(this.props.concerts);
+      cards = this.props.concerts.map((card, i) => {
         return (
           // <Link key={i} to={`/eventmanager/${card.name}`}>
           <EventCard
             events={card.events}
             Name={card.name}
             //   img="https://variety.com/wp-content/uploads/2020/07/ap_19206704285722.jpg"
-            img={card.image}
+            img={card.cardImg}
           />
           // </Link>
         );
