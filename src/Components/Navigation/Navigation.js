@@ -149,12 +149,12 @@ class Navigation extends Component {
             menuButton={this.state.menuButton}
           />
           <ul className={classes.NavLinks}>
-            {/* <li>
-              <NavLink>About</NavLink>
+            <li>
+              <NavLink>Concerts</NavLink>
             </li>
             <li>
-              <NavLink>Contact</NavLink>
-            </li> */}
+              <NavLink>Sports</NavLink>
+            </li>
             <li>{navLink}</li>
           </ul>
         </div>

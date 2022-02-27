@@ -52,3 +52,6 @@
 .time {
   color: rgba(38, 38, 38, 0.65);
 }
+.imgWrapper {
+  background-color: lightgray;
+}
