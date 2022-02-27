@@ -121,10 +121,20 @@ class Navigation extends Component {
                 style={{ color: "grey", fontSize: "23px" }}
               ></i>
             ))}
-          <div className={classes.Logo}>
-            <Link to="/">
-              <Logo />
-            </Link>
+          <div className={classes.leftNavLinks}>
+            <div className={classes.Logo}>
+              <Link to="/">
+                <Logo />
+              </Link>
+            </div>
+            <ul className={classes.NavLinks}>
+              <li>
+                <NavLink>Concerts</NavLink>
+              </li>
+              <li>
+                <NavLink>Sports</NavLink>
+              </li>
+            </ul>
           </div>
           {this.props.searchBar && (
             <div className={classes.Wrapper}>
@@ -150,10 +160,10 @@ class Navigation extends Component {
           />
           <ul className={classes.NavLinks}>
             <li>
-              <NavLink>Concerts</NavLink>
+              <NavLink>Sell</NavLink>
             </li>
             <li>
-              <NavLink>Sports</NavLink>
+              <NavLink>Help</NavLink>
             </li>
             <li>{navLink}</li>
           </ul>

@@ -234,6 +234,10 @@
   box-sizing: border-box;
   transition: all 0.4s;
 }
+.leftNavLinks {
+  display: flex;
+  align-items: center;
+}
 
 @media only screen and (max-width: 1200px) {
   /*Tablets [601px -> 1200px]*/
