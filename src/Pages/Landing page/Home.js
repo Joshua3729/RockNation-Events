@@ -10,6 +10,30 @@ import Categories from "../../Components/Categories/Categories";
 // import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 
 class Home extends Component {
+  state = {
+    concerts: null,
+  };
+
+  getConcerts = () => {
+    componentDidMount = () => {
+      fetch("http://localhost:5000/feed/events/concerts")
+        .then((res) => {
+          if (res.status !== 200) {
+            throw new Error("Failed to fetch concerts.");
+          }
+
+          return res.json();
+        })
+        .then((resData) => {
+          console.log(resData);
+          this.setState({
+            concerts: resData.events,
+            eventsLoading: false,
+          });
+        })
+        .catch((err) => console.log(err));
+    };
+  };
   render() {
     return (
       <Aux>
@@ -25,7 +49,7 @@ class Home extends Component {
         <Hero />
         <ComingSoon />
         <Categories />
-        <TopSelling />
+        <TopSelling concerts={this.state.concerts} />
         <Amax />
         <ExclusiveEvents />
       </Aux>
