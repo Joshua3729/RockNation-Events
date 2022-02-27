@@ -1,40 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap");
-.Logo {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&family=Righteous&display=swap");
+
+.Logo p {
   color: white;
-  font-family: "Orbitron", sans-serif;
-  font-size: 15px;
-  display: flex;
-  align-items: center;
-  font-weight: 700;
-}
-.logoSpan {
-  background-color: #000c66;
-  color: white;
-  clip-path: polygon(7% 1%, 100% 0%, 94% 100%, 0% 100%);
-  padding: 5px 10px;
-  font-style: italic;
-}
-@media only screen and (max-width: 900px) {
-  /*Tablets [601px -> 1200px]*/
-  .ComingSoon {
-    flex-direction: column;
-    padding: 50px 30px;
-  }
-  .Wrapper {
-    margin: 20px 0 0 0;
-  }
-}
-@media only screen and (max-width: 700px) {
-  /*Big smartphones [426px -> 600px]*/
-}
-@media only screen and (max-width: 425px) {
-  /*Small smartphones [325px -> 425px]*/
-  .Logo {
-    color: white;
-    font-family: "Orbitron", sans-serif;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-  }
+  font-size: 30px;
+  font-family: "Righteous", cursive;
 }

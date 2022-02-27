@@ -1,12 +1,9 @@
 import React from "react";
 import classes from "./Logo.module.css";
-import Logo from "../../../../Assets/images/Logo1.png";
 const logo = () => {
   return (
     <div className={classes.Logo}>
-      <p>
-        <span className={classes.logoSpan}>POWERBRAINS</span> EVENTS
-      </p>
+      <p>rocknation</p>
     </div>
   );
 };
