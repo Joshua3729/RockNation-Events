@@ -47,7 +47,10 @@ class Home extends Component {
         <Hero />
         <ComingSoon />
         <Categories />
-        <TopSelling concerts={this.state.concerts} />
+        <TopSelling
+          concerts={this.state.concerts}
+          getConcerts={this.getConcerts}
+        />
         <Amax />
         <ExclusiveEvents />
       </Aux>

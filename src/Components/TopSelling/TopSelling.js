@@ -159,6 +159,7 @@ class topSelling extends Component {
         });
       })
       .catch((err) => console.log(err));
+    this.props.getConcerts();
   }
   render() {
     let loading = null;
