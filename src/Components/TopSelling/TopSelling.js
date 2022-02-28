@@ -175,15 +175,10 @@ class topSelling extends Component {
       this.state.comedy
     ) {
       console.log(this.props.concerts);
-      cards = this.props.concerts.map((card, i) => {
+      cards = this.props.concerts.map((event, i) => {
         return (
           // <Link key={i} to={`/eventmanager/${card.name}`}>
-          <EventCard
-            events={card.events}
-            Name={card.name}
-            //   img="https://variety.com/wp-content/uploads/2020/07/ap_19206704285722.jpg"
-            img={card.cardImg}
-          />
+          <EventCard event={event} />
           // </Link>
         );
       });
@@ -191,20 +186,13 @@ class topSelling extends Component {
         if (i < 8) {
           return (
             // <Link key={i} to={`/artsandtheater/${event._id}`}>
-            <EventCard img={event.imageUrl} Name={event.name} />
+            <EventCard key={i} event={event} />
             //</Link>
           );
         }
       });
       EventsFamily = this.state.Family.map((event, i) => {
-        return (
-          <EventCard
-            key={i}
-            img={event.image}
-            Name={event.name}
-            events={event.events}
-          />
-        );
+        return <EventCard key={i} event={event} />;
       });
       Comedy = this.state.comedy.map((event, i) => {
         if (i < 8) {
