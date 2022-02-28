@@ -16,9 +16,7 @@ import circus from "../../Components/Image/circus.png";
 
 class ArtsAndTheater extends Component {
   state = {
-    showMore: false,
     events: null,
-    eventsLoading: null,
   };
 
   componentDidMount = () => {
