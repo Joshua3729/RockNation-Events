@@ -8,7 +8,7 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .eventInfo {
@@ -19,11 +19,12 @@
   height: 46%;
   background-color: white;
   padding: 10px 20px;
+  overflow: hidden;
 }
 .artist {
   margin-bottom: 10px;
   font-size: 20px;
-  font-weight: 900;
+  font-weight: 700;
 }
 .date {
   margin-bottom: 10px;
@@ -37,6 +38,6 @@
   margin-top: 20px;
   width: calc(100% - 10px);
 }
-.card:hover{
+.card:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }

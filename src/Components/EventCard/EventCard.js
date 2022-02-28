@@ -10,7 +10,7 @@ const eventCard = (props) => {
       }}
     >
       <div className={classes.eventInfo}>
-        <h4 className={classes.artist}>{props.event.eventName}</h4>
+        <p className={classes.artist}>{props.event.eventName}</p>
         <p className={classes.date}>23 February 2022</p>
         <p className={classes.venue}>
           {props.event.venue}, {props.event.city}
