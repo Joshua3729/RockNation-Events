@@ -21,10 +21,10 @@ class ComedyPage extends Component {
   };
 
   componentDidMount = () => {
-    fetch("https://powerbrains-events.herokuapp.com/feed/events/comedy")
+    fetch("http://localhost:5000/feed/events/sports")
       .then((res) => {
         if (res.status !== 200) {
-          throw new Error("Failed to fetch books.");
+          throw new Error("Failed to fetch concerts.");
         }
 
         return res.json();
