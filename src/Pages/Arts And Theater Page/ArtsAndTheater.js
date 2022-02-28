@@ -74,7 +74,7 @@ class ArtsAndTheater extends Component {
                   img: "https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://static.onecms.io/wp-content/uploads/sites/6/2021/11/17/GettyImages-1313060346.jpg&w=1280&h=720&q=90&c=cc",
                 },
                 {
-                  img: "https://www.flare.com/wp-content/uploads/2017/11/Drake-concert-inline-GettyImages-871232956.jpg",
+                  img: "https://static.politico.com/dims4/default/896a3c1/2147483647/strip/true/crop/3339x2227+0+0/resize/630x420!/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F2d%2Fb3%2F443179884f1c9c5f05d3de6d73af%2Fhttps-delivery.gettyimages.com%2Fdownloads%2F1307266550",
                 },
                 {
                   img: "https://www.prensario.net/Multimedios/imgs/44455_750.jpg",
@@ -83,7 +83,7 @@ class ArtsAndTheater extends Component {
                   img: "https://m.media-amazon.com/images/M/MV5BNGRiNmM2NmItN2I3Ni00NDk5LThjYWEtZDAyZDdmNjQyYzE5XkEyXkFqcGdeQWFybm8@._V1_.jpg",
                 },
                 {
-                  img: "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191001102612-burna-boy-at-coachella.jpg",
+                  img: "https://cdn.michiganopera.org/20200813175226/Swan-Lake.jpg",
                 },
               ]}
               parent={"musicConcerts"}
