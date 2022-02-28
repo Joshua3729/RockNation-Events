@@ -71,19 +71,24 @@ class ArtsAndTheater extends Component {
                   img: "https://media.istockphoto.com/vectors/upcoming-events-neon-signs-vector-upcoming-events-design-template-vector-id978975308?k=20&m=978975308&s=612x612&w=0&h=HnwHCKofUyVji7q4Vqpg9VI0avrWdF8hr-nA5EATfmk=",
                 },
                 {
-                  img: "https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://static.onecms.io/wp-content/uploads/sites/6/2021/11/17/GettyImages-1313060346.jpg&w=1280&h=720&q=90&c=cc",
+                  img: "https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2016/06/30/LocalLiving/Images/Kevin%20Hart_%20Rally%20HealthFest_2016.jpg?uuid=Mz_Doj8PEeaE6BWAx9tSdQ",
+                  eventName: "Kevin Hart: What Now?",
                 },
                 {
                   img: "https://static.politico.com/dims4/default/896a3c1/2147483647/strip/true/crop/3339x2227+0+0/resize/630x420!/quality/90/?url=https%3A%2F%2Fstatic.politico.com%2F2d%2Fb3%2F443179884f1c9c5f05d3de6d73af%2Fhttps-delivery.gettyimages.com%2Fdownloads%2F1307266550",
+                  eventName: "Trevor Noah: Homecoming",
                 },
                 {
                   img: "https://www.prensario.net/Multimedios/imgs/44455_750.jpg",
+                  eventName: "Hisaishi: Ochestra Concert",
                 },
                 {
                   img: "https://m.media-amazon.com/images/M/MV5BNGRiNmM2NmItN2I3Ni00NDk5LThjYWEtZDAyZDdmNjQyYzE5XkEyXkFqcGdeQWFybm8@._V1_.jpg",
+                  eventName: "Hamilton: Broadway Musical",
                 },
                 {
-                  img: "https://cdn.michiganopera.org/20200813175226/Swan-Lake.jpg",
+                  img: "https://ichef.bbci.co.uk/news/976/cpsprodpb/10E59/production/_102490296_sleeping-beauty-900-5.jpg",
+                  eventName: "The Rasies: Swan Lake",
                 },
               ]}
               parent={"musicConcerts"}
