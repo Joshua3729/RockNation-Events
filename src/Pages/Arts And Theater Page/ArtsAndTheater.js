@@ -22,10 +22,10 @@ class ArtsAndTheater extends Component {
   componentDidMount = () => {
     document.body.scrollTop = 0;
     console.log("step 1");
-    fetch("https://powerbrains-events.herokuapp.com/feed/events/artsandtheater")
+    fetch("http://localhost:5000/feed/events/artsandtheater")
       .then((res) => {
         if (res.status !== 200) {
-          throw new Error("Failed to fetch events.");
+          throw new Error("Failed to fetch concerts.");
         }
 
         return res.json();
@@ -46,110 +46,58 @@ class ArtsAndTheater extends Component {
   };
 
   render() {
-    let events = (
-      <div className={classes.loadingWrapper}>
-        <div className={classes.loading}>
-          <Loading />
-        </div>
-        <p>PLEASE WAIT!</p>
-      </div>
-    );
+    let events = "loading";
+
     if (this.state.events)
       events = this.state.events.map((event, i) => {
-        if (this.state.showMore)
-          return (
-            <Event
-              key={event._id}
-              id={event._id}
-              name={event.name}
-              imageUrl={event.imageUrl}
-              price={event.price}
-              venue={event.venue}
-              remaining={event.ticketsRemaining}
-              city={event.city}
-              country={event.country}
-            />
-          );
-        if (!this.state.showMore && i < 10)
-          return (
-            <Event
-              key={event._id}
-              name={event.name}
-              id={event._id}
-              imageUrl={event.imageUrl}
-              price={event.price}
-              venue={event.venue}
-              remaining={event.ticketsRemaining}
-              city={event.city}
-              country={event.country}
-            />
-          );
+        return <EventInfo key={i} event={event} />;
       });
     return (
       <Fragment>
         <Navigation
-          scrollEffect={false}
-          searchBar={false}
+          scrollEffect={true}
+          searchBar={true}
           isAuth={this.props.isAuth}
           logout={this.props.logout}
           login={this.props.loginModal}
           fullname={this.props.fullname}
           userImage={this.props.userImage}
         />
-        <PageGutter
-          name="Arts & Theater"
-          links={[
-            { name: "Home", to: "/", active: false },
-            { name: "Arts and Theater", to: "/artsandtheater", active: true },
-          ]}
-        />
-        <SlideShow
-          images={[
-            {
-              color1: "#4286f4",
-              color2: "#373b44",
-              image: TN,
-              eventName: "The Caveliuhs : St Petersburg tour".split(" : "),
-            },
-            {
-              image: swanlake,
-              color1: "#334d50",
-              color2: "#cbcaa5",
-              eventName: "The Pallots : Black Swan".split(" : "),
-            },
-            {
-              image: romeo,
-              color1: "#E4E5E6",
-              color2: "#00416A",
-              eventName: "Lamar Theater : Romeo And Juliet".split(" : "),
-            },
-            {
-              image: anastatia,
-              color1: "#536976",
-              color2: "#292E49",
-              eventName: "Belfort Theater : Anasthesia Walkings".split(" : "),
-            },
-            {
-              image: baxter,
-              color1: "#fff",
-              color2: "#076585",
-              eventName: "Baxter Theater : City Jabavu".split(" : "),
-            },
-            {
-              image: circus,
-              color1: "#bdc3c7",
-              color2: "#2c3e50",
-              eventName: "Circus Vasques : Canada tour".split(" : "),
-            },
-          ]}
-        />
-        <section className={classes.ComedyPage}>
-          <div className={classes.events_grid}>{events}</div>
-          {events.length > 10 ? (
-            <button className={classes.showMore} onClick={this.showMoreHandler}>
-              {this.state.showMore ? "SHOW LESS" : "SHOW MORE"}
-            </button>
-          ) : null}
+        <section className={classes.MusicConcerts}>
+          <div className={classes.banner}>
+            <SlideShow
+              images={[
+                {
+                  img: "https://media.istockphoto.com/vectors/upcoming-events-neon-signs-vector-upcoming-events-design-template-vector-id978975308?k=20&m=978975308&s=612x612&w=0&h=HnwHCKofUyVji7q4Vqpg9VI0avrWdF8hr-nA5EATfmk=",
+                },
+                {
+                  img: "https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://static.onecms.io/wp-content/uploads/sites/6/2021/11/17/GettyImages-1313060346.jpg&w=1280&h=720&q=90&c=cc",
+                },
+                {
+                  img: "https://www.flare.com/wp-content/uploads/2017/11/Drake-concert-inline-GettyImages-871232956.jpg",
+                },
+                {
+                  img: "https://149366112.v2.pressablecdn.com/wp-content/uploads/2019/10/shutterstock_1488792806.jpg",
+                },
+                {
+                  img: "https://i0.wp.com/leafrinique.co.za/wp-content/uploads/2019/12/DSC3715-scaled.jpeg?fit=2560%2C1709&ssl=1",
+                },
+                {
+                  img: "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191001102612-burna-boy-at-coachella.jpg",
+                },
+              ]}
+              parent={"musicConcerts"}
+            />
+          </div>
+          <div className={classes.mainContent}>
+            <h2 className={classes.header}>All Concert Events (783)</h2>
+            <div className={classes.eventsWrapper}>
+              <div className={classes.events}>{events}</div>
+              <div className={classes.AdCard}>
+                <video src={video} autoPlay loop muted />
+              </div>
+            </div>
+          </div>
         </section>
       </Fragment>
     );

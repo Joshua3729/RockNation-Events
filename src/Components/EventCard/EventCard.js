@@ -15,10 +15,6 @@ const eventCard = (props) => {
         <p className={classes.venue}>
           {props.event.venue}, {props.event.city}
         </p>
-        <p className={classes.description}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-          mollitia, molestiae quas vel sint
-        </p>
       </div>
     </div>
   );
