@@ -10,7 +10,7 @@ const eventCard = (props) => {
       }}
     >
       <div className={classes.eventInfo}>
-        <p className={classes.artist}>{props.event.eventName}</p>
+        <div className={classes.artist}>{props.event.eventName}</div>
         <p className={classes.date}>23 February 2022</p>
         <p className={classes.venue}>
           {props.event.venue}, {props.event.city}

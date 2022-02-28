@@ -19,7 +19,7 @@
   height: 46%;
   background-color: white;
   padding: 10px 20px;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 .artist {
   margin-bottom: 10px;
