@@ -4,7 +4,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import video from "../../Assets/Video/AD.mp4";
-
+import upcoming_arts from "../../Components/Image/upcoming.png";
 
 class ArtsAndTheater extends Component {
   state = {
@@ -60,7 +60,7 @@ class ArtsAndTheater extends Component {
             <SlideShow
               images={[
                 {
-                  img: "https://artscimedia.case.edu/wp-content/uploads/sites/129/2019/12/20155812/upcoming-events-bigger.jpg",
+                  img: upcoming_arts,
                 },
                 {
                   img: "https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2016/06/30/LocalLiving/Images/Kevin%20Hart_%20Rally%20HealthFest_2016.jpg?uuid=Mz_Doj8PEeaE6BWAx9tSdQ",
