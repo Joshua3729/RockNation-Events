@@ -97,6 +97,8 @@ const SlideShow = (props) => {
           className={classes.slide2}
           style={{ backgroundImage: `url(${slide.img})` }}
         >
+          <div className={classes.backDrop}></div>
+
           <div className={classes.eventInfo}>
             <h2 className={classes.eventName}>{slide.eventName}</h2>
             <p className={classes.date}>Sun, 30 Aug 2021</p>

@@ -4,15 +4,6 @@ import SlideShow from "../../Components/SlideShow/SlideShow";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import video from "../../Assets/Video/AD.mp4";
-import Event from "../../Components/Event/Event";
-import Loading from "../../Components/UI/loading/loading";
-import PageGutter from "../../Components/Page Gutter/PageGutter";
-import TN from "../../Components/Image/trevornoah.png";
-import BB from "../../Components/Image/billbur.png";
-import MP from "../../Components/Image/mphopopps.png";
-import KH from "../../Components/Image/kevinhart.png";
-import DC from "../../Components/Image/davechappelle.png";
-import TH from "../../Components/Image/tiffanyhaddish.png";
 
 class ComedyPage extends Component {
   state = {
