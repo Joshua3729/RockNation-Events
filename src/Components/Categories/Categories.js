@@ -17,7 +17,7 @@ const categories = (props) => {
           </Link>
         </div>
         <div className={classes.grid_item}>
-          <Link to="/comedy">
+          <Link to="/sports">
             <img
               src="https://seedworld.com/site/wp-content/uploads/2019/11/Standup-Comedy-1-696x464.jpg"
               alt=""

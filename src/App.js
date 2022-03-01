@@ -6,7 +6,7 @@ import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
 import { required, email, length } from "./util/validators";
-import ComedyPage from "./Pages/Comedy page/ComedyPage";
+import SportsPage from "./Pages/Sports page/SportsPage";
 import ArtsAndTheaterPage from "./Pages/Arts And Theater Page/ArtsAndTheater";
 import FilePicker from "./Components/Filepicker/FilePicker";
 import { generateBase64FromImage } from "./util/image";
@@ -625,7 +625,7 @@ class App extends Component {
     //       path="/comedy"
     //       exact
     //       element={
-    //         <ComedyPage
+    //         <SportsPage
     //           loginModal={this.openModalHandler}
     //           isAuth={this.state.isAuth}
     //           token={this.state.token}
@@ -762,7 +762,7 @@ class App extends Component {
     //         path="/comedy"
     //         exact
     //         element={
-    //           <ComedyPage
+    //           <SportsPage
     //             loginModal={this.openModalHandler}
     //             isAuth={this.state.isAuth}
     //             token={this.state.token}
@@ -911,10 +911,10 @@ class App extends Component {
           )}
         />
         <Route
-          path="/comedy"
+          path="/sports"
           exact
           render={(props) => (
-            <ComedyPage
+            <SportsPage
               {...props}
               loginModal={this.openModalHandler}
               isAuth={this.state.isAuth}
@@ -956,7 +956,7 @@ class App extends Component {
           )}
         />
         <Route
-          path="/comedy/:id"
+          path="/sports/:id"
           exact
           render={(props) => (
             <SingleEvent
@@ -1053,10 +1053,10 @@ class App extends Component {
             )}
           />
           <Route
-            path="/comedy"
+            path="/sports"
             exact
             render={(props) => (
-              <ComedyPage
+              <SportsPage
                 {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
@@ -1098,7 +1098,7 @@ class App extends Component {
             )}
           />
           <Route
-            path="/comedy/:id"
+            path="/sports/:id"
             exact
             render={(props) => (
               <SingleEvent
