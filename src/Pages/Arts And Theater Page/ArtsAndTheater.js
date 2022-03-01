@@ -4,15 +4,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import video from "../../Assets/Video/AD.mp4";
-import Event from "../../Components/Event/Event";
-import Loading from "../../Components/UI/loading/loading";
-import PageGutter from "../../Components/Page Gutter/PageGutter";
-import TN from "../../Components/Image/ballet.png";
-import swanlake from "../../Components/Image/swanlake.png";
-import romeo from "../../Components/Image/romeo.png";
-import anastatia from "../../Components/Image/anastatia.png";
-import baxter from "../../Components/Image/Bexter.png";
-import circus from "../../Components/Image/circus.png";
+
 
 class ArtsAndTheater extends Component {
   state = {
