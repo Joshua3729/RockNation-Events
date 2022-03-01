@@ -75,10 +75,10 @@ class ComedyPage extends Component {
                   img: "https://images.indianexpress.com/2021/10/real-madrid-barcelona.jpg",
                 },
                 {
-                  img: "https://www.flare.com/wp-content/uploads/2017/11/Drake-concert-inline-GettyImages-871232956.jpg",
+                  img: "https://titanswire.usatoday.com/wp-content/uploads/sites/43/2022/01/9406bb86641643b4a61e945d7ca9dd42.jpg?w=1000&h=600&crop=1",
                 },
                 {
-                  img: "https://149366112.v2.pressablecdn.com/wp-content/uploads/2019/10/shutterstock_1488792806.jpg",
+                  img: "https://liverpoollatestnews.com/wp-content/uploads/2020/09/Liverpool-vs-Chelsea-Head-To-Head-Results-Records-H2H.jpg",
                 },
                 {
                   img: "https://i0.wp.com/leafrinique.co.za/wp-content/uploads/2019/12/DSC3715-scaled.jpeg?fit=2560%2C1709&ssl=1",
