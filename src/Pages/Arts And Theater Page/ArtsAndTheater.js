@@ -68,7 +68,7 @@ class ArtsAndTheater extends Component {
             <SlideShow
               images={[
                 {
-                  img: "https://media.istockphoto.com/vectors/upcoming-events-neon-signs-vector-upcoming-events-design-template-vector-id978975308?k=20&m=978975308&s=612x612&w=0&h=HnwHCKofUyVji7q4Vqpg9VI0avrWdF8hr-nA5EATfmk=",
+                  img: "https://artscimedia.case.edu/wp-content/uploads/sites/129/2019/12/20155812/upcoming-events-bigger.jpg",
                 },
                 {
                   img: "https://img.washingtonpost.com/rf/image_1484w/2010-2019/WashingtonPost/2016/06/30/LocalLiving/Images/Kevin%20Hart_%20Rally%20HealthFest_2016.jpg?uuid=Mz_Doj8PEeaE6BWAx9tSdQ",
@@ -79,7 +79,7 @@ class ArtsAndTheater extends Component {
                   eventName: "Trevor Noah: Homecoming",
                 },
                 {
-                  img: "https://www.prensario.net/Multimedios/imgs/44455_750.jpg",
+                  img: "https://www.prensario.nets/Multimedios/imgs/44455_750.jpg",
                   eventName: "Hisaishi: Ochestra Concert",
                 },
                 {
