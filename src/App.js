@@ -679,7 +679,7 @@ class App extends Component {
     //     />
 
     //     <Route
-    //       path="/musicevents"
+    //       path="/concerts"
     //       exact
     //       element={
     //         <MusicConcerts
@@ -831,7 +831,7 @@ class App extends Component {
     //         }
     //       />
     //       <Route
-    //         path="/musicevents"
+    //         path="/concerts"
     //         exact
     //         element={
     //           <MusicConcerts
@@ -971,7 +971,7 @@ class App extends Component {
           )}
         />
         <Route
-          path="/musicevents"
+          path="/concerts"
           exact
           render={(props) => (
             <MusicConcerts
@@ -1130,7 +1130,7 @@ class App extends Component {
             )}
           />
           <Route
-            path="/musicevents"
+            path="/concerts"
             exact
             render={(props) => (
               <MusicConcerts

@@ -153,13 +153,13 @@ class Navigation extends Component {
             )}
             <ul className={classes.NavLinks}>
               <li>
-                <NavLink>Concerts</NavLink>
+                <Link to="/concerts">Concerts</Link>
               </li>
               <li>
-                <NavLink>Sports</NavLink>
+                <Link to="/sports">Sports</Link>
               </li>
               <li>
-                <NavLink>More</NavLink>
+                <Link>More</Link>
               </li>
             </ul>
           </div>
