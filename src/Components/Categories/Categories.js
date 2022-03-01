@@ -19,10 +19,10 @@ const categories = (props) => {
         <div className={classes.grid_item}>
           <Link to="/sports">
             <img
-              src="https://seedworld.com/site/wp-content/uploads/2019/11/Standup-Comedy-1-696x464.jpg"
+              src="https://www.mural-wallpaper.com/wp-content/uploads/2020/11/S-SP25.jpg"
               alt=""
             />
-            <div className={classes.EventLabel}>Stand Up Comedy</div>
+            <div className={classes.EventLabel}>sports</div>
           </Link>
         </div>
         <div className={classes.grid_item}>
