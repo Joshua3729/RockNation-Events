@@ -82,7 +82,7 @@ class ComedyPage extends Component {
             />
           </div>
           <div className={classes.mainContent}>
-            <h2 className={classes.header}>All Concert Events (783)</h2>
+            <h2 className={classes.header}>All Sports Events (783)</h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
               <div className={classes.AdCard}>
