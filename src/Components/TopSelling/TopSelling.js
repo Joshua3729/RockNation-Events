@@ -12,7 +12,7 @@ class topSelling extends Component {
     loading: false,
     artist: null,
     ArtsAndTheater: null,
-    comedy: null,
+    sports: null,
     //remove this when done
     artsAndTheater: [
       {
@@ -143,7 +143,7 @@ class topSelling extends Component {
         });
       })
       .catch((err) => console.log(err));
-    fetch("https://powerbrains-events.herokuapp.com/feed/events/comedy")
+    fetch("https://powerbrains-events.herokuapp.com/feed/events/sports")
       .then((res) => {
         if (res.status !== 200) {
           throw new Error("Failed to fetch events.");
@@ -154,7 +154,7 @@ class topSelling extends Component {
       .then((resData) => {
         console.log(resData);
         this.setState({
-          comedy: resData.events,
+          sports: resData.events,
           eventsLoading: false,
         });
       })
@@ -165,14 +165,14 @@ class topSelling extends Component {
     let loading = null;
     let cards = null;
     let EventsArtsAndTheater = null;
-    let Comedy = null;
+    let Sports = null;
     let EventsFamily = null;
     if (
       !this.state.loading &&
       this.props.concerts &&
       this.state.events &&
       this.state.ArtsAndTheater &&
-      this.state.comedy
+      this.state.sports
     ) {
       console.log(this.props.concerts);
       cards = this.props.concerts.map((event, i) => {
@@ -194,7 +194,7 @@ class topSelling extends Component {
       EventsFamily = this.state.Family.map((event, i) => {
         return <EventCard key={i} event={event} />;
       });
-      Comedy = this.state.comedy.map((event, i) => {
+      Sports = this.state.sports.map((event, i) => {
         if (i < 8) {
           return (
             // <Link key={i} to={`/comedy/${event._id}`}>
@@ -220,8 +220,8 @@ class topSelling extends Component {
             <div className={classes.grid}>{cards}</div>
           </div>
           <div className={classes.ArtsAndTheaterWrapper}>
-            <div className={classes.sectionDescription2}>Comedy</div>
-            <div className={classes.grid}>{Comedy}</div>
+            <div className={classes.sectionDescription2}>Sports</div>
+            <div className={classes.grid}>{Sports}</div>
           </div>
           <div className={classes.ArtsAndTheaterWrapper}>
             <div className={classes.sectionDescription2}>Arts And Theater</div>
