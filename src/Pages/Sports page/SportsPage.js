@@ -59,18 +59,24 @@ class ComedyPage extends Component {
                 },
                 {
                   img: "https://images.indianexpress.com/2021/10/real-madrid-barcelona.jpg",
+                  eventName: "Barcelona vs Real Madrid",
                 },
                 {
                   img: "https://titanswire.usatoday.com/wp-content/uploads/sites/43/2022/01/9406bb86641643b4a61e945d7ca9dd42.jpg?w=1000&h=600&crop=1",
+                  eventName: "Philadelphia Eagles vs Dallas Cowboys",
                 },
                 {
                   img: "https://liverpoollatestnews.com/wp-content/uploads/2020/09/Liverpool-vs-Chelsea-Head-To-Head-Results-Records-H2H.jpg",
+
+                  eventName: "Liverpool vs Chelsea",
                 },
                 {
                   img: "https://lebronwire.usatoday.com/wp-content/uploads/sites/37/2021/12/USATSI_13894834.jpg?w=1000&h=600&crop=1",
+                  eventName: "Lakers vs Maverics",
                 },
                 {
                   img: "https://resources.stuff.co.nz/content/dam/images/1/m/9/o/m/z/image.related.StuffLandscapeThreeByTwo.1464x976.1m9f4g.png/1507880727432.jpg",
+                  eventName: "South Africa vs New Zealand",
                 },
               ]}
               parent={"musicConcerts"}
