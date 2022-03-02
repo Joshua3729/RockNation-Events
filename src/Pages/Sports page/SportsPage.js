@@ -4,6 +4,7 @@ import SlideShow from "../../Components/SlideShow/SlideShow";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import video from "../../Assets/Video/AD.mp4";
+import sports from "../../Components/Image/sports.png";
 
 class ComedyPage extends Component {
   state = {
@@ -60,7 +61,7 @@ class ComedyPage extends Component {
             <SlideShow
               images={[
                 {
-                  img: "https://media.istockphoto.com/vectors/sports-set-of-athletes-of-various-sports-disciplines-isolated-vector-vector-id1141191007?k=20&m=1141191007&s=612x612&w=0&h=CXC28y_ZRV1KvjISumj5w20bYn649HVi4yYTPWsKaZI=",
+                  img: sports,
                 },
                 {
                   img: "https://images.indianexpress.com/2021/10/real-madrid-barcelona.jpg",
