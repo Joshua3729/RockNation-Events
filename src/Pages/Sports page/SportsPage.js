@@ -8,7 +8,6 @@ import sports from "../../Components/Image/sports.png";
 
 class ComedyPage extends Component {
   state = {
-    showMore: false,
     events: null,
     eventsLoading: null,
     showModal: true,
@@ -18,7 +17,7 @@ class ComedyPage extends Component {
     fetch("http://localhost:5000/feed/events/sports")
       .then((res) => {
         if (res.status !== 200) {
-          throw new Error("Failed to fetch concerts.");
+          throw new Error("Failed to fetch sports.");
         }
 
         return res.json();
@@ -31,11 +30,6 @@ class ComedyPage extends Component {
         });
       })
       .catch((err) => console.log(err));
-  };
-  showMoreHandler = () => {
-    this.setState((prevState) => {
-      return { showMore: !prevState.showMore };
-    });
   };
 
   render() {
