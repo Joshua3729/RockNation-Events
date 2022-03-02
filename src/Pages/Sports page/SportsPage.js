@@ -67,10 +67,10 @@ class ComedyPage extends Component {
                   img: "https://liverpoollatestnews.com/wp-content/uploads/2020/09/Liverpool-vs-Chelsea-Head-To-Head-Results-Records-H2H.jpg",
                 },
                 {
-                  img: "https://i0.wp.com/leafrinique.co.za/wp-content/uploads/2019/12/DSC3715-scaled.jpeg?fit=2560%2C1709&ssl=1",
+                  img: "https://lebronwire.usatoday.com/wp-content/uploads/sites/37/2021/12/USATSI_13894834.jpg?w=1000&h=600&crop=1",
                 },
                 {
-                  img: "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191001102612-burna-boy-at-coachella.jpg",
+                  img: "https://resources.stuff.co.nz/content/dam/images/1/m/9/o/m/z/image.related.StuffLandscapeThreeByTwo.1464x976.1m9f4g.png/1507880727432.jpg",
                 },
               ]}
               parent={"musicConcerts"}
