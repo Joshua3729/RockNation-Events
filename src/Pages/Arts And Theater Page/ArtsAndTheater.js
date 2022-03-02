@@ -71,7 +71,7 @@ class ArtsAndTheater extends Component {
                   eventName: "Trevor Noah: Homecoming",
                 },
                 {
-                  img: "https://www.prensario.nets/Multimedios/imgs/44455_750.jpg",
+                  img: "https://www.prensario.net/Multimedios/imgs/44455_750.jpg",
                   eventName: "Hisaishi: Ochestra Concert",
                 },
                 {

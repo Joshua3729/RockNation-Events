@@ -60,7 +60,7 @@ class ComedyPage extends Component {
             <SlideShow
               images={[
                 {
-                  img: "https://media.istockphoto.com/vectors/upcoming-events-neon-signs-vector-upcoming-events-design-template-vector-id978975308?k=20&m=978975308&s=612x612&w=0&h=HnwHCKofUyVji7q4Vqpg9VI0avrWdF8hr-nA5EATfmk=",
+                  img: "https://media.istockphoto.com/vectors/sports-set-of-athletes-of-various-sports-disciplines-isolated-vector-vector-id1141191007?k=20&m=1141191007&s=612x612&w=0&h=CXC28y_ZRV1KvjISumj5w20bYn649HVi4yYTPWsKaZI=",
                 },
                 {
                   img: "https://images.indianexpress.com/2021/10/real-madrid-barcelona.jpg",
