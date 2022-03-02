@@ -45,6 +45,7 @@
 .NavLinks li a {
   color: inherit;
   text-decoration: none;
+  padding: 10px;
 }
 .NavLinks li a:hover {
   color: blue;
