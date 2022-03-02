@@ -31,11 +31,6 @@ class ArtsAndTheater extends Component {
       })
       .catch((err) => console.log(err));
   };
-  showMoreHandler = () => {
-    this.setState((prevState) => {
-      return { showMore: !prevState.showMore };
-    });
-  };
 
   render() {
     let events = "loading";
