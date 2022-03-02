@@ -52,10 +52,7 @@
 .NavLinks li:last-child {
   margin-right: 10px;
 }
-/* .Gutter {
-  height: 70px;
-  background-color: violet;
-} */
+
 .SearchInput {
   display: block;
   padding: 10px 20px 10px 40px;
