@@ -12,6 +12,7 @@ import Categories from "../../Components/Categories/Categories";
 class Home extends Component {
   state = {
     concerts: null,
+    sports: null
   };
 
   getConcerts = () => {
@@ -32,6 +33,24 @@ class Home extends Component {
       })
       .catch((err) => console.log(err));
   };
+  getSports=()=>{
+    fetch("http://localhost:5000/feed/events/sports")
+    .then((res) => {
+      if (res.status !== 200) {
+        throw new Error("Failed to fetch events.");
+      }
+
+      return res.json();
+    })
+    .then((resData) => {
+      console.log(resData);
+      this.setState({
+        sports: resData.events,
+        eventsLoading: false,
+      });
+    })
+    .catch((err) => console.log(err));
+  }
   render() {
     return (
       <Aux>
@@ -50,6 +69,8 @@ class Home extends Component {
         <TopSelling
           concerts={this.state.concerts}
           getConcerts={this.getConcerts}
+          sports={this.state.sports}
+          getSports={this.getSports}
         />
         <Amax />
         <ExclusiveEvents />
