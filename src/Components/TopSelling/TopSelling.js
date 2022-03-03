@@ -12,6 +12,7 @@ class topSelling extends Component {
     loading: false,
     artist: null,
     ArtsAndTheater: null,
+    events: null,
     //remove this when done
     artsAndTheater: [
       {
@@ -128,6 +129,7 @@ class topSelling extends Component {
       .catch((error) => this.setState({ loading: false }));
     this.props.getConcerts();
     this.props.getSports();
+    this.props.getArtsAndTheater();
   }
   render() {
     let loading = null;
@@ -135,43 +137,27 @@ class topSelling extends Component {
     let EventsArtsAndTheater = null;
     let Sports = null;
     let EventsFamily = null;
-    if (
-      !this.state.loading &&
-      this.props.concerts &&
-      this.state.events &&
-      this.props.ArtsAndTheater &&
-      this.props.sports
-    ) {
+    if (this.props.concerts && this.props.artsandtheater && this.props.sports) {
       console.log(this.props.concerts);
       cards = this.props.concerts.map((event, i) => {
-        return (
-          // <Link key={i} to={`/eventmanager/${card.name}`}>
-          <EventCard event={event} />
-          // </Link>
-        );
+        return <EventCard event={event} />;
       });
-      EventsArtsAndTheater = this.state.ArtsAndTheater.map((event, i) => {
+      EventsArtsAndTheater = this.props.artsandtheater.map((event, i) => {
         if (i < 8) {
-          return (
-            // <Link key={i} to={`/artsandtheater/${event._id}`}>
-            <EventCard key={i} event={event} />
-            //</Link>
-          );
+          return <EventCard key={i} event={event} />;
         }
       });
-      EventsFamily = this.state.Family.map((event, i) => {
-        return <EventCard key={i} event={event} />;
-      });
+      // EventsFamily = this.state.Family.map((event, i) => {
+      //   return <EventCard key={i} event={event} />;
+      // });
       Sports = this.props.sports.map((event, i) => {
         if (i < 8) {
           return (
-            // <Link key={i} to={`/comedy/${event._id}`}>
             <EventCard
               img={event.banner}
               Name={event.name}
               events={event.events}
             />
-            // </Link>
           );
         }
       });
@@ -180,7 +166,7 @@ class topSelling extends Component {
     }
     return (
       <Aux>
-        {loading}
+        {/* {loading} */}
         <section className={classes.TopSelling}>
           <div className={classes.sectionDescription}>Top selling</div>
           <div className={classes.ConcertsWrapper}>
