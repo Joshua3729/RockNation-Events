@@ -163,7 +163,7 @@ class topSelling extends Component {
     }
     return (
       <Aux>
-        {/* {loading} */}
+        {loading}
         <section className={classes.TopSelling}>
           <div className={classes.sectionDescription}>Top selling</div>
           <div className={classes.ConcertsWrapper}>
