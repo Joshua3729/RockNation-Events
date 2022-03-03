@@ -126,22 +126,6 @@ class topSelling extends Component {
         this.setState({ loading: false, events: response.data })
       )
       .catch((error) => this.setState({ loading: false }));
-    fetch("https://powerbrains-events.herokuapp.com/feed/events/artsandtheater")
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to fetch events.");
-        }
-
-        return res.json();
-      })
-      .then((resData) => {
-        console.log(resData);
-        this.setState({
-          ArtsAndTheater: resData.events,
-          eventsLoading: false,
-        });
-      })
-      .catch((err) => console.log(err));
     this.props.getConcerts();
     this.props.getSports();
   }
