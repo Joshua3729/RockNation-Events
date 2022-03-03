@@ -138,10 +138,6 @@ class topSelling extends Component {
     let Sports = null;
     let EventsFamily = null;
     if (this.props.concerts && this.props.artsandtheater && this.props.sports) {
-      console.log(this.props.concerts);
-      console.log(this.props.sports);
-      console.log(this.props.artsandtheater);
-
       cards = this.props.concerts.map((event, i) => {
         return <EventCard event={event} />;
       });
@@ -150,7 +146,7 @@ class topSelling extends Component {
           return <EventCard key={i} event={event} />;
         }
       });
-      // EventsFamily = this.state.Family.map((event, i) => {
+      // EventsFamily = this.props.Family.map((event, i) => {
       //   return <EventCard key={i} event={event} />;
       // });
       Sports = this.props.sports.map((event, i) => {
