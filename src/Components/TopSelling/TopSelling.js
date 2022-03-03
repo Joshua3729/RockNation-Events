@@ -12,7 +12,6 @@ class topSelling extends Component {
     loading: false,
     artist: null,
     ArtsAndTheater: null,
-    sports: null,
     //remove this when done
     artsAndTheater: [
       {
@@ -144,6 +143,7 @@ class topSelling extends Component {
       })
       .catch((err) => console.log(err));
     this.props.getConcerts();
+    this.props.getSports();
   }
   render() {
     let loading = null;
@@ -178,7 +178,7 @@ class topSelling extends Component {
       EventsFamily = this.state.Family.map((event, i) => {
         return <EventCard key={i} event={event} />;
       });
-      Sports = this.state.sports.map((event, i) => {
+      Sports = this.props.sports.map((event, i) => {
         if (i < 8) {
           return (
             // <Link key={i} to={`/comedy/${event._id}`}>
