@@ -139,8 +139,8 @@ class topSelling extends Component {
       !this.state.loading &&
       this.props.concerts &&
       this.state.events &&
-      this.state.ArtsAndTheater &&
-      this.state.sports
+      this.props.ArtsAndTheater &&
+      this.props.sports
     ) {
       console.log(this.props.concerts);
       cards = this.props.concerts.map((event, i) => {
