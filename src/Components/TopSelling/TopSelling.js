@@ -143,22 +143,6 @@ class topSelling extends Component {
         });
       })
       .catch((err) => console.log(err));
-    fetch("https://powerbrains-events.herokuapp.com/feed/events/sports")
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to fetch events.");
-        }
-
-        return res.json();
-      })
-      .then((resData) => {
-        console.log(resData);
-        this.setState({
-          sports: resData.events,
-          eventsLoading: false,
-        });
-      })
-      .catch((err) => console.log(err));
     this.props.getConcerts();
   }
   render() {
