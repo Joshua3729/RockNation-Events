@@ -153,13 +153,33 @@ class Navigation extends Component {
             )}
             <ul className={classes.NavLinks}>
               <li className={this.state.scroll ? classes.scrollNavLink : null}>
-                <Link to="/concerts">Concerts</Link>
+                <Link
+                  to="/concerts"
+                  style={{
+                    color: this.state.scroll ? "rgb(38,38,38" : "white",
+                  }}
+                >
+                  Concerts
+                </Link>
               </li>
               <li>
-                <Link to="/sports">Sports</Link>
+                <Link
+                  to="/sports"
+                  style={{
+                    color: this.state.scroll ? "rgb(38,38,38" : "white",
+                  }}
+                >
+                  Sports
+                </Link>
               </li>
               <li>
-                <Link>More</Link>
+                <Link
+                  style={{
+                    color: this.state.scroll ? "rgb(38,38,38" : "white",
+                  }}
+                >
+                  More
+                </Link>
               </li>
             </ul>
           </div>
@@ -170,10 +190,10 @@ class Navigation extends Component {
           />
           <ul className={classes.NavLinks}>
             <li>
-              <NavLink>Sell</NavLink>
+              <Link>Sell</Link>
             </li>
             <li>
-              <NavLink>Help</NavLink>
+              <Link>Help</Link>
             </li>
             <li>{navLink}</li>
           </ul>
