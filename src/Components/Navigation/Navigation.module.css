@@ -43,12 +43,10 @@
 }
 .NavLinks li a {
   text-decoration: none;
-  padding: 27px 20px 27px 20px;
+  padding: 22px 20px 22px 20px;
   background-color: rgba(128, 128, 128, 0.3);
 }
-.NavLinks li a:hover {
-  border-bottom: 2px solid rgb(2, 108, 223);
-}
+
 .NavLinks li:last-child {
   margin-right: 10px;
 }
@@ -284,7 +282,7 @@
 }
 .dropDown {
   position: absolute;
-  top: calc(90% + 27px);
+  top: calc(90% + 27.5px);
   width: 200px;
   background-color: white;
   padding: 20px;
