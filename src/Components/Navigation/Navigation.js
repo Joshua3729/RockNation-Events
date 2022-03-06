@@ -95,7 +95,14 @@ class Navigation extends Component {
         </div>
       </div>
     ) : (
-      <li onClick={this.props.login}>Sign in</li>
+      <li
+        style={{
+          color: this.state.scroll ? "rgb(38,38,38" : "white",
+        }}
+        onClick={this.props.login}
+      >
+        Sign in
+      </li>
     );
 
     return ReactDOM.createPortal(
@@ -190,10 +197,22 @@ class Navigation extends Component {
           />
           <ul className={classes.NavLinks}>
             <li>
-              <Link>Sell</Link>
+              <Link
+                style={{
+                  color: this.state.scroll ? "rgb(38,38,38" : "white",
+                }}
+              >
+                Sell
+              </Link>
             </li>
             <li>
-              <Link>Help</Link>
+              <Link
+                style={{
+                  color: this.state.scroll ? "rgb(38,38,38" : "white",
+                }}
+              >
+                Help
+              </Link>
             </li>
             <li>{navLink}</li>
           </ul>
