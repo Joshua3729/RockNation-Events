@@ -151,13 +151,8 @@ class Navigation extends Component {
                 </form>
               </div>
             )}
-            <ul
-              className={classes.NavLinks}
-              style={{
-                color: this.state.scroll ? "rgb(38, 38, 38)" : "white",
-              }}
-            >
-              <li>
+            <ul className={classes.NavLinks}>
+              <li className={this.state.scroll ? classes.scrollNavLink : null}>
                 <Link to="/concerts">Concerts</Link>
               </li>
               <li>
