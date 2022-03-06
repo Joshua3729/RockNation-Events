@@ -178,15 +178,38 @@ class Navigation extends Component {
                   Sports
                 </Link>
               </li>
-              <li>
-                <Link
-                  style={{
-                    color: this.state.scroll ? "rgb(38,38,38" : "white",
-                  }}
-                >
-                  More
-                </Link>
-              </li>
+              {this.props.searchBar || this.state.scroll ? (
+                <li>
+                  <Link
+                    style={{
+                      color: this.state.scroll ? "rgb(38,38,38" : "white",
+                    }}
+                  >
+                    More
+                  </Link>
+                </li>
+              ) : (
+                <Fragment>
+                  <li>
+                    <Link
+                      style={{
+                        color: this.state.scroll ? "rgb(38,38,38" : "white",
+                      }}
+                    >
+                      Arts & Theater
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      style={{
+                        color: this.state.scroll ? "rgb(38,38,38" : "white",
+                      }}
+                    >
+                      Family
+                    </Link>
+                  </li>
+                </Fragment>
+              )}
             </ul>
           </div>
 
