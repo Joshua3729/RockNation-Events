@@ -179,7 +179,7 @@ class Navigation extends Component {
                 </Link>
               </li>
               {this.props.searchBar || this.state.scroll ? (
-                <li>
+                <li className={classes.moreLink}>
                   <Link
                     style={{
                       color: this.state.scroll ? "rgb(38,38,38" : "white",
@@ -187,6 +187,27 @@ class Navigation extends Component {
                   >
                     More
                   </Link>
+
+                  <ul className={classes.dropDown}>
+                    <li>
+                      <Link
+                        style={{
+                          color: this.state.scroll ? "rgb(38,38,38" : "white",
+                        }}
+                      >
+                        Arts & Theater
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        style={{
+                          color: this.state.scroll ? "rgb(38,38,38" : "white",
+                        }}
+                      >
+                        Family
+                      </Link>
+                    </li>
+                  </ul>
                 </li>
               ) : (
                 <Fragment>
