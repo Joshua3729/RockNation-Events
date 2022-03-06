@@ -192,7 +192,7 @@ class Navigation extends Component {
                     <li>
                       <Link
                         style={{
-                          color: this.state.scroll ? "rgb(38,38,38" : "white",
+                          color: "rgb(38,38,38)",
                         }}
                       >
                         Arts & Theater
@@ -201,7 +201,7 @@ class Navigation extends Component {
                     <li>
                       <Link
                         style={{
-                          color: this.state.scroll ? "rgb(38,38,38" : "white",
+                          color: "rgb(38,38,38)",
                         }}
                       >
                         Family
