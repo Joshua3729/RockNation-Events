@@ -1,7 +1,6 @@
 import classes from "./Navigation.module.css";
 import React, { Component, Fragment } from "react";
 import Logo from "../UI/Spinner/Logo/Logo";
-import NavLink from "./NavLink/NavLink";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
