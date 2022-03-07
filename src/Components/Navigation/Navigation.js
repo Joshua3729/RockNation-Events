@@ -195,6 +195,7 @@ class Navigation extends Component {
                         style={{
                           color: "rgb(38,38,38)",
                         }}
+                        to="/artsandtheater"
                       >
                         Arts & Theater
                       </Link>
