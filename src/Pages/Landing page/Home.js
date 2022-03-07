@@ -7,6 +7,8 @@ import Amax from "../../Components/Amax/Amax";
 import ExclusiveEvents from "../../Components/ExclusiveEvents/ExclusiveEvents";
 import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
+import LoadingModal from "../../Components/Loading Modal/LoadingModal";
+import { Fragment } from "react/cjs/react.development";
 // import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 
 class Home extends Component {
@@ -14,6 +16,9 @@ class Home extends Component {
     concerts: null,
     sports: null,
     artsandtheater: null,
+    concertsLoading: true,
+    sportsLoading: true,
+    artsAndTheaterLoading: true,
   };
 
   getConcerts = () => {
@@ -29,10 +34,14 @@ class Home extends Component {
         console.log(resData);
         this.setState({
           concerts: resData.events,
-          eventsLoading: false,
+          concertsLoading: false,
         });
+        console.log(1);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        this.setState({ concertsLoading: false });
+        console.log(err);
+      });
   };
   getSports = () => {
     fetch("http://localhost:5000/feed/events/sports")
@@ -47,10 +56,14 @@ class Home extends Component {
         console.log(resData);
         this.setState({
           sports: resData.events,
-          eventsLoading: false,
+          sportsLoading: false,
         });
+        console.log(2);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        this.setState({ sportsLoading: false });
+        console.log(err);
+      });
   };
   getArtsAndTheater = () => {
     fetch("http://localhost:5000/feed/events/artsandtheater")
@@ -65,37 +78,56 @@ class Home extends Component {
         console.log(resData);
         this.setState({
           artsandtheater: resData.events,
-          eventsLoading: false,
+          artsAndTheaterLoading: false,
         });
+        console.log(3);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        this.setState({ artsAndTheaterLoading: false });
+        console.log(err);
+      });
   };
   render() {
+    console.log(
+      this.state.artsAndTheaterLoading +
+        "," +
+        this.state.concertsLoading +
+        "," +
+        this.state.sportsLoading
+    );
+    const loading =
+      this.state.artsAndTheaterLoading ||
+      this.state.concertsLoading ||
+      this.state.sportsLoading;
+    console.log(loading);
     return (
-      <Aux>
-        <Navigation
-          scrollEffect={true}
-          searchBar={false}
-          isAuth={this.props.isAuth}
-          logout={this.props.logout}
-          login={this.props.loginModal}
-          fullname={this.props.fullname}
-          userImage={this.props.userImage}
-        />
-        <Hero />
-        <ComingSoon />
-        <Categories />
-        <TopSelling
-          concerts={this.state.concerts}
-          getConcerts={this.getConcerts}
-          sports={this.state.sports}
-          getSports={this.getSports}
-          artsandtheater={this.state.artsandtheater}
-          getArtsAndTheater={this.getArtsAndTheater}
-        />
-        <Amax />
-        <ExclusiveEvents />
-      </Aux>
+      <Fragment>
+        {loading && <LoadingModal />}
+        <div className={loading && classes.loading}>
+          <Navigation
+            scrollEffect={true}
+            searchBar={false}
+            isAuth={this.props.isAuth}
+            logout={this.props.logout}
+            login={this.props.loginModal}
+            fullname={this.props.fullname}
+            userImage={this.props.userImage}
+          />
+          <Hero />
+          <ComingSoon />
+          <Categories />
+          <TopSelling
+            concerts={this.state.concerts}
+            getConcerts={this.getConcerts}
+            sports={this.state.sports}
+            getSports={this.getSports}
+            artsandtheater={this.state.artsandtheater}
+            getArtsAndTheater={this.getArtsAndTheater}
+          />
+          <Amax />
+          <ExclusiveEvents />)
+        </div>
+      </Fragment>
     );
   }
 }
