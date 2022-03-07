@@ -1160,20 +1160,21 @@ class App extends Component {
               />
             )}
           />
-             <Route
-          path="/family"
-          exact
-          render={(props) => (
-            <FamilyPage
-              {...props}
-              loginModal={this.openModalHandler}
-              isAuth={this.state.isAuth}
-              token={this.state.token}
-              logout={this.logoutHandler}
-              fullname={this.state.fullname}
-              userImage={this.state.userImage}
-            />
-          
+          <Route
+            path="/family"
+            exact
+            render={(props) => (
+              <FamilyPage
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+              />
+            )}
+          />
         </Router>
       );
     }
