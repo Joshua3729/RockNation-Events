@@ -9,6 +9,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import { Fragment } from "react/cjs/react.development";
+import classes from "./Home.module.css";
 // import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 
 class Home extends Component {
@@ -31,12 +32,10 @@ class Home extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           concerts: resData.events,
-          concertsLoading: false,
+          // concertsLoading: false,
         });
-        console.log(1);
       })
       .catch((err) => {
         this.setState({ concertsLoading: false });
@@ -53,12 +52,10 @@ class Home extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           sports: resData.events,
           sportsLoading: false,
         });
-        console.log(2);
       })
       .catch((err) => {
         this.setState({ sportsLoading: false });
@@ -75,12 +72,10 @@ class Home extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           artsandtheater: resData.events,
           artsAndTheaterLoading: false,
         });
-        console.log(3);
       })
       .catch((err) => {
         this.setState({ artsAndTheaterLoading: false });
@@ -88,22 +83,10 @@ class Home extends Component {
       });
   };
   render() {
-    console.log(
-      this.state.artsAndTheaterLoading +
-        "," +
-        this.state.concertsLoading +
-        "," +
-        this.state.sportsLoading
-    );
-    const loading =
-      this.state.artsAndTheaterLoading ||
-      this.state.concertsLoading ||
-      this.state.sportsLoading;
-    console.log(loading);
     return (
       <Fragment>
         {loading && <LoadingModal />}
-        <div className={loading && classes.loading}>
+        <div className={loading ? classes.loading : null}>
           <Navigation
             scrollEffect={true}
             searchBar={false}

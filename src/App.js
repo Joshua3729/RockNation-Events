@@ -107,6 +107,12 @@ class App extends Component {
     fullname: null,
     imagePreview: null,
     userImage: null,
+    concerts: null,
+    sports: null,
+    artsandtheater: null,
+    concertsLoading: true,
+    sportsLoading: true,
+    artsAndTheaterLoading: true,
   };
   componentDidMount() {
     const fullname = localStorage.getItem("fullname");
@@ -332,8 +338,72 @@ class App extends Component {
   needToSignInhandler = () => {
     this.setState({ needToSignUp: false });
   };
+  getConcerts = () => {
+    fetch("http://localhost:5000/feed/events/concerts")
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to fetch concerts.");
+        }
 
+        return res.json();
+      })
+      .then((resData) => {
+        this.setState({
+          concerts: resData.events,
+          // concertsLoading: false,
+        });
+      })
+      .catch((err) => {
+        this.setState({ concertsLoading: false });
+        console.log(err);
+      });
+  };
+  getSports = () => {
+    fetch("http://localhost:5000/feed/events/sports")
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to fetch events.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        this.setState({
+          sports: resData.events,
+          sportsLoading: false,
+        });
+      })
+      .catch((err) => {
+        this.setState({ sportsLoading: false });
+        console.log(err);
+      });
+  };
+  getArtsAndTheater = () => {
+    fetch("http://localhost:5000/feed/events/artsandtheater")
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to fetch events.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        this.setState({
+          artsandtheater: resData.events,
+          artsAndTheaterLoading: false,
+        });
+      })
+      .catch((err) => {
+        this.setState({ artsAndTheaterLoading: false });
+        console.log(err);
+      });
+  };
   render() {
+    const loading =
+      this.state.artsAndTheaterLoading ||
+      this.state.concertsLoading ||
+      this.state.sportsLoading;
+
     let loginModal = this.state.needToSignUp ? (
       <div className={classes.logInModal}>
         <div className={classes.leftpane}>
@@ -560,293 +630,6 @@ class App extends Component {
         </div>
       </div>
     );
-
-    // let routes = (
-    //   <Routes>
-    //     {/* <Fragment>
-    //       <ScrollToTop /> */}
-    //     <Route
-    //       path="/"
-    //       exact
-    //       element={
-    //         <Home
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-    //     <Route
-    //       path="/eventmanager"
-    //       exact
-    //       element={
-    //         <EventSearcher
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-    //     <Route
-    //       path="/eventmanager/:name"
-    //       exact
-    //       element={
-    //         <EventSearcher
-    //           {...this.props}
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-    //     <Route
-    //       path="/ticket"
-    //       exact
-    //       element={
-    //         <TicketPage
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-    //     <Route
-    //       path="/comedy"
-    //       exact
-    //       element={
-    //         <SportsPage
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-    //     <Route
-    //       path="/artsandtheater"
-    //       exact
-    //       element={
-    //         <ArtsAndTheaterPage
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-    //     <Route
-    //       path="/artsandtheater/:id"
-    //       exact
-    //       element={
-    //         <SingleEvent
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-    //     <Route
-    //       path="/comedy/:id"
-    //       exact
-    //       element={
-    //         <SingleEvent
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-
-    //     <Route
-    //       path="/concerts"
-    //       exact
-    //       element={
-    //         <MusicConcerts
-    //           loginModal={this.openModalHandler}
-    //           isAuth={this.state.isAuth}
-    //           token={this.state.token}
-    //           logout={this.logoutHandler}
-    //           fullname={this.state.fullname}
-    //           userImage={this.state.userImage}
-    //         />
-    //       }
-    //     />
-    //     {/* <Navigate to="/" />
-    //     </Fragment> */}
-    //   </Routes>
-    // );
-
-    // if (this.state.isAuth) {
-    //   routes = (
-    //     <Routes>
-    //       {/* <ScrollToTop /> */}
-
-    //       <Route
-    //         path="/"
-    //         exact
-    //         element={
-    //           <Home
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-    //       <Route
-    //         path="/eventmanager"
-    //         exact
-    //         element={
-    //           <EventSearcher
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-    //       <Route
-    //         path="/eventmanager/:name"
-    //         exact
-    //         element={
-    //           <EventSearcher
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-    //       <Route
-    //         path="/ticket"
-    //         exact
-    //         element={
-    //           <TicketPage
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-    //       <Route
-    //         path="/comedy"
-    //         exact
-    //         element={
-    //           <SportsPage
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-    //       <Route
-    //         path="/artsandtheater"
-    //         exact
-    //         element={
-    //           <ArtsAndTheaterPage
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-    //       <Route
-    //         path="/artsandtheater/:id"
-    //         exact
-    //         element={
-    //           <SingleEvent
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-    //       <Route
-    //         path="/comedy/:id"
-    //         exact
-    //         element={
-    //           <SingleEvent
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-
-    //       <Route
-    //         path="/profile"
-    //         exact
-    //         element={
-    //           <UserProfile
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //             userAddress={this.state.userAddress}
-    //           />
-    //         }
-    //       />
-    //       <Route
-    //         path="/concerts"
-    //         exact
-    //         element={
-    //           <MusicConcerts
-    //             loginModal={this.openModalHandler}
-    //             isAuth={this.state.isAuth}
-    //             token={this.state.token}
-    //             logout={this.logoutHandler}
-    //             fullname={this.state.fullname}
-    //             userImage={this.state.userImage}
-    //           />
-    //         }
-    //       />
-    //     </Routes>
-    // );
 
     let routes = (
       <Router>
