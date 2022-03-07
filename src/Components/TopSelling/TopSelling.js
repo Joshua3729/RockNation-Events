@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import classes from "./TopSelling.module.css";
 import axios from "axios";
-import Spinner from "../UI/Spinner/Spinner";
-import LoadingModal from "../Loading Modal/LoadingModal";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import { Link } from "react-router-dom";
 import EventCard from "../EventCard/EventCard";
@@ -53,12 +51,9 @@ class topSelling extends Component {
           return <EventCard key={i} event={event} />;
         }
       });
-    } else {
-      loading = <LoadingModal />;
     }
     return (
       <Aux>
-        {loading}
         <section className={classes.TopSelling}>
           <div className={classes.sectionDescription}>Top selling</div>
           <div className={classes.ConcertsWrapper}>
