@@ -181,6 +181,7 @@ class Navigation extends Component {
               {this.props.searchBar || this.state.scroll ? (
                 <li className={classes.moreLink}>
                   <Link
+                    className={classes.more}
                     style={{
                       color: this.state.scroll ? "rgb(38,38,38" : "white",
                     }}

@@ -295,7 +295,7 @@
 }
 .dropDown li a {
   display: block;
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
   background-color: unset;
   width: 100%;
@@ -313,7 +313,11 @@
 .moreLink {
   position: relative;
 }
-.moreLink a:hover {
+
+.moreLink:hover .dropDown {
+  display: block;
+}
+.more:hover {
   border-bottom: 2px solid rgb(2, 108, 223);
 }
 
