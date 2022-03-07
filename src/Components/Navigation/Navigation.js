@@ -205,6 +205,7 @@ class Navigation extends Component {
                         style={{
                           color: "rgb(38,38,38)",
                         }}
+                        to="/family"
                       >
                         Family
                       </Link>
@@ -228,6 +229,7 @@ class Navigation extends Component {
                       style={{
                         color: this.state.scroll ? "rgb(38,38,38" : "white",
                       }}
+                      to="/family"
                     >
                       Family
                     </Link>

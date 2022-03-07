@@ -36,11 +36,13 @@ const categories = (props) => {
           </Link>
         </div>
         <div className={classes.grid_item}>
-          <img
-            src="https://cdn.shopify.com/s/files/1/0468/4270/8124/articles/2559491272_17552143_28c0213a-8e3b-45e9-95cd-89cce2ee313b_3000x.jpg?v=1608226189"
-            alt=""
-          />
-          <div className={classes.EventLabel}>Kids Events</div>
+          <Link to="/family">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0468/4270/8124/articles/2559491272_17552143_28c0213a-8e3b-45e9-95cd-89cce2ee313b_3000x.jpg?v=1608226189"
+              alt=""
+            />
+            <div className={classes.EventLabel}>Kids Events</div>
+          </Link>
         </div>
       </div>
     </div>
