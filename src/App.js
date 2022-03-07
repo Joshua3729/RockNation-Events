@@ -17,6 +17,7 @@ import UserProfile from "./Pages/User Profile/UserProfile";
 import MusicConcerts from "./Pages/Music Page/MusicConcerts";
 import ScrollToTop from "./util/ScrollToTop";
 import Aux from "./hoc/Auxiliary/Auxiliary";
+import FamilyPage from "./Pages/Family Page/FamilyPage";
 
 class App extends Component {
   state = {
@@ -985,6 +986,21 @@ class App extends Component {
             />
           )}
         />
+        <Route
+          path="/family"
+          exact
+          render={(props) => (
+            <FamilyPage
+              {...props}
+              loginModal={this.openModalHandler}
+              isAuth={this.state.isAuth}
+              token={this.state.token}
+              logout={this.logoutHandler}
+              fullname={this.state.fullname}
+              userImage={this.state.userImage}
+            />
+          )}
+        />
       </Router>
     );
 
@@ -1144,6 +1160,20 @@ class App extends Component {
               />
             )}
           />
+             <Route
+          path="/family"
+          exact
+          render={(props) => (
+            <FamilyPage
+              {...props}
+              loginModal={this.openModalHandler}
+              isAuth={this.state.isAuth}
+              token={this.state.token}
+              logout={this.logoutHandler}
+              fullname={this.state.fullname}
+              userImage={this.state.userImage}
+            />
+          
         </Router>
       );
     }
