@@ -93,12 +93,12 @@ class Home extends Component {
         <ComingSoon />
         <Categories />
         <TopSelling
-          concerts={this.props.concerts}
-          getConcerts={this.props.getConcerts}
-          sports={this.props.sports}
-          getSports={this.props.getSports}
-          artsandtheater={this.props.artsandtheater}
-          getArtsAndTheater={this.props.getArtsAndTheater}
+          concerts={this.state.concerts}
+          getConcerts={this.state.getConcerts}
+          sports={this.state.sports}
+          getSports={this.state.getSports}
+          artsandtheater={this.state.artsandtheater}
+          getArtsAndTheater={this.state.getArtsAndTheater}
         />
         <Amax />
         <ExclusiveEvents />)
