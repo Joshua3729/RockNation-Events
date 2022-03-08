@@ -102,7 +102,7 @@ class Home extends Component {
           artsandtheater={this.state.artsandtheater}
         />
         <Amax />
-        <ExclusiveEvents />)
+        <ExclusiveEvents />
       </Fragment>
     );
   }
