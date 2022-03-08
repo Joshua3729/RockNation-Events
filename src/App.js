@@ -113,12 +113,6 @@ class App extends Component {
     fullname: null,
     imagePreview: null,
     userImage: null,
-    concerts: null,
-    sports: null,
-    artsandtheater: null,
-    concertsLoading: true,
-    sportsLoading: true,
-    artsAndTheaterLoading: true,
   };
   componentDidMount() {
     console.log("Check this out");
@@ -345,66 +339,7 @@ class App extends Component {
   needToSignInhandler = () => {
     this.setState({ needToSignUp: false });
   };
-  getConcerts = () => {
-    fetch("http://localhost:5000/feed/events/concerts")
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to fetch concerts.");
-        }
 
-        return res.json();
-      })
-      .then((resData) => {
-        this.setState({
-          concerts: resData.events,
-          concertsLoading: false,
-        });
-      })
-      .catch((err) => {
-        this.setState({ concertsLoading: false });
-        console.log(err);
-      });
-  };
-  getSports = () => {
-    fetch("http://localhost:5000/feed/events/sports")
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to fetch events.");
-        }
-
-        return res.json();
-      })
-      .then((resData) => {
-        this.setState({
-          sports: resData.events,
-          sportsLoading: false,
-        });
-      })
-      .catch((err) => {
-        this.setState({ sportsLoading: false });
-        console.log(err);
-      });
-  };
-  getArtsAndTheater = () => {
-    fetch("http://localhost:5000/feed/events/artsandtheater")
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to fetch events.");
-        }
-
-        return res.json();
-      })
-      .then((resData) => {
-        this.setState({
-          artsandtheater: resData.events,
-          artsAndTheaterLoading: false,
-        });
-      })
-      .catch((err) => {
-        this.setState({ artsAndTheaterLoading: false });
-        console.log(err);
-      });
-  };
   homeHandler = () => {
     let history = useHistory();
     this.setState({
@@ -898,6 +833,7 @@ class App extends Component {
                 logout={this.logoutHandler}
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
+                goToHome={this.homeHandler}
               />
             )}
           />
