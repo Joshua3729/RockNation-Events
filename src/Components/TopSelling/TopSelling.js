@@ -6,30 +6,7 @@ import { Link } from "react-router-dom";
 import EventCard from "../EventCard/EventCard";
 
 class topSelling extends Component {
-  state = {
-    loading: false,
-    artist: null,
-    ArtsAndTheater: null,
-    events: null,
-  };
-  componentDidMount() {
-    this.setState({ loading: true });
-    axios("https://m-dab-events-default-rtdb.firebaseio.com/Data.json")
-      .then((response) =>
-        this.setState({ loading: false, artist: response.data })
-      )
-      .catch((error) => this.setState({ loading: false }));
-    axios("https://m-dab-events-default-rtdb.firebaseio.com/Data.json")
-      .then((response) =>
-        this.setState({ loading: false, events: response.data })
-      )
-      .catch((error) => this.setState({ loading: false }));
-    this.props.getConcerts();
-    this.props.getSports();
-    this.props.getArtsAndTheater();
-  }
   render() {
-    let loading = null;
     let cards = null;
     let EventsArtsAndTheater = null;
     let Sports = null;

@@ -18,7 +18,7 @@ class Home extends Component {
     sportsLoading: true,
     artsAndTheaterLoading: true,
   };
-  componentDidMountd() {
+  componentDidMount() {
     fetch("http://localhost:5000/feed/events/concerts")
       .then((res) => {
         if (res.status !== 200) {
@@ -98,11 +98,8 @@ class Home extends Component {
         <Categories />
         <TopSelling
           concerts={this.state.concerts}
-          getConcerts={this.getConcerts}
           sports={this.state.sports}
-          getSports={this.getSports}
           artsandtheater={this.state.artsandtheater}
-          getArtsAndTheater={this.getArtsAndTheater}
         />
         <Amax />
         <ExclusiveEvents />)
