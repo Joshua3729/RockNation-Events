@@ -18,7 +18,6 @@ import MusicConcerts from "./Pages/Music Page/MusicConcerts";
 import ScrollToTop from "./util/ScrollToTop";
 import Aux from "./hoc/Auxiliary/Auxiliary";
 import FamilyPage from "./Pages/Family Page/FamilyPage";
-import LoadingModal from "./Components/Loading Modal/LoadingModal";
 
 class App extends Component {
   state = {
