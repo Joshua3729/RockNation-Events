@@ -734,6 +734,7 @@ class App extends Component {
               logout={this.logoutHandler}
               fullname={this.state.fullname}
               userImage={this.state.userImage}
+              goToHome={this.homeHandler}
             />
           )}
         />

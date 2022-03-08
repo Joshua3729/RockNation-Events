@@ -49,6 +49,7 @@ class ComedyPage extends Component {
           login={this.props.loginModal}
           fullname={this.props.fullname}
           userImage={this.props.userImage}
+          goTohome={this.props.goTohome}
         />
         <section className={classes.MusicConcerts}>
           <div className={classes.banner}>

@@ -127,9 +127,7 @@ class Navigation extends Component {
             ))}
           <div className={classes.leftNavLinks}>
             <div className={classes.Logo}>
-              <Link to="/">
-                <Logo scroll={this.state.scroll} />
-              </Link>
+              <Logo scroll={this.state.scroll} goToHome={this.props.goToHome} />
             </div>
             {(this.props.searchBar || this.state.scroll) && (
               <div className={classes.Wrapper}>
