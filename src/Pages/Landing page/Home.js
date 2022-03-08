@@ -18,7 +18,7 @@ class Home extends Component {
     sportsLoading: true,
     artsAndTheaterLoading: true,
   };
-  getConcerts = () => {
+  componentDidMountd() {
     fetch("http://localhost:5000/feed/events/concerts")
       .then((res) => {
         if (res.status !== 200) {
@@ -37,8 +37,7 @@ class Home extends Component {
         this.setState({ concertsLoading: false });
         console.log(err);
       });
-  };
-  getSports = () => {
+
     fetch("http://localhost:5000/feed/events/sports")
       .then((res) => {
         if (res.status !== 200) {
@@ -57,8 +56,7 @@ class Home extends Component {
         this.setState({ sportsLoading: false });
         console.log(err);
       });
-  };
-  getArtsAndTheater = () => {
+
     fetch("http://localhost:5000/feed/events/artsandtheater")
       .then((res) => {
         if (res.status !== 200) {
@@ -77,7 +75,7 @@ class Home extends Component {
         this.setState({ artsAndTheaterLoading: false });
         console.log(err);
       });
-  };
+  }
   render() {
     const loading =
       this.state.artsAndTheaterLoading ||
@@ -100,11 +98,11 @@ class Home extends Component {
         <Categories />
         <TopSelling
           concerts={this.state.concerts}
-          getConcerts={this.state.getConcerts}
+          getConcerts={this.getConcerts}
           sports={this.state.sports}
-          getSports={this.state.getSports}
+          getSports={this.getSports}
           artsandtheater={this.state.artsandtheater}
-          getArtsAndTheater={this.state.getArtsAndTheater}
+          getArtsAndTheater={this.getArtsAndTheater}
         />
         <Amax />
         <ExclusiveEvents />)
