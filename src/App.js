@@ -583,12 +583,6 @@ class App extends Component {
               logout={this.logoutHandler}
               fullname={this.state.fullname}
               userImage={this.state.userImage}
-              artsandtheater={this.state.artsandtheater}
-              concerts={this.state.concerts}
-              sports={this.state.sports}
-              getArtsAndTheater={this.getArtsAndTheater}
-              getSports={this.getSports}
-              getConcerts={this.getConcerts}
             />
           )}
         />
