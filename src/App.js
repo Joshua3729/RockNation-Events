@@ -116,14 +116,6 @@ class App extends Component {
     artsAndTheaterLoading: true,
   };
   componentDidMount() {
-    this.setState({
-      concerts: null,
-      sports: null,
-      artsandtheater: null,
-      concertsLoading: true,
-      sportsLoading: true,
-      artsAndTheaterLoading: true,
-    });
     console.log("Check this out");
     const fullname = localStorage.getItem("fullname");
     const token = localStorage.getItem("token");
@@ -407,6 +399,20 @@ class App extends Component {
         this.setState({ artsAndTheaterLoading: false });
         console.log(err);
       });
+  };
+  homeHandler = () => {
+    this.setState({
+      concerts: null,
+      sports: null,
+      artsandtheater: null,
+      concertsLoading: true,
+      sportsLoading: true,
+      artsAndTheaterLoading: true,
+    });
+    history.push("/");
+    this.getArtsAndTheater;
+    this.getConcerts;
+    this.getSports;
   };
   render() {
     const loading =
@@ -983,6 +989,8 @@ class App extends Component {
         </Router>
       );
     }
+
+    console.log(this.state.artsandtheater);
 
     return (
       <Aux>
