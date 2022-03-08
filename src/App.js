@@ -1,12 +1,7 @@
 import React, { Component, Fragment } from "react";
 import EventSearcher from "./Components/EventSearcher/EventSearcher";
 import Home from "./Pages/Landing page/Home";
-import {
-  Route,
-  BrowserRouter as Router,
-  Redirect,
-  useHistory,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
 import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
@@ -340,21 +335,6 @@ class App extends Component {
     this.setState({ needToSignUp: false });
   };
 
-  homeHandler = () => {
-    let history = useHistory();
-    this.setState({
-      concerts: null,
-      sports: null,
-      artsandtheater: null,
-      concertsLoading: true,
-      sportsLoading: true,
-      artsAndTheaterLoading: true,
-    });
-    history.push("/");
-    this.getArtsAndTheater();
-    this.getConcerts();
-    this.getSports();
-  };
   render() {
     const loading =
       this.state.artsAndTheaterLoading ||
