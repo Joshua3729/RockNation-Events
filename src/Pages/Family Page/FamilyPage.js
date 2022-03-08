@@ -55,22 +55,22 @@ class FamilyPage extends Component {
             <SlideShow
               images={[
                 {
-                  img: "https://media.istockphoto.com/vectors/upcoming-events-neon-signs-vector-upcoming-events-design-template-vector-id978975308?k=20&m=978975308&s=612x612&w=0&h=HnwHCKofUyVji7q4Vqpg9VI0avrWdF8hr-nA5EATfmk=",
+                  img: "https://www.lbcc.edu/sites/main/files/imagecache/lightbox/main-images/tile-upcoming-events.jpg",
                 },
                 {
-                  img: "https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://static.onecms.io/wp-content/uploads/sites/6/2021/11/17/GettyImages-1313060346.jpg&w=1280&h=720&q=90&c=cc",
+                  img: "https://cdn-montecasino.pressidium.com/wp-content/uploads/2020/07/MagicCompany_Feature.jpg",
                 },
                 {
-                  img: "https://www.flare.com/wp-content/uploads/2017/11/Drake-concert-inline-GettyImages-871232956.jpg",
+                  img: "https://www.gannett-cdn.com/-mm-/514922ee78c25e2bb90a92cf29ab3e31e5542750/c=0-153-3000-1848/local/-/media/2017/05/29/Phoenix/Phoenix/636316603972945108-McCormick-Stillman.jpg",
                 },
                 {
-                  img: "https://149366112.v2.pressablecdn.com/wp-content/uploads/2019/10/shutterstock_1488792806.jpg",
+                  img: "https://www.creativeevents.ie/wp-content/uploads/2016/01/Family-Fun-4.jpg",
                 },
                 {
-                  img: "https://i0.wp.com/leafrinique.co.za/wp-content/uploads/2019/12/DSC3715-scaled.jpeg?fit=2560%2C1709&ssl=1",
+                  img: "https://insidethemagic.net/wp-content/uploads/2021/02/Untitled-design-2021-02-19T125614.540.jpg",
                 },
                 {
-                  img: "https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F191001102612-burna-boy-at-coachella.jpg",
+                  img: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2018%2F09%2Funiversal-orlando-halloween-horror-nights-THEMEOWEEN0918.jpg",
                 },
               ]}
               parent={"musicConcerts"}
