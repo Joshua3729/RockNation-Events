@@ -7,6 +7,7 @@ import Amax from "../../Components/Amax/Amax";
 import ExclusiveEvents from "../../Components/ExclusiveEvents/ExclusiveEvents";
 import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
+import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 
 class Home extends Component {
   state = {
@@ -78,8 +79,13 @@ class Home extends Component {
       });
   };
   render() {
+    const loading =
+      this.state.artsAndTheaterLoading ||
+      this.state.concertsLoading ||
+      this.state.sportsLoading;
     return (
       <Fragment>
+        {loading && <LoadingModal />}
         <Navigation
           scrollEffect={true}
           searchBar={false}
