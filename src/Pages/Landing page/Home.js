@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import ComingSoon from "../../Components/Coming Soon/ComingSoon";
 import Hero from "../../Components/HeroSection/Hero";
 import TopSelling from "../../Components/TopSelling/TopSelling";
@@ -7,7 +7,6 @@ import Amax from "../../Components/Amax/Amax";
 import ExclusiveEvents from "../../Components/ExclusiveEvents/ExclusiveEvents";
 import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
-import { Fragment } from "react/cjs/react.development";
 
 class Home extends Component {
   render() {
@@ -26,12 +25,12 @@ class Home extends Component {
         <ComingSoon />
         <Categories />
         <TopSelling
-          concerts={this.state.concerts}
-          getConcerts={this.getConcerts}
-          sports={this.state.sports}
-          getSports={this.getSports}
-          artsandtheater={this.state.artsandtheater}
-          getArtsAndTheater={this.getArtsAndTheater}
+          concerts={this.props.concerts}
+          getConcerts={this.props.getConcerts}
+          sports={this.props.sports}
+          getSports={this.props.getSports}
+          artsandtheater={this.props.artsandtheater}
+          getArtsAndTheater={this.props.getArtsAndTheater}
         />
         <Amax />
         <ExclusiveEvents />)

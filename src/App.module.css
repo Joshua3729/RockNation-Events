@@ -130,6 +130,11 @@
   width: 100%;
   height: 200px;
 }
+.loading {
+  visibility: hidden;
+  overflow: hidden;
+  height: 100vh;
+}
 
 @media only screen and (max-width: 900px) {
   /*Tablets [601px -> 1200px]*/

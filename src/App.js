@@ -18,6 +18,7 @@ import MusicConcerts from "./Pages/Music Page/MusicConcerts";
 import ScrollToTop from "./util/ScrollToTop";
 import Aux from "./hoc/Auxiliary/Auxiliary";
 import FamilyPage from "./Pages/Family Page/FamilyPage";
+import LoadingModal from "./Components/Loading Modal/LoadingModal";
 
 class App extends Component {
   state = {
@@ -115,6 +116,15 @@ class App extends Component {
     artsAndTheaterLoading: true,
   };
   componentDidMount() {
+    this.setState({
+      concerts: null,
+      sports: null,
+      artsandtheater: null,
+      concertsLoading: true,
+      sportsLoading: true,
+      artsAndTheaterLoading: true,
+    });
+    console.log("Check this out");
     const fullname = localStorage.getItem("fullname");
     const token = localStorage.getItem("token");
     const expiryDate = localStorage.getItem("expiryDate");
@@ -350,7 +360,7 @@ class App extends Component {
       .then((resData) => {
         this.setState({
           concerts: resData.events,
-          // concertsLoading: false,
+          concertsLoading: false,
         });
       })
       .catch((err) => {
@@ -403,7 +413,7 @@ class App extends Component {
       this.state.artsAndTheaterLoading ||
       this.state.concertsLoading ||
       this.state.sportsLoading;
-
+    console.log(loading);
     let loginModal = this.state.needToSignUp ? (
       <div className={classes.logInModal}>
         <div className={classes.leftpane}>
@@ -646,6 +656,12 @@ class App extends Component {
               logout={this.logoutHandler}
               fullname={this.state.fullname}
               userImage={this.state.userImage}
+              artsandtheater={this.state.artsandtheater}
+              concerts={this.state.concerts}
+              sports={this.state.sports}
+              getArtsAndTheater={this.getArtsAndTheater}
+              getSports={this.getSports}
+              getConcerts={this.getConcerts}
             />
           )}
         />
@@ -803,6 +819,12 @@ class App extends Component {
                 logout={this.logoutHandler}
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
+                artsandtheater={this.state.artsandtheater}
+                concerts={this.state.concerts}
+                sports={this.state.sports}
+                getArtsAndTheater={this.getArtsAndTheater}
+                getSports={this.getSports}
+                getConcerts={this.getConcerts}
               />
             )}
           />
@@ -964,6 +986,7 @@ class App extends Component {
 
     return (
       <Aux>
+        {loading && <LoadingModal />}
         <Modal show={this.state.showModal} clicked={this.closeModalHandler}>
           {loginModal}
 
@@ -972,9 +995,10 @@ class App extends Component {
             <span style={{ marginLeft: "10px" }}> Khumalo Media House</span>
           </div>
         </Modal>
-        {routes}
-
-        <Footer />
+        <div className={loading ? classes.loading : null}>
+          {routes}
+          <Footer />
+        </div>
       </Aux>
     );
   }
