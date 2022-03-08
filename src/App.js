@@ -336,11 +336,6 @@ class App extends Component {
   };
 
   render() {
-    const loading =
-      this.state.artsAndTheaterLoading ||
-      this.state.concertsLoading ||
-      this.state.sportsLoading;
-    console.log(loading);
     let loginModal = this.state.needToSignUp ? (
       <div className={classes.logInModal}>
         <div className={classes.leftpane}>
@@ -741,12 +736,6 @@ class App extends Component {
                 logout={this.logoutHandler}
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
-                artsandtheater={this.state.artsandtheater}
-                concerts={this.state.concerts}
-                sports={this.state.sports}
-                getArtsAndTheater={this.getArtsAndTheater}
-                getSports={this.getSports}
-                getConcerts={this.getConcerts}
               />
             )}
           />
@@ -907,11 +896,8 @@ class App extends Component {
       );
     }
 
-    console.log(this.state.artsandtheater);
-
     return (
       <Aux>
-        {loading && <LoadingModal />}
         <Modal show={this.state.showModal} clicked={this.closeModalHandler}>
           {loginModal}
 
