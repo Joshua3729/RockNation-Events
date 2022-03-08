@@ -905,10 +905,9 @@ class App extends Component {
             <span style={{ marginLeft: "10px" }}> Khumalo Media House</span>
           </div>
         </Modal>
-        <div className={loading ? classes.loading : null}>
-          {routes}
-          <Footer />
-        </div>
+
+        {routes}
+        <Footer />
       </Aux>
     );
   }
