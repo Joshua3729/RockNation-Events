@@ -80,9 +80,6 @@ class MusicConcerts extends Component {
             <h2 className={classes.header}>All Concert Events (783)</h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
-              <div className={classes.AdCard}>
-                <video src={video} autoPlay loop muted />
-              </div>
             </div>
           </div>
         </section>
