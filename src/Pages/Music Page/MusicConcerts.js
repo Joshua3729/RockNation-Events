@@ -3,7 +3,7 @@ import classes from "./MusicConcerts.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
-import video from "../../Assets/Video/AD.mp4";
+import AdCard from "../../Components/AdCard/AdCard";
 
 class MusicConcerts extends Component {
   state = {
@@ -81,6 +81,7 @@ class MusicConcerts extends Component {
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
             </div>
+            <AdCard />
           </div>
         </section>
       </Fragment>
