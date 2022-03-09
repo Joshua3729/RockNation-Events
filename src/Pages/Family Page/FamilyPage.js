@@ -3,6 +3,7 @@ import classes from "./FamilyPage.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
+import AdCard from "../../Components/AdCard/AdCard";
 
 class FamilyPage extends Component {
   state = {
@@ -79,6 +80,7 @@ class FamilyPage extends Component {
             <h2 className={classes.header}>All Family Events (783)</h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
+              <AdCard />
             </div>
           </div>
         </section>
