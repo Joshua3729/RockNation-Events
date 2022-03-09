@@ -32,17 +32,6 @@
   grid-template-columns: 5fr 1fr;
   grid-gap: 50px;
 }
-.AdCard {
-  position: relative;
-  margin-left: 50px;
-  width: 300px;
-  height: 600px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-.AdCard img {
-  width: 100%;
-  height: 100%;
-}
 .backDrop {
   position: absolute;
   top: 0;
@@ -50,11 +39,4 @@
   background-color: rgba(38, 38, 38, 0.55);
   width: 100%;
   height: 100%;
-}
-.AdCard video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  /* position: fixed; */
-  z-index: 100;
 }
