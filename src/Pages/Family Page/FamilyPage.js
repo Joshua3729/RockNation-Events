@@ -3,7 +3,6 @@ import classes from "./FamilyPage.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
-import video from "../../Assets/Video/AD.mp4";
 
 class FamilyPage extends Component {
   state = {
