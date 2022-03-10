@@ -7,8 +7,6 @@ import AdCard from "../../Components/AdCard/AdCard";
 
 class MusicConcerts extends Component {
   state = {
-    artists: null,
-    eventslength: null,
     more: 12,
     events: null,
   };
