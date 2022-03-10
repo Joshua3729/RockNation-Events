@@ -10,7 +10,7 @@ class FamilyPage extends Component {
     artists: null,
     eventslength: null,
     more: 12,
-    events: null,
+    events: [],
   };
 
   componentDidMount = () => {
@@ -35,7 +35,7 @@ class FamilyPage extends Component {
   render() {
     let events = "loading";
 
-    if (this.state.events)
+    if (this.state.events.length > 0)
       events = this.state.events.map((event, i) => {
         return <EventInfo key={i} event={event} />;
       });
@@ -77,7 +77,9 @@ class FamilyPage extends Component {
             />
           </div>
           <div className={classes.mainContent}>
-            <h2 className={classes.header}>All Family Events (783)</h2>
+            <h2 className={classes.header}>
+              All Family Events ({this.state.events.length})
+            </h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
               <AdCard />
