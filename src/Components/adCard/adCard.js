@@ -1,4 +1,6 @@
 import React from "react";
+import classes from "./AdCard.module.css";
+import video from "../../Assets/Video/AD.mp4";
 
 const adCard = (props) => {
   return (
