@@ -3,8 +3,8 @@ import classes from "./SportsPage.module.css";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
-import video from "../../Assets/Video/AD.mp4";
 import sports from "../../Components/Image/sports.png";
+import AdCard from "../../Components/AdCard/AdCard";
 
 class ComedyPage extends Component {
   state = {
@@ -89,9 +89,7 @@ class ComedyPage extends Component {
             </h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
-              <div className={classes.AdCard}>
-                <video src={video} autoPlay loop muted />
-              </div>
+              <AdCard />
             </div>
           </div>
         </section>
