@@ -120,6 +120,7 @@ class Home extends Component {
           concerts={this.state.concerts}
           sports={this.state.sports}
           artsandtheater={this.state.artsandtheater}
+          family={this.state.family}
         />
         <Amax />
         <ExclusiveEvents />
