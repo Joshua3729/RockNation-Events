@@ -26,7 +26,9 @@ class topSelling extends Component {
         }
       });
       EventsFamily = this.props.family.map((event, i) => {
-        return <EventCard key={i} event={event} />;
+        if (i < 8) {
+          return <EventCard key={i} event={event} />;
+        }
       });
       Sports = this.props.sports.map((event, i) => {
         if (i < 8) {
