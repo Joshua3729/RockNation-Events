@@ -75,27 +75,24 @@ class Home extends Component {
         this.setState({ artsAndTheaterLoading: false });
         console.log(err);
       });
-    componentDidMount = () => {
-      fetch("http://localhost:5000/feed/events/family")
-        .then((res) => {
-          if (res.status !== 200) {
-            throw new Error("Failed to fetch family.");
-          }
+    fetch("http://localhost:5000/feed/events/family")
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to fetch family.");
+        }
 
-          return res.json();
-        })
-        .then((resData) => {
-          console.log(resData);
-          this.setState({
-            events: resData.events,
-            familyLoading: false,
-          });
-        })
-        .catch((err) => {
-          this.setState({ familyLoading: false });
-          console.log(err);
+        return res.json();
+      })
+      .then((resData) => {
+        this.setState({
+          family: resData.events,
+          familyLoading: false,
         });
-    };
+      })
+      .catch((err) => {
+        this.setState({ familyLoading: false });
+        console.log(err);
+      });
   }
   render() {
     const loading =
