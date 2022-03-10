@@ -8,7 +8,7 @@ import sports from "../../Components/Image/sports.png";
 
 class ComedyPage extends Component {
   state = {
-    events: null,
+    events: [],
     eventsLoading: null,
     showModal: true,
   };
@@ -35,7 +35,7 @@ class ComedyPage extends Component {
   render() {
     let events = "loading";
 
-    if (this.state.events)
+    if (this.state.events.length > 0)
       events = this.state.events.map((event, i) => {
         return <EventInfo key={i} event={event} />;
       });
@@ -84,7 +84,9 @@ class ComedyPage extends Component {
           </div>
           <div className={classes.mainContent}>
             <button onClick={this.props.goToHome}>Yes</button>
-            <h2 className={classes.header}>All Sports Events (783)</h2>
+            <h2 className={classes.header}>
+              All Sports Events ({this.state.events.length})
+            </h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
               <div className={classes.AdCard}>
