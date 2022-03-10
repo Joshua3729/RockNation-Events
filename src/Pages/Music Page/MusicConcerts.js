@@ -3,7 +3,7 @@ import classes from "./MusicConcerts.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
-import AdCard from "../../Components/adCard/AdCard";
+import AdCard from "../../Components/AdCard/AdCard";
 
 class MusicConcerts extends Component {
   state = {
