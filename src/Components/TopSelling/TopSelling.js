@@ -11,7 +11,12 @@ class topSelling extends Component {
     let EventsArtsAndTheater = null;
     let Sports = null;
     let EventsFamily = null;
-    if (this.props.concerts && this.props.artsandtheater && this.props.sports) {
+    if (
+      this.props.concerts &&
+      this.props.artsandtheater &&
+      this.props.sports &&
+      this.props.family
+    ) {
       cards = this.props.concerts.map((event, i) => {
         return <EventCard event={event} />;
       });
