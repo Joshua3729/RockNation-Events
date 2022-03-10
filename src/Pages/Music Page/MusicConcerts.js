@@ -8,7 +8,7 @@ import AdCard from "../../Components/AdCard/AdCard";
 class MusicConcerts extends Component {
   state = {
     more: 12,
-    events: null,
+    events: [],
   };
 
   componentDidMount = () => {
@@ -33,7 +33,7 @@ class MusicConcerts extends Component {
   render() {
     let events = "loading";
 
-    if (this.state.events)
+    if (this.state.events.length > 0)
       events = this.state.events.map((event, i) => {
         return <EventInfo key={i} event={event} />;
       });
@@ -75,7 +75,7 @@ class MusicConcerts extends Component {
             />
           </div>
           <div className={classes.mainContent}>
-            <h2 className={classes.header}>All Concert Events (783)</h2>
+            <h2 className={classes.header}>All Concert Events </h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
             </div>
