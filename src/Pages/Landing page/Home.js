@@ -100,7 +100,8 @@ class Home extends Component {
     const loading =
       this.state.artsAndTheaterLoading ||
       this.state.concertsLoading ||
-      this.state.sportsLoading;
+      this.state.sportsLoading ||
+      this.state.familyLoading;
     return (
       <Fragment>
         {loading && <LoadingModal />}
