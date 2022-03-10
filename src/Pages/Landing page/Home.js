@@ -11,6 +11,8 @@ import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 
 class Home extends Component {
   state = {
+    family: null,
+    familyLoading: true,
     concerts: null,
     sports: null,
     artsandtheater: null,
