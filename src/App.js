@@ -136,6 +136,25 @@ class App extends Component {
     this.setAutoLogout(remainingMilliseconds);
   }
 
+  searchHandler = (query) => {
+    fetch(`localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`)
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          events: resData.events,
+          eventsLoading: false,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
+
   openModalHandler = () => {
     this.setState({ showModal: true });
   };
