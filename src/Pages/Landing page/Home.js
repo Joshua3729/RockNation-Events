@@ -8,6 +8,7 @@ import ExclusiveEvents from "../../Components/ExclusiveEvents/ExclusiveEvents";
 import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
+import classes from "./Home.module.css";
 
 class Home extends Component {
   state = {
@@ -105,26 +106,28 @@ class Home extends Component {
     return (
       <Fragment>
         {loading && <LoadingModal />}
-        <Navigation
-          scrollEffect={true}
-          searchBar={false}
-          isAuth={this.props.isAuth}
-          logout={this.props.logout}
-          login={this.props.loginModal}
-          fullname={this.props.fullname}
-          userImage={this.props.userImage}
-        />
-        <Hero />
-        <ComingSoon />
-        <Categories />
-        <TopSelling
-          concerts={this.state.concerts}
-          sports={this.state.sports}
-          artsandtheater={this.state.artsandtheater}
-          family={this.state.family}
-        />
-        <Amax />
-        <ExclusiveEvents />
+        <div className={this.state.loading ? classes.loading : null}>
+          <Navigation
+            scrollEffect={true}
+            searchBar={false}
+            isAuth={this.props.isAuth}
+            logout={this.props.logout}
+            login={this.props.loginModal}
+            fullname={this.props.fullname}
+            userImage={this.props.userImage}
+          />
+          <Hero />
+          <ComingSoon />
+          <Categories />
+          <TopSelling
+            concerts={this.state.concerts}
+            sports={this.state.sports}
+            artsandtheater={this.state.artsandtheater}
+            family={this.state.family}
+          />
+          <Amax />
+          <ExclusiveEvents />
+        </div>
       </Fragment>
     );
   }
