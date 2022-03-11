@@ -133,7 +133,10 @@ class Navigation extends Component {
             </div>
             {(this.props.searchBar || this.state.scroll) && (
               <div className={classes.Wrapper}>
-                <form id="form">
+                <form
+                  id="form"
+                  onSubmit={(e) => this.props.search(e).bind(this, e)}
+                >
                   <input
                     type="text"
                     placeholder="Search for events by your favourite artists"
@@ -143,7 +146,7 @@ class Navigation extends Component {
                         ? classes.searchPlaceHolder1
                         : classes.searchPlaceHolder2,
                     ].join(" ")}
-                    id="name"
+                    id="query"
                   />
                   <button className={classes.SearchIcon}>
                     <img

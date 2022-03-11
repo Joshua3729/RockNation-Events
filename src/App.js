@@ -107,6 +107,7 @@ class App extends Component {
     fullname: null,
     imagePreview: null,
     userImage: null,
+    searchresult: null,
   };
   componentDidMount() {
     console.log("Check this out");
@@ -136,23 +137,24 @@ class App extends Component {
     this.setAutoLogout(remainingMilliseconds);
   }
 
-  searchHandler = (query) => {
-    fetch(`localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`)
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to search.");
-        }
+  searchHandler = (e, query) => {
+    e.preventDefault();
+    console.log(query.target.query);
+    // fetch(`localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`)
+    //   .then((res) => {
+    //     if (res.status !== 200) {
+    //       throw new Error("Failed to search.");
+    //     }
 
-        return res.json();
-      })
-      .then((resData) => {
-        console.log(resData);
-        this.setState({
-          events: resData.events,
-          eventsLoading: false,
-        });
-      })
-      .catch((err) => console.log(err));
+    //     return res.json();
+    //   })
+    //   .then((resData) => {
+    //     console.log(resData);
+    //     this.setState({
+    //       searchresult: resData,
+    //     });
+    //   })
+    //   .catch((err) => console.log(err));
   };
 
   openModalHandler = () => {
@@ -596,6 +598,8 @@ class App extends Component {
               logout={this.logoutHandler}
               fullname={this.state.fullname}
               userImage={this.state.userImage}
+              searchResult={this.state.searchresult}
+              search={this.searchHandler}
             />
           )}
         />
@@ -754,6 +758,7 @@ class App extends Component {
                 logout={this.logoutHandler}
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
+                searchResult={this.state.searchresult}
               />
             )}
           />

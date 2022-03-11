@@ -115,6 +115,7 @@ class Home extends Component {
             login={this.props.loginModal}
             fullname={this.props.fullname}
             userImage={this.props.userImage}
+            search={this.props.search}
           />
           <Hero />
           <ComingSoon />
