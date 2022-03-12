@@ -1,7 +1,12 @@
 import React, { Component, Fragment } from "react";
 import EventSearcher from "./Components/EventSearcher/EventSearcher";
 import Home from "./Pages/Landing page/Home";
-import { Route, BrowserRouter as Router, withRouter } from "react-router-dom";
+import {
+  Route,
+  BrowserRouter as Router,
+  withRouter,
+  Redirect,
+} from "react-router-dom";
 import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
@@ -108,6 +113,7 @@ class App extends Component {
     imagePreview: null,
     userImage: null,
     searchresult: [],
+    search: false,
   };
   componentDidMount() {
     console.log("Check this out");
@@ -140,6 +146,11 @@ class App extends Component {
   searchHandler = (e) => {
     e.preventDefault();
     const query = e.target.query.value;
+    this.setState({ search: true });
+    this.props.history.push({
+      pathname: "/",
+      search: "?q=" + query,
+    });
     fetch(
       `http://localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`
     )
@@ -154,10 +165,6 @@ class App extends Component {
         console.log(resData);
         this.setState({
           searchresult: resData,
-        });
-        this.props.history.push({
-          pathname: "/events/",
-          search: "?q=" + query,
         });
       })
       .catch((err) => console.log(err));
@@ -592,23 +599,43 @@ class App extends Component {
     let routes = (
       <Router>
         <ScrollToTop />
-        <Route
-          path="/"
-          exact
-          render={(props) => (
-            <Home
-              {...props}
-              loginModal={this.openModalHandler}
-              isAuth={this.state.isAuth}
-              token={this.state.token}
-              logout={this.logoutHandler}
-              fullname={this.state.fullname}
-              userImage={this.state.userImage}
-              searchResult={this.state.searchresult}
-              search={this.searchHandler}
-            />
-          )}
-        />
+        {this.state.search ? (
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <SearchResults
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+                goToHome={this.homeHandler}
+                searchresult={this.state.searchresult}
+              />
+            )}
+          />
+        ) : (
+          <Route
+            path="/"
+            exact
+            render={(props) => (
+              <Home
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+                searchResult={this.state.searchresult}
+                search={this.searchHandler}
+              />
+            )}
+          />
+        )}
         <Route
           path="/eventmanager"
           exact
@@ -670,23 +697,7 @@ class App extends Component {
             />
           )}
         />
-        <Route
-          path="/events"
-          exact
-          render={(props) => (
-            <SearchResults
-              {...props}
-              loginModal={this.openModalHandler}
-              isAuth={this.state.isAuth}
-              token={this.state.token}
-              logout={this.logoutHandler}
-              fullname={this.state.fullname}
-              userImage={this.state.userImage}
-              goToHome={this.homeHandler}
-              searchresult={this.state.searchresult}
-            />
-          )}
-        />
+
         <Route
           path="/artsandtheater"
           exact
@@ -769,22 +780,43 @@ class App extends Component {
       routes = (
         <Router>
           <ScrollToTop />
-          <Route
-            path="/"
-            exact
-            render={(props) => (
-              <Home
-                {...props}
-                loginModal={this.openModalHandler}
-                isAuth={this.state.isAuth}
-                token={this.state.token}
-                logout={this.logoutHandler}
-                fullname={this.state.fullname}
-                userImage={this.state.userImage}
-                searchResult={this.state.searchresult}
-              />
-            )}
-          />
+          {this.state.search ? (
+            <Route
+              path="/"
+              exact
+              render={(props) => (
+                <SearchResults
+                  {...props}
+                  loginModal={this.openModalHandler}
+                  isAuth={this.state.isAuth}
+                  token={this.state.token}
+                  logout={this.logoutHandler}
+                  fullname={this.state.fullname}
+                  userImage={this.state.userImage}
+                  goToHome={this.homeHandler}
+                  searchresult={this.state.searchresult}
+                />
+              )}
+            />
+          ) : (
+            <Route
+              path="/"
+              exact
+              render={(props) => (
+                <Home
+                  {...props}
+                  loginModal={this.openModalHandler}
+                  isAuth={this.state.isAuth}
+                  token={this.state.token}
+                  logout={this.logoutHandler}
+                  fullname={this.state.fullname}
+                  userImage={this.state.userImage}
+                  searchResult={this.state.searchresult}
+                  search={this.searchHandler}
+                />
+              )}
+            />
+          )}
           <Route
             path="/eventmanager"
             exact
