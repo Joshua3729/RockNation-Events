@@ -116,6 +116,7 @@ class Home extends Component {
             fullname={this.props.fullname}
             userImage={this.props.userImage}
             search={this.props.search}
+            home={this.props.goToHome}
           />
           <Hero />
           <ComingSoon />

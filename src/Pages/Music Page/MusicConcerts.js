@@ -47,6 +47,7 @@ class MusicConcerts extends Component {
           login={this.props.loginModal}
           fullname={this.props.fullname}
           userImage={this.props.userImage}
+          home={this.props.goToHome}
         />
         <section className={classes.MusicConcerts}>
           <div className={classes.banner}>
