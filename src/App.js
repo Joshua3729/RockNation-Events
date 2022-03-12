@@ -155,6 +155,11 @@ class App extends Component {
         this.setState({
           searchresult: resData,
         });
+        this.props.history.push({
+          pathname: "/events/",
+          search: "?q=" + query,
+        });
+        c;
       })
       .catch((err) => console.log(err));
   };
@@ -667,7 +672,7 @@ class App extends Component {
           )}
         />
         <Route
-          path="/search"
+          path="/events"
           exact
           render={(props) => (
             <SearchResults
@@ -679,6 +684,7 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
               goToHome={this.homeHandler}
+              searchresult={this.state.searchresult}
             />
           )}
         />
@@ -842,7 +848,7 @@ class App extends Component {
             )}
           />
           <Route
-            path="/search"
+            path="/events"
             exact
             render={(props) => (
               <SearchResults
