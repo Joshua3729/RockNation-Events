@@ -18,7 +18,7 @@ import MusicConcerts from "./Pages/Music Page/MusicConcerts";
 import ScrollToTop from "./util/ScrollToTop";
 import Aux from "./hoc/Auxiliary/Auxiliary";
 import FamilyPage from "./Pages/Family Page/FamilyPage";
-
+import SearchResults from "./Pages/Search Results/SearchResults";
 class App extends Component {
   state = {
     signupForm: {
@@ -667,6 +667,22 @@ class App extends Component {
           )}
         />
         <Route
+          path="/search"
+          exact
+          render={(props) => (
+            <SearchResults
+              {...props}
+              loginModal={this.openModalHandler}
+              isAuth={this.state.isAuth}
+              token={this.state.token}
+              logout={this.logoutHandler}
+              fullname={this.state.fullname}
+              userImage={this.state.userImage}
+              goToHome={this.homeHandler}
+            />
+          )}
+        />
+        <Route
           path="/artsandtheater"
           exact
           render={(props) => (
@@ -814,6 +830,22 @@ class App extends Component {
             exact
             render={(props) => (
               <SportsPage
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+                goToHome={this.homeHandler}
+              />
+            )}
+          />
+          <Route
+            path="/search"
+            exact
+            render={(props) => (
+              <SearchResults
                 {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
