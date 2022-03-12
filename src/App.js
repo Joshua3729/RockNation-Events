@@ -860,6 +860,7 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
                 goToHome={this.homeHandler}
+                searchresult={this.state.searchresult}
               />
             )}
           />
