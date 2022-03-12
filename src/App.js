@@ -716,6 +716,7 @@ class App extends Component {
               logout={this.logoutHandler}
               fullname={this.state.fullname}
               userImage={this.state.userImage}
+              goToHome={this.homeHandler}
             />
           )}
         />
@@ -730,6 +731,7 @@ class App extends Component {
               token={this.state.token}
               logout={this.logoutHandler}
               fullname={this.state.fullname}
+              goToHome={this.homeHandler}
               userImage={this.state.userImage}
             />
           )}
@@ -745,6 +747,7 @@ class App extends Component {
               token={this.state.token}
               logout={this.logoutHandler}
               fullname={this.state.fullname}
+              goToHome={this.homeHandler}
               userImage={this.state.userImage}
             />
           )}
@@ -760,6 +763,7 @@ class App extends Component {
               token={this.state.token}
               logout={this.logoutHandler}
               fullname={this.state.fullname}
+              goToHome={this.homeHandler}
               userImage={this.state.userImage}
             />
           )}
@@ -775,6 +779,7 @@ class App extends Component {
               token={this.state.token}
               logout={this.logoutHandler}
               fullname={this.state.fullname}
+              goToHome={this.homeHandler}
               userImage={this.state.userImage}
             />
           )}
@@ -819,7 +824,7 @@ class App extends Component {
                   userImage={this.state.userImage}
                   searchResult={this.state.searchresult}
                   search={this.searchHandler}
-                  homeHandler={this.homeHandler}
+                  goToHome={this.homeHandler}
                 />
               )}
             />
@@ -885,23 +890,7 @@ class App extends Component {
               />
             )}
           />
-          <Route
-            path="/events"
-            exact
-            render={(props) => (
-              <SearchResults
-                {...props}
-                loginModal={this.openModalHandler}
-                isAuth={this.state.isAuth}
-                token={this.state.token}
-                logout={this.logoutHandler}
-                fullname={this.state.fullname}
-                userImage={this.state.userImage}
-                goToHome={this.homeHandler}
-                searchresult={this.state.searchresult}
-              />
-            )}
-          />
+
           <Route
             path="/artsandtheater"
             exact
@@ -914,6 +903,7 @@ class App extends Component {
                 logout={this.logoutHandler}
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
+                goToHome={this.homeHandler}
               />
             )}
           />
@@ -976,6 +966,7 @@ class App extends Component {
                 logout={this.logoutHandler}
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
+                goToHome={this.homeHandler}
               />
             )}
           />
@@ -991,6 +982,7 @@ class App extends Component {
                 logout={this.logoutHandler}
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
+                goToHome={this.homeHandler}
               />
             )}
           />
