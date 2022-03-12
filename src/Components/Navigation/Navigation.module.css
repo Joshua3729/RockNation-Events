@@ -235,8 +235,13 @@
 .Logo {
   margin-right: 20px;
 }
-.Logo a {
-  text-decoration: none;
+.Logo button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.Logo button:active {
+  outline: none;
 }
 .sideTray {
   position: fixed;

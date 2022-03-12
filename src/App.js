@@ -147,7 +147,7 @@ class App extends Component {
     this.props.history.push({
       pathname: "/",
     });
-    alert("yep");
+    this.props.history.go();
   };
   searchHandler = (e) => {
     e.preventDefault();
@@ -800,7 +800,6 @@ class App extends Component {
                   fullname={this.state.fullname}
                   userImage={this.state.userImage}
                   goToHome={this.homeHandler}
-                  searchresult={this.state.searchresult}
                   searchresult={this.state.searchresult}
                 />
               )}
