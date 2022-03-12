@@ -10,6 +10,8 @@ class SearchResults extends Component {
   };
 
   componentDidMount = () => {
+    const name = this.props.match?.params;
+    console.log(name);
     fetch("http://localhost:5000/feed/events/concerts")
       .then((res) => {
         if (res.status !== 200) {

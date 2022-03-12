@@ -116,7 +116,6 @@ class App extends Component {
     search: false,
   };
   componentDidMount() {
-    console.log("Check this out");
     const fullname = localStorage.getItem("fullname");
     const token = localStorage.getItem("token");
     const expiryDate = localStorage.getItem("expiryDate");
@@ -152,28 +151,29 @@ class App extends Component {
   searchHandler = (e) => {
     e.preventDefault();
     const query = e.target.query.value;
-    this.setState({ search: true });
     this.props.history.push({
-      pathname: "/",
+      pathname: "/events/",
       search: "?q=" + query,
     });
-    fetch(
-      `http://localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`
-    )
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to search.");
-        }
+    this.props.history.go();
 
-        return res.json();
-      })
-      .then((resData) => {
-        console.log(resData);
-        this.setState({
-          searchresult: resData,
-        });
-      })
-      .catch((err) => console.log(err));
+    // fetch(
+    //   `http://localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`
+    // )
+    //   .then((res) => {
+    //     if (res.status !== 200) {
+    //       throw new Error("Failed to search.");
+    //     }
+
+    //     return res.json();
+    //   })
+    //   .then((resData) => {
+    //     console.log(resData);
+    //     this.setState({
+    //       searchresult: resData,
+    //     });
+    //   })
+    //   .catch((err) => console.log(err));
   };
 
   openModalHandler = () => {
@@ -658,6 +658,23 @@ class App extends Component {
           )}
         />
         <Route
+          path="/events"
+          exact
+          render={(props) => (
+            <SearchResults
+              {...props}
+              loginModal={this.openModalHandler}
+              isAuth={this.state.isAuth}
+              token={this.state.token}
+              logout={this.logoutHandler}
+              fullname={this.state.fullname}
+              userImage={this.state.userImage}
+              goToHome={this.homeHandler}
+              searchresult={this.state.searchresult}
+            />
+          )}
+        />
+        <Route
           path="/eventmanager/:name"
           exact
           render={(props) => (
@@ -700,6 +717,7 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
               goToHome={this.homeHandler}
+              search={this.searchHandler}
             />
           )}
         />
@@ -717,6 +735,7 @@ class App extends Component {
               fullname={this.state.fullname}
               userImage={this.state.userImage}
               goToHome={this.homeHandler}
+              search={this.searchHandler}
             />
           )}
         />
@@ -765,6 +784,7 @@ class App extends Component {
               fullname={this.state.fullname}
               goToHome={this.homeHandler}
               userImage={this.state.userImage}
+              search={this.searchHandler}
             />
           )}
         />
@@ -781,6 +801,7 @@ class App extends Component {
               fullname={this.state.fullname}
               goToHome={this.homeHandler}
               userImage={this.state.userImage}
+              search={this.searchHandler}
             />
           )}
         />
@@ -988,6 +1009,23 @@ class App extends Component {
                 userImage={this.state.userImage}
                 goToHome={this.homeHandler}
                 search={this.searchHandler}
+              />
+            )}
+          />
+          <Route
+            path="/events"
+            exact
+            render={(props) => (
+              <SearchResults
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+                goToHome={this.homeHandler}
+                searchresult={this.state.searchresult}
               />
             )}
           />
