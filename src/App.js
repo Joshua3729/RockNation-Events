@@ -142,7 +142,13 @@ class App extends Component {
     });
     this.setAutoLogout(remainingMilliseconds);
   }
-
+  homeHandler = () => {
+    this.setState({ search: false });
+    this.props.history.push({
+      pathname: "/",
+    });
+    alert("yep");
+  };
   searchHandler = (e) => {
     e.preventDefault();
     const query = e.target.query.value;
@@ -795,6 +801,7 @@ class App extends Component {
                   userImage={this.state.userImage}
                   goToHome={this.homeHandler}
                   searchresult={this.state.searchresult}
+                  searchresult={this.state.searchresult}
                 />
               )}
             />
@@ -813,6 +820,7 @@ class App extends Component {
                   userImage={this.state.userImage}
                   searchResult={this.state.searchresult}
                   search={this.searchHandler}
+                  homeHandler={this.homeHandler}
                 />
               )}
             />
