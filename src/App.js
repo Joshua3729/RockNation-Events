@@ -137,24 +137,26 @@ class App extends Component {
     this.setAutoLogout(remainingMilliseconds);
   }
 
-  searchHandler = (e, query) => {
+  searchHandler = (e) => {
     e.preventDefault();
-    console.log(query.target.query);
-    // fetch(`localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`)
-    //   .then((res) => {
-    //     if (res.status !== 200) {
-    //       throw new Error("Failed to search.");
-    //     }
+    const query = e.target.query.value;
+    fetch(
+      `http://localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
 
-    //     return res.json();
-    //   })
-    //   .then((resData) => {
-    //     console.log(resData);
-    //     this.setState({
-    //       searchresult: resData,
-    //     });
-    //   })
-    //   .catch((err) => console.log(err));
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          searchresult: resData,
+        });
+      })
+      .catch((err) => console.log(err));
   };
 
   openModalHandler = () => {
