@@ -887,6 +887,7 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
                 goToHome={this.homeHandler}
+                search={this.searchHandler}
               />
             )}
           />
@@ -904,6 +905,7 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
                 goToHome={this.homeHandler}
+                search={this.searchHandler}
               />
             )}
           />
@@ -918,6 +920,7 @@ class App extends Component {
                 token={this.state.token}
                 logout={this.logoutHandler}
                 fullname={this.state.fullname}
+                search={this.searchHandler}
                 userImage={this.state.userImage}
               />
             )}
@@ -967,6 +970,7 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
                 goToHome={this.homeHandler}
+                search={this.searchHandler}
               />
             )}
           />
@@ -983,6 +987,7 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
                 goToHome={this.homeHandler}
+                search={this.searchHandler}
               />
             )}
           />

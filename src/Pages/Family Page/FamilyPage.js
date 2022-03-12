@@ -49,6 +49,8 @@ class FamilyPage extends Component {
           login={this.props.loginModal}
           fullname={this.props.fullname}
           userImage={this.props.userImage}
+          home={this.props.goToHome}
+          search={this.props.search}
         />
         <section className={classes.MusicConcerts}>
           <div className={classes.banner}>
