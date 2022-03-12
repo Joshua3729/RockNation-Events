@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react";
-import classes from "./MusicConcerts.module.css";
+import classes from "./SearchResults.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import AdCard from "../../Components/AdCard/AdCard";
 
-class MusicConcerts extends Component {
+class SearchResults extends Component {
   state = {
     events: [],
   };
@@ -63,4 +63,4 @@ class MusicConcerts extends Component {
   }
 }
 
-export default MusicConcerts;
+export default SearchResults;
