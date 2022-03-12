@@ -32,7 +32,7 @@ class MusicConcerts extends Component {
     let events = "loading";
 
     if (this.state.events.length > 0)
-      events = this.state.events.map((event, i) => {
+      events = this.props.results.map((event, i) => {
         return <EventInfo key={i} event={event} />;
       });
     return (
