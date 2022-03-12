@@ -1,0 +1,47 @@
+.MusicConcerts {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+}
+.banner {
+  position: relative;
+  /* background-image: url("https://imagesvc.meredithcorp.io/v3/jumpstartpure/image?url=https://static.onecms.io/wp-content/uploads/sites/6/2021/11/17/GettyImages-1313060346.jpg&w=1280&h=720&q=90&c=cc"); */
+  /* background-position: center; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: black;
+  width: 100%;
+  height: 70vh;
+}
+
+.header {
+  margin-bottom: 50px;
+  font-weight: 500;
+  color: rgb(38, 38, 38);
+}
+.mainContent {
+  padding: 50px;
+}
+
+.eventsWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 50px;
+}
+
+.backDrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(38, 38, 38, 0.55);
+  width: 100%;
+  height: 100%;
+}
+.AdCard video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  /* position: fixed; */
+  z-index: 100;
+}
