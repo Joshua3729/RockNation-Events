@@ -31,8 +31,8 @@ class SearchResults extends Component {
   render() {
     let events = "loading";
 
-    if (this.state.events.length > 0)
-      events = this.props.results.map((event, i) => {
+    if (this.props.searchresult.length > 0)
+      events = this.props.searchresult.map((event, i) => {
         return <EventInfo key={i} event={event} />;
       });
     return (

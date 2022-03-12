@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import EventSearcher from "./Components/EventSearcher/EventSearcher";
 import Home from "./Pages/Landing page/Home";
-import { Route, BrowserRouter as Router, Redirect } from "react-router-dom";
+import { Route, BrowserRouter as Router, withRouter } from "react-router-dom";
 import TicketPage from "./Pages/ticket page/TicketPage";
 import Modal from "./Components/Modal/Modal";
 import classes from "./App.module.css";
@@ -107,7 +107,7 @@ class App extends Component {
     fullname: null,
     imagePreview: null,
     userImage: null,
-    searchresult: null,
+    searchresult: [],
   };
   componentDidMount() {
     console.log("Check this out");
@@ -159,7 +159,6 @@ class App extends Component {
           pathname: "/events/",
           search: "?q=" + query,
         });
-        c;
       })
       .catch((err) => console.log(err));
   };
@@ -978,4 +977,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
