@@ -69,7 +69,8 @@ class SearchResults extends Component {
           <div className={classes.banner}>
             <div className={classes.resultsHeader}>
               <h1>
-                We found {resultsLength} matches for "{query}"
+                We found {this.state.resultsLength} matches for "
+                {this.state.query}"
               </h1>
             </div>
           </div>

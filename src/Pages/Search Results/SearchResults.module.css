@@ -49,3 +49,8 @@
   /* position: fixed; */
   z-index: 100;
 }
+.resultsHeader {
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+}
