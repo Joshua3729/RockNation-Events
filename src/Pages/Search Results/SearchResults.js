@@ -9,6 +9,7 @@ class SearchResults extends Component {
   state = {
     searchresult: null,
     resultsLength: null,
+    query: null,
   };
 
   componentDidMount = () => {
@@ -18,6 +19,7 @@ class SearchResults extends Component {
       queryName = param[1];
     }
     console.log(queryName);
+    this.setState({ query: queryName });
     fetch(
       `http://localhost:5000/feed/artist?name=${queryName
         .split(" ")
@@ -64,7 +66,13 @@ class SearchResults extends Component {
           search={this.props.search}
         />
         <section className={classes.MusicConcerts}>
-          <div className={classes.banner}></div>
+          <div className={classes.banner}>
+            <div className={classes.resultsHeader}>
+              <h1>
+                We found {resultsLength} matches for "{query}"
+              </h1>
+            </div>
+          </div>
           <div className={classes.mainContent}>
             <h2 className={classes.header}>
               Search results: ({this.state.resultsLength})
