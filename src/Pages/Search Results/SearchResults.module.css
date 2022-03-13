@@ -51,6 +51,14 @@
 }
 .resultsHeader {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   left: 50px;
+  color: white;
+  font-size: 35px;
+}
+.resultsHeader h1 {
+  font-weight: 300;
+}
+.resultsHeader h1 span {
+  font-weight: 500;
 }
