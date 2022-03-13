@@ -75,14 +75,14 @@ class SearchResults extends Component {
             </div>
           </div>
           <div className={classes.mainContent}>
-            <div className={classes.categoryWrapper}>
-              <div className={classes.category_item}>Artists & Teams ()</div>
-              <div className={classes.category_item}>Events ()</div>
-              <div className={classes.category_item}>Venues ()</div>
+            <div className={classes.wrapper}>
+              <div className={classes.categoryWrapper}>
+                <div className={classes.category_item}>Artists & Teams ()</div>
+                <div className={classes.category_item}>Events ()</div>
+                <div className={classes.category_item}>Venues ()</div>
+              </div>
             </div>
-            <h2 className={classes.header}>
-              Search results: ({this.state.resultsLength})
-            </h2>
+
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
             </div>
