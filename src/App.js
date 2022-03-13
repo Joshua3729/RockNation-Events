@@ -153,7 +153,7 @@ class App extends Component {
     const query = e.target.query.value;
     this.props.history.push({
       pathname: "/events/",
-      search: "?q=" + query,
+      search: "?" + query,
     });
     this.props.history.go();
 
@@ -658,7 +658,7 @@ class App extends Component {
           )}
         />
         <Route
-          path="/events"
+          path="/events/:query"
           exact
           render={(props) => (
             <SearchResults
@@ -802,6 +802,23 @@ class App extends Component {
               goToHome={this.homeHandler}
               userImage={this.state.userImage}
               search={this.searchHandler}
+            />
+          )}
+        />
+        <Route
+          path="/events"
+          exact
+          render={(props) => (
+            <SearchResults
+              {...props}
+              loginModal={this.openModalHandler}
+              isAuth={this.state.isAuth}
+              token={this.state.token}
+              logout={this.logoutHandler}
+              fullname={this.state.fullname}
+              userImage={this.state.userImage}
+              goToHome={this.homeHandler}
+              searchresult={this.state.searchresult}
             />
           )}
         />
@@ -1012,6 +1029,7 @@ class App extends Component {
               />
             )}
           />
+
           <Route
             path="/events"
             exact

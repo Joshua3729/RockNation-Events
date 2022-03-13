@@ -3,6 +3,7 @@ import classes from "./SearchResults.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import AdCard from "../../Components/AdCard/AdCard";
+import { withRouter } from "react-router-dom";
 
 class SearchResults extends Component {
   state = {
@@ -10,8 +11,12 @@ class SearchResults extends Component {
   };
 
   componentDidMount = () => {
-    const name = this.props.match?.params;
-    console.log(name);
+    const query = new URLSearchParams(this.props.location.search);
+    let queryName;
+    for (let param of query.entries()) {
+      queryName = param[0];
+    }
+    console.log(queryName);
     fetch("http://localhost:5000/feed/events/concerts")
       .then((res) => {
         if (res.status !== 200) {
@@ -66,4 +71,4 @@ class SearchResults extends Component {
   }
 }
 
-export default SearchResults;
+export default withRouter(SearchResults);
