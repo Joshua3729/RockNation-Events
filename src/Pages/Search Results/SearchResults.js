@@ -10,6 +10,7 @@ class SearchResults extends Component {
     searchresult: null,
     resultsLength: null,
     query: null,
+    tab: "artists",
   };
 
   componentDidMount = () => {
@@ -41,6 +42,9 @@ class SearchResults extends Component {
       })
       .catch((err) => console.log(err));
   };
+  tabChangeHandler = (tabName) => {
+    this.setState({ tab: tabName });
+  };
 
   render() {
     let events = "loading";
@@ -70,16 +74,40 @@ class SearchResults extends Component {
             <div className={classes.resultsHeader}>
               <h1>
                 We found {this.state.resultsLength} match(es) for "
-                <span>{this.state.query}</span> "
+                <span>{this.state.query}</span>"
               </h1>
             </div>
           </div>
           <div className={classes.mainContent}>
             <div className={classes.wrapper}>
               <div className={classes.categoryWrapper}>
-                <div className={classes.category_item}>Artists & Teams ()</div>
-                <div className={classes.category_item}>Events ()</div>
-                <div className={classes.category_item}>Venues ()</div>
+                <div
+                  className={[
+                    classes.category_item,
+                    this.state.tab == "artists" ? classes.active : null,
+                  ].join(" ")}
+                  onClick={this.tabChangeHandler.bind(this, "artists")}
+                >
+                  Artists & Teams ()
+                </div>
+                <div
+                  className={[
+                    classes.category_item,
+                    this.state.tab == "events" ? classes.active : null,
+                  ].join(" ")}
+                  onClick={this.tabChangeHandler.bind(this, "events")}
+                >
+                  Events ()
+                </div>
+                <div
+                  className={[
+                    classes.category_item,
+                    this.state.tab == "venues" ? classes.active : null,
+                  ].join(" ")}
+                  onClick={this.tabChangeHandler.bind(this, "venues")}
+                >
+                  Venues ()
+                </div>
               </div>
             </div>
 
