@@ -1,0 +1,24 @@
+.event {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  grid-gap: 20px;
+  height: 80px;
+  /* box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%); */
+  border-bottom: solid 1px lightgray;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+.eventImg {
+  width: 100%;
+  height: 100%;
+  /* display: none; */
+}
+.imgWrapper {
+  width: 100%;
+  height: calc(80px - 20px);
+}
+.date,
+.eventName {
+  margin-bottom: 5px;
+}
