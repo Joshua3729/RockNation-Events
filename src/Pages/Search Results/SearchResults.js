@@ -144,8 +144,11 @@ class SearchResults extends Component {
           <div className={classes.banner}>
             <div className={classes.resultsHeader}>
               <h1>
-                We found {this.state.resultsLengthArtists} match(es) for "
-                <span>{this.state.query}</span>"
+                We found{" "}
+                {this.state.resultsLengthArtists +
+                  this.state.resultsLengthEvents +
+                  this.state.resultsLengthVenues}{" "}
+                match(es) for "<span>{this.state.query}</span>"
               </h1>
             </div>
           </div>
