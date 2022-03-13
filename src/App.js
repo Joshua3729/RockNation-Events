@@ -640,23 +640,6 @@ class App extends Component {
           )}
         />
         <Route
-          path="/events/:query"
-          exact
-          render={(props) => (
-            <SearchResults
-              {...props}
-              loginModal={this.openModalHandler}
-              isAuth={this.state.isAuth}
-              token={this.state.token}
-              logout={this.logoutHandler}
-              fullname={this.state.fullname}
-              userImage={this.state.userImage}
-              goToHome={this.homeHandler}
-              searchresult={this.state.searchresult}
-            />
-          )}
-        />
-        <Route
           path="/eventmanager/:name"
           exact
           render={(props) => (
@@ -801,6 +784,8 @@ class App extends Component {
               userImage={this.state.userImage}
               goToHome={this.homeHandler}
               searchresult={this.state.searchresult}
+              search={this.searchHandler}
+              goToHome={this.homeHandler}
             />
           )}
         />
@@ -1026,6 +1011,8 @@ class App extends Component {
                 userImage={this.state.userImage}
                 goToHome={this.homeHandler}
                 searchresult={this.state.searchresult}
+                search={this.searchHandler}
+                goToHome={this.homeHandler}
               />
             )}
           />
