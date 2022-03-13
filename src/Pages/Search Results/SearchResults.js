@@ -7,7 +7,8 @@ import { withRouter } from "react-router-dom";
 
 class SearchResults extends Component {
   state = {
-    events: [],
+    searchresult: null,
+    resultsLength: null,
   };
 
   componentDidMount = () => {
@@ -17,10 +18,14 @@ class SearchResults extends Component {
       queryName = param[0];
     }
     console.log(queryName);
-    fetch("http://localhost:5000/feed/events/concerts")
+    fetch(
+      `http://localhost:5000/feed/artist?name=${queryName
+        .split(" ")
+        .join("%20")}`
+    )
       .then((res) => {
         if (res.status !== 200) {
-          throw new Error("Failed to fetch concerts.");
+          throw new Error("Failed to search.");
         }
 
         return res.json();
@@ -28,8 +33,8 @@ class SearchResults extends Component {
       .then((resData) => {
         console.log(resData);
         this.setState({
-          events: resData.events,
-          eventsLoading: false,
+          searchresult: resData,
+          resultsLength: resData.length,
         });
       })
       .catch((err) => console.log(err));
@@ -37,8 +42,10 @@ class SearchResults extends Component {
 
   render() {
     let events = "loading";
-
-    if (this.props.searchresult.length > 0)
+    if (this.state.resultsLength == 0) {
+      events = <p>Event not found :(</p>;
+    }
+    if (this.state.resultsLength > 0)
       events = this.props.searchresult.map((event, i) => {
         return <EventInfo key={i} event={event} />;
       });
@@ -58,7 +65,7 @@ class SearchResults extends Component {
           <div className={classes.banner}></div>
           <div className={classes.mainContent}>
             <h2 className={classes.header}>
-              All Concert Events ({this.state.events.length})
+              Search results: ({this.state.resultsLength})
             </h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
