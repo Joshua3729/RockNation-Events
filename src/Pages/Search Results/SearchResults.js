@@ -95,13 +95,11 @@ class SearchResults extends Component {
 
   render() {
     let events = "loading";
-    if (this.state.resultsLengthArtists == 0) {
-      events = <p>Event not found :(</p>;
-    }
+
     if (
-      this.state.resultsLengthArtists > 0 &&
-      this.state.resultsLengthEvents &&
-      this.state.resultsLengthVenues
+      this.state.resultsLengthArtists != null &&
+      this.state.resultsLengthEvents != null &&
+      this.state.resultsLengthVenues != null
     ) {
       switch (this.state.tab) {
         case "artists":
@@ -115,9 +113,11 @@ class SearchResults extends Component {
           });
           break;
         case "venues":
-          events = this.state.searchresultVenues.map((event, i) => {
-            return <EventInfo key={i} event={event} />;
-          });
+          if (this.state.resultsLengthVenues > 0)
+            events = this.state.searchresultVenues.map((event, i) => {
+              return <EventInfo key={i} event={event} />;
+            });
+          else events = <p>No venues found</p>;
           break;
 
         default:
