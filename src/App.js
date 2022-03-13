@@ -785,7 +785,6 @@ class App extends Component {
               goToHome={this.homeHandler}
               searchresult={this.state.searchresult}
               search={this.searchHandler}
-              goToHome={this.homeHandler}
             />
           )}
         />
@@ -1012,7 +1011,6 @@ class App extends Component {
                 goToHome={this.homeHandler}
                 searchresult={this.state.searchresult}
                 search={this.searchHandler}
-                goToHome={this.homeHandler}
               />
             )}
           />

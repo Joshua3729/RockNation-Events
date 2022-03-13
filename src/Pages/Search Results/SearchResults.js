@@ -45,10 +45,11 @@ class SearchResults extends Component {
     if (this.state.resultsLength == 0) {
       events = <p>Event not found :(</p>;
     }
-    if (this.state.resultsLength > 0)
-      events = this.props.searchresult.map((event, i) => {
+    if (this.state.resultsLength > 0) {
+      events = this.state.searchresult.map((event, i) => {
         return <EventInfo key={i} event={event} />;
       });
+    }
     return (
       <Fragment>
         <Navigation
