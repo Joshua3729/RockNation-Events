@@ -9,6 +9,10 @@ class SearchResults extends Component {
   state = {
     searchresultArtists: null,
     resultsLengthArtists: null,
+    searchresultEvents: null,
+    resultsLengthEvents: null,
+    searchresultVenues: null,
+    resultsLengthVenues: null,
     query: null,
     tab: "artists",
   };
@@ -93,10 +97,34 @@ class SearchResults extends Component {
     if (this.state.resultsLengthArtists == 0) {
       events = <p>Event not found :(</p>;
     }
-    if (this.state.resultsLengthArtists > 0) {
-      events = this.state.searchresultArtists.map((event, i) => {
-        return <EventInfo key={i} event={event} />;
-      });
+    if (
+      this.state.resultsLengthArtists > 0 &&
+      this.state.resultsLengthEvents &&
+      this.state.resultsLengthVenues
+    ) {
+      switch (this.state.tab) {
+        case "artists":
+          events = this.state.searchresultArtists.map((event, i) => {
+            return <EventInfo key={i} event={event} />;
+          });
+          break;
+        case "events":
+          events = this.state.searchresultEvents.map((event, i) => {
+            return <EventInfo key={i} event={event} />;
+          });
+          break;
+        case "venues":
+          events = this.state.searchresultVenues.map((event, i) => {
+            return <EventInfo key={i} event={event} />;
+          });
+          break;
+
+        default:
+          events = this.state.searchresultArtists.map((event, i) => {
+            return <EventInfo key={i} event={event} />;
+          });
+          break;
+      }
     }
     return (
       <Fragment>
@@ -139,7 +167,7 @@ class SearchResults extends Component {
                   ].join(" ")}
                   onClick={this.tabChangeHandler.bind(this, "events")}
                 >
-                  Events ()
+                  Events ({this.state.resultsLengthEvents})
                 </div>
                 <div
                   className={[
@@ -148,7 +176,7 @@ class SearchResults extends Component {
                   ].join(" ")}
                   onClick={this.tabChangeHandler.bind(this, "venues")}
                 >
-                  Venues ()
+                  Venues ({this.state.resultsLengthVenues})
                 </div>
               </div>
             </div>
