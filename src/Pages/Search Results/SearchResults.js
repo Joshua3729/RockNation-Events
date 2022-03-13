@@ -4,6 +4,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import AdCard from "../../Components/AdCard/AdCard";
 import { withRouter } from "react-router-dom";
+import ArtistInfo from "../../Components/ArtistInfo/ArtistInfo";
 
 class SearchResults extends Component {
   state = {
@@ -105,7 +106,7 @@ class SearchResults extends Component {
       switch (this.state.tab) {
         case "artists":
           events = this.state.searchresultArtists.map((event, i) => {
-            return <EventInfo key={i} event={event} />;
+            return <ArtistInfo key={i} event={event} />;
           });
           break;
         case "events":

@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./artistInfo.module.css";
+import classes from "./ArtistInfo.module.css";
 
 const artistInfo = (props) => {
   return (
@@ -8,7 +8,7 @@ const artistInfo = (props) => {
         <img src={props.event.eventImg} alt="" className={classes.eventImg} />
       </div>
       <div className={classes.aboutArtistWrapper}>
-        <p>{props.name}</p>
+        <p>{props.event.artistName}</p>
         <p>Rock</p>
       </div>
     </div>
