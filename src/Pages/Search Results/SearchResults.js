@@ -7,8 +7,8 @@ import { withRouter } from "react-router-dom";
 
 class SearchResults extends Component {
   state = {
-    searchresult: null,
-    resultsLength: null,
+    searchresultArtists: null,
+    resultsLengthArtists: null,
     query: null,
     tab: "artists",
   };
@@ -36,8 +36,8 @@ class SearchResults extends Component {
       .then((resData) => {
         console.log(resData);
         this.setState({
-          searchresult: resData,
-          resultsLength: resData.length,
+          searchresultArtists: resData,
+          resultsLengthArtists: resData.length,
         });
       })
       .catch((err) => console.log(err));
@@ -48,11 +48,11 @@ class SearchResults extends Component {
 
   render() {
     let events = "loading";
-    if (this.state.resultsLength == 0) {
+    if (this.state.resultsLengthArtists == 0) {
       events = <p>Event not found :(</p>;
     }
-    if (this.state.resultsLength > 0) {
-      events = this.state.searchresult.map((event, i) => {
+    if (this.state.resultsLengthArtists > 0) {
+      events = this.state.searchresultArtists.map((event, i) => {
         return <EventInfo key={i} event={event} />;
       });
     }
@@ -73,7 +73,7 @@ class SearchResults extends Component {
           <div className={classes.banner}>
             <div className={classes.resultsHeader}>
               <h1>
-                We found {this.state.resultsLength} match(es) for "
+                We found {this.state.resultsLengthArtists} match(es) for "
                 <span>{this.state.query}</span>"
               </h1>
             </div>
@@ -88,7 +88,7 @@ class SearchResults extends Component {
                   ].join(" ")}
                   onClick={this.tabChangeHandler.bind(this, "artists")}
                 >
-                  Artists & Teams ()
+                  Artists & Teams ({this.state.resultsLengthArtists})
                 </div>
                 <div
                   className={[

@@ -73,6 +73,7 @@
 .category_item {
   margin-right: 20px;
   padding-bottom: 10px;
+  cursor: pointer;
 }
 .category_item:last-child {
   margin-right: 0;
