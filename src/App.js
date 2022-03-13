@@ -153,7 +153,7 @@ class App extends Component {
     const query = e.target.query.value;
     this.props.history.push({
       pathname: "/events/",
-      search: "q?=" + query,
+      search: "?q=" + query,
     });
     this.props.history.go();
   };

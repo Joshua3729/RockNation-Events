@@ -15,7 +15,7 @@ class SearchResults extends Component {
     const query = new URLSearchParams(this.props.location.search);
     let queryName;
     for (let param of query.entries()) {
-      queryName = param[0];
+      queryName = param[1];
     }
     console.log(queryName);
     fetch(
