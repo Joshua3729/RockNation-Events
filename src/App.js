@@ -153,27 +153,9 @@ class App extends Component {
     const query = e.target.query.value;
     this.props.history.push({
       pathname: "/events/",
-      search: "?" + query,
+      search: "q?=" + query,
     });
     this.props.history.go();
-
-    // fetch(
-    //   `http://localhost:5000/feed/artist?name=${query.split(" ").join("%20")}`
-    // )
-    //   .then((res) => {
-    //     if (res.status !== 200) {
-    //       throw new Error("Failed to search.");
-    //     }
-
-    //     return res.json();
-    //   })
-    //   .then((resData) => {
-    //     console.log(resData);
-    //     this.setState({
-    //       searchresult: resData,
-    //     });
-    //   })
-    //   .catch((err) => console.log(err));
   };
 
   openModalHandler = () => {
