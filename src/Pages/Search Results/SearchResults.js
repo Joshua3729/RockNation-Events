@@ -41,6 +41,48 @@ class SearchResults extends Component {
         });
       })
       .catch((err) => console.log(err));
+
+    fetch(
+      `http://localhost:5000/feed/event?name=${queryName
+        .split(" ")
+        .join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          searchresultEvents: resData,
+          resultsLengthEvents: resData.length,
+        });
+      })
+      .catch((err) => console.log(err));
+
+    fetch(
+      `http://localhost:5000/feed/venue?name=${queryName
+        .split(" ")
+        .join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          searchresultVenues: resData,
+          resultsLengthVenues: resData.length,
+        });
+      })
+      .catch((err) => console.log(err));
   };
   tabChangeHandler = (tabName) => {
     this.setState({ tab: tabName });
