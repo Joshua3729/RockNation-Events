@@ -5,6 +5,7 @@ import EventInfo from "../../Components/EventInfo/EventInfo";
 import AdCard from "../../Components/AdCard/AdCard";
 import { withRouter } from "react-router-dom";
 import ArtistInfo from "../../Components/ArtistInfo/ArtistInfo";
+import VenueInfo from "../../Components/VenueInfo/VenueInfo";
 
 class SearchResults extends Component {
   state = {
@@ -115,7 +116,7 @@ class SearchResults extends Component {
         case "venues":
           if (this.state.resultsLengthVenues > 0)
             events = this.state.searchresultVenues.map((event, i) => {
-              return <EventInfo key={i} event={event} />;
+              return <VenueInfo key={i} event={event} />;
             });
           else events = <p>No venues found</p>;
           break;

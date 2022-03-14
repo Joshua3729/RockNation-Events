@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./ArtistInfo.module.css";
+import classes from "./VenueInfo.module.css";
 
 const venueInfo = (props) => {
   return (
