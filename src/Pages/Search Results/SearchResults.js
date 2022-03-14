@@ -162,7 +162,7 @@ class SearchResults extends Component {
                   ].join(" ")}
                   onClick={this.tabChangeHandler.bind(this, "artists")}
                 >
-                  Artists & Teams ({this.state.resultsLengthArtists})
+                  Artists & Teams ({this.state.resultsLengthArtists || 0})
                 </div>
                 <div
                   className={[
@@ -171,7 +171,7 @@ class SearchResults extends Component {
                   ].join(" ")}
                   onClick={this.tabChangeHandler.bind(this, "events")}
                 >
-                  Events ({this.state.resultsLengthEvents})
+                  Events ({this.state.resultsLengthEvents || 0})
                 </div>
                 <div
                   className={[
@@ -180,7 +180,7 @@ class SearchResults extends Component {
                   ].join(" ")}
                   onClick={this.tabChangeHandler.bind(this, "venues")}
                 >
-                  Venues ({this.state.resultsLengthVenues})
+                  Venues ({this.state.resultsLengthVenues || 0})
                 </div>
               </div>
             </div>
