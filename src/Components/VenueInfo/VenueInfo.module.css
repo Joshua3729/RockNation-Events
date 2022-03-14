@@ -15,8 +15,9 @@
   /* display: none; */
 }
 .imgWrapper {
-  width: 100%;
+  width: 60px;
   height: calc(80px - 20px);
+  overflow: hidden;
 }
 .date,
 .eventName {
