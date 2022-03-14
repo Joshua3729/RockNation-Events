@@ -12,7 +12,9 @@ const venueInfo = (props) => {
       </div>
       <div className={classes.aboutArtistWrapper}>
         <p className={classes.name}>{props.event.name}</p>
-        <p className={classes.location}>{props.event.genre}</p>
+        <p className={classes.location}>
+          {props.event.city}, {props.event.country}
+        </p>
       </div>
     </div>
   );
