@@ -22,3 +22,12 @@
 .eventName {
   margin-bottom: 5px;
 }
+
+.name {
+  font-weight: 600;
+  color: rgb(2, 108, 223);
+  margin-bottom: 10px;
+}
+.genre {
+  color: rgba(38, 38, 38, 0.65);
+}
