@@ -5,11 +5,11 @@ const artistInfo = (props) => {
   return (
     <div className={classes.event}>
       <div className={classes.imgWrapper}>
-        <img src={props.event.eventImg} alt="" className={classes.eventImg} />
+        <img src={props.event.img} alt="" className={classes.eventImg} />
       </div>
       <div className={classes.aboutArtistWrapper}>
-        <p>{props.event.artistName}</p>
-        <p>Rock</p>
+        <p className={classes.name}>{props.event.name}</p>
+        <p className={classes.genre}>{props.event.genre}</p>
       </div>
     </div>
   );
