@@ -85,7 +85,6 @@ class ComedyPage extends Component {
             />
           </div>
           <div className={classes.mainContent}>
-            <button onClick={this.props.goToHome}>Yes</button>
             <h2 className={classes.header}>
               All Sports Events ({this.state.events.length})
             </h2>

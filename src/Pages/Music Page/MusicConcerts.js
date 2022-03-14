@@ -82,8 +82,8 @@ class MusicConcerts extends Component {
             </h2>
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
+              <AdCard />
             </div>
-            <AdCard />
           </div>
         </section>
       </Fragment>
