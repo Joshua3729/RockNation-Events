@@ -43,8 +43,9 @@
   right: 50px;
   transform: translateY(-50%);
   width: 294px;
-  min-height: 130px;
-  background-color: lightgray;
+  height: 180px;
+  background-color: silver;
   border-radius: 5px;
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+  overflow: hidden;
 }
