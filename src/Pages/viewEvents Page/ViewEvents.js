@@ -24,6 +24,12 @@ class ViewEvents extends Component {
         />
         <section className={classes.ViewEvents}>
           <div className={classes.banner}>
+            <div className={classes.bannerText}>
+              <div className={classes.breadcrumbs}></div>
+              <p className={classes.name}>
+                Justin Beiber <span>Tickets</span>
+              </p>
+            </div>
             <img
               className={classes.artist}
               src="https://media.gq.com/photos/606f6dcf3a4bbf3820d3a7d6/16:9/w_1999,h_1124,c_limit/justin-bieber-cover-gq-may-2021-01.jpg"

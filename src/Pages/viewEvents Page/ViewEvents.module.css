@@ -24,4 +24,10 @@
   transform: translateY(-50%);
   width: 294px;
   border-radius: 5px;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+}
+.bannerText {
+  position: absolute;
+  top: 50%;
+  left: 50px;
 }
