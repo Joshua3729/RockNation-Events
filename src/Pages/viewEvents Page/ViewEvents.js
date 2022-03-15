@@ -53,11 +53,13 @@ class ViewEvents extends Component {
                 {this.state.artistDetails[0]?.name} <span>Tickets</span>
               </p>
             </div>
-            <img
-              className={classes.artist}
-              src={this.state.artistDetails[0]?.big_img}
-              alt=""
-            />
+            <div className={classes.artistWrapper}>
+              <img
+                className={classes.artist}
+                src={this.state.artistDetails[0]?.big_img}
+                alt=""
+              />
+            </div>
           </div>
           <div className={classes.mainContent}></div>
         </section>

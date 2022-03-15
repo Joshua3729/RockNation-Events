@@ -18,13 +18,7 @@
   height: 55vh;
 }
 .artist {
-  position: absolute;
-  top: 50%;
-  right: 50px;
-  transform: translateY(-50%);
-  width: 294px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+  width: 100%;
 }
 .bannerText {
   position: absolute;
@@ -42,4 +36,15 @@
 .breadcrumbs {
   color: white;
   margin-bottom: 50px;
+}
+.artistWrapper {
+  position: absolute;
+  top: 50%;
+  right: 50px;
+  transform: translateY(-50%);
+  width: 294px;
+  min-height: 130px;
+  background-color: lightgray;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
