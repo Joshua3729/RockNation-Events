@@ -3,7 +3,7 @@ import Spinner from "../UI/Spinner/Spinner";
 import classes from "./LoadingModal.module.css";
 import loading from "../Image/loading.svg";
 import Background from "../Background/Background";
-import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom";
 
 const loadingModal = () => {
   return ReactDOM.createPortal(
