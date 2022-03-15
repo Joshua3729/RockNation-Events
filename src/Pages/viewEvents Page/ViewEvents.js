@@ -7,6 +7,7 @@ import { withRouter } from "react-router-dom";
 class ViewEvents extends Component {
   state = {
     artistDetails: [],
+    events: null,
   };
 
   componentDidMount = () => {
@@ -28,8 +29,35 @@ class ViewEvents extends Component {
         });
       })
       .catch((err) => console.log(err));
+
+    fetch(
+      `http://localhost:5000/feed/artist-events?name=${name
+        .split(" ")
+        .join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          events: resData,
+        });
+      })
+      .catch((err) => console.log(err));
   };
   render() {
+    let events = <p>Loading...</p>;
+
+    if (this.state.events) {
+      events = this.state.events.map((event, i) => {
+        return <EventInfo key={i} event={event} />;
+      });
+    }
     return (
       <Fragment>
         <Navigation
