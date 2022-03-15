@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 class ViewEvents extends Component {
   state = {
-    artistDetails: null,
+    artistDetails: [],
   };
 
   componentDidMount = () => {
@@ -50,12 +50,12 @@ class ViewEvents extends Component {
                 Home / concerts/ Justin Beiber / tickets
               </div>
               <p className={classes.name}>
-                {this.state.artistDetails.name} <span>Tickets</span>
+                {this.state.artistDetails[0]?.name} <span>Tickets</span>
               </p>
             </div>
             <img
               className={classes.artist}
-              src={this.state.artistDetails.big_img}
+              src={this.state.artistDetails[0]?.big_img}
               alt=""
             />
           </div>
