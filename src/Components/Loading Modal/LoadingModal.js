@@ -3,9 +3,10 @@ import Spinner from "../UI/Spinner/Spinner";
 import classes from "./LoadingModal.module.css";
 import loading from "../Image/loading.svg";
 import Background from "../Background/Background";
+import { BrowserRouter } from "react-router-dom";
 
 const loadingModal = () => {
-  return (
+  return ReactDOM.createPortal(
     <div className={classes.LoadingModal}>
       <div className={classes.Wrapper}>
         <div className={classes.logoWrapper}>
@@ -17,7 +18,8 @@ const loadingModal = () => {
         </div>
         <p className={classes.pleaseWait}>Please Wait...</p>
       </div>
-    </div>
+    </div>,
+    document.getElementById("loading-modal")
   );
 };
 
