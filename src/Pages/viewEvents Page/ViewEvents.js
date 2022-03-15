@@ -25,7 +25,9 @@ class ViewEvents extends Component {
         <section className={classes.ViewEvents}>
           <div className={classes.banner}>
             <div className={classes.bannerText}>
-              <div className={classes.breadcrumbs}></div>
+              <div className={classes.breadcrumbs}>
+                Home / concerts/ Justin Beiber / tickets
+              </div>
               <p className={classes.name}>
                 Justin Beiber <span>Tickets</span>
               </p>

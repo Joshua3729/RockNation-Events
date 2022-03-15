@@ -28,6 +28,18 @@
 }
 .bannerText {
   position: absolute;
-  top: 50%;
+  top: calc(50% - 50px);
   left: 50px;
+}
+.name {
+  font-size: 40px;
+  font-weight: 700;
+  color: white;
+}
+.name span {
+  font-weight: 100;
+}
+.breadcrumbs {
+  color: white;
+  margin-bottom: 50px;
 }
