@@ -61,7 +61,7 @@ class ViewEvents extends Component {
               />
             </div>
           </div>
-          <div className={classes.mainContent}></div>
+          <div className={classes.mainContent}>{events}</div>
         </section>
       </Fragment>
     );
