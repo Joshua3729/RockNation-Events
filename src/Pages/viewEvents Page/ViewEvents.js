@@ -55,7 +55,7 @@ class ViewEvents extends Component {
 
     if (this.state.events) {
       events = this.state.events.map((event, i) => {
-        return <EventInfo key={i} event={event} />;
+        return <EventInfo key={i} event={event} hideImage={true} />;
       });
     }
     return (

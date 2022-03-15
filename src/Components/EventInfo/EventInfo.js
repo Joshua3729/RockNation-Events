@@ -3,10 +3,12 @@ import classes from "./EventInfo.module.css";
 
 const eventInfo = (props) => {
   return (
-    <div className={classes.event}>
-      <div className={classes.imgWrapper}>
-        <img src={props.event.eventImg} alt="" className={classes.eventImg} />
-      </div>
+    <div className={props.hideImage ? classes.hideImgEvents : classes.event}>
+      {props.hideImage ? null : (
+        <div className={classes.imgWrapper}>
+          <img src={props.event.eventImg} alt="" className={classes.eventImg} />
+        </div>
+      )}
 
       <div className={classes.dateWrapper}>
         <p className={classes.date}>FEB 10</p>
