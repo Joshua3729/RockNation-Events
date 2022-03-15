@@ -5,9 +5,30 @@ import EventInfo from "../../Components/EventInfo/EventInfo";
 import { withRouter } from "react-router-dom";
 
 class ViewEvents extends Component {
-  state = {};
+  state = {
+    artistDetails: null,
+  };
 
-  componentDidMount = () => {};
+  componentDidMount = () => {
+    const name = this.props.match?.params.name;
+    fetch(
+      `http://localhost:5000/feed/artist?name=${name.split(" ").join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          artistDetails: resData,
+        });
+      })
+      .catch((err) => console.log(err));
+  };
   render() {
     return (
       <Fragment>
@@ -29,12 +50,12 @@ class ViewEvents extends Component {
                 Home / concerts/ Justin Beiber / tickets
               </div>
               <p className={classes.name}>
-                Justin Beiber <span>Tickets</span>
+                {this.state.artistDetails.name} <span>Tickets</span>
               </p>
             </div>
             <img
               className={classes.artist}
-              src="https://media.gq.com/photos/606f6dcf3a4bbf3820d3a7d6/16:9/w_1999,h_1124,c_limit/justin-bieber-cover-gq-may-2021-01.jpg"
+              src={this.state.artistDetails.big_img}
               alt=""
             />
           </div>
