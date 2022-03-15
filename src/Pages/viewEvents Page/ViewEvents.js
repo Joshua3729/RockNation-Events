@@ -23,7 +23,13 @@ class ViewEvents extends Component {
           search={this.props.search}
         />
         <section className={classes.ViewEvents}>
-          <div className={classes.banner}></div>
+          <div className={classes.banner}>
+            <img
+              className={classes.artist}
+              src="https://media.gq.com/photos/606f6dcf3a4bbf3820d3a7d6/16:9/w_1999,h_1124,c_limit/justin-bieber-cover-gq-may-2021-01.jpg"
+              alt=""
+            />
+          </div>
           <div className={classes.mainContent}></div>
         </section>
       </Fragment>
