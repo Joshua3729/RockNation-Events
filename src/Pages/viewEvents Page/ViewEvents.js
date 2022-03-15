@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import classes from "./SearchResults.module.css";
+import classes from "./ViewEvents.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import { withRouter } from "react-router-dom";
