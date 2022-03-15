@@ -1,5 +1,6 @@
 import React from "react";
 import classes from "./ArtistInfo.module.css";
+import { Link } from "react-router-dom";
 
 const artistInfo = (props) => {
   return (
@@ -8,7 +9,13 @@ const artistInfo = (props) => {
         <img src={props.event.img} alt="" className={classes.eventImg} />
       </div>
       <div className={classes.aboutArtistWrapper}>
-        <p className={classes.name}>{props.event.name}</p>
+        <Link
+          to={`/events/${props.event.name.split(" ").join("%20")}/${
+            props.event._id
+          }`}
+        >
+          <p className={classes.name}>{props.event.name}</p>
+        </Link>
         <p className={classes.genre}>{props.event.genre}</p>
       </div>
     </div>

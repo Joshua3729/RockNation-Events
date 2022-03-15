@@ -32,3 +32,10 @@
 .genre {
   color: rgba(38, 38, 38, 0.65);
 }
+.aboutArtistWrapper a {
+  text-decoration: none;
+}
+
+.name:hover {
+  color: blue;
+}
