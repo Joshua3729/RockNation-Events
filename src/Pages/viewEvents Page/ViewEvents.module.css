@@ -50,3 +50,6 @@
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
   overflow: hidden;
 }
+.mainContent {
+  padding: 0 50px;
+}
