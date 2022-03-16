@@ -41,20 +41,31 @@ class topSelling extends Component {
         <section className={classes.TopSelling}>
           <div className={classes.sectionDescription}>Top selling</div>
           <div className={classes.ConcertsWrapper}>
-            <div className={classes.sectionDescription2}>Concerts</div>
+            <div className={classes.sectionDescription2}>
+              <p>Concerts</p> <Link to="/concerts">See All Concerts</Link>
+            </div>
             <div className={classes.grid}>{cards}</div>
           </div>
           <div className={classes.ArtsAndTheaterWrapper}>
-            <div className={classes.sectionDescription2}>Sports</div>
+            <div className={classes.sectionDescription2}>
+              <p>Sports</p> <Link to="/concerts">See All Sports</Link>
+            </div>
             <div className={classes.grid}>{Sports}</div>
           </div>
           <div className={classes.ArtsAndTheaterWrapper}>
-            <div className={classes.sectionDescription2}>Arts And Theater</div>
+            <div className={classes.sectionDescription2}>
+              <p>Arts & Theater</p>
+              <Link to="/concerts">See All Arts & Theater</Link>
+            </div>
             <div className={classes.grid}>{EventsArtsAndTheater}</div>
           </div>
 
           <div className={classes.Family}>
-            <div className={classes.sectionDescription2}>Family</div>
+            <div className={classes.sectionDescription2}>
+              <div className={classes.sectionDescription2}>
+                <p>Family</p> <Link to="/concerts">See All Family</Link>
+              </div>
+            </div>
             <div className={classes.grid}>{EventsFamily}</div>
           </div>
         </section>
