@@ -2,7 +2,6 @@ import React, { Component, Fragment } from "react";
 import classes from "./SearchResults.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
-import AdCard from "../../Components/AdCard/AdCard";
 import { withRouter } from "react-router-dom";
 import ArtistInfo from "../../Components/ArtistInfo/ArtistInfo";
 import VenueInfo from "../../Components/VenueInfo/VenueInfo";
@@ -213,7 +212,6 @@ class SearchResults extends Component {
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
             </div>
-            <AdCard />
           </div>
         </section>
       </Fragment>
