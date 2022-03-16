@@ -26,7 +26,11 @@ class SearchResults extends Component {
       queryParams.push(param[1]);
     }
     let queryName = queryParams[0];
-    this.setState({ query: queryName, tab: queryParams[1] });
+    if (queryParams.length > 1) {
+      this.setState({ query: queryName, tab: queryParams[1] });
+    } else {
+      this.setState({ query: queryName });
+    }
     fetch(
       `http://localhost:5000/feed/artist?name=${queryName
         .split(" ")
@@ -100,11 +104,14 @@ class SearchResults extends Component {
     this.props.history.push({
       search: `?q=${queryParams[0]}&tab=` + tabName,
     });
-    this.props.history.go();
+
+    this.setState({ tab: tabName });
+    // this.props.history.go();
   };
 
   render() {
     let events = "loading";
+    let resultsMessage = null;
     console.log(this.state.tab);
 
     if (
@@ -112,6 +119,15 @@ class SearchResults extends Component {
       this.state.resultsLengthEvents != null &&
       this.state.resultsLengthVenues != null
     ) {
+      resultsMessage = (
+        <h1>
+          We found{" "}
+          {this.state.resultsLengthArtists +
+            this.state.resultsLengthEvents +
+            this.state.resultsLengthVenues}{" "}
+          match(es) for "<span>{this.state.query}</span>"
+        </h1>
+      );
       switch (this.state.tab) {
         case "artists":
           if (this.state.resultsLengthArtists > 0)
@@ -159,15 +175,7 @@ class SearchResults extends Component {
         />
         <section className={classes.MusicConcerts}>
           <div className={classes.banner}>
-            <div className={classes.resultsHeader}>
-              <h1>
-                We found{" "}
-                {this.state.resultsLengthArtists +
-                  this.state.resultsLengthEvents +
-                  this.state.resultsLengthVenues}{" "}
-                match(es) for "<span>{this.state.query}</span>"
-              </h1>
-            </div>
+            <div className={classes.resultsHeader}>{resultsMessage}</div>
           </div>
           <div className={classes.mainContent}>
             <div className={classes.wrapper}>
