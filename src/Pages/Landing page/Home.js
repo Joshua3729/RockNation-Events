@@ -103,10 +103,10 @@ class Home extends Component {
       this.state.concertsLoading ||
       this.state.sportsLoading ||
       this.state.familyLoading;
-    return (
-      <Fragment>
-        {loading && <LoadingModal />}
-        <div className={this.state.loading ? classes.loading : null}>
+    let page = <LoadingModal />;
+    if (!loading)
+      page = (
+        <Fragment>
           <Navigation
             scrollEffect={true}
             searchBar={false}
@@ -129,9 +129,9 @@ class Home extends Component {
           />
           <Amax />
           <ExclusiveEvents />
-        </div>
-      </Fragment>
-    );
+        </Fragment>
+      );
+    return page;
   }
 }
 export default Home;
