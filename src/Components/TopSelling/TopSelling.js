@@ -62,9 +62,7 @@ class topSelling extends Component {
 
           <div className={classes.Family}>
             <div className={classes.sectionDescription2}>
-              <div className={classes.sectionDescription2}>
-                <p>Family</p> <Link to="/concerts">See All Family</Link>
-              </div>
+              <p>Family</p> <Link to="/concerts">See All Family</Link>
             </div>
             <div className={classes.grid}>{EventsFamily}</div>
           </div>
