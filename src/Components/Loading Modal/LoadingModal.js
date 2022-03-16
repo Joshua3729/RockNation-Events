@@ -9,14 +9,15 @@ const loadingModal = () => {
   return ReactDOM.createPortal(
     <div className={classes.LoadingModal}>
       <div className={classes.Wrapper}>
-        <div className={classes.logoWrapper}>
+        {/* <div className={classes.logoWrapper}>
           <h1 className={classes.span}>POWERBRAINS</h1>
           <h1 className={classes.events}>EVENTS</h1>
         </div>
         <div className={classes.SpinnerWrapper}>
           <img src={loading} alt="" style={{ backGround: "transparent" }} />
         </div>
-        <p className={classes.pleaseWait}>Please Wait...</p>
+        <p className={classes.pleaseWait}>Please Wait...</p> */}
+        <p>rocknation</p>
       </div>
     </div>,
     document.getElementById("loading-modal")

@@ -16,6 +16,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  background-color: #27374d;
+  padding: 10px 20px;
+  border-radius: 5px;
+  animation: loading 2s linear infinite;
 }
 .Wrapper h1 {
   font-family: "Orbitron", sans-serif;
@@ -96,5 +100,27 @@
   }
   .SpinnerWrapper img {
     width: 100%;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&family=Righteous&display=swap");
+
+.Wrapper p {
+  font-size: 40px;
+  color: white;
+  font-family: "Righteous", cursive;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
