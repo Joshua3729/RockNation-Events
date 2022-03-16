@@ -121,8 +121,7 @@ class SearchResults extends Component {
     if (
       this.state.resultsLengthArtists != null &&
       this.state.resultsLengthEvents != null &&
-      this.state.resultsLengthVenues != null &&
-      false
+      this.state.resultsLengthVenues != null
     ) {
       resultsMessage = (
         <h1>
