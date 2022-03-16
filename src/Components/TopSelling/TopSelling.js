@@ -48,21 +48,21 @@ class topSelling extends Component {
           </div>
           <div className={classes.ArtsAndTheaterWrapper}>
             <div className={classes.sectionDescription2}>
-              <p>Sports</p> <Link to="/concerts">See All Sports</Link>
+              <p>Sports</p> <Link to="/sports">See All Sports</Link>
             </div>
             <div className={classes.grid}>{Sports}</div>
           </div>
           <div className={classes.ArtsAndTheaterWrapper}>
             <div className={classes.sectionDescription2}>
               <p>Arts & Theater</p>
-              <Link to="/concerts">See All Arts & Theater</Link>
+              <Link to="/artsandtheater">See All Arts & Theater</Link>
             </div>
             <div className={classes.grid}>{EventsArtsAndTheater}</div>
           </div>
 
           <div className={classes.Family}>
             <div className={classes.sectionDescription2}>
-              <p>Family</p> <Link to="/concerts">See All Family</Link>
+              <p>Family</p> <Link to="/family">See All Family</Link>
             </div>
             <div className={classes.grid}>{EventsFamily}</div>
           </div>
