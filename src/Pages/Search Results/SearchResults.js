@@ -110,7 +110,11 @@ class SearchResults extends Component {
   };
 
   render() {
-    let events = <Spinner />;
+    let events = (
+      <div className={classes.spinnerWrapper}>
+        <Spinner />
+      </div>
+    );
     let resultsMessage = null;
     console.log(this.state.tab);
 

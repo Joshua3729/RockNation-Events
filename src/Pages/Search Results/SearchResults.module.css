@@ -26,7 +26,12 @@
 .mainContent {
   padding: 50px;
 }
-
+.spinnerWrapper {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  background-color: blueviolet;
+}
 .eventsWrapper {
   position: relative;
   width: 100%;
