@@ -21,12 +21,12 @@ class SearchResults extends Component {
 
   componentDidMount = () => {
     const query = new URLSearchParams(this.props.location.search);
-    let queryName;
+    let queryParams = [];
     for (let param of query.entries()) {
-      queryName = param[1];
+      queryParams.push(param[1]);
     }
-    console.log(queryName);
-    this.setState({ query: queryName });
+    let queryName = queryParams[0];
+    this.setState({ query: queryName, tab: queryParams[1] });
     fetch(
       `http://localhost:5000/feed/artist?name=${queryName
         .split(" ")
@@ -91,11 +91,21 @@ class SearchResults extends Component {
       .catch((err) => console.log(err));
   };
   tabChangeHandler = (tabName) => {
-    this.setState({ tab: tabName });
+    const query = new URLSearchParams(this.props.location.search);
+    let queryParams = [];
+    for (let param of query.entries()) {
+      queryParams.push(param[1]);
+    }
+
+    this.props.history.push({
+      search: `?q=${queryParams[0]}&tab=` + tabName,
+    });
+    this.props.history.go();
   };
 
   render() {
     let events = "loading";
+    console.log(this.state.tab);
 
     if (
       this.state.resultsLengthArtists != null &&
