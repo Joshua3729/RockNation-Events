@@ -5,6 +5,7 @@ import EventInfo from "../../Components/EventInfo/EventInfo";
 import { withRouter } from "react-router-dom";
 import ArtistInfo from "../../Components/ArtistInfo/ArtistInfo";
 import VenueInfo from "../../Components/VenueInfo/VenueInfo";
+import Spinner from "../../Components/UI/Spinner/Spinner";
 
 class SearchResults extends Component {
   state = {
@@ -109,14 +110,15 @@ class SearchResults extends Component {
   };
 
   render() {
-    let events = "loading";
+    let events = <Spinner />;
     let resultsMessage = null;
     console.log(this.state.tab);
 
     if (
       this.state.resultsLengthArtists != null &&
       this.state.resultsLengthEvents != null &&
-      this.state.resultsLengthVenues != null
+      this.state.resultsLengthVenues != null &&
+      false
     ) {
       resultsMessage = (
         <h1>
