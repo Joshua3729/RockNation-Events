@@ -8,6 +8,7 @@ import ExclusiveEvents from "../../Components/ExclusiveEvents/ExclusiveEvents";
 import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
+import RecentlyViewed from "../../Components/RecentlyViewed/RecentlyViewed";
 import classes from "./Home.module.css";
 
 class Home extends Component {
@@ -128,6 +129,7 @@ class Home extends Component {
           />
           <Hero />
           <ComingSoon />
+          <RecentlyViewed />
           <Categories />
           <TopSelling
             concerts={this.state.concerts}
