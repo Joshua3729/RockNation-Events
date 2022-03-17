@@ -109,7 +109,7 @@ class SearchResults extends Component {
     // this.props.history.go();
   };
 
-  viewEntity = (entityData) => {
+  viewEntity = (entityData, type) => {
     const recentlyViewedData =
       JSON.parse(localStorage.getItem("recentlyViewedData")) || [];
 
@@ -125,6 +125,7 @@ class SearchResults extends Component {
       pathname: `/events/${entityData.name.split(" ").join("%20")}/${
         entityData._id
       }`,
+      search: `?type=${type.split(" ").join("%20")}`,
     });
   };
 
@@ -176,7 +177,9 @@ class SearchResults extends Component {
         case "venues":
           if (this.state.resultsLengthVenues > 0)
             events = this.state.searchresultVenues.map((event, i) => {
-              return <VenueInfo key={i} event={event} />;
+              return (
+                <VenueInfo key={i} event={event} viewEntity={this.viewEntity} />
+              );
             });
           else events = <p>No venues found</p>;
 
