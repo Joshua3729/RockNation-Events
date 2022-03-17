@@ -110,9 +110,8 @@ class SearchResults extends Component {
   };
 
   viewEntity = (entityData) => {
-    const recentlyViewedData = JSON.parse(
-      localStorage.getItem("recentlyViewedData")
-    );
+    const recentlyViewedData =
+      JSON.parse(localStorage.getItem("recentlyViewedData")) || [];
 
     if (!recentlyViewedData.some((entity) => entity._id === entityData._id)) {
       recentlyViewedData.push(entityData);
