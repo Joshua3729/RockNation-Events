@@ -4,7 +4,13 @@ import classes from "./RecentlyViewed.module.css";
 const recentlyViewed = (props) => {
   let recentlyViewed_items = props.recentlyViewed_data.map((recentlyViewed) => {
     return (
-      <div className={classes.recentlyViewed_item}>
+      <div
+        className={classes.recentlyViewed_item}
+        onClick={props.seeRecentlyViewed_item.bind(
+          this,
+          props.recentlyViewed_data[0]
+        )}
+      >
         <div className={classes.recentlyViewed_img}>
           <img src={recentlyViewed.img} />
         </div>

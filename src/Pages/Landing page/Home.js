@@ -106,6 +106,15 @@ class Home extends Component {
         console.log(err);
       });
   }
+
+  seeRecentlyViewed_item = (entityData) => {
+    this.props.history.push({
+      pathname: `/events/${entityData.name.split(" ").join("%20")}/${
+        entityData._id
+      }`,
+    });
+  };
+
   render() {
     const loading =
       this.state.artsAndTheaterLoading ||
@@ -132,6 +141,7 @@ class Home extends Component {
           {this.state.recentlyViewedData.length > 0 && (
             <RecentlyViewed
               recentlyViewed_data={this.state.recentlyViewedData}
+              seeRecentlyViewed_item={this.seeRecentlyViewed_item}
             />
           )}
           <Categories />
