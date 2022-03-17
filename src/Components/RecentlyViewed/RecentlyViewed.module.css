@@ -7,6 +7,7 @@
   grid-gap: 30px;
 }
 .recentlyViewed_item {
+  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -25,10 +26,18 @@
   color: rgb(2, 108, 223);
 }
 .remove_btn {
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  transform: translateY(-50%);
   background-color: transparent;
-  border: none;
-  font-size: 30px;
-  color: rgb(38, 38, 38);
+  border: lightgray 1px solid;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: lightgray;
 }
 .remove_btn:active {
   outline: none;

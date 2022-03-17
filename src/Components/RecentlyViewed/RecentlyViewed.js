@@ -9,6 +9,7 @@ const recentlyViewed = (props) => {
           <img src={recentlyViewed.img} />
         </div>
         <div className={classes.recentlyViewed_name}>{recentlyViewed.name}</div>
+        <button className={classes.remove_btn}>&times;</button>
       </div>
     );
   });
@@ -17,7 +18,6 @@ const recentlyViewed = (props) => {
       <div className={classes.sectionDescription}>Recently Viewed</div>
       <p className={classes.message}>Pick up where you left off</p>
       <div className={classes.recentlyViewed}>{recentlyViewed_items}</div>
-      <button className={classes.remove_btn}>&times;</button>
     </div>
   );
 };
