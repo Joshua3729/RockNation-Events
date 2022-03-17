@@ -17,6 +17,7 @@ const recentlyViewed = (props) => {
       <div className={classes.sectionDescription}>Recently Viewed</div>
       <p className={classes.message}>Pick up where you left off</p>
       <div className={classes.recentlyViewed}>{recentlyViewed_items}</div>
+      <button className={classes.remove_btn}>&times;</button>
     </div>
   );
 };
