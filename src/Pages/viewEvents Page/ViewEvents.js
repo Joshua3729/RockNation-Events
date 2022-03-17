@@ -3,6 +3,7 @@ import classes from "./ViewEvents.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import { withRouter } from "react-router-dom";
+import Spinner from "../../Components/UI/Spinner/Spinner";
 
 class ViewEvents extends Component {
   state = {
@@ -51,7 +52,11 @@ class ViewEvents extends Component {
       .catch((err) => console.log(err));
   };
   render() {
-    let events = <p>Loading...</p>;
+    let events = (
+      <div className={classes.spinnerWrapper}>
+        <Spinner />
+      </div>
+    );
 
     if (this.state.events) {
       events = this.state.events.map((event, i) => {
