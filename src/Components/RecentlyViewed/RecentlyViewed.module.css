@@ -7,7 +7,6 @@
   grid-gap: 30px;
 }
 .recentlyViewed_item {
-  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
@@ -40,10 +39,12 @@
   color: lightgray;
   display: none;
 }
-.recentlyViewed_item:hover .remove_btn {
+.recentlyViewed_item_Wrapper:hover .remove_btn {
   display: block;
 }
-
+.remove_btn:hover {
+  color: black;
+}
 .remove_btn:active {
   outline: none;
 }
@@ -70,4 +71,7 @@
 .message {
   margin-bottom: 50px;
   color: rgb(38, 38, 38);
+}
+.recentlyViewed_item_Wrapper {
+  position: relative;
 }

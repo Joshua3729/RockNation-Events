@@ -115,6 +115,24 @@ class Home extends Component {
     });
   };
 
+  removeRecentlyViewed_item = (entityData) => {
+    this.setState((prevState) => {
+      console.log(prevState.recentlyViewedData);
+      let recentlyViewedData = [...prevState.recentlyViewedData];
+      recentlyViewedData = recentlyViewedData.filter((recentlyViewed_item) => {
+        return entityData !== recentlyViewed_item;
+      });
+      localStorage.setItem(
+        "recentlyViewedData",
+        JSON.stringify(recentlyViewedData)
+      );
+
+      return {
+        recentlyViewedData: recentlyViewedData,
+      };
+    });
+  };
+
   render() {
     const loading =
       this.state.artsAndTheaterLoading ||
@@ -142,6 +160,7 @@ class Home extends Component {
             <RecentlyViewed
               recentlyViewed_data={this.state.recentlyViewedData}
               seeRecentlyViewed_item={this.seeRecentlyViewed_item}
+              removeRecentlyViewed_item={this.removeRecentlyViewed_item}
             />
           )}
           <Categories />
