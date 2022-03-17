@@ -12,4 +12,4 @@ const recentlyViewed = (props) => {
   );
 };
 
-export default recentlyViewedData;
+export default recentlyViewed;
