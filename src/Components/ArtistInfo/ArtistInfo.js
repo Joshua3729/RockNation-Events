@@ -9,13 +9,13 @@ const artistInfo = (props) => {
         <img src={props.event.img} alt="" className={classes.eventImg} />
       </div>
       <div className={classes.aboutArtistWrapper}>
-        <Link
-          to={`/events/${props.event.name.split(" ").join("%20")}/${
-            props.event._id
-          }`}
+        <div
+          className={classes.name}
+          onClick={props.viewEntity.bind(this, props.event)}
         >
-          <p className={classes.name}>{props.event.name}</p>
-        </Link>
+          {props.event.name}
+        </div>
+
         <p className={classes.genre}>{props.event.genre}</p>
       </div>
     </div>

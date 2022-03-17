@@ -109,6 +109,26 @@ class SearchResults extends Component {
     // this.props.history.go();
   };
 
+  viewEntity = (entityData) => {
+    const recentlyViewedData = JSON.parse(
+      localStorage.getItem("recentlyViewedData")
+    );
+
+    if (!recentlyViewedData.some((entity) => entity._id === entityData._id)) {
+      recentlyViewedData.push(entityData);
+      localStorage.setItem(
+        "recentlyViewedData",
+        JSON.stringify(recentlyViewedData)
+      );
+    }
+
+    this.props.history.push({
+      pathname: `/events/${entityData.name.split(" ").join("%20")}/${
+        entityData._id
+      }`,
+    });
+  };
+
   render() {
     let events = (
       <div className={classes.spinnerWrapper}>
@@ -136,7 +156,13 @@ class SearchResults extends Component {
         case "artists":
           if (this.state.resultsLengthArtists > 0)
             events = this.state.searchresultArtists.map((event, i) => {
-              return <ArtistInfo key={i} event={event} />;
+              return (
+                <ArtistInfo
+                  key={i}
+                  event={event}
+                  viewEntity={this.viewEntity}
+                />
+              );
             });
           else events = <p>No artists & teams found</p>;
           break;
