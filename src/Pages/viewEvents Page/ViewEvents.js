@@ -78,7 +78,7 @@ class ViewEvents extends Component {
         .catch((err) => console.log(err));
 
       fetch(
-        `http://localhost:5000/feed/artist-events?name=${name
+        `http://localhost:5000/feed/venue-events?name=${name
           .split(" ")
           .join("%20")}`
       )
@@ -110,6 +110,7 @@ class ViewEvents extends Component {
         return <EventInfo key={i} event={event} hideImage={true} />;
       });
     }
+
     return (
       <Fragment>
         <Navigation
@@ -130,13 +131,18 @@ class ViewEvents extends Component {
                 Home / concerts/ Justin Beiber / tickets
               </div>
               <p className={classes.name}>
-                {this.state.artistDetails[0]?.name} <span>Tickets</span>
+                {this.state.artistDetails[0]?.name ||
+                  this.state.venueDetails[0]?.name}{" "}
+                <span>Tickets</span>
               </p>
             </div>
             <div className={classes.artistWrapper}>
               <img
                 className={classes.artist}
-                src={this.state.artistDetails[0]?.big_img}
+                src={
+                  this.state.artistDetails[0]?.big_img ||
+                  this.state.venueDetails[0]?.img
+                }
                 alt=""
               />
             </div>
