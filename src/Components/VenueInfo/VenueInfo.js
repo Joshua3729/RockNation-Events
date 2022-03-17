@@ -11,7 +11,12 @@ const venueInfo = (props) => {
         />
       </div>
       <div className={classes.aboutArtistWrapper}>
-        <p className={classes.name}>{props.event.name}</p>
+        <div
+          className={classes.name}
+          onClick={props.viewEntity.bind(this, props.event, "venue")}
+        >
+          {props.event.name}
+        </div>
         <p className={classes.location}>
           {props.event.city}, {props.event.country}
         </p>

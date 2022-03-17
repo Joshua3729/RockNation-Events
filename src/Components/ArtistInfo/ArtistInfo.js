@@ -11,7 +11,7 @@ const artistInfo = (props) => {
       <div className={classes.aboutArtistWrapper}>
         <div
           className={classes.name}
-          onClick={props.viewEntity.bind(this, props.event)}
+          onClick={props.viewEntity.bind(this, props.event, "artist")}
         >
           {props.event.name}
         </div>
