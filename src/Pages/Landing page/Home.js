@@ -129,7 +129,11 @@ class Home extends Component {
           />
           <Hero />
           <ComingSoon />
-          <RecentlyViewed recentlyViewed_data={this.state.recentlyViewedData} />
+          {this.state.recentlyViewedData.length > 0 && (
+            <RecentlyViewed
+              recentlyViewed_data={this.state.recentlyViewedData}
+            />
+          )}
           <Categories />
           <TopSelling
             concerts={this.state.concerts}
