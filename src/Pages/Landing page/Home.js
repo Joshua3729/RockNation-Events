@@ -21,7 +21,7 @@ class Home extends Component {
     concertsLoading: true,
     sportsLoading: true,
     artsAndTheaterLoading: true,
-    recentlyViewedData: null,
+    recentlyViewedData: [],
   };
   componentDidMount() {
     let recentlyViewedData = JSON.parse(
@@ -129,7 +129,7 @@ class Home extends Component {
           />
           <Hero />
           <ComingSoon />
-          <RecentlyViewed />
+          <RecentlyViewed recentlyViewed_data={this.state.recentlyViewedData} />
           <Categories />
           <TopSelling
             concerts={this.state.concerts}
