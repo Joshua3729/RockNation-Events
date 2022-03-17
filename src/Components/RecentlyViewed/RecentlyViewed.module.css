@@ -20,7 +20,7 @@
   font-size: 40px;
   font-weight: 600;
   color: rgb(38, 38, 38);
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .recentlyViewed_img {
   height: 100%;
@@ -35,4 +35,8 @@
 }
 .recentlyViewed_name {
   font-weight: 700;
+}
+.message {
+  margin-bottom: 50px;
+  color: rgb(38, 38, 38);
 }
