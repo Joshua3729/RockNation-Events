@@ -20,8 +20,16 @@ class Home extends Component {
     concertsLoading: true,
     sportsLoading: true,
     artsAndTheaterLoading: true,
+    recentlyViewedData: null,
   };
   componentDidMount() {
+    let recentlyViewedData = JSON.parse(
+      localStorage.getItem("recentlyViewedData")
+    );
+    if (recentlyViewedData) {
+      this.setState({ recentlyViewedData: recentlyViewedData });
+    }
+
     fetch("http://localhost:5000/feed/events/concerts")
       .then((res) => {
         if (res.status !== 200) {
