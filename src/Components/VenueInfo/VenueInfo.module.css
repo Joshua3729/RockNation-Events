@@ -30,6 +30,10 @@
   color: rgb(2, 108, 223);
   margin-bottom: 10px;
   font-size: 20px;
+  cursor: pointer;
+}
+.name:hover {
+  color: blue;
 }
 .genre {
   color: rgba(38, 38, 38, 0.65);
