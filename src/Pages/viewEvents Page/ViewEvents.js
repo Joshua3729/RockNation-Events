@@ -8,6 +8,7 @@ import Spinner from "../../Components/UI/Spinner/Spinner";
 class ViewEvents extends Component {
   state = {
     artistDetails: [],
+    venueDetails: [],
     events: null,
   };
 
@@ -59,7 +60,7 @@ class ViewEvents extends Component {
         .catch((err) => console.log(err));
     } else if (type === "venue") {
       fetch(
-        `http://localhost:5000/feed/artist?name=${name.split(" ").join("%20")}`
+        `http://localhost:5000/feed/venue?name=${name.split(" ").join("%20")}`
       )
         .then((res) => {
           if (res.status !== 200) {
@@ -71,7 +72,7 @@ class ViewEvents extends Component {
         .then((resData) => {
           console.log(resData);
           this.setState({
-            artistDetails: resData,
+            venueDetails: resData,
           });
         })
         .catch((err) => console.log(err));
