@@ -19,3 +19,7 @@
   background-color: lightgray;
   border-radius: 5px;
 }
+.recommendation_item_img {
+  width: 100%;
+  height: 100%;
+}

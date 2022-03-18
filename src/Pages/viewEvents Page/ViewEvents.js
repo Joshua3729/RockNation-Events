@@ -170,7 +170,7 @@ class ViewEvents extends Component {
             </div>
           </div>
           <div className={classes.mainContent}>{events}</div>
-          <Recommendations />
+          <Recommendations entities={this.state.artists || this.state.venues} />
         </section>
       </Fragment>
     );
