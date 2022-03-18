@@ -4,6 +4,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import { withRouter } from "react-router-dom";
 import Spinner from "../../Components/UI/Spinner/Spinner";
+import Recommendations from "../../Components/Recommendations/Recommendations";
 
 class ViewEvents extends Component {
   state = {
@@ -148,6 +149,7 @@ class ViewEvents extends Component {
             </div>
           </div>
           <div className={classes.mainContent}>{events}</div>
+          <Recommendations />
         </section>
       </Fragment>
     );
