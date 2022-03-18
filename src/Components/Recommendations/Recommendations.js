@@ -5,10 +5,14 @@ const recommendations = (props) => {
   let recommendations = props.entities.map((entity) => (
     <div className={classes.recommendation_item}>
       <img
-        src={entity.img}
+        src={entity.big_img}
         alt=""
         className={classes.recommendation_item_img}
       />
+      <div className={classes.text_wrapper}>
+        <p className={classes.name}>{entity.name}</p>
+        <p className={classes.numberOfEvents}>see all 10 events</p>
+      </div>
     </div>
   ));
   return (
