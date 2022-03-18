@@ -7,10 +7,7 @@ const recentlyViewed = (props) => {
       <div className={classes.recentlyViewed_item_Wrapper}>
         <div
           className={classes.recentlyViewed_item}
-          onClick={props.seeRecentlyViewed_item.bind(
-            this,
-            props.recentlyViewed_data[0]
-          )}
+          onClick={props.seeRecentlyViewed_item.bind(this, recentlyViewed)}
         >
           <div className={classes.recentlyViewed_img}>
             <img src={recentlyViewed.img} />
@@ -21,10 +18,7 @@ const recentlyViewed = (props) => {
         </div>
         <button
           className={classes.remove_btn}
-          onClick={props.removeRecentlyViewed_item.bind(
-            this,
-            props.recentlyViewed_data[0]
-          )}
+          onClick={props.removeRecentlyViewed_item.bind(this, recentlyViewed)}
         >
           &times;
         </button>
