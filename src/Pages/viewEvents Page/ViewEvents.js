@@ -5,6 +5,7 @@ import EventInfo from "../../Components/EventInfo/EventInfo";
 import { withRouter } from "react-router-dom";
 import Spinner from "../../Components/UI/Spinner/Spinner";
 import Recommendations from "../../Components/Recommendations/Recommendations";
+import { Link } from "react-router-dom";
 
 class ViewEvents extends Component {
   state = {
@@ -180,7 +181,20 @@ class ViewEvents extends Component {
             <p className={classes.socialLinks_header}>
               From {this.props.match?.params.name}
             </p>
-            <div className={classes.socialLinks_wrapper}></div>
+            <div className={classes.socialLinks_wrapper}>
+              <Link>
+                <i className="fa-brands fa-facebook"></i>
+              </Link>
+              <Link>
+                <i className="fa-brands fa-twitter"></i>
+              </Link>
+              <Link>
+                <i className="fa-brands fa-youtube"></i>
+              </Link>
+              <Link>
+                <i className="fa-solid fa-globe"></i>
+              </Link>
+            </div>
           </div>
           {recommendations}
         </section>

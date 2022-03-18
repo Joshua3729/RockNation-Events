@@ -71,3 +71,11 @@
   color: rgb(38, 38, 38);
   margin-bottom: 50px;
 }
+.socialLinks_wrapper {
+  display: flex;
+  align-items: center;
+}
+.socialLinks_wrapper a {
+  text-decoration: none;
+  margin-right: 20px;
+}
