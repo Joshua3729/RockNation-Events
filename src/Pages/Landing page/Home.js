@@ -107,12 +107,12 @@ class Home extends Component {
       });
   }
 
-  seeRecentlyViewed_item = (entityData, type) => {
+  seeRecentlyViewed_item = (entityData) => {
     this.props.history.push({
       pathname: `/events/${entityData.name.split(" ").join("%20")}/${
         entityData._id
       }`,
-      search: `?type=${type}`,
+      search: `?type=${entityData.type}`,
     });
   };
 
