@@ -19,6 +19,7 @@ class ViewEvents extends Component {
 
   componentDidMount = () => {
     const name = this.props.match?.params.name;
+    const id = this.props.match?.params.id;
     const query = new URLSearchParams(this.props.location.search);
     let queryParams = [];
     for (let param of query.entries()) {
@@ -65,7 +66,7 @@ class ViewEvents extends Component {
         })
         .catch((err) => console.log(err));
 
-      fetch(`http://localhost:5000/feed/artists/${event_type}`)
+      fetch(`http://localhost:5000/feed/artists/${event_type}/${id}`)
         .then((res) => {
           if (res.status !== 200) {
             throw new Error("Failed to fetch artists.");

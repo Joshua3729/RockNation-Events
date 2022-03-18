@@ -11,7 +11,9 @@ const recommendations = (props) => {
       />
       <div className={classes.text_wrapper}>
         <p className={classes.name}>{entity.name}</p>
-        <p className={classes.numberOfEvents}>see all 10 events</p>
+        <p className={classes.numberOfEvents}>
+          see all {entity.number_of_events} events
+        </p>
       </div>
     </div>
   ));

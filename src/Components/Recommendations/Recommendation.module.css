@@ -29,11 +29,16 @@
   position: absolute;
   left: 10px;
   bottom: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(38, 38, 38, 0.8);
   padding: 10px;
   color: white;
+  border-radius: 5px;
 }
 .name {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
+  margin-bottom: 10px;
+}
+.numberOfEvents {
+  font-size: 12px;
 }
