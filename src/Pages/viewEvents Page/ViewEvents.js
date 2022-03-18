@@ -13,6 +13,7 @@ class ViewEvents extends Component {
     events: null,
     artists: null,
     venues: null,
+    name: "",
   };
 
   componentDidMount = () => {
@@ -175,6 +176,12 @@ class ViewEvents extends Component {
             </div>
           </div>
           <div className={classes.mainContent}>{events}</div>
+          <div className={classes.socialLinks_section}>
+            <p className={classes.socialLinks_header}>
+              From {this.props.match?.params.name}
+            </p>
+            <div className={classes.socialLinks_wrapper}></div>
+          </div>
           {recommendations}
         </section>
       </Fragment>
