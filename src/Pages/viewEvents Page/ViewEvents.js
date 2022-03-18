@@ -181,12 +181,13 @@ class ViewEvents extends Component {
             <p className={classes.socialLinks_header}>
               From {this.props.match?.params.name}
             </p>
+            <p className={classes.socialLinks_header2}>Follow</p>
             <div className={classes.socialLinks_wrapper}>
               <Link>
                 <i className="fa fa-brands fa-facebook"></i>
               </Link>
               <Link>
-                <i className="fa fa-brands fa -twitter"></i>
+                <i className="fa fa-brands fa-twitter"></i>
               </Link>
               <Link>
                 <i className="fa fa-brands fa-youtube"></i>
