@@ -18,6 +18,7 @@
   height: 200px;
   background-color: lightgray;
   border-radius: 5px;
+  overflow: hidden;
 }
 .recommendation_item_img {
   width: 100%;

@@ -12,6 +12,7 @@ class ViewEvents extends Component {
     venueDetails: [],
     events: null,
     artists: null,
+    venues: null,
   };
 
   componentDidMount = () => {
@@ -61,7 +62,23 @@ class ViewEvents extends Component {
           });
         })
         .catch((err) => console.log(err));
-      this.getArtistsHandler(event_type);
+
+      fetch(`http://localhost:5000/feed/artists/${event_type}`)
+        .then((res) => {
+          if (res.status !== 200) {
+            throw new Error("Failed to fetch artists.");
+          }
+          return res.json();
+        })
+        .then((resData) => {
+          console.log(resData);
+          this.setState({
+            artists: resData.artists,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else if (type === "venue") {
       fetch(
         `http://localhost:5000/feed/venue?name=${name.split(" ").join("%20")}`
@@ -103,34 +120,22 @@ class ViewEvents extends Component {
     }
   };
 
-  getArtistsHandler = (event_type) => {
-    fetch(`http://localhost:5000/feed/artists/${event_type}`)
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to fetch artists.");
-        }
-        return res.json();
-      })
-      .then((resData) => {
-        this.setState({
-          artists: resData,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
   render() {
     let events = (
       <div className={classes.spinnerWrapper}>
         <Spinner />
       </div>
     );
+    let recommendations = null;
 
-    if (this.state.events) {
+    if (this.state.events && (this.state.artists || this.state.venue)) {
       events = this.state.events.map((event, i) => {
         return <EventInfo key={i} event={event} hideImage={true} />;
       });
+
+      recommendations = (
+        <Recommendations entities={this.state.artists || this.state.venues} />
+      );
     }
 
     return (
@@ -170,7 +175,7 @@ class ViewEvents extends Component {
             </div>
           </div>
           <div className={classes.mainContent}>{events}</div>
-          <Recommendations entities={this.state.artists || this.state.venues} />
+          {recommendations}
         </section>
       </Fragment>
     );
