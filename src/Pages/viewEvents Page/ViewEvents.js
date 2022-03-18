@@ -183,16 +183,16 @@ class ViewEvents extends Component {
             </p>
             <div className={classes.socialLinks_wrapper}>
               <Link>
-                <i className="fa-brands fa-facebook"></i>
+                <i className="fa fa-brands fa-facebook"></i>
               </Link>
               <Link>
-                <i className="fa-brands fa-twitter"></i>
+                <i className="fa fa-brands fa -twitter"></i>
               </Link>
               <Link>
-                <i className="fa-brands fa-youtube"></i>
+                <i className="fa fa-brands fa-youtube"></i>
               </Link>
               <Link>
-                <i className="fa-solid fa-globe"></i>
+                <i className="fa fa-solid fa-globe"></i>
               </Link>
             </div>
           </div>
