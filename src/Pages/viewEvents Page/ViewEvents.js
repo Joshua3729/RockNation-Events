@@ -123,6 +123,27 @@ class ViewEvents extends Component {
     }
   };
 
+  viewEntity = (entityData, type) => {
+    const recentlyViewedData =
+      JSON.parse(localStorage.getItem("recentlyViewedData")) || [];
+
+    if (!recentlyViewedData.some((entity) => entity._id === entityData._id)) {
+      entityData.type = type;
+      recentlyViewedData.push(entityData);
+      localStorage.setItem(
+        "recentlyViewedData",
+        JSON.stringify(recentlyViewedData)
+      );
+    }
+
+    this.props.history.push({
+      pathname: `/events/${entityData.name.split(" ").join("%20")}/${
+        entityData._id
+      }`,
+      search: `?type=${type}&event_type=${entityData.event_type}`,
+    });
+  };
+
   render() {
     let events = (
       <div className={classes.spinnerWrapper}>
@@ -137,7 +158,10 @@ class ViewEvents extends Component {
       });
 
       recommendations = (
-        <Recommendations entities={this.state.artists || this.state.venues} />
+        <Recommendations
+          entities={this.state.artists || this.state.venues}
+          viewEntity={this.viewEntity}
+        />
       );
     }
 
