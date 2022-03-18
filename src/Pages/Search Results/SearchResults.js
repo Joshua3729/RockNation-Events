@@ -126,7 +126,7 @@ class SearchResults extends Component {
       pathname: `/events/${entityData.name.split(" ").join("%20")}/${
         entityData._id
       }`,
-      search: `?type=${type}`,
+      search: `?type=${type}&event_type=${entityData.event_type}`,
     });
   };
 

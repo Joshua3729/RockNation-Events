@@ -11,6 +11,7 @@ class ViewEvents extends Component {
     artistDetails: [],
     venueDetails: [],
     events: null,
+    artists: null,
   };
 
   componentDidMount = () => {
@@ -21,6 +22,7 @@ class ViewEvents extends Component {
       queryParams.push(param[1]);
     }
     let type = queryParams[0];
+    let event_type = queryParams[1];
     if (type === "artist") {
       fetch(
         `http://localhost:5000/feed/artist?name=${name.split(" ").join("%20")}`
@@ -59,6 +61,7 @@ class ViewEvents extends Component {
           });
         })
         .catch((err) => console.log(err));
+      this.getArtistsHandler(event_type);
     } else if (type === "venue") {
       fetch(
         `http://localhost:5000/feed/venue?name=${name.split(" ").join("%20")}`
@@ -98,6 +101,24 @@ class ViewEvents extends Component {
         })
         .catch((err) => console.log(err));
     }
+  };
+
+  getArtistsHandler = (event_type) => {
+    fetch(`http://localhost:5000/feed/artists/${event_type}`)
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to fetch artists.");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        this.setState({
+          artists: resData,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   render() {
     let events = (

@@ -10,6 +10,10 @@ const recommendations = (props) => {
         <div className={classes.recommendation_item}></div>
         <div className={classes.recommendation_item}></div>
         <div className={classes.recommendation_item}></div>
+        <div className={classes.recommendation_item}></div>
+        <div className={classes.recommendation_item}></div>
+        <div className={classes.recommendation_item}></div>
+        <div className={classes.recommendation_item}></div>
       </div>
     </div>
   );

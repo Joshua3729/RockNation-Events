@@ -112,7 +112,7 @@ class Home extends Component {
       pathname: `/events/${entityData.name.split(" ").join("%20")}/${
         entityData._id
       }`,
-      search: `?type=${entityData.type}`,
+      search: `?type=${entityData.type}&event_type=${entityData.event_type}`,
     });
   };
 
