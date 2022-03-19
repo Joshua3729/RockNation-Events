@@ -22,7 +22,7 @@ const recommendations = (props) => {
   ));
   return (
     <div className={classes.recommendations_wrapper}>
-      <p className={classes.recommendtion_header}>Recommendations</p>
+      <p className={classes.recommendtion_header}>Recommended</p>
       <div className={classes.recommendtion_grid}>{recommendations}</div>
     </div>
   );
