@@ -122,6 +122,23 @@ class ViewEvents extends Component {
           });
         })
         .catch((err) => console.log(err));
+
+      fetch(`http://localhost:5000/feed/venue/${event_type}/${id}`)
+        .then((res) => {
+          if (res.status !== 200) {
+            throw new Error("Failed to fetch venue.");
+          }
+          return res.json();
+        })
+        .then((resData) => {
+          console.log(resData);
+          this.setState({
+            artists: resData.artists,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
   };
 
@@ -155,7 +172,7 @@ class ViewEvents extends Component {
     );
     let recommendations = null;
 
-    if (this.state.events && (this.state.artists || this.state.venue)) {
+    if (this.state.events && (this.state.artists || this.state.venues)) {
       events = this.state.events.map((event, i) => {
         return <EventInfo key={i} event={event} hideImage={true} />;
       });
