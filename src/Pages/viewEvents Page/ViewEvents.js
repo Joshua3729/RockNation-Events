@@ -144,6 +144,7 @@ class ViewEvents extends Component {
       }`,
       search: `?type=${type}&event_type=${entityData.event_type}`,
     });
+    this.props.history.go();
   };
 
   render() {
