@@ -3,7 +3,10 @@ import classes from "./Recommendation.module.css";
 
 const recommendations = (props) => {
   let recommendations = props.entities.map((entity) => (
-    <div className={classes.recommendation_item}>
+    <div
+      className={classes.recommendation_item}
+      onClick={props.viewEntity.bind(this, entity, props.type)}
+    >
       <img
         src={entity.big_img}
         alt=""

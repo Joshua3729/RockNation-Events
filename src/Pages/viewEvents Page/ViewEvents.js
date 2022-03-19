@@ -15,6 +15,7 @@ class ViewEvents extends Component {
     artists: null,
     venues: null,
     name: "",
+    type: null,
   };
 
   componentDidMount = () => {
@@ -42,6 +43,7 @@ class ViewEvents extends Component {
           console.log(resData);
           this.setState({
             artistDetails: resData,
+            type: type,
           });
         })
         .catch((err) => console.log(err));
@@ -161,6 +163,7 @@ class ViewEvents extends Component {
         <Recommendations
           entities={this.state.artists || this.state.venues}
           viewEntity={this.viewEntity}
+          type={this.state.type}
         />
       );
     }
