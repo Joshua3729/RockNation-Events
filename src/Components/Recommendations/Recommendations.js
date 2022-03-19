@@ -8,7 +8,7 @@ const recommendations = (props) => {
       onClick={props.viewEntity.bind(this, entity, props.type)}
     >
       <img
-        src={entity.big_img}
+        src={entity.big_img || entity.img}
         alt=""
         className={classes.recommendation_item_img}
       />

@@ -133,7 +133,7 @@ class ViewEvents extends Component {
         .then((resData) => {
           console.log(resData);
           this.setState({
-            artists: resData.artists,
+            venues: resData.venues,
           });
         })
         .catch((err) => {
