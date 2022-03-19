@@ -99,6 +99,7 @@ class ViewEvents extends Component {
           console.log(resData);
           this.setState({
             venueDetails: resData,
+            type: type,
           });
         })
         .catch((err) => console.log(err));
