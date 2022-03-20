@@ -10,7 +10,7 @@ const categories = (props) => {
         <div className={classes.grid_item}>
           <Link to="/musicevents">
             <img
-              src="https://www.rollingstone.com/wp-content/uploads/2020/09/black-promoters-collective.jpg?resize=1800,1200&w=450"
+              src="https://images.unsplash.com/photo-1566808907623-51b8fc382454?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
               alt=""
             />
             <div className={classes.EventLabel}>Music Concerts</div>
@@ -38,7 +38,7 @@ const categories = (props) => {
         <div className={classes.grid_item}>
           <Link to="/family">
             <img
-              src="https://cdn.shopify.com/s/files/1/0468/4270/8124/articles/2559491272_17552143_28c0213a-8e3b-45e9-95cd-89cce2ee313b_3000x.jpg?v=1608226189"
+              src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80"
               alt=""
             />
             <div className={classes.EventLabel}>Kids Events</div>

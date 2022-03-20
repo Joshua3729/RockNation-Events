@@ -32,12 +32,12 @@
   text-transform: capitalize;
   position: absolute;
   top: 70%;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   right: 10px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
+  background-color: rgba(38, 38, 38, 0.8);
+  border-radius: 5px;
   padding: 10px 20px;
   box-sizing: border-box;
 }
