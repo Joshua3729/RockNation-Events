@@ -80,7 +80,7 @@ class Navigation extends Component {
             <li>Tickets</li>
             <li>
               <button className={classes.logout} onClick={this.props.logout}>
-                LOG OUT
+                Log out
               </button>
             </li>
           </ul>
