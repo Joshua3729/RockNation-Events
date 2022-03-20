@@ -168,7 +168,13 @@
   border-radius: 50%;
   overflow: hidden;
   margin-left: 20px;
+  cursor: pointer;
+  border: 2px white solid;
 }
+.userImgWrapper:hover {
+  border: 2px blue solid;
+}
+
 .userImgWrapper img {
   width: 100%;
   height: 100%;
