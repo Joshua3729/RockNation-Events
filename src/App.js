@@ -1034,6 +1034,24 @@ class App extends Component {
               />
             )}
           />
+          <Route
+            path="/events/:name/:id"
+            exact
+            render={(props) => (
+              <ViewEvents
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+                goToHome={this.homeHandler}
+                searchresult={this.state.searchresult}
+                search={this.searchHandler}
+              />
+            )}
+          />
         </Router>
       );
     }
