@@ -62,6 +62,7 @@ class Navigation extends Component {
         </div>
 
         <div className={classes.userDetailsTray}>
+          <div className={classes.pointer}></div>
           <ul
             className={
               this.state.openTray
