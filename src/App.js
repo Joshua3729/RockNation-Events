@@ -171,7 +171,7 @@ class App extends Component {
 
     this.setState({ authLoading: true });
     console.log(userData);
-    fetch("https://powerbrains-events.herokuapp.com/auth/login", {
+    fetch("http://localhost:5000/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -262,7 +262,7 @@ class App extends Component {
     formData.append("street", userData.street.value);
     formData.append("image", userData.image.value);
     console.log(formData);
-    fetch("https://powerbrains-events.herokuapp.com/auth/signup", {
+    fetch("http://localhost:5000/auth/signup", {
       method: "POST",
       body: formData,
     })
