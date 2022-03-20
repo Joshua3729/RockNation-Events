@@ -8,7 +8,7 @@ const categories = (props) => {
       <p className={classes.categoriesText}>Categories</p>
       <div className={classes.categories_grid}>
         <div className={classes.grid_item}>
-          <Link to="/musicevents">
+          <Link to="/concerts">
             <img
               src="https://images.unsplash.com/photo-1566808907623-51b8fc382454?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
               alt=""
