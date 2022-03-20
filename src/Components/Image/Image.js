@@ -1,6 +1,5 @@
 import React from "react";
-
-import classes from "./Image.css";
+import classes from "./Image.module.css";
 
 const image = (props) => (
   <div
