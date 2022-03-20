@@ -15,7 +15,7 @@ import SportsPage from "./Pages/Sports page/SportsPage";
 import ArtsAndTheaterPage from "./Pages/Arts And Theater Page/ArtsAndTheater";
 import FilePicker from "./Components/Filepicker/FilePicker";
 import { generateBase64FromImage } from "./util/image";
-import Image from "./Components/Image/Image";
+import Image from "./Components/ImagePreview/Image";
 import SingleEvent from "./Components/SingleEvent/SingleEvent";
 import Footer from "./Components/Footer/Footer";
 import UserProfile from "./Pages/User Profile/UserProfile";
