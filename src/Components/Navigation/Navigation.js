@@ -62,7 +62,7 @@ class Navigation extends Component {
         </div>
 
         <div className={classes.userDetailsTray}>
-          <div className={classes.pointer}></div>
+          <div className={classes.gutter}></div>
           <ul
             className={
               this.state.openTray
@@ -70,6 +70,8 @@ class Navigation extends Component {
                 : classes.userDetailsTrayLinks
             }
           >
+            <div className={classes.pointer}></div>
+
             <li>
               <Link to="/profile" className={classes.userTray_item}>
                 Profile
