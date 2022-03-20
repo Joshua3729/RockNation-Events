@@ -57,20 +57,10 @@ class Navigation extends Component {
 
     let navLink = this.props.isAuth ? (
       <div className={classes.userDetailsWrapper}>
-        <div className={classes.openTray_btn} onClick={this.openTrayHandler}>
-          <div className={classes.userImgWrapper}>
-            {console.log(this.props.userImage)}
-
-            <img
-              src={
-                "https://powerbrains-events.herokuapp.com/" +
-                this.props.userImage
-              }
-              alt=""
-            />
-          </div>
-          <p className={classes.userName}>{this.props.fullname}</p>
+        <div className={classes.userImgWrapper} onClick={this.openTrayHandler}>
+          <img src={"http://localhost:5000/" + this.props.userImage} alt="" />
         </div>
+
         <div className={classes.userDetailsTray}>
           <ul
             className={
