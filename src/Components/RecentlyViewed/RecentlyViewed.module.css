@@ -67,6 +67,7 @@
 }
 .recentlyViewed_name {
   font-weight: 700;
+  color: rgb(38, 38, 38);
 }
 .message {
   margin-bottom: 50px;
