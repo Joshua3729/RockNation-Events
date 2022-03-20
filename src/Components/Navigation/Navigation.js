@@ -98,6 +98,7 @@ class Navigation extends Component {
         style={{
           color: this.state.scroll ? "rgb(38,38,38" : "white",
         }}
+        className={classes.sign_in}
         onClick={this.props.login}
       >
         Sign in
@@ -262,7 +263,7 @@ class Navigation extends Component {
                 Help
               </Link>
             </li>
-            <li>{navLink}</li>
+            {navLink}
           </ul>
         </div>
         <div className={this.props.scrollEffect ? null : classes.gutter}></div>

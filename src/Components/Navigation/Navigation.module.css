@@ -327,6 +327,10 @@
   border-bottom: 2px solid rgb(2, 108, 223);
 }
 
+.sign_in {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1200px) {
   /*Tablets [601px -> 1200px]*/
   .events_grid {
