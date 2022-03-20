@@ -86,7 +86,7 @@ class Navigation extends Component {
     ) : (
       <li
         style={{
-          color: this.state.scroll ? "rgb(38,38,38" : "white",
+          color: this.state.scroll ? "rgb(38,38,38)" : "white",
         }}
         className={classes.sign_in}
         onClick={this.props.login}

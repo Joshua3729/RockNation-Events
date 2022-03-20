@@ -14,7 +14,8 @@
 }
 .grid_item {
   position: relative;
-  height: 200px;
+  height: 158px;
+  border-radius: 5px;
   background-color: lightgray;
   overflow: hidden;
 }
