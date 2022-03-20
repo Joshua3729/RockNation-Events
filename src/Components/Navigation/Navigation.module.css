@@ -174,31 +174,38 @@
   height: 100%;
 }
 .userDetailsTray {
-  /* overflow: hidden; */
+  overflow: hidden;
   position: absolute;
   top: 110%;
   right: 0px;
-  width: 190px;
-  height: 150px;
+  width: 150px;
+  height: 160px;
 }
 .userDetailsTray ul {
-  width: 190px;
+  width: 100%;
   height: 150px;
-  background-color: #27374d;
+  background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: all 0.5s;
   list-style: none;
-  padding: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 7px;
 }
 .pointer {
   position: absolute;
   top: 0;
-  right: 0;
-  transform: translateY(-100%);
+  right: 15px;
+  transform: translate(50%, -100%);
   background-color: white;
   height: 10px;
   width: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+.gutter {
+  width: 100%;
+  height: 10px;
 }
 .openTray {
   transform: translateY(0);
@@ -206,23 +213,28 @@
 .logout {
   background-color: transparent;
   border: none;
-  color: white;
+  color: rgb(38, 38, 38);
 }
 .userDetailsTrayLinks {
-  transform: translateY(-100%);
+  transform: translateY(-110%);
 }
 .userDetailsTray li {
   width: 100%;
   text-align: center;
-  padding: 10px;
   box-sizing: border-box;
   cursor: pointer;
-  border-bottom: 1px solid lightgray;
+  color: rgb(38, 38, 38);
+  margin-bottom: 10px;
 }
 .userDetailsTray li:hover {
   background-color: lightblue;
 }
-
+.userDetailsTray a {
+  color: rgb(38, 38, 38);
+}
+.userDetailsTray a:hover {
+  background-color: unset !important;
+}
 .logoWrapper {
   width: 150px;
   height: 100px;
