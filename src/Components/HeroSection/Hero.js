@@ -69,15 +69,14 @@ const Hero = () => {
         </div>
       </div>
       <div className={classes.bigHero}>
+        <div className={classes.backDrop}></div>
+        <img src={heroBg} alt="" className={classes.heroBg} />
         <div className={classes.TextWrapper}>
           <h1>Shop for millions of tickets to your favorite events</h1>
           <p>
             Plus secure effortless ticketing and many more with RockNation
             Events
           </p>
-        </div>
-        <div className={classes.heroImgWrapper}>
-          <img src={hero} alt="" className={classes.heroImg} />
         </div>
         <div className={classes.searchTool}>
           <form>

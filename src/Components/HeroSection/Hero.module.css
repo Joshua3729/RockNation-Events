@@ -47,6 +47,9 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.9);
 }
+.bigHero {
+  display: none;
+}
 .heroImgWrapper {
   position: absolute;
   bottom: 0;
@@ -209,5 +212,24 @@ input::-webkit-datetime-edit-fields-wrapper {
   }
   .partnersBanner {
     height: 200px;
+  }
+  .bigHero {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  .Hero_wrapper {
+    display: none;
+  }
+  .partnersBanner {
+    display: none;
+  }
+  .TextWrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
 }
