@@ -1,10 +1,14 @@
 .TopSelling {
   padding: 0 50px 100px 50px;
 }
-.grid {
-  /* background-color: red; */
+.TopSelling_wrapper {
+  display: block;
   max-width: 1440px;
   margin: 0 auto;
+}
+.grid {
+  /* background-color: red; */
+
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;

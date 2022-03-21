@@ -39,32 +39,34 @@ class topSelling extends Component {
     return (
       <Aux>
         <section className={classes.TopSelling}>
-          <h3 className={classes.sectionDescription}>Top selling</h3>
-          <div className={classes.ConcertsWrapper}>
-            <div className={classes.sectionDescription2}>
-              <p>Concerts</p> <Link to="/concerts">See All Concerts</Link>
+          <div className={classes.TopSelling_wrapper}>
+            <h3 className={classes.sectionDescription}>Top selling</h3>
+            <div className={classes.ConcertsWrapper}>
+              <div className={classes.sectionDescription2}>
+                <p>Concerts</p> <Link to="/concerts">See All Concerts</Link>
+              </div>
+              <div className={classes.grid}>{cards}</div>
             </div>
-            <div className={classes.grid}>{cards}</div>
-          </div>
-          <div className={classes.ArtsAndTheaterWrapper}>
-            <div className={classes.sectionDescription2}>
-              <p>Sports</p> <Link to="/sports">See All Sports</Link>
+            <div className={classes.ArtsAndTheaterWrapper}>
+              <div className={classes.sectionDescription2}>
+                <p>Sports</p> <Link to="/sports">See All Sports</Link>
+              </div>
+              <div className={classes.grid}>{Sports}</div>
             </div>
-            <div className={classes.grid}>{Sports}</div>
-          </div>
-          <div className={classes.ArtsAndTheaterWrapper}>
-            <div className={classes.sectionDescription2}>
-              <p>Arts & Theater</p>
-              <Link to="/artsandtheater">See All Arts & Theater</Link>
+            <div className={classes.ArtsAndTheaterWrapper}>
+              <div className={classes.sectionDescription2}>
+                <p>Arts & Theater</p>
+                <Link to="/artsandtheater">See All Arts & Theater</Link>
+              </div>
+              <div className={classes.grid}>{EventsArtsAndTheater}</div>
             </div>
-            <div className={classes.grid}>{EventsArtsAndTheater}</div>
-          </div>
 
-          <div className={classes.Family}>
-            <div className={classes.sectionDescription2}>
-              <p>Family</p> <Link to="/family">See All Family</Link>
+            <div className={classes.Family}>
+              <div className={classes.sectionDescription2}>
+                <p>Family</p> <Link to="/family">See All Family</Link>
+              </div>
+              <div className={classes.grid}>{EventsFamily}</div>
             </div>
-            <div className={classes.grid}>{EventsFamily}</div>
           </div>
         </section>
       </Aux>
