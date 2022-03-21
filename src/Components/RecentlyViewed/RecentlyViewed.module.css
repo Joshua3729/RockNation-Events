@@ -1,9 +1,12 @@
-.recentlyViewed_wrapper {
+.recentlyViewed_section {
   padding: 50px 50px 0 50px;
 }
-.recentlyViewed {
+.recentlyViewed_wrapper {
+  display: block;
   max-width: 1440px;
   margin: 0 auto;
+}
+.recentlyViewed {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
