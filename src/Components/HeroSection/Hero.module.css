@@ -114,6 +114,21 @@
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
   box-sizing: border-box;
 }
+.searchTool2 form {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  width: 1140px;
+  padding: 20px;
+  height: 90px;
+  border-radius: 100px;
+  background-color: #030406;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+  box-sizing: border-box;
+}
 .searchBtn {
   position: absolute;
   top: 20px;
@@ -231,5 +246,11 @@ input::-webkit-datetime-edit-fields-wrapper {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    height: 300px;
+  }
+
+  .searchTool_wrapper {
+    position: absolute;
+    max-width: 1440px;
   }
 }
