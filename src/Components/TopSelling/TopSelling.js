@@ -39,7 +39,7 @@ class topSelling extends Component {
     return (
       <Aux>
         <section className={classes.TopSelling}>
-          <div className={classes.sectionDescription}>Top selling</div>
+          <h3 className={classes.sectionDescription}>Top selling</h3>
           <div className={classes.ConcertsWrapper}>
             <div className={classes.sectionDescription2}>
               <p>Concerts</p> <Link to="/concerts">See All Concerts</Link>
