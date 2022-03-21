@@ -9,40 +9,42 @@ import EventCard from "../EventCard/EventCard";
 const ComingSoon = (props) => {
   return (
     <section className={classes.upcomingEvents}>
-      <h2 className={classes.header}>Our top picks this week</h2>
-      <div className={classes.OurPicksGrid}>
-        <EventCard
-          event={{
-            cardImg: beiber,
-            eventName: "Justin Beiber: Turn On The Lights",
-            venue: "The O2",
-            city: "Manchester",
-          }}
-        />
-        <EventCard
-          event={{
-            cardImg: badbunny,
-            eventName: "Bad Bunny: Game on",
-            venue: "staple center",
-            city: "New York",
-          }}
-        />
-        <EventCard
-          event={{
-            cardImg: billie,
-            eventName: "Billy Eilish: Simphony tour",
-            venue: "Rumble Arena",
-            city: "Australia",
-          }}
-        />
-        <EventCard
-          event={{
-            cardImg: khalid,
-            eventName: "Khalid: Bad Boys Tour",
-            venue: "Wembly Stadium",
-            city: "London",
-          }}
-        />
+      <div className={classes.upcomingEvents_wrapper}>
+        <h2 className={classes.header}>Our top picks this week</h2>
+        <div className={classes.OurPicksGrid}>
+          <EventCard
+            event={{
+              cardImg: beiber,
+              eventName: "Justin Beiber: Turn On The Lights",
+              venue: "The O2",
+              city: "Manchester",
+            }}
+          />
+          <EventCard
+            event={{
+              cardImg: badbunny,
+              eventName: "Bad Bunny: Game on",
+              venue: "staple center",
+              city: "New York",
+            }}
+          />
+          <EventCard
+            event={{
+              cardImg: billie,
+              eventName: "Billy Eilish: Simphony tour",
+              venue: "Rumble Arena",
+              city: "Australia",
+            }}
+          />
+          <EventCard
+            event={{
+              cardImg: khalid,
+              eventName: "Khalid: Bad Boys Tour",
+              venue: "Wembly Stadium",
+              city: "London",
+            }}
+          />
+        </div>
       </div>
     </section>
   );
