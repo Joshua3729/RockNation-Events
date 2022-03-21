@@ -5,13 +5,6 @@
   height: 100vh;
   width: 100%;
 }
-.Hero_wrapper {
-  position: relative;
-  top: 0;
-  left: 0;
-  background-color: red;
-  height: 100%;
-}
 .heroBg {
   object-fit: cover;
   z-index: 100;
