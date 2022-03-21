@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const categories = (props) => {
   return (
     <div className={classes.categories}>
-      <p className={classes.categoriesText}>Categories</p>
+      <h3 className={classes.categoriesText}>Categories</h3>
       <div className={classes.categories_grid}>
         <div className={classes.grid_item}>
           <Link to="/concerts">
