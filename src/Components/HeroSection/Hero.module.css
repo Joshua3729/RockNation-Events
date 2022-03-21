@@ -4,9 +4,14 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  position: relative;
 }
-
+.Hero_wrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: red;
+  height: 100%;
+}
 .heroBg {
   object-fit: cover;
   z-index: 100;
@@ -193,4 +198,16 @@ input::-webkit-datetime-edit-fields-wrapper {
   outline: none;
   font-size: 25px;
   width: 70%;
+}
+@media only screen and (min-width: 1440px) {
+  /*Small smartphones [325px -> 425px]*/
+  .Hero {
+    height: 50vh;
+  }
+  .backDrop {
+    height: 50vh;
+  }
+  .partnersBanner {
+    height: 200px;
+  }
 }
