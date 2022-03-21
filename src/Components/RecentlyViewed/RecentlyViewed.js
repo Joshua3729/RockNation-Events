@@ -27,7 +27,7 @@ const recentlyViewed = (props) => {
   });
   return (
     <div className={classes.recentlyViewed_wrapper}>
-      <div className={classes.sectionDescription}>Recently Viewed</div>
+      <h3 className={classes.sectionDescription}>Recently Viewed</h3>
       <p className={classes.message}>Pick up where you left off</p>
       <div className={classes.recentlyViewed}>{recentlyViewed_items}</div>
     </div>
