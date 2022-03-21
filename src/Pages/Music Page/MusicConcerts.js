@@ -77,12 +77,14 @@ class MusicConcerts extends Component {
             />
           </div>
           <div className={classes.mainContent}>
-            <h2 className={classes.header}>
-              All Concert Events ({this.state.events.length})
-            </h2>
-            <div className={classes.eventsWrapper}>
-              <div className={classes.events}>{events}</div>
-              <AdCard />
+            <div className={classes.wrapper}>
+              <h2 className={classes.header}>
+                All Concert Events ({this.state.events.length})
+              </h2>
+              <div className={classes.eventsWrapper}>
+                <div className={classes.events}>{events}</div>
+                <AdCard />
+              </div>
             </div>
           </div>
         </section>

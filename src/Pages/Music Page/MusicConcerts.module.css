@@ -26,6 +26,11 @@
 /*event card*/
 
 /*---------------------*/
+.wrapper {
+  display: block;
+  margin: 0 auto;
+  max-width: 1440px;
+}
 .eventsWrapper {
   width: 100%;
   display: grid;
