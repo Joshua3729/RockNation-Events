@@ -7,9 +7,12 @@
   margin-bottom: 20px;
   color: rgb(38, 38, 38);
 }
-.categories_grid {
+.categories_wrapper {
+  display: block;
   max-width: 1440px;
   margin: 0 auto;
+}
+.categories_grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
