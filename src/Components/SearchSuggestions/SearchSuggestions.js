@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "./SearchSuggestions.module.css";
 
 class SearchSuggestion {
   render() {
