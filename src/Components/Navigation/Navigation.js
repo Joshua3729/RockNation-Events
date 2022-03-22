@@ -149,6 +149,9 @@ class Navigation extends Component {
                     />
                   </button>
                 </form>
+                <div className={classes.searchSuggestion}>
+                  <p>Hello world</p>
+                </div>
               </div>
             )}
             <ul className={classes.NavLinks}>
