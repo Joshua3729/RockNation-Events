@@ -399,18 +399,3 @@
     display: none;
   }
 }
-.searchSuggestion {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  transform: translateY(10px);
-  width: 320px;
-  height: 400px;
-  background-color: white;
-
-  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 50%);
-}
-
-.hide {
-  display: none;
-}
