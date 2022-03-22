@@ -31,7 +31,7 @@ const searchSuggestion = (props) => {
   }
   return (
     <div className={classes.searchSuggestion}>
-      <h3>Recently viewed</h3>
+      <h3 className={classes.header}>Recently viewed</h3>
       {searchSuggestion_items}
     </div>
   );
