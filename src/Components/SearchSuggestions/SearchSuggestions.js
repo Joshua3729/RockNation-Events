@@ -8,13 +8,18 @@ const searchSuggestion = (props) => {
   if (props.searchSuggestionData) {
     searchSuggestion_items = props.searchSuggestionData.map((entity, i) => {
       let searchSuggestion_item = null;
-      if ((entity.type = "artist"))
+      if (entity.type == "artist")
         searchSuggestion_item = (
-          <ArtistInfo key={i} event={entity} viewEntity={this.viewEntity} />
+          <ArtistInfo key={i} event={entity} viewEntity={props.viewEntity} />
         );
       else
         searchSuggestion_item = (
-          <VenueInfo key={i} event={entity} viewEntity={this.viewEntity} />
+          <VenueInfo
+            key={i}
+            event={entity}
+            viewEntity={props.viewEntity}
+            searchSuggestion={true}
+          />
         );
       return searchSuggestion_item;
     });

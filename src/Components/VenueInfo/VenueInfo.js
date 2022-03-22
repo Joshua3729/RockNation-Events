@@ -17,7 +17,10 @@ const venueInfo = (props) => {
         >
           {props.event.name}
         </div>
-        <p className={classes.location}>
+        <p
+          className={classes.location}
+          style={{ fontSize: props.searchSuggestion && "10px" }}
+        >
           {props.event.city}, {props.event.country}
         </p>
       </div>
