@@ -15,7 +15,16 @@ class Navigation extends Component {
     menuButton: false,
     openSearchTray: false,
     show: false,
+    searchSuggestionData: null,
   };
+  componentDidMount() {
+    let recentlyViewedData = JSON.parse(
+      localStorage.getItem("recentlyViewedData")
+    );
+    if (recentlyViewedData) {
+      this.setState({ searchSuggestionData: recentlyViewedData });
+    }
+  }
   changeNavBarBG = () => {
     if (window.scrollY > 0) {
       this.setState({ scroll: true });

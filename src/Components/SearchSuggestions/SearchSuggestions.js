@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import classes from "./SearchSuggestions.module.css";
+import ArtistInfo from "../ArtistInfo/ArtistInfo";
 
 class SearchSuggestion extends Component {
   render() {
     return (
       <div className={classes.searchSuggestion}>
-        <p>Hello world</p>
+        <h3>Recently viewed</h3>
       </div>
     );
   }
