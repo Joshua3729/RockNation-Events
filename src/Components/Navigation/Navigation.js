@@ -133,11 +133,12 @@ class Navigation extends Component {
             </div>
             {(this.props.searchBar || this.state.scroll) && (
               <div className={classes.Wrapper}>
-                <form id="form" onSubmit={this.props.search}>
+                <form id="form" onSubmit={this.props.search} autocomplete="off">
                   <input
                     type="text"
                     placeholder="Search for events by your favourite artists"
                     onFocus={this.showSearchHandler}
+                    onBlur={this.showSearchHandler}
                     className={[
                       classes.SearchInput,
                       !this.state.scroll
