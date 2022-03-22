@@ -13,6 +13,7 @@ class Navigation extends Component {
     openTray: false,
     menuButton: false,
     openSearchTray: false,
+    show: false,
   };
   changeNavBarBG = () => {
     if (window.scrollY > 0) {
@@ -40,6 +41,11 @@ class Navigation extends Component {
       return {
         menuButton: !prevState.menuButton,
       };
+    });
+  };
+  showSearchHandler = () => {
+    this.setState((prevState) => {
+      return { show: !prevState.show };
     });
   };
   render() {
@@ -131,6 +137,7 @@ class Navigation extends Component {
                   <input
                     type="text"
                     placeholder="Search for events by your favourite artists"
+                    onFocus={this.showSearchHandler}
                     className={[
                       classes.SearchInput,
                       !this.state.scroll
@@ -149,7 +156,12 @@ class Navigation extends Component {
                     />
                   </button>
                 </form>
-                <div className={classes.searchSuggestion}>
+                <div
+                  className={[
+                    classes.searchSuggestion,
+                    this.state.show ? null : classes.hide,
+                  ].join(" ")}
+                >
                   <p>Hello world</p>
                 </div>
               </div>
