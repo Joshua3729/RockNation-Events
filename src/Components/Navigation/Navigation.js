@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import MenuButton from "./MenuButton/MenuButton";
 import searchIcon from "../Image/searchIcon.png";
+import SearchSuggestion from "../SearchSuggestions/SearchSuggestions";
 
 class Navigation extends Component {
   state = {
