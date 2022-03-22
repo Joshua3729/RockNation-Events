@@ -158,11 +158,7 @@ class Navigation extends Component {
                     />
                   </button>
                 </form>
-                {this.state.show && (
-                  <div className={classes.searchSuggestion}>
-                    <p>Hello world</p>
-                  </div>
-                )}
+                {this.state.show && <SearchSuggestion />}
               </div>
             )}
             <ul className={classes.NavLinks}>

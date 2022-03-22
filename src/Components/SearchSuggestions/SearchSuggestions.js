@@ -2,7 +2,11 @@ import React from "react";
 
 class SearchSuggestion {
   render() {
-    return;
+    return (
+      <div className={classes.searchSuggestion}>
+        <p>Hello world</p>
+      </div>
+    );
   }
 }
 
