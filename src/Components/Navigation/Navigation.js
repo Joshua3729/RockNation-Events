@@ -59,6 +59,15 @@ class Navigation extends Component {
   hideSearchSuggestionsHandler = () => {
     this.setState({ show: false });
   };
+  viewEntity = (entityData, type) => {
+    this.props.history.push({
+      pathname: `/events/${entityData.name.split(" ").join("%20")}/${
+        entityData._id
+      }`,
+      search: `?type=${type}&event_type=${entityData.event_type}`,
+    });
+  };
+
   render() {
     if (this.props.scrollEffect) {
       window.addEventListener("scroll", this.changeNavBarBG);
@@ -171,6 +180,7 @@ class Navigation extends Component {
                 {this.state.show && (
                   <SearchSuggestion
                     searchSuggestionData={this.state.searchSuggestionData}
+                    viewEntity={this.viewEntity}
                   />
                 )}
               </div>
