@@ -6,6 +6,6 @@
   width: 320px;
   height: 400px;
   background-color: white;
-
+  overflow-y: scroll;
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 50%);
 }

@@ -44,10 +44,11 @@ class Navigation extends Component {
       };
     });
   };
-  showSearchHandler = () => {
-    this.setState((prevState) => {
-      return { show: !prevState.show };
-    });
+  showSearchSuggestionsHandler = () => {
+    this.setState({ show: true });
+  };
+  hideSearchSuggestionsHandler = () => {
+    this.setState({ show: false });
   };
   render() {
     if (this.props.scrollEffect) {
@@ -138,8 +139,8 @@ class Navigation extends Component {
                   <input
                     type="text"
                     placeholder="Search for events by your favourite artists"
-                    onFocus={this.showSearchHandler}
-                    onBlur={this.showSearchHandler}
+                    onFocus={this.showSearchSuggestionsHandler}
+                    onBlur={this.hideSearchSuggestionsHandler}
                     className={[
                       classes.SearchInput,
                       !this.state.scroll
