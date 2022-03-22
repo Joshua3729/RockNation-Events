@@ -14,12 +14,13 @@ const venueInfo = (props) => {
         <div
           className={classes.name}
           onClick={props.viewEntity.bind(this, props.event, "venue")}
+          style={{ fontSize: props.searchSuggestion && "15px" }}
         >
           {props.event.name}
         </div>
         <p
           className={classes.location}
-          style={{ fontSize: props.searchSuggestion && "10px" }}
+          style={{ fontSize: props.searchSuggestion && "12px" }}
         >
           {props.event.city}, {props.event.country}
         </p>

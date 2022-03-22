@@ -6,17 +6,31 @@ const artistInfo = (props) => {
   return (
     <div className={classes.event}>
       <div className={classes.imgWrapper}>
-        <img src={props.event.img} alt="" className={classes.eventImg} />
+        <img
+          src={props.event.img}
+          alt=""
+          className={classes.eventImg}
+          style={{
+            width: props.searchSuggestion && "60px",
+            borderRadius: props.searchSuggestion && "50%",
+          }}
+        />
       </div>
       <div className={classes.aboutArtistWrapper}>
         <div
           className={classes.name}
           onClick={props.viewEntity.bind(this, props.event, "artist")}
+          style={{ fontSize: props.searchSuggestion && "15px" }}
         >
           {props.event.name}
         </div>
 
-        <p className={classes.genre}>{props.event.genre}</p>
+        <p
+          className={classes.genre}
+          style={{ fontSize: props.searchSuggestion && "12px" }}
+        >
+          {props.event.genre}
+        </p>
       </div>
     </div>
   );

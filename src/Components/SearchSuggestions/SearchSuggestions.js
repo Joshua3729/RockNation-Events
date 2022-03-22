@@ -10,7 +10,12 @@ const searchSuggestion = (props) => {
       let searchSuggestion_item = null;
       if (entity.type == "artist")
         searchSuggestion_item = (
-          <ArtistInfo key={i} event={entity} viewEntity={props.viewEntity} />
+          <ArtistInfo
+            key={i}
+            event={entity}
+            viewEntity={props.viewEntity}
+            searchSuggestion={true}
+          />
         );
       else
         searchSuggestion_item = (
