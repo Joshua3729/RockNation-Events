@@ -45,36 +45,51 @@ const searchSuggestion = (props) => {
     props.resultsLengthEvents != null &&
     props.resultsLengthVenues != null
   ) {
-    events = props.searchresultEvents.map((event, i) => {
-      return (
-        <EventInfo
-          key={i}
-          event={event}
-          viewEntity={props.viewEntity}
-          searchSuggestion={true}
-        />
+    events =
+      props.searchresultEvents.length > 0 ? (
+        props.searchresultEvents.map((event, i) => {
+          return (
+            <EventInfo
+              key={i}
+              event={event}
+              viewEntity={props.viewEntity}
+              searchSuggestion={true}
+            />
+          );
+        })
+      ) : (
+        <div className={classes.empty}>Not Found</div>
       );
-    });
-    artists = props.searchresultArtists.map((event, i) => {
-      return (
-        <ArtistInfo
-          key={i}
-          event={event}
-          viewEntity={props.viewEntity}
-          searchSuggestion={true}
-        />
+    artists =
+      props.searchresultArtists.length > 0 ? (
+        props.searchresultArtists.map((event, i) => {
+          return (
+            <ArtistInfo
+              key={i}
+              event={event}
+              viewEntity={props.viewEntity}
+              searchSuggestion={true}
+            />
+          );
+        })
+      ) : (
+        <div className={classes.empty}>Not Found</div>
       );
-    });
-    venues = props.searchresultVenues.map((event, i) => {
-      return (
-        <VenueInfo
-          key={i}
-          event={event}
-          viewEntity={props.viewEntity}
-          searchSuggestion={true}
-        />
+    venues =
+      props.searchresultVenues.length > 0 ? (
+        props.searchresultVenues.map((event, i) => {
+          return (
+            <VenueInfo
+              key={i}
+              event={event}
+              viewEntity={props.viewEntity}
+              searchSuggestion={true}
+            />
+          );
+        })
+      ) : (
+        <div className={classes.empty}>Not Found</div>
       );
-    });
     searchSuggestion_items = (
       <div className={classes.searchSuggestion_items}>
         <div className={classes.searchSuggestion_item}>

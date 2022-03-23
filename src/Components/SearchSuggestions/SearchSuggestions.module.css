@@ -22,3 +22,19 @@
   height: 50px;
   overflow: hidden;
 }
+.header2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.searchSuggestion_item {
+  min-height: 100px;
+  position: relative;
+}
+.empty {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  text-align: center;
+}
