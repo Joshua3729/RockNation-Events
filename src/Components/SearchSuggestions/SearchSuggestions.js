@@ -43,7 +43,8 @@ const searchSuggestion = (props) => {
   if (
     props.resultsLengthArtists != null &&
     props.resultsLengthEvents != null &&
-    props.resultsLengthVenues != null
+    props.resultsLengthVenues != null &&
+    !props.showRecentlyViewed
   ) {
     events =
       props.searchresultEvents.length > 0 ? (
@@ -110,7 +111,9 @@ const searchSuggestion = (props) => {
 
   return (
     <div className={classes.searchSuggestion}>
-      <h3 className={classes.header}>Recently viewed</h3>
+      <h3 className={classes.header}>
+        {props.showRecentlyViewed ? "Recently viewed" : "Results"}
+      </h3>
       {searchSuggestion_items}
     </div>
   );
