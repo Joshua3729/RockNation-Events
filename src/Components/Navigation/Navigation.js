@@ -269,6 +269,9 @@ class Navigation extends Component {
                     searchresultArtists={this.state.searchresultArtists}
                     searchresultEvents={this.state.searchresultEvents}
                     searchresultVenues={this.state.searchresultVenues}
+                    resultsLengthArtists={this.state.resultsLengthArtists}
+                    resultsLengthVenues={this.state.resultsLengthVenues}
+                    resultsLengthEvents={this.state.resultsLengthEvents}
                     showRecentlyViewed={this.state.showRecentlyViewed}
                     viewEntity={this.viewEntity}
                   />

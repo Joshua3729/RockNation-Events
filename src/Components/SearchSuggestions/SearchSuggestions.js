@@ -3,9 +3,14 @@ import classes from "./SearchSuggestions.module.css";
 import ArtistInfo from "../ArtistInfo/ArtistInfo";
 import VenueInfo from "../VenueInfo/VenueInfo";
 import EventInfo from "../EventInfo/EventInfo";
+import Spinner from "../UI/Spinner/Spinner";
 
 const searchSuggestion = (props) => {
-  let searchSuggestion_items = null;
+  let searchSuggestion_items = (
+    <div className={classes.spinnerWrapper}>
+      <Spinner />
+    </div>
+  );
   let artists = null;
   let venues = null;
   let events = null;
@@ -34,6 +39,7 @@ const searchSuggestion = (props) => {
       return searchSuggestion_item;
     });
   }
+
   if (
     props.resultsLengthArtists != null &&
     props.resultsLengthEvents != null &&
@@ -55,11 +61,11 @@ const searchSuggestion = (props) => {
           {events}
         </div>
         <div className={classes.searchSuggestion_item}>
-          <p className={classes.header2}>Events</p>
+          <p className={classes.header2}>Artists</p>
           {artists}
         </div>
         <div className={classes.searchSuggestion_item}>
-          <p className={classes.header2}>Events</p>
+          <p className={classes.header2}>venues</p>
           {venues}
         </div>
       </div>
