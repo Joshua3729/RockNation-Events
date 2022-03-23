@@ -210,6 +210,10 @@ input::-webkit-datetime-edit-fields-wrapper {
   font-size: 25px;
   width: 70%;
 }
+.Hero_wrapper {
+  display: block;
+  height: 100%;
+}
 @media only screen and (min-width: 1440px) {
   /*Small smartphones [325px -> 425px]*/
   .Hero {
