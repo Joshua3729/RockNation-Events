@@ -6,16 +6,15 @@ const eventInfo = (props) => {
   if (props.searchSuggestion) {
     eventInfo = (
       <div className={classes.event}>
-        <div className={classes.imgWrapper}>
-          <img
-            src={props.event.img}
-            alt=""
-            className={classes.eventImg}
-            style={{
-              width: props.searchSuggestion && "60px",
-              borderRadius: props.searchSuggestion && "50%",
-            }}
-          />
+        <div
+          className={classes.imgWrapper}
+          style={{
+            width: props.searchSuggestion && "60px",
+            borderRadius: props.searchSuggestion && "50%",
+            overflow: "hidden",
+          }}
+        >
+          <img src={props.event.eventImg} alt="" className={classes.eventImg} />
         </div>
         <div className={classes.aboutArtistWrapper}>
           <div
@@ -23,7 +22,7 @@ const eventInfo = (props) => {
             onClick={props.viewEntity.bind(this, props.event, "artist")}
             style={{ fontSize: props.searchSuggestion && "15px" }}
           >
-            {props.event.name}
+            {props.event.eventName}
           </div>
 
           <p
