@@ -55,6 +55,77 @@ class Navigation extends Component {
       };
     });
   };
+  onChangeHandler = (e) => {
+    const queryName = e.target.query.value;
+    fetch(
+      `http://localhost:5000/feed/artist?name=${queryName
+        .split(" ")
+        .join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState((prevState) => {
+          const results = [...prevState.results, ...resData];
+          return {
+            results: results,
+          };
+        });
+      })
+      .catch((err) => console.log(err));
+
+    fetch(
+      `http://localhost:5000/feed/event?name=${queryName
+        .split(" ")
+        .join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState((prevState) => {
+          const results = [...prevState.results, ...resData];
+          return {
+            results: results,
+          };
+        });
+      })
+      .catch((err) => console.log(err));
+
+    fetch(
+      `http://localhost:5000/feed/venue?name=${queryName
+        .split(" ")
+        .join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState((prevState) => {
+          const results = [...prevState.results, ...resData];
+          return {
+            results: results,
+          };
+        });
+      })
+      .catch((err) => console.log(err));
+  };
   showSearchSuggestionsHandler = () => {
     this.setState({ show: true });
   };
