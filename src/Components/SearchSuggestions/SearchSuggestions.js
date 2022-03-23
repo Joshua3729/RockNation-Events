@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import classes from "./SearchSuggestions.module.css";
 import ArtistInfo from "../ArtistInfo/ArtistInfo";
 import VenueInfo from "../VenueInfo/VenueInfo";
+import EventInfo from "../EventInfo/EventInfo";
 
 const searchSuggestion = (props) => {
   let searchSuggestion_items = null;
@@ -34,11 +35,20 @@ const searchSuggestion = (props) => {
     });
   }
   if (
-    this.state.resultsLengthArtists != null &&
-    this.state.resultsLengthEvents != null &&
-    this.state.resultsLengthVenues != null
+    props.resultsLengthArtists != null &&
+    props.resultsLengthEvents != null &&
+    props.resultsLengthVenues != null
   ) {
-    artists = searchSuggestion_items = (
+    events = props.searchresultEvents.map((event, i) => {
+      return <EventInfo key={i} event={event} viewEntity={props.viewEntity} />;
+    });
+    artists = props.searchresultArtists.map((event, i) => {
+      return <ArtistInfo key={i} event={event} viewEntity={props.viewEntity} />;
+    });
+    venues = props.searchresultVenues.map((event, i) => {
+      return <VenueInfo key={i} event={event} viewEntity={props.viewEntity} />;
+    });
+    searchSuggestion_items = (
       <div className={classes.searchSuggestion_items}>
         <div className={classes.searchSuggestion_item}>
           <p className={classes.header2}>Events</p>
