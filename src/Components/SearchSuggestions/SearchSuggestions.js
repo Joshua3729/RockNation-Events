@@ -46,13 +46,34 @@ const searchSuggestion = (props) => {
     props.resultsLengthVenues != null
   ) {
     events = props.searchresultEvents.map((event, i) => {
-      return <EventInfo key={i} event={event} viewEntity={props.viewEntity} />;
+      return (
+        <EventInfo
+          key={i}
+          event={event}
+          viewEntity={props.viewEntity}
+          searchSuggestion={true}
+        />
+      );
     });
     artists = props.searchresultArtists.map((event, i) => {
-      return <ArtistInfo key={i} event={event} viewEntity={props.viewEntity} />;
+      return (
+        <ArtistInfo
+          key={i}
+          event={event}
+          viewEntity={props.viewEntity}
+          searchSuggestion={true}
+        />
+      );
     });
     venues = props.searchresultVenues.map((event, i) => {
-      return <VenueInfo key={i} event={event} viewEntity={props.viewEntity} />;
+      return (
+        <VenueInfo
+          key={i}
+          event={event}
+          viewEntity={props.viewEntity}
+          searchSuggestion={true}
+        />
+      );
     });
     searchSuggestion_items = (
       <div className={classes.searchSuggestion_items}>
