@@ -24,6 +24,7 @@ class Navigation extends Component {
     resultsLengthEvents: null,
     searchresultVenues: null,
     resultsLengthVenues: null,
+    showRecentlyViewed: true,
   };
   componentDidMount() {
     let recentlyViewedData = JSON.parse(
@@ -63,6 +64,12 @@ class Navigation extends Component {
   };
   onChangeHandler = (e) => {
     const queryName = e.target.value;
+
+    if (queryName.length > 0) {
+      this.setState({ showRecentlyViewed: false });
+    } else {
+      this.setState({ showRecentlyViewed: true });
+    }
     fetch(
       `http://localhost:5000/feed/artist?name=${queryName
         .split(" ")
@@ -258,11 +265,11 @@ class Navigation extends Component {
                 </form>
                 {this.state.show && (
                   <SearchSuggestion
-                    searchSuggestionData={
-                      this.state.results
-                        ? this.state.results
-                        : this.state.searchSuggestionData
-                    }
+                    searchSuggestionData={this.state.searchSuggestionData}
+                    searchresultArtists={this.state.searchresultArtists}
+                    searchresultEvents={this.state.searchresultEvents}
+                    searchresultVenues={this.state.searchresultVenues}
+                    showRecentlyViewed={this.state.showRecentlyViewed}
                     viewEntity={this.viewEntity}
                   />
                 )}
