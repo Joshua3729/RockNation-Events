@@ -8,6 +8,7 @@ import MenuButton from "./MenuButton/MenuButton";
 import searchIcon from "../Image/searchIcon.png";
 import SearchSuggestion from "../SearchSuggestions/SearchSuggestions";
 import Background from "../Background/Background";
+import { withRouter } from "react-router-dom";
 
 class Navigation extends Component {
   state = {
@@ -67,6 +68,7 @@ class Navigation extends Component {
       }`,
       search: `?type=${type}&event_type=${entityData.event_type}`,
     });
+    this.props.history.go();
   };
 
   render() {
@@ -159,7 +161,7 @@ class Navigation extends Component {
                     type="text"
                     placeholder="Search for events by your favourite artists"
                     onFocus={this.showSearchSuggestionsHandler}
-                    // onBlur={this.hideSearchSuggestionsHandler}
+                    onBlur={this.hideSearchSuggestionsHandler}
                     className={[
                       classes.SearchInput,
                       !this.state.scroll
@@ -358,4 +360,4 @@ class Navigation extends Component {
     );
   }
 }
-export default Navigation;
+export default withRouter(Navigation);
