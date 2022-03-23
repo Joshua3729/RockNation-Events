@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import MenuButton from "./MenuButton/MenuButton";
 import searchIcon from "../Image/searchIcon.png";
 import SearchSuggestion from "../SearchSuggestions/SearchSuggestions";
+import Background from "../Background/Background";
 
 class Navigation extends Component {
   state = {
@@ -158,7 +159,7 @@ class Navigation extends Component {
                     type="text"
                     placeholder="Search for events by your favourite artists"
                     onFocus={this.showSearchSuggestionsHandler}
-                    onBlur={this.hideSearchSuggestionsHandler}
+                    // onBlur={this.hideSearchSuggestionsHandler}
                     className={[
                       classes.SearchInput,
                       !this.state.scroll
@@ -178,10 +179,13 @@ class Navigation extends Component {
                   </button>
                 </form>
                 {this.state.show && (
-                  <SearchSuggestion
-                    searchSuggestionData={this.state.searchSuggestionData}
-                    viewEntity={this.viewEntity}
-                  />
+                  <Fragment>
+                    <SearchSuggestion
+                      searchSuggestionData={this.state.searchSuggestionData}
+                      viewEntity={this.viewEntity}
+                    />
+                    <Background />
+                  </Fragment>
                 )}
               </div>
             )}
