@@ -129,6 +129,11 @@ class Navigation extends Component {
 
     return ReactDOM.createPortal(
       <Aux>
+        <Background
+          show={this.state.show}
+          clicked={this.hideSearchSuggestionsHandler}
+        />
+
         <div className={NavClasses}>
           {this.props.searchBar &&
             (!this.state.openSearchTray ? (
@@ -161,7 +166,6 @@ class Navigation extends Component {
                     type="text"
                     placeholder="Search for events by your favourite artists"
                     onFocus={this.showSearchSuggestionsHandler}
-                    onBlur={this.hideSearchSuggestionsHandler}
                     className={[
                       classes.SearchInput,
                       !this.state.scroll
@@ -186,7 +190,6 @@ class Navigation extends Component {
                       searchSuggestionData={this.state.searchSuggestionData}
                       viewEntity={this.viewEntity}
                     />
-                    <Background />
                   </Fragment>
                 )}
               </div>
