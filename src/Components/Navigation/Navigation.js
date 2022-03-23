@@ -18,6 +18,12 @@ class Navigation extends Component {
     openSearchTray: false,
     show: false,
     searchSuggestionData: null,
+    searchresultArtists: null,
+    resultsLengthArtists: null,
+    searchresultEvents: null,
+    resultsLengthEvents: null,
+    searchresultVenues: null,
+    resultsLengthVenues: null,
   };
   componentDidMount() {
     let recentlyViewedData = JSON.parse(
@@ -56,7 +62,7 @@ class Navigation extends Component {
     });
   };
   onChangeHandler = (e) => {
-    const queryName = e.target.query.value;
+    const queryName = e.target.value;
     fetch(
       `http://localhost:5000/feed/artist?name=${queryName
         .split(" ")
@@ -71,11 +77,9 @@ class Navigation extends Component {
       })
       .then((resData) => {
         console.log(resData);
-        this.setState((prevState) => {
-          const results = [...prevState.results, ...resData];
-          return {
-            results: results,
-          };
+        this.setState({
+          searchresultArtists: resData,
+          resultsLengthArtists: resData.length,
         });
       })
       .catch((err) => console.log(err));
@@ -94,11 +98,9 @@ class Navigation extends Component {
       })
       .then((resData) => {
         console.log(resData);
-        this.setState((prevState) => {
-          const results = [...prevState.results, ...resData];
-          return {
-            results: results,
-          };
+        this.setState({
+          searchresultEvents: resData,
+          resultsLengthEvents: resData.length,
         });
       })
       .catch((err) => console.log(err));
@@ -117,11 +119,9 @@ class Navigation extends Component {
       })
       .then((resData) => {
         console.log(resData);
-        this.setState((prevState) => {
-          const results = [...prevState.results, ...resData];
-          return {
-            results: results,
-          };
+        this.setState({
+          searchresultVenues: resData,
+          resultsLengthVenues: resData.length,
         });
       })
       .catch((err) => console.log(err));
@@ -237,6 +237,7 @@ class Navigation extends Component {
                     type="text"
                     placeholder="Search for events by your favourite artists"
                     onFocus={this.showSearchSuggestionsHandler}
+                    onChange={(e) => this.onChangeHandler(e)}
                     className={[
                       classes.SearchInput,
                       !this.state.scroll
@@ -256,12 +257,14 @@ class Navigation extends Component {
                   </button>
                 </form>
                 {this.state.show && (
-                  <Fragment>
-                    <SearchSuggestion
-                      searchSuggestionData={this.state.searchSuggestionData}
-                      viewEntity={this.viewEntity}
-                    />
-                  </Fragment>
+                  <SearchSuggestion
+                    searchSuggestionData={
+                      this.state.results
+                        ? this.state.results
+                        : this.state.searchSuggestionData
+                    }
+                    viewEntity={this.viewEntity}
+                  />
                 )}
               </div>
             )}
