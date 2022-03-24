@@ -73,7 +73,7 @@ class Navigation extends Component {
     fetch(
       `http://localhost:5000/feed/artist?name=${queryName
         .split(" ")
-        .join("%20")}`
+        .join("%20")}&&limit=${true}`
     )
       .then((res) => {
         if (res.status !== 200) {
@@ -94,7 +94,7 @@ class Navigation extends Component {
     fetch(
       `http://localhost:5000/feed/event?name=${queryName
         .split(" ")
-        .join("%20")}`
+        .join("%20")}&&limit=${true}`
     )
       .then((res) => {
         if (res.status !== 200) {
@@ -115,7 +115,7 @@ class Navigation extends Component {
     fetch(
       `http://localhost:5000/feed/venue?name=${queryName
         .split(" ")
-        .join("%20")}`
+        .join("%20")}&&limit=${true}`
     )
       .then((res) => {
         if (res.status !== 200) {
@@ -140,6 +140,17 @@ class Navigation extends Component {
     this.setState({ show: false });
   };
   viewEntity = (entityData, type) => {
+    const recentlyViewedData =
+      JSON.parse(localStorage.getItem("recentlyViewedData")) || [];
+
+    if (!recentlyViewedData.some((entity) => entity._id === entityData._id)) {
+      entityData.type = type;
+      recentlyViewedData.push(entityData);
+      localStorage.setItem(
+        "recentlyViewedData",
+        JSON.stringify(recentlyViewedData)
+      );
+    }
     this.props.history.push({
       pathname: `/events/${entityData.name.split(" ").join("%20")}/${
         entityData._id
