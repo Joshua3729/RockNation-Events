@@ -65,6 +65,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-right: 20px;
+  background-color: lightgray;
 }
 .recentlyViewed_img img {
   width: 100%;
