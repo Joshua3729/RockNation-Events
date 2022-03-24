@@ -9,7 +9,8 @@ const eventInfo = (props) => {
         <div
           className={classes.imgWrapper}
           style={{
-            width: props.searchSuggestion && "60px",
+            width: props.searchSuggestion && "50px",
+            height: props.searchSuggestion && "50px",
             borderRadius: props.searchSuggestion && "50%",
             overflow: "hidden",
           }}
