@@ -115,7 +115,7 @@ class SearchResults extends Component {
 
     if (!recentlyViewedData.some((entity) => entity._id === entityData._id)) {
       entityData.type = type;
-      recentlyViewedData.push(entityData);
+      recentlyViewedData.unshift(entityData);
       localStorage.setItem(
         "recentlyViewedData",
         JSON.stringify(recentlyViewedData)
