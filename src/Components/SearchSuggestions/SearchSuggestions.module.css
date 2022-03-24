@@ -30,6 +30,7 @@
 .searchSuggestion_item {
   min-height: 100px;
   position: relative;
+  margin-bottom: 20px;
 }
 .empty {
   position: absolute;
