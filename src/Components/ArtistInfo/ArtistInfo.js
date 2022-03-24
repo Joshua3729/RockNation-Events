@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 
 const artistInfo = (props) => {
   return (
-    <div className={classes.event}>
+    <div
+      className={classes.event}
+      style={{
+        padding: props.searchSuggestion && "10px",
+      }}
+    >
       <div className={classes.imgWrapper}>
         <img
           src={props.event.img}

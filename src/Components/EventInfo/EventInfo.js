@@ -5,7 +5,12 @@ const eventInfo = (props) => {
   let eventInfo = null;
   if (props.searchSuggestion) {
     eventInfo = (
-      <div className={classes.event}>
+      <div
+        className={classes.event2}
+        style={{
+          padding: props.searchSuggestion && "10px",
+        }}
+      >
         <div
           className={classes.imgWrapper}
           style={{

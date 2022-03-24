@@ -3,7 +3,12 @@ import classes from "./VenueInfo.module.css";
 
 const venueInfo = (props) => {
   return (
-    <div className={classes.event}>
+    <div
+      className={classes.event}
+      style={{
+        padding: props.searchSuggestion && "10px",
+      }}
+    >
       <div
         className={classes.imgWrapper}
         style={{
