@@ -11,7 +11,8 @@ const artistInfo = (props) => {
           alt=""
           className={classes.eventImg}
           style={{
-            width: props.searchSuggestion && "60px",
+            width: props.searchSuggestion && "50px",
+            height: props.searchSuggestion && "50px",
             borderRadius: props.searchSuggestion && "50%",
           }}
         />
