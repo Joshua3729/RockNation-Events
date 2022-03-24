@@ -4,7 +4,13 @@ import classes from "./VenueInfo.module.css";
 const venueInfo = (props) => {
   return (
     <div className={classes.event}>
-      <div className={classes.imgWrapper}>
+      <div
+        className={classes.imgWrapper}
+        style={{
+          width: props.searchSuggestion && "50px",
+          height: props.searchSuggestion && "50px",
+        }}
+      >
         <img
           src="https://www.pngkey.com/png/detail/207-2072722_address-symbol-png-download-date-time-venue-icon.png"
           className={classes.eventImg}
