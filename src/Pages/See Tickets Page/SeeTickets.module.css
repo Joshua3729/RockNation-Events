@@ -1,3 +1,13 @@
 .SeeTickets {
   height: 100vh;
 }
+.banner {
+  width: 100%;
+  height: 30vh;
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

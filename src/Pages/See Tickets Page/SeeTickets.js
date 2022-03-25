@@ -17,6 +17,7 @@ class SeeTickets extends Component {
           home={this.props.goToHome}
           search={this.props.search}
         />
+        <div className={classes.banner}></div>
         <div className={classes.SeeTickets}></div>
       </Fragment>
     );
