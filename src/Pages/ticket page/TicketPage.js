@@ -387,7 +387,6 @@ class TicketPage extends Component {
         >
           <PaymentModal
             name={this.props.fullname}
-            totalPrice={this.state.totalPrice}
             closePaymentModalHandler={this.closePaymentModalHandler}
             eventName={
               this.state.singer &&
