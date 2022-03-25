@@ -25,6 +25,7 @@ import Aux from "./hoc/Auxiliary/Auxiliary";
 import FamilyPage from "./Pages/Family Page/FamilyPage";
 import SearchResults from "./Pages/Search Results/SearchResults";
 import ViewEvents from "./Pages/ViewEvents Page/ViewEvents";
+import SeeTickets from "./Pages/See Tickets Page/SeeTickets";
 
 class App extends Component {
   state = {
@@ -688,7 +689,23 @@ class App extends Component {
             />
           )}
         />
-
+        <Route
+          path="/tickets/:name/:id"
+          exact
+          render={(props) => (
+            <SeeTickets
+              {...props}
+              loginModal={this.openModalHandler}
+              isAuth={this.state.isAuth}
+              token={this.state.token}
+              logout={this.logoutHandler}
+              fullname={this.state.fullname}
+              userImage={this.state.userImage}
+              goToHome={this.homeHandler}
+              search={this.searchHandler}
+            />
+          )}
+        />
         <Route
           path="/artsandtheater"
           exact
@@ -706,6 +723,7 @@ class App extends Component {
             />
           )}
         />
+
         <Route
           path="/artsandtheater/:id"
           exact
