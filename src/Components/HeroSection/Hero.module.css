@@ -270,11 +270,22 @@ input::-webkit-datetime-edit-fields-wrapper {
     font-size: 15px;
   }
   .searchInput input {
-    background-color: transparent;
-    color: gray;
-    border: none;
-    outline: none;
-    font-size: 25px;
+    font-size: 20px;
+  }
+  .searchInput {
+    margin-left: 30px;
+  }
+  .datePicker input {
+    margin-left: 30px;
+    font-size: 20px;
     width: 70%;
+  }
+  .city {
+    font-size: 20px;
+    width: 70%;
+  }
+  .location_icon {
+    width: 20px;
+    margin-right: 30px;
   }
 }
