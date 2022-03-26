@@ -258,4 +258,14 @@ input::-webkit-datetime-edit-fields-wrapper {
     padding: 10px;
     height: 70px;
   }
+  .searchBtn {
+    top: 15px;
+    right: 20px;
+    padding: 5px 10px;
+    width: 110px;
+    height: calc(100% - 30px);
+    color: white;
+    font-weight: 900;
+    font-size: 15px;
+  }
 }
