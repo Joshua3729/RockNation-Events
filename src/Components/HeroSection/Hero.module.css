@@ -289,3 +289,18 @@ input::-webkit-datetime-edit-fields-wrapper {
     margin-right: 30px;
   }
 }
+@media only screen and (max-width: 950px) {
+  .heroImg {
+    display: none;
+  }
+  .partnersBanner {
+    width: 100%;
+  }
+  .TextWrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+  }
+}
