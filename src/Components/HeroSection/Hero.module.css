@@ -269,4 +269,12 @@ input::-webkit-datetime-edit-fields-wrapper {
     font-weight: 900;
     font-size: 15px;
   }
+  .searchInput input {
+    background-color: transparent;
+    color: gray;
+    border: none;
+    outline: none;
+    font-size: 25px;
+    width: 70%;
+  }
 }
