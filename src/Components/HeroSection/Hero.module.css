@@ -251,3 +251,11 @@ input::-webkit-datetime-edit-fields-wrapper {
     max-width: 1440px;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  /*Small smartphones [325px -> 425px]*/
+  .searchTool form {
+    padding: 10px;
+    height: 70px;
+  }
+}
