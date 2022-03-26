@@ -257,6 +257,7 @@ input::-webkit-datetime-edit-fields-wrapper {
   .searchTool form {
     padding: 10px;
     height: 70px;
+    font-size: 8px;
   }
   .searchBtn {
     top: 15px;
