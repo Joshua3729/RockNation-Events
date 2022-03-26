@@ -302,5 +302,12 @@ input::-webkit-datetime-edit-fields-wrapper {
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+  .searchTool form {
+    width: calc(100% - 50px);
+    padding: 20px;
+    left: 25px;
   }
 }

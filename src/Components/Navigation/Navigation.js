@@ -351,26 +351,61 @@ class Navigation extends Component {
                 </li>
               ) : (
                 <Fragment>
-                  <li>
+                  <li className={classes.moreLink}>
                     <Link
+                      className={classes.more}
                       style={{
                         color: this.state.scroll ? "rgb(38,38,38" : "white",
                       }}
-                      to="/artsandtheater"
                     >
-                      Arts & Theater
+                      More
                     </Link>
+
+                    <ul className={classes.dropDown}>
+                      <li>
+                        <Link
+                          style={{
+                            color: "rgb(38,38,38)",
+                          }}
+                          to="/artsandtheater"
+                        >
+                          Arts & Theater
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          style={{
+                            color: "rgb(38,38,38)",
+                          }}
+                          to="/family"
+                        >
+                          Family
+                        </Link>
+                      </li>
+                    </ul>
                   </li>
-                  <li>
-                    <Link
-                      style={{
-                        color: this.state.scroll ? "rgb(38,38,38" : "white",
-                      }}
-                      to="/family"
-                    >
-                      Family
-                    </Link>
-                  </li>
+                  <ul className={classes.links}>
+                    <li>
+                      <Link
+                        style={{
+                          color: this.state.scroll ? "rgb(38,38,38" : "white",
+                        }}
+                        to="/artsandtheater"
+                      >
+                        Arts & Theater
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        style={{
+                          color: this.state.scroll ? "rgb(38,38,38" : "white",
+                        }}
+                        to="/family"
+                      >
+                        Family
+                      </Link>
+                    </li>
+                  </ul>
                 </Fragment>
               )}
             </ul>
