@@ -82,3 +82,17 @@
 .recentlyViewed_item_Wrapper {
   position: relative;
 }
+@media only screen and (max-width: 1200px) {
+  /*Tablets [601px -> 1200px]*/
+
+  .recentlyViewed {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 800px) {
+  /*Tablets [601px -> 1200px]*/
+
+  .recentlyViewed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
