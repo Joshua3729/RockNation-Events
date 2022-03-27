@@ -5,6 +5,7 @@ import badbunny from "../Image/top_picks/badbunny.jpg";
 import billie from "../Image/top_picks/billie.jpg";
 import khalid from "../Image/top_picks/khalid.jpg";
 import EventCard from "../EventCard/EventCard";
+import ScrollingHorizontally from "../Horizontal Scroll/HorizontalScroll";
 
 const ComingSoon = (props) => {
   return (
@@ -45,6 +46,8 @@ const ComingSoon = (props) => {
             }}
           />
         </div>
+        <div className={classes.wrapp}></div>
+        <ScrollingHorizontally />
       </div>
     </section>
   );
