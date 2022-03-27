@@ -358,6 +358,7 @@
 
 .sign_in {
   cursor: pointer;
+  margin: "0 0 0 20px";
 }
 
 @media only screen and (max-width: 1200px) {
@@ -421,5 +422,11 @@
   }
   .Nav_1 {
     display: none;
+  }
+  .NavLinks li a {
+    padding: 22px 10px 22px 10px;
+  }
+  .sign_in {
+    margin: 0;
   }
 }

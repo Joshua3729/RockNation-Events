@@ -213,7 +213,6 @@ class Navigation extends Component {
       <li
         style={{
           color: this.state.scroll ? "rgb(38,38,38)" : "white",
-          margin: "0 0 0 20px",
         }}
         className={classes.sign_in}
         onClick={this.props.login}
@@ -412,10 +411,6 @@ class Navigation extends Component {
             </ul>
           </div>
 
-          <MenuButton
-            clicked={this.sideDrawerHandler}
-            menuButton={this.state.menuButton}
-          />
           <ul className={[classes.NavLinks, classes.Nav_2].join(" ")}>
             <li>
               <Link
@@ -436,6 +431,10 @@ class Navigation extends Component {
               </Link>
             </li>
             {navLink}
+            <MenuButton
+              clicked={this.sideDrawerHandler}
+              menuButton={this.state.menuButton}
+            />
           </ul>
         </div>
         <div className={this.props.scrollEffect ? null : classes.gutter}></div>
