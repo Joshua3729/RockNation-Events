@@ -1,21 +1,15 @@
-import React, { Component } from "react";
-import HorizontalScroll from "react-scroll-horizontal";
+import React from "react";
+import classes from "./HorizontalScroll.module.css";
 
-class ScrollingHorizontally extends Component {
-  render() {
-    const child = { width: `30em`, height: `100%`, color: "white" };
-    const parent = { width: `60em`, height: `100px`, backGroundColor: "red" };
-    return (
-      <div style={parent}>
-        <HorizontalScroll>
-          <div style={child} />
-          <div style={child} />
-          <div style={child} />
-          <p>Hello Wolrd</p>
-        </HorizontalScroll>
-      </div>
-    );
-  }
-}
+const scrollingHorizontally = (props) => {
+  return (
+    <div className={classes.parent}>
+      <div className={classes.scroll_item}>slide 1</div>
+      <div className={classes.scroll_item}>slide 2</div>
+      <div className={classes.scroll_item}>slide 3</div>
+      <div className={classes.scroll_item}>slide 4</div>
+    </div>
+  );
+};
 
-export default ScrollingHorizontally;
+export default scrollingHorizontally;

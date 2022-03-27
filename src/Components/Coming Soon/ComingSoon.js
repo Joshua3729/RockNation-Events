@@ -46,7 +46,6 @@ const ComingSoon = (props) => {
             }}
           />
         </div>
-        <div className={classes.wrapp}></div>
         <ScrollingHorizontally />
       </div>
     </section>
