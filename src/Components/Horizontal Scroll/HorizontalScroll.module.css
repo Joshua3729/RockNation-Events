@@ -1,5 +1,4 @@
 .parent {
-  position: absolute;
   overflow-x: auto;
   display: none;
 }
@@ -12,7 +11,7 @@
   height: 400px;
   margin-right: 20px;
 }
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1200px) {
   /*Tablets [601px -> 1200px]*/
 
   .parent {

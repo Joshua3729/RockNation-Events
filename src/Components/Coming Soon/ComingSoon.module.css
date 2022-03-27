@@ -91,10 +91,13 @@
   width: calc(100% - 10px);
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1200px) {
   /*Tablets [601px -> 1200px]*/
 
   .OurPicksGrid {
     display: none;
+  }
+  .upcomingEvents {
+    padding: 50px 0 50px 50px;
   }
 }
