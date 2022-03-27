@@ -213,6 +213,7 @@ class Navigation extends Component {
       <li
         style={{
           color: this.state.scroll ? "rgb(38,38,38)" : "white",
+          margin: "0 0 0 20px",
         }}
         className={classes.sign_in}
         onClick={this.props.login}
@@ -434,6 +435,7 @@ class Navigation extends Component {
             <MenuButton
               clicked={this.sideDrawerHandler}
               menuButton={this.state.menuButton}
+              scroll={this.state.scroll}
             />
           </ul>
         </div>

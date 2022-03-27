@@ -11,9 +11,18 @@ const menuButton = (props) => {
       }
       onClick={props.clicked}
     >
-      <div className={classes.bar1}></div>
-      <div className={classes.bar2}></div>
-      <div className={classes.bar3}></div>
+      <div
+        style={{ backgroundColor: props.scroll ? "rgb(38,38,38)" : "white" }}
+        className={classes.bar1}
+      ></div>
+      <div
+        style={{ background: props.scroll ? "rgb(38,38,38)" : "white" }}
+        className={classes.bar2}
+      ></div>
+      <div
+        style={{ backgroundColor: props.scroll ? "rgb(38,38,38)" : "white" }}
+        className={classes.bar3}
+      ></div>
     </div>
   );
 };

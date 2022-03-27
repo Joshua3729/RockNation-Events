@@ -429,4 +429,7 @@
   .sign_in {
     margin: 0;
   }
+  .Wrapper {
+    width: 300px;
+  }
 }
