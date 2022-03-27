@@ -342,7 +342,13 @@
 .moreLink {
   position: relative;
 }
-
+.show {
+  display: none;
+}
+.links {
+  display: flex;
+  align-items: center;
+}
 .moreLink:hover .dropDown {
   display: block;
 }
@@ -396,6 +402,21 @@
     flex-direction: column;
   }
   .NavLinks {
+    display: none;
+  }
+  .show {
+    display: block;
+  }
+  .links {
+    display: none;
+  }
+}
+@media only screen and (max-width: 950px) {
+  /*Small smartphones [325px -> 425px]*/
+  .show {
+    display: block;
+  }
+  .links {
     display: none;
   }
 }
