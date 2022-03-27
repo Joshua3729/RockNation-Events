@@ -430,6 +430,9 @@
     margin: 0;
   }
   .Wrapper {
-    width: 300px;
+    width: 250px;
+  }
+  .sign_in_scroll {
+    display: none;
   }
 }

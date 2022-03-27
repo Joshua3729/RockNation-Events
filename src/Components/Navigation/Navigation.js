@@ -215,7 +215,10 @@ class Navigation extends Component {
           color: this.state.scroll ? "rgb(38,38,38)" : "white",
           margin: "0 0 0 20px",
         }}
-        className={classes.sign_in}
+        className={[
+          classes.sign_in,
+          this.state.scroll ? classes.sign_in_scroll : null,
+        ].join(" ")}
         onClick={this.props.login}
       >
         Sign in
