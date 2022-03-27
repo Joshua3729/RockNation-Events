@@ -295,7 +295,7 @@ class Navigation extends Component {
                 )}
               </div>
             )}
-            <ul className={classes.NavLinks}>
+            <ul className={[classes.NavLinks, classes.Nav_1].join(" ")}>
               <li className={this.state.scroll ? classes.scrollNavLink : null}>
                 <Link
                   to="/concerts"
@@ -416,7 +416,7 @@ class Navigation extends Component {
             clicked={this.sideDrawerHandler}
             menuButton={this.state.menuButton}
           />
-          <ul className={classes.NavLinks}>
+          <ul className={[classes.NavLinks, classes.Nav_2].join(" ")}>
             <li>
               <Link
                 style={{
