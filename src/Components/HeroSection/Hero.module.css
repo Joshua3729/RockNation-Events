@@ -295,6 +295,7 @@ input::-webkit-datetime-edit-fields-wrapper {
   }
   .partnersBanner {
     width: 100%;
+    padding: 20px;
   }
   .TextWrapper {
     top: 50%;
@@ -371,7 +372,9 @@ input::-webkit-datetime-edit-fields-wrapper {
   .TextWrapper h1 {
     font-size: 40px;
   }
-  .partnersBanner {
-    padding: 10px;
+
+  .searchTool form {
+    width: calc(100% - 40px);
+    left: 20px;
   }
 }
