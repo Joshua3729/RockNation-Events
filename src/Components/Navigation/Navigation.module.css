@@ -369,21 +369,26 @@
 }
 @media only screen and (max-width: 900px) {
   /*Big smartphones [426px -> 600px]*/
-  z .Wrapper {
+  .Wrapper {
     display: none;
   }
   .Navigation {
     padding: 0 12px;
   }
-  /* .openSearch {
+  .openSearch {
     display: block;
   }
   .searchTray {
     display: block;
-  } */
+  }
 }
 @media only screen and (max-width: 500px) {
-  .NavLinks {
+  .NavLinks li {
+    display: none;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .Wrapper {
     display: none;
   }
 }
@@ -402,9 +407,7 @@
   .AboutEvent {
     flex-direction: column;
   }
-  .NavLinks {
-    display: none;
-  }
+
   .show {
     display: block;
   }

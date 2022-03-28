@@ -232,7 +232,7 @@ class Navigation extends Component {
         />
 
         <div className={NavClasses}>
-          {this.props.searchBar &&
+          {(this.props.searchBar || this.state.scroll) &&
             (!this.state.openSearchTray ? (
               <button
                 className={classes.openSearch}
@@ -469,7 +469,7 @@ class Navigation extends Component {
             <li>Help</li>
           </ul>
         </div>
-        {this.props.searchBar && (
+        {(this.props.searchBar || this.state.scroll) && (
           <Aux>
             <div
               className={classes.searchTray}
