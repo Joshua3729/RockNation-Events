@@ -305,6 +305,7 @@
   display: none;
   box-sizing: border-box;
   transition: all 0.4s;
+  margin-top: 70px;
 }
 .leftNavLinks {
   display: flex;
