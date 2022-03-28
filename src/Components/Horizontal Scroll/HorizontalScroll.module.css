@@ -11,10 +11,20 @@
   height: 400px;
   margin-right: 20px;
 }
+.scroll_card:first-child {
+  margin-left: 50px;
+}
 @media only screen and (max-width: 1200px) {
   /*Tablets [601px -> 1200px]*/
 
   .parent {
     display: flex;
+  }
+}
+@media only screen and (max-width: 600px) {
+  /*Tablets [601px -> 1200px]*/
+
+  .scroll_card:first-child {
+    margin-left: 20px;
   }
 }
