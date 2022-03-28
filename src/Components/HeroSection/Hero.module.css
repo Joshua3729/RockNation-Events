@@ -372,6 +372,10 @@ input::-webkit-datetime-edit-fields-wrapper {
   .TextWrapper h1 {
     font-size: 40px;
   }
+  .TextWrapper {
+    padding: 20px;
+    font-size: 20px;
+  }
 
   .searchTool form {
     width: calc(100% - 40px);

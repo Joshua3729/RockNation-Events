@@ -1,7 +1,7 @@
 .card {
   position: relative;
   background-color: lightgray;
-  height: 400px;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

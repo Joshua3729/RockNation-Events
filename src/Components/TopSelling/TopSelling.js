@@ -18,21 +18,37 @@ class topSelling extends Component {
       this.props.family
     ) {
       cards = this.props.concerts.map((event, i) => {
-        return <EventCard event={event} />;
+        return (
+          <div className={classes.card_wrapper} key={i}>
+            <EventCard event={event} />
+          </div>
+        );
       });
       EventsArtsAndTheater = this.props.artsandtheater.map((event, i) => {
         if (i < 8) {
-          return <EventCard key={i} event={event} />;
+          return (
+            <div className={classes.card_wrapper} key={i}>
+              <EventCard event={event} />
+            </div>
+          );
         }
       });
       EventsFamily = this.props.family.map((event, i) => {
         if (i < 8) {
-          return <EventCard key={i} event={event} />;
+          return (
+            <div className={classes.card_wrapper} key={i}>
+              <EventCard event={event} />
+            </div>
+          );
         }
       });
       Sports = this.props.sports.map((event, i) => {
         if (i < 8) {
-          return <EventCard key={i} event={event} />;
+          return (
+            <div className={classes.card_wrapper} key={i}>
+              <EventCard event={event} />
+            </div>
+          );
         }
       });
     }
