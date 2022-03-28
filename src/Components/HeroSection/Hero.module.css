@@ -290,7 +290,7 @@ input::-webkit-datetime-edit-fields-wrapper {
   }
 }
 @media only screen and (max-width: 950px) {
-  .heroImg {
+  .heroImgWrapper {
     display: none;
   }
   .partnersBanner {
@@ -309,5 +309,23 @@ input::-webkit-datetime-edit-fields-wrapper {
     width: calc(100% - 50px);
     padding: 20px;
     left: 25px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .partnersBanner {
+    height: 9%;
+  }
+  .searchTool form {
+    padding: 7px;
+    height: 60px;
+    font-size: 5px;
+  }
+  .city {
+    font-size: 15px;
+    width: 80%;
+  }
+  .location_icon {
+    margin-right: 10px;
   }
 }
