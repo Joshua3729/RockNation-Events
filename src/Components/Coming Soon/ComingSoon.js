@@ -13,38 +13,46 @@ const ComingSoon = (props) => {
       <div className={classes.upcomingEvents_wrapper}>
         <h2 className={classes.header}>Our top picks this week</h2>
         <div className={classes.OurPicksGrid}>
-          <EventCard
-            event={{
-              cardImg: beiber,
-              eventName: "Justin Beiber: Turn On The Lights",
-              venue: "The O2",
-              city: "Manchester",
-            }}
-          />
-          <EventCard
-            event={{
-              cardImg: badbunny,
-              eventName: "Bad Bunny: Game on",
-              venue: "staple center",
-              city: "New York",
-            }}
-          />
-          <EventCard
-            event={{
-              cardImg: billie,
-              eventName: "Billy Eilish: Simphony tour",
-              venue: "Rumble Arena",
-              city: "Australia",
-            }}
-          />
-          <EventCard
-            event={{
-              cardImg: khalid,
-              eventName: "Khalid: Bad Boys Tour",
-              venue: "Wembly Stadium",
-              city: "London",
-            }}
-          />
+          <div className={classes.card}>
+            <EventCard
+              event={{
+                cardImg: beiber,
+                eventName: "Justin Beiber: Turn On The Lights",
+                venue: "The O2",
+                city: "Manchester",
+              }}
+            />
+          </div>
+          <div className={classes.card}>
+            <EventCard
+              event={{
+                cardImg: badbunny,
+                eventName: "Bad Bunny: Game on",
+                venue: "staple center",
+                city: "New York",
+              }}
+            />
+          </div>
+          <div className={classes.card}>
+            <EventCard
+              event={{
+                cardImg: billie,
+                eventName: "Billy Eilish: Simphony tour",
+                venue: "Rumble Arena",
+                city: "Australia",
+              }}
+            />
+          </div>
+          <div className={classes.card}>
+            <EventCard
+              event={{
+                cardImg: khalid,
+                eventName: "Khalid: Bad Boys Tour",
+                venue: "Wembly Stadium",
+                city: "London",
+              }}
+            />
+          </div>
         </div>
         <ScrollingHorizontally />
       </div>
