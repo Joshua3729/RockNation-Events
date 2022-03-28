@@ -62,7 +62,8 @@
 .header {
   color: white;
   margin-bottom: 50px;
-  font-size: 40px;
+  font-size: 24px;
+  font-weight: 600;
 }
 .eventInfo {
   position: absolute;
@@ -99,5 +100,11 @@
   }
   .upcomingEvents {
     padding: 50px 0 50px 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .upcomingEvents {
+    padding: 20px 0 20px 20px;
   }
 }

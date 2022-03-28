@@ -52,7 +52,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   .categories {
-    padding: 0 30px 100px 30px;
+    padding: 50px 30px 50px 30px;
   }
 }
 @media only screen and (max-width: 700px) {
@@ -78,6 +78,6 @@
     padding: 20px;
   }
   .categories {
-    padding: 0 20px 100px 20px;
+    padding: 100px 20px 100px 20px;
   }
 }
