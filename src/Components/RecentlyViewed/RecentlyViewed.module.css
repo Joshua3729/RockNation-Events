@@ -101,3 +101,14 @@
     padding: 50px 20px 50px 20px;
   }
 }
+@media only screen and (max-width: 500px) {
+  .recentlyViewed {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .recentlyViewed_img {
+    width: 60px;
+  }
+  .recentlyViewed_item {
+    height: 74px;
+  }
+}

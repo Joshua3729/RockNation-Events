@@ -82,4 +82,22 @@
   .categories {
     padding: 50px 20px 50px 20px;
   }
+  .grid_item {
+    height: 320px;
+  }
+  .EventLabel {
+    font-size: 20px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .grid_item {
+    height: 250px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .grid_item {
+    height: 200px;
+  }
 }
