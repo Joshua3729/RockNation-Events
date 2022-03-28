@@ -54,3 +54,8 @@
   /* position: fixed; */
   z-index: 100;
 }
+@media only screen and (max-width: 950px) {
+  .eventsWrapper {
+    grid-template-columns: 1fr;
+  }
+}
