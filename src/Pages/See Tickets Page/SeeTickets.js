@@ -44,6 +44,83 @@ class SeeTickets extends Component {
             </div>
           </div>
           <div className={classes.ticket_picker}>
+            <h3 className={classes.header}>Choose Your Tickets</h3>
+            <div className={classes.ticket_type_wrapper}>
+              <div className={classes.text_wrapper}>
+                <p className={classes.label}>General Admission</p>
+                <p className={classes.prices}>$ 2,000</p>
+              </div>
+              <div className={classes.form_input}>
+                <select
+                  name="parkingPass"
+                  className={classes.select}
+                  // defaultValue={this.state.quantity}
+                  // onChange={this.quantity}
+                >
+                  <option value={0}>0</option>
+                  <option value={1}>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                </select>
+              </div>
+            </div>
+            <div className={classes.ticket_type_wrapper}>
+              <div className={classes.text_wrapper}>
+                <p className={classes.label}>General Admission</p>
+                <p className={classes.prices}>$ 2,000</p>
+              </div>
+              <div className={classes.form_input}>
+                <select
+                  name="parkingPass"
+                  className={classes.select}
+                  // defaultValue={this.state.quantity}
+                  // onChange={this.quantity}
+                >
+                  <option value={0}>0</option>
+                  <option value={1}>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                </select>
+              </div>
+            </div>
+            <div className={classes.ticket_type_wrapper}>
+              <div className={classes.text_wrapper}>
+                <p className={classes.label}>General Admission</p>
+                <p className={classes.prices}>$ 2,000</p>
+              </div>
+              <div className={classes.form_input}>
+                <select
+                  name="parkingPass"
+                  className={classes.select}
+                  // defaultValue={this.state.quantity}
+                  // onChange={this.quantity}
+                >
+                  <option value={0}>0</option>
+                  <option value={1}>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                </select>
+              </div>
+            </div>
+            <div className={classes.ticket_type_wrapper}>
+              <div className={classes.text_wrapper}>
+                <p className={classes.label}>General Admission</p>
+                <p className={classes.prices}>$ 2,000</p>
+              </div>
+              <div className={classes.form_input}>
+                <select
+                  name="parkingPass"
+                  className={classes.select}
+                  // defaultValue={this.state.quantity}
+                  // onChange={this.quantity}
+                >
+                  <option value={0}>0</option>
+                  <option value={1}>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                </select>
+              </div>
+            </div>
             <div className={classes.ticket_type_wrapper}>
               <div className={classes.text_wrapper}>
                 <p className={classes.label}>General Admission</p>
