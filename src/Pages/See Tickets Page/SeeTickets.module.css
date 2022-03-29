@@ -3,19 +3,19 @@
 }
 .banner {
   width: 100%;
-  height: 30vh;
   background: radial-gradient(
     circle,
     rgba(2, 0, 36, 1) 0%,
     rgba(9, 9, 121, 1) 35%,
     rgba(0, 0, 0, 1) 100%
   );
-  padding: 0 40px;
+  padding: 10px 30px;
   box-sizing: border-box;
+  margin-top: 60px;
 }
 .img_wrapper {
   width: 150px;
-  height: 100px;
+  height: 80px;
 }
 .img_wrapper img {
   height: 100%;
@@ -26,7 +26,11 @@
   align-items: center;
   width: 100%;
 }
-.gutter {
-  width: 100%;
-  height: 74px;
+.event_name {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+.event_info {
+  color: white;
+  margin-left: 20px;
 }

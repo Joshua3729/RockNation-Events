@@ -7,7 +7,7 @@ class SeeTickets extends Component {
     return (
       <Fragment>
         <Navigation
-          scrollEffect={true}
+          scrollEffect={false}
           searchBar={true}
           isAuth={this.props.isAuth}
           logout={this.props.logout}
@@ -26,7 +26,14 @@ class SeeTickets extends Component {
                 alt=""
               />
             </div>
-            <div className={classes.event_info}></div>
+            <div className={classes.event_info}>
+              <p className={classes.event_name}>Billie Eilish: Homecoming</p>
+              <p className={classes.event_date}>Thu • june 16 • 2022</p>
+
+              <p className={classes.event_venue}>
+                The O2 Arena, London, United kingdom
+              </p>
+            </div>
           </div>
         </div>
         <div className={classes.SeeTickets}></div>
