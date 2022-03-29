@@ -32,7 +32,7 @@
     font-size: 30px;
   } */
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1200px) {
   /*Tablets [601px -> 1200px]*/
   .Wrapper h1 {
     font-size: 35px;
