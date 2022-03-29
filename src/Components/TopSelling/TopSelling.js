@@ -4,8 +4,14 @@ import axios from "axios";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import { Link } from "react-router-dom";
 import EventCard from "../EventCard/EventCard";
+import { withRouter } from "react-router-dom";
 
 class topSelling extends Component {
+  goToLink = (eventName, id) => {
+    this.props.history.push({
+      pathname: `/tickets/${eventName}/${id}`,
+    });
+  };
   render() {
     let cards = null;
     let EventsArtsAndTheater = null;
@@ -19,7 +25,11 @@ class topSelling extends Component {
     ) {
       cards = this.props.concerts.map((event, i) => {
         return (
-          <div className={classes.card_wrapper} key={i}>
+          <div
+            className={classes.card_wrapper}
+            key={i}
+            onClick={this.goToLink.bind(this, event.eventName, event._id)}
+          >
             <EventCard event={event} />
           </div>
         );
@@ -89,4 +99,4 @@ class topSelling extends Component {
     );
   }
 }
-export default topSelling;
+export default withRouter(topSelling);
