@@ -140,6 +140,7 @@ class SeeTickets extends Component {
                 </select>
               </div>
             </div>
+            <div className={classes.summary_wrapper}>Total: $2001</div>
           </div>
         </div>
       </Fragment>
