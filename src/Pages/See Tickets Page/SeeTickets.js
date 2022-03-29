@@ -37,7 +37,14 @@ class SeeTickets extends Component {
           </div>
         </div>
         <div className={classes.SeeTickets}>
-          <div className={classes.venue_map_wrapper}></div>
+          <div className={classes.venue_map_wrapper}>
+            <div className={classes.map_wrapper}>
+              <img
+                src="https://w7.pngwing.com/pngs/668/960/png-transparent-manchester-arena-the-o2-arena-quicken-loans-arena-scottrade-center-snhu-arena-others-miscellaneous-angle-text.png"
+                alt=""
+              />
+            </div>
+          </div>
           <div className={classes.ticket_picker}></div>
         </div>
       </Fragment>
