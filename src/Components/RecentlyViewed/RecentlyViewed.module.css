@@ -100,6 +100,9 @@
   .recentlyViewed_section {
     padding: 50px 20px 50px 20px;
   }
+  .recentlyViewed {
+    grid-gap: 20px;
+  }
 }
 @media only screen and (max-width: 500px) {
   .recentlyViewed {
