@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import classes from "./SeeTickets.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
+import the_o2 from "../../Components/Image/the_o2.png";
 
 class SeeTickets extends Component {
   render() {
@@ -39,13 +40,30 @@ class SeeTickets extends Component {
         <div className={classes.SeeTickets}>
           <div className={classes.venue_map_wrapper}>
             <div className={classes.map_wrapper}>
-              <img
-                src="https://w7.pngwing.com/pngs/668/960/png-transparent-manchester-arena-the-o2-arena-quicken-loans-arena-scottrade-center-snhu-arena-others-miscellaneous-angle-text.png"
-                alt=""
-              />
+              <img src={the_o2} alt="" />
             </div>
           </div>
-          <div className={classes.ticket_picker}></div>
+          <div className={classes.ticket_picker}>
+            <div className={classes.ticket_type_wrapper}>
+              <div className={classes.text_wrapper}>
+                <p className={classes.label}>General Admission</p>
+                <p className={classes.prices}>$ 2,000</p>
+              </div>
+              <div className={classes.form_input}>
+                <select
+                  name="parkingPass"
+                  className={classes.select}
+                  // defaultValue={this.state.quantity}
+                  // onChange={this.quantity}
+                >
+                  <option value={0}>0</option>
+                  <option value={1}>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
       </Fragment>
     );
