@@ -106,6 +106,9 @@
   .TopSelling {
     padding: 50px 20px 50px 20px;
   }
+  .grid {
+    grid-gap: 20px;
+  }
 }
 @media only screen and (max-width: 1200px) {
   /*Big smartphones [426px -> 600px]*/
