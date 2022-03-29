@@ -36,7 +36,10 @@ class SeeTickets extends Component {
             </div>
           </div>
         </div>
-        <div className={classes.SeeTickets}></div>
+        <div className={classes.SeeTickets}>
+          <div className={classes.venue_map_wrapper}></div>
+          <div className={classes.ticket_picker}></div>
+        </div>
       </Fragment>
     );
   }
