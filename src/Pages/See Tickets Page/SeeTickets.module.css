@@ -111,9 +111,11 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: red;
   padding: 30px;
   box-sizing: border-box;
+  -webkit-box-shadow: -2px -1px 15px 7px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: -3px -2px 30px 14px rgba(0, 0, 0, 0.425);
+  box-shadow: -4px -3px 45px -19px rgba(0, 0, 0, 0.65);
 }
 .summary_wrapper {
   position: absolute;
@@ -122,10 +124,14 @@
   background-color: white;
   width: 100%;
   height: 70px;
-  border-top: 1px lightgray solid;
+
+  box-shadow: 0px -15px 10px -15px lightgray;
 }
 .tickets {
   padding-right: 20px;
   overflow-y: scroll;
-  height: calc(100% - 100px);
+  height: calc(100% - 115px);
+}
+.ticket_picker_gutter {
+  height: 70px;
 }

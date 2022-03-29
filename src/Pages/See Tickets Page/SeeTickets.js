@@ -47,7 +47,7 @@ class SeeTickets extends Component {
             <div className={classes.header_wrapper}>
               <h3 className={classes.header}>Choose Your Tickets</h3>
             </div>
-
+            <div className={classes.ticket_picker_gutter}></div>
             <div className={classes.tickets}>
               <div className={classes.ticket_type_wrapper}>
                 <div className={classes.text_wrapper}>
