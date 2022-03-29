@@ -4,7 +4,6 @@ import Hero from "../../Components/HeroSection/Hero";
 import TopSelling from "../../Components/TopSelling/TopSelling";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import Amax from "../../Components/Amax/Amax";
-import ExclusiveEvents from "../../Components/ExclusiveEvents/ExclusiveEvents";
 import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
@@ -172,7 +171,6 @@ class Home extends Component {
             family={this.state.family}
           />
           <Amax />
-          <ExclusiveEvents />
         </Fragment>
       );
     return page;
