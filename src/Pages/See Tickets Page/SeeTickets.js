@@ -107,7 +107,7 @@ class SeeTickets extends Component {
                 <p className={classes.event_date}>Thu • june 16 • 2022</p>
 
                 <p className={classes.event_venue}>
-                  {`${this.state.event.venue}, ${this.state.event.city}, united Kingdom`}
+                  {`${this.state.venue.name}, ${this.state.venue.city}, ${this.state.venue.country}`}
                 </p>
               </div>
             </div>
@@ -220,7 +220,13 @@ class SeeTickets extends Component {
                   </div>
                 </div>
               </div>
-              <div className={classes.summary_wrapper}>Total: $2001</div>
+              <div className={classes.summary_wrapper}>
+                <div className={classes.summary_text}>
+                  <p>Total Cost:</p>
+                  <p>$1200</p>
+                </div>
+                <button className={classes.checkout_btn}>Checkout</button>
+              </div>
             </div>
           </div>
         </Fragment>
