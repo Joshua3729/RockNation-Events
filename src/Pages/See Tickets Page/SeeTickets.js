@@ -17,8 +17,8 @@ class SeeTickets extends Component {
     for (let param of query.entries()) {
       queryParams.push(param[1]);
     }
-    artistName = queryParams[0];
-    venueName = queryParams[1];
+    const artistName = queryParams[0];
+    const venueName = queryParams[1];
 
     fetch(`http://localhost:5000/feed/event/${id}`)
       .then((res) => {
