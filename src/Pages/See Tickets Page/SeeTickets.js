@@ -52,11 +52,13 @@ class SeeTickets extends Component {
                 />
               </div>
               <div className={classes.event_info}>
-                <p className={classes.event_name}>{this.state.eventName}</p>
+                <p className={classes.event_name}>
+                  {this.state.event.eventName}
+                </p>
                 <p className={classes.event_date}>Thu • june 16 • 2022</p>
 
                 <p className={classes.event_venue}>
-                  The O2 Arena, London, United kingdom
+                  {`${this.state.event.venue}, ${this.state.event.city}, united Kingdom`}
                 </p>
               </div>
             </div>
