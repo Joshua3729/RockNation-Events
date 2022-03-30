@@ -7,6 +7,8 @@ import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 class SeeTickets extends Component {
   state = {
     event: null,
+    artist: null,
+    venue: null,
   };
   componentDidMount() {
     const id = this.props.match?.params.id;
@@ -34,7 +36,7 @@ class SeeTickets extends Component {
       })
       .catch((err) => console.log(err));
     fetch(
-      `http://localhost:5000/feed/artist?name=${queryName
+      `http://localhost:5000/feed/artist?name=${artistName
         .split(" ")
         .join("%20")}`
     )
@@ -48,14 +50,13 @@ class SeeTickets extends Component {
       .then((resData) => {
         console.log(resData);
         this.setState({
-          searchresultArtists: resData,
-          resultsLengthArtists: resData.length,
+          artist: resData,
         });
       })
       .catch((err) => console.log(err));
 
     fetch(
-      `http://localhost:5000/feed/venue?name=${queryName
+      `http://localhost:5000/feed/venue?name=${venueName
         .split(" ")
         .join("%20")}`
     )
@@ -69,8 +70,7 @@ class SeeTickets extends Component {
       .then((resData) => {
         console.log(resData);
         this.setState({
-          searchresultVenues: resData,
-          resultsLengthVenues: resData.length,
+          venue: resData,
         });
       })
       .catch((err) => console.log(err));
