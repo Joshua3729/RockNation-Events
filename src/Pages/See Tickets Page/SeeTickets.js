@@ -10,6 +10,14 @@ class SeeTickets extends Component {
   };
   componentDidMount() {
     const id = this.props.match?.params.id;
+    const query = new URLSearchParams(this.props.location.search);
+    let queryParams = [];
+    for (let param of query.entries()) {
+      queryParams.push(param[1]);
+    }
+    artistName = queryParams[0];
+    venueName = queryParams[1];
+
     fetch(`http://localhost:5000/feed/event/${id}`)
       .then((res) => {
         if (res.status !== 200) {
@@ -22,6 +30,26 @@ class SeeTickets extends Component {
         console.log(resData);
         this.setState({
           event: resData.event,
+        });
+      })
+      .catch((err) => console.log(err));
+    fetch(
+      `http://localhost:5000/feed/artist?name=${queryName
+        .split(" ")
+        .join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          searchresultArtists: resData,
+          resultsLengthArtists: resData.length,
         });
       })
       .catch((err) => console.log(err));
