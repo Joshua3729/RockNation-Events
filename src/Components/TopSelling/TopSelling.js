@@ -7,9 +7,10 @@ import EventCard from "../EventCard/EventCard";
 import { withRouter } from "react-router-dom";
 
 class topSelling extends Component {
-  goToLink = (eventName, id) => {
+  goToLink = (eventName, id, venueName, artistName) => {
     this.props.history.push({
       pathname: `/tickets/${eventName}/${id}`,
+      search: `?artist=${artistName}&venue=${venueName}`,
     });
   };
   render() {
@@ -28,7 +29,13 @@ class topSelling extends Component {
           <div
             className={classes.card_wrapper}
             key={i}
-            onClick={this.goToLink.bind(this, event.eventName, event._id)}
+            onClick={this.goToLink.bind(
+              this,
+              event.eventName,
+              event._id,
+              event.venue,
+              event.artistName
+            )}
           >
             <EventCard event={event} />
           </div>
