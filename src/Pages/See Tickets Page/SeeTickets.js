@@ -53,6 +53,27 @@ class SeeTickets extends Component {
         });
       })
       .catch((err) => console.log(err));
+
+    fetch(
+      `http://localhost:5000/feed/venue?name=${queryName
+        .split(" ")
+        .join("%20")}`
+    )
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to search.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log(resData);
+        this.setState({
+          searchresultVenues: resData,
+          resultsLengthVenues: resData.length,
+        });
+      })
+      .catch((err) => console.log(err));
   }
   render() {
     let page = <LoadingModal />;
