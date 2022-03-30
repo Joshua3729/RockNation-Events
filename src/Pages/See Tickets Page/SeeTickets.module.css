@@ -150,4 +150,8 @@
   border-radius: 5px;
   margin-top: 10px;
   margin: 0 auto;
+  cursor: pointer;
+}
+.checkout_btn:hover {
+  background-color: #536b8d;
 }

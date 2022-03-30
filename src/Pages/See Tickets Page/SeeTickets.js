@@ -9,6 +9,7 @@ class SeeTickets extends Component {
     event: null,
     artist: null,
     venue: null,
+    totalCost: 0,
   };
   componentDidMount() {
     const id = this.props.match?.params.id;
@@ -193,7 +194,12 @@ class SeeTickets extends Component {
                   <p>Total Cost:</p>
                   <p>$1200</p>
                 </div>
-                <button className={classes.checkout_btn}>Checkout</button>
+                <button
+                  className={classes.checkout_btn}
+                  disabled={this.state.totalCost > 0}
+                >
+                  Checkout
+                </button>
               </div>
             </div>
           </div>
