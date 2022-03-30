@@ -4,6 +4,10 @@ import Navigation from "../../Components/Navigation/Navigation";
 import the_o2 from "../../Components/Image/the_o2.png";
 
 class SeeTickets extends Component {
+  componentDidMount() {
+    const eventName = this.props.match?.params.name;
+    const id = this.props.match?.params.id;
+  }
   render() {
     return (
       <Fragment>

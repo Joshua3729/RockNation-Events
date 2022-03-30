@@ -1070,6 +1070,23 @@ class App extends Component {
               />
             )}
           />
+          <Route
+            path="/tickets/:name/:id"
+            exact
+            render={(props) => (
+              <SeeTickets
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+                goToHome={this.homeHandler}
+                search={this.searchHandler}
+              />
+            )}
+          />
         </Router>
       );
     }
