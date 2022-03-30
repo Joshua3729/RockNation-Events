@@ -50,7 +50,7 @@ class SeeTickets extends Component {
       .then((resData) => {
         console.log(resData);
         this.setState({
-          artist: resData,
+          artist: resData[0],
         });
       })
       .catch((err) => console.log(err));
@@ -70,14 +70,14 @@ class SeeTickets extends Component {
       .then((resData) => {
         console.log(resData);
         this.setState({
-          venue: resData,
+          venue: resData[0],
         });
       })
       .catch((err) => console.log(err));
   }
   render() {
     let page = <LoadingModal />;
-    if (this.state.event) {
+    if (this.state.event && this.state.artist && this.state.venue) {
       page = (
         <Fragment>
           <Navigation
@@ -96,8 +96,8 @@ class SeeTickets extends Component {
             <div className={classes.innerWrapper}>
               <div className={classes.img_wrapper}>
                 <img
-                  src="https://media.globalcitizen.org/thumbnails/bc/df/bcdf3412-5ec9-4ddd-ba4d-d409623b225c/billieeilish.jpg__1600x900_q85_crop_subsampling-2.jpg"
-                  alt=""
+                  // src="https://media.globalcitizen.org/thumbnails/bc/df/bcdf3412-5ec9-4ddd-ba4d-d409623b225c/billieeilish.jpg__1600x900_q85_crop_subsampling-2.jpg"
+                  src={this.state.artist.big_img}
                 />
               </div>
               <div className={classes.event_info}>
