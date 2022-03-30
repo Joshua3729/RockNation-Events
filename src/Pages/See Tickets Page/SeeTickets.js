@@ -127,11 +127,13 @@ class SeeTickets extends Component {
                 <div className={classes.ticket_type_wrapper}>
                   <div className={classes.text_wrapper}>
                     <p className={classes.label}>General Admission</p>
-                    <p className={classes.prices}>$ 2,000</p>
+                    <p className={classes.prices}>
+                      R {this.state.event.prices.general}
+                    </p>
                   </div>
                   <div className={classes.form_input}>
                     <select
-                      name="parkingPass"
+                      name="general"
                       className={classes.select}
                       // defaultValue={this.state.quantity}
                       // onChange={this.quantity}
@@ -145,12 +147,14 @@ class SeeTickets extends Component {
                 </div>
                 <div className={classes.ticket_type_wrapper}>
                   <div className={classes.text_wrapper}>
-                    <p className={classes.label}>General Admission</p>
-                    <p className={classes.prices}>$ 2,000</p>
+                    <p className={classes.label}>V.I.P</p>
+                    <p className={classes.prices}>
+                      R {this.state.event.prices.vip}
+                    </p>
                   </div>
                   <div className={classes.form_input}>
                     <select
-                      name="parkingPass"
+                      name="vip"
                       className={classes.select}
                       // defaultValue={this.state.quantity}
                       // onChange={this.quantity}
@@ -164,50 +168,14 @@ class SeeTickets extends Component {
                 </div>
                 <div className={classes.ticket_type_wrapper}>
                   <div className={classes.text_wrapper}>
-                    <p className={classes.label}>General Admission</p>
-                    <p className={classes.prices}>$ 2,000</p>
+                    <p className={classes.label}>V.V.I.P</p>
+                    <p className={classes.prices}>
+                      R {this.state.event.prices.vip * 1.5}
+                    </p>
                   </div>
                   <div className={classes.form_input}>
                     <select
-                      name="parkingPass"
-                      className={classes.select}
-                      // defaultValue={this.state.quantity}
-                      // onChange={this.quantity}
-                    >
-                      <option value={0}>0</option>
-                      <option value={1}>1</option>
-                      <option value={2}>2</option>
-                      <option value={3}>3</option>
-                    </select>
-                  </div>
-                </div>
-                <div className={classes.ticket_type_wrapper}>
-                  <div className={classes.text_wrapper}>
-                    <p className={classes.label}>General Admission</p>
-                    <p className={classes.prices}>$ 2,000</p>
-                  </div>
-                  <div className={classes.form_input}>
-                    <select
-                      name="parkingPass"
-                      className={classes.select}
-                      // defaultValue={this.state.quantity}
-                      // onChange={this.quantity}
-                    >
-                      <option value={0}>0</option>
-                      <option value={1}>1</option>
-                      <option value={2}>2</option>
-                      <option value={3}>3</option>
-                    </select>
-                  </div>
-                </div>
-                <div className={classes.ticket_type_wrapper}>
-                  <div className={classes.text_wrapper}>
-                    <p className={classes.label}>General Admission</p>
-                    <p className={classes.prices}>$ 2,000</p>
-                  </div>
-                  <div className={classes.form_input}>
-                    <select
-                      name="parkingPass"
+                      name="vvip"
                       className={classes.select}
                       // defaultValue={this.state.quantity}
                       // onChange={this.quantity}
