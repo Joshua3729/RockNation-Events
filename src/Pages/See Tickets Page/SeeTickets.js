@@ -12,7 +12,7 @@ class SeeTickets extends Component {
     venue: null,
     totalCost: 0,
     tickets: [{ general: 0 }, { vip: 0 }, { vvip: 0 }],
-    showPaymentModal: true,
+    showPaymentModal: false,
   };
   componentDidMount() {
     const id = this.props.match?.params.id;
@@ -82,6 +82,10 @@ class SeeTickets extends Component {
 
   closePaymentModalHandler = () => {
     this.setState({ showPaymentModal: false });
+  };
+
+  openPaymentModalHandler = () => {
+    this.setState({ showPaymentModal: true });
   };
 
   quantityHandler = (e) => {
@@ -251,6 +255,7 @@ class SeeTickets extends Component {
                 <button
                   className={classes.checkout_btn}
                   disabled={this.state.totalCost === 0}
+                  onClick={this.openPaymentModalHandler}
                 >
                   Checkout
                 </button>
