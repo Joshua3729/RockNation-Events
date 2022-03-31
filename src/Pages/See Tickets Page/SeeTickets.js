@@ -12,6 +12,7 @@ class SeeTickets extends Component {
     venue: null,
     totalCost: 0,
     tickets: [{ general: 0 }, { vip: 0 }, { vvip: 0 }],
+    showPaymentModal: true,
   };
   componentDidMount() {
     const id = this.props.match?.params.id;

@@ -161,3 +161,9 @@
 .checkout_btn:hover {
   background-color: #536b8d;
 }
+
+.modal_innerWrapper {
+  width: 80vw;
+  height: 80vh;
+  background-color: white;
+}
