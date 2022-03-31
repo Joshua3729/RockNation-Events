@@ -271,7 +271,10 @@ class SeeTickets extends Component {
           show={this.state.showPaymentModal}
           clicked={this.closePaymentModalHandler}
         >
-          <div className={classes.modal_innerWrapper}>Hello World</div>
+          <div className={classes.modal_innerWrapper}>
+            <div className={classes.left_side}></div>
+            <div className={classes.right_side}></div>
+          </div>
         </Modal>
         {page}
       </Fragment>

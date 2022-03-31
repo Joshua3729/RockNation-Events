@@ -163,7 +163,17 @@
 }
 
 .modal_innerWrapper {
+  display: flex;
   width: 80vw;
   height: 80vh;
   background-color: white;
+}
+.left_side {
+  width: 70%;
+  height: 100%;
+}
+.right_side {
+  width: 30%;
+  height: 100%;
+  background-color: orange;
 }
