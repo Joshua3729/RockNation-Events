@@ -255,7 +255,14 @@ class SeeTickets extends Component {
         </Fragment>
       );
     }
-    return page;
+    return (
+      <Fragment>
+        <Modal>
+          <div className={classes.modal_innerWrapper}>Hello World</div>
+        </Modal>
+        {page}
+      </Fragment>
+    );
   }
 }
 
