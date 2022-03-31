@@ -280,6 +280,7 @@ class SeeTickets extends Component {
                   alt="banner"
                 />
               </div>
+              <div className={classes.checkout_summaryWrapper}></div>
             </div>
           </div>
         </Modal>
