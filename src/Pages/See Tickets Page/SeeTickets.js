@@ -273,7 +273,14 @@ class SeeTickets extends Component {
         >
           <div className={classes.modal_innerWrapper}>
             <div className={classes.left_side}></div>
-            <div className={classes.right_side}></div>
+            <div className={classes.right_side}>
+              <div className={classes.small_banner}>
+                <img
+                  src="https://thumbs.dreamstime.com/b/live-music-concert-poster-festival-banner-live-music-concert-poster-festival-banner-vector-illustration-98105876.jpg"
+                  alt="banner"
+                />
+              </div>
+            </div>
           </div>
         </Modal>
         {page}
