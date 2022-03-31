@@ -80,6 +80,10 @@ class SeeTickets extends Component {
       .catch((err) => console.log(err));
   }
 
+  closePaymentModalHandler = () => {
+    this.setState({ showPaymentModal: false });
+  };
+
   quantityHandler = (e) => {
     const value = e.target.value;
     const name = e.target.name;
