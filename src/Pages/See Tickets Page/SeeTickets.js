@@ -10,6 +10,7 @@ class SeeTickets extends Component {
     artist: null,
     venue: null,
     totalCost: 0,
+    quantity: 0,
   };
   componentDidMount() {
     const id = this.props.match?.params.id;
@@ -76,6 +77,12 @@ class SeeTickets extends Component {
       })
       .catch((err) => console.log(err));
   }
+
+  quantityHandler = (e) => {
+    const value = e.target.value;
+    console.log(value);
+  };
+
   render() {
     let page = <LoadingModal />;
     if (this.state.event && this.state.artist && this.state.venue) {
@@ -136,8 +143,8 @@ class SeeTickets extends Component {
                     <select
                       name="general"
                       className={classes.select}
-                      // defaultValue={this.state.quantity}
-                      // onChange={this.quantity}
+                      defaultValue={this.state.quantity}
+                      onChange={this.quantityHandler}
                     >
                       <option value={0}>0</option>
                       <option value={1}>1</option>
@@ -157,8 +164,8 @@ class SeeTickets extends Component {
                     <select
                       name="vip"
                       className={classes.select}
-                      // defaultValue={this.state.quantity}
-                      // onChange={this.quantity}
+                      defaultValue={this.state.quantity}
+                      onChange={this.quantityHandler}
                     >
                       <option value={0}>0</option>
                       <option value={1}>1</option>
@@ -178,8 +185,8 @@ class SeeTickets extends Component {
                     <select
                       name="vvip"
                       className={classes.select}
-                      // defaultValue={this.state.quantity}
-                      // onChange={this.quantity}
+                      defaultValue={this.state.quantity}
+                      onChange={this.quantityHandler}
                     >
                       <option value={0}>0</option>
                       <option value={1}>1</option>
