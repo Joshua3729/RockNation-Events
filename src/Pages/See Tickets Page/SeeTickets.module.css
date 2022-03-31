@@ -153,6 +153,11 @@
   cursor: pointer;
   width: 200px;
 }
+.checkout_btn:disabled {
+  color: white;
+  background-color: lightgray;
+  cursor: not-allowed;
+}
 .checkout_btn:hover {
   background-color: #536b8d;
 }
