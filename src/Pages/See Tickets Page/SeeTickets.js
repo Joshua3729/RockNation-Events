@@ -257,7 +257,10 @@ class SeeTickets extends Component {
     }
     return (
       <Fragment>
-        <Modal>
+        <Modal
+          show={this.state.showPaymentModal}
+          clicked={this.closePaymentModalHandler}
+        >
           <div className={classes.modal_innerWrapper}>Hello World</div>
         </Modal>
         {page}
