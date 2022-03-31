@@ -10,7 +10,7 @@ class SeeTickets extends Component {
     artist: null,
     venue: null,
     totalCost: 0,
-    quantity: 0,
+    tickets: [{ general: 0 }, { vip: 0 }, { vvip: 0 }],
   };
   componentDidMount() {
     const id = this.props.match?.params.id;
@@ -80,11 +80,55 @@ class SeeTickets extends Component {
 
   quantityHandler = (e) => {
     const value = e.target.value;
-    console.log(value);
+    const name = e.target.name;
+    const prices = this.state.event.prices;
+
+    if (name === "general")
+      this.setState((prevState) => {
+        const newTickets = [...prevState.tickets];
+        newTickets[0].general = Number(value);
+        const newTotalCost =
+          newTickets[0].general * prices.general +
+          newTickets[1].vip * prices.vip +
+          newTickets[2].vvip * prices.vip * 1.5;
+        return {
+          tickets: newTickets,
+          totalCost: newTotalCost,
+        };
+      });
+    else if (name === "vip")
+      this.setState((prevState) => {
+        const newTickets = [...prevState.tickets];
+        newTickets[1].vip = Number(value);
+        const newTotalCost =
+          newTickets[0].general * prices.general +
+          newTickets[1].vip * prices.vip +
+          newTickets[2].vvip * prices.vip * 1.5;
+        return {
+          tickets: newTickets,
+          totalCost: newTotalCost,
+        };
+      });
+    else if (name === "vvip")
+      this.setState((prevState) => {
+        const newTickets = [...prevState.tickets];
+        newTickets[2].vvip = Number(value);
+        const newTotalCost =
+          newTickets[0].general * prices.general +
+          newTickets[1].vip * prices.vip +
+          newTickets[2].vvip * prices.vip * 1.5;
+        return {
+          tickets: newTickets,
+          totalCost: newTotalCost,
+        };
+      });
   };
 
   render() {
     let page = <LoadingModal />;
+    console.log(this.state.tickets[0]);
+    console.log(this.state.tickets[1]);
+    console.log(this.state.tickets[2]);
     if (this.state.event && this.state.artist && this.state.venue) {
       page = (
         <Fragment>
@@ -199,7 +243,7 @@ class SeeTickets extends Component {
               <div className={classes.summary_wrapper}>
                 <div className={classes.summary_text}>
                   <p>Total Cost:</p>
-                  <p>$1200</p>
+                  <p>R {this.state.totalCost}</p>
                 </div>
                 <button
                   className={classes.checkout_btn}
