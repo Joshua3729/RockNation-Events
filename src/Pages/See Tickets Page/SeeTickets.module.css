@@ -123,7 +123,7 @@
   left: 0;
   background-color: white;
   width: 100%;
-  height: 80px;
+  height: 100px;
   padding: 10px 20px;
   box-sizing: border-box;
   box-shadow: 0px -15px 10px -15px lightgray;
@@ -131,7 +131,7 @@
 .tickets {
   padding-right: 20px;
   overflow-y: scroll;
-  height: calc(100% - 125px);
+  height: calc(100% - 145px);
 }
 .ticket_picker_gutter {
   height: 70px;
@@ -139,18 +139,19 @@
 .summary_text {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 .checkout_btn {
   display: block;
   background-color: #27374d;
   color: white;
   font-size: 15px;
-  padding: 10px 20px;
+  padding: 16px;
   border: none;
   border-radius: 5px;
-  margin-top: 10px;
   margin: 0 auto;
   cursor: pointer;
+  width: 200px;
 }
 .checkout_btn:hover {
   background-color: #536b8d;

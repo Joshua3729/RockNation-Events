@@ -194,10 +194,7 @@ class SeeTickets extends Component {
                   <p>Total Cost:</p>
                   <p>$1200</p>
                 </div>
-                <button
-                  className={classes.checkout_btn}
-                  disabled={this.state.totalCost > 0}
-                >
+                <button className={classes.checkout_btn} disabled>
                   Checkout
                 </button>
               </div>
