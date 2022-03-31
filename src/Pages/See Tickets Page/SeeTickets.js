@@ -3,6 +3,7 @@ import classes from "./SeeTickets.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import the_o2 from "../../Components/Image/the_o2.png";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
+import Modal from "../../Components/Modal/Modal";
 
 class SeeTickets extends Component {
   state = {
