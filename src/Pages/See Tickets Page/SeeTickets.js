@@ -126,9 +126,6 @@ class SeeTickets extends Component {
 
   render() {
     let page = <LoadingModal />;
-    console.log(this.state.tickets[0]);
-    console.log(this.state.tickets[1]);
-    console.log(this.state.tickets[2]);
     if (this.state.event && this.state.artist && this.state.venue) {
       page = (
         <Fragment>
