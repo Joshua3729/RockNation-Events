@@ -272,7 +272,10 @@ class SeeTickets extends Component {
           clicked={this.closePaymentModalHandler}
         >
           <div className={classes.modal_innerWrapper}>
-            <div className={classes.left_side}></div>
+            <div className={classes.left_side}>
+              <div className={classes.top_gutter}></div>
+              <div className={classes.bottom_gutter}></div>
+            </div>
             <div className={classes.right_side}>
               <div className={classes.small_banner}>
                 <img
