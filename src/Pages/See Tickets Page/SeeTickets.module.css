@@ -188,12 +188,16 @@
   height: 100%;
 }
 .checkout_summaryWrapper {
-  background-color: #eeeeee;
+  background-color: rgba(83, 107, 141, 0.2);
   width: 100%;
   height: 60%;
 }
 
 .top_gutter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -225,4 +229,10 @@
   color: white;
   border: none;
   border-radius: 5px;
+}
+.payment_optionWrapper {
+  width: 100%;
+  height: calc(100% - 200px);
+  margin-top: 100px;
+  overflow-y: scroll;
 }

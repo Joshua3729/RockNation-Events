@@ -276,6 +276,7 @@ class SeeTickets extends Component {
               <div className={classes.top_gutter}>
                 <p className={classes.modal_header}>Checkout</p>
               </div>
+              <div className={classes.payment_optionWrapper}></div>
               <div className={classes.bottom_gutter}>
                 <button className={classes.place_order}>Place Order</button>
               </div>
