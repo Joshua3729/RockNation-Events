@@ -139,12 +139,28 @@ class SeeTickets extends Component {
     let general = this.state.tickets[0].general && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[0].general} &times; general</p>
-        <p>
-          {this.state.tickets[0].general} * {this.state.event.prices.general}
-        </p>
+        <p>{this.state.tickets[0].general * this.state.event.prices.general}</p>
       </div>
     );
-    let tickets = <Fragment>{general}</Fragment>;
+    let vip = this.state.tickets[0].vip && (
+      <div className={classes.ticket_item}>
+        <p>{this.state.tickets[0].vip} &times; vip</p>
+        <p>{this.state.tickets[0].general * this.state.event.prices.vip}</p>
+      </div>
+    );
+    let vvip = this.state.tickets[0].vvip && (
+      <div className={classes.ticket_item}>
+        <p>{this.state.tickets[0].vvip} &times; general</p>
+        <p>{this.state.tickets[0].vvip * this.state.event.prices.vip * 2}</p>
+      </div>
+    );
+    let tickets = (
+      <Fragment>
+        {general}
+        {vip}
+        {vvip}
+      </Fragment>
+    );
 
     if (this.state.event && this.state.artist && this.state.venue) {
       page = (
