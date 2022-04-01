@@ -136,6 +136,16 @@ class SeeTickets extends Component {
 
   render() {
     let page = <LoadingModal />;
+    let general = this.state.tickets[0].general && (
+      <div className={classes.ticket_item}>
+        <p>{this.state.tickets[0].general} &times; general</p>
+        <p>
+          {this.state.tickets[0].general} * {this.state.event.prices.general}
+        </p>
+      </div>
+    );
+    let tickets = <Fragment>{general}</Fragment>;
+
     if (this.state.event && this.state.artist && this.state.venue) {
       page = (
         <Fragment>
@@ -288,7 +298,10 @@ class SeeTickets extends Component {
                   alt="banner"
                 />
               </div>
-              <div className={classes.checkout_summaryWrapper}></div>
+              <div className={classes.checkout_summaryWrapper}>
+                <p>Order summary</p>
+                <div className={classes.order_summary_tickets}>{tickets}</div>
+              </div>
             </div>
           </div>
         </Modal>
