@@ -273,8 +273,12 @@ class SeeTickets extends Component {
         >
           <div className={classes.modal_innerWrapper}>
             <div className={classes.left_side}>
-              <div className={classes.top_gutter}></div>
-              <div className={classes.bottom_gutter}></div>
+              <div className={classes.top_gutter}>
+                <p className={classes.modal_header}>Checkout</p>
+              </div>
+              <div className={classes.bottom_gutter}>
+                <button className={classes.place_order}>Place Order</button>
+              </div>
             </div>
             <div className={classes.right_side}>
               <div className={classes.small_banner}>
