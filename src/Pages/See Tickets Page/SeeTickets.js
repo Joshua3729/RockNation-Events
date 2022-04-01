@@ -142,16 +142,16 @@ class SeeTickets extends Component {
         <p>{this.state.tickets[0].general * this.state.event.prices.general}</p>
       </div>
     );
-    let vip = this.state.tickets[0].vip && (
+    let vip = this.state.tickets[1].vip && (
       <div className={classes.ticket_item}>
-        <p>{this.state.tickets[0].vip} &times; vip</p>
-        <p>{this.state.tickets[0].general * this.state.event.prices.vip}</p>
+        <p>{this.state.tickets[1].vip} &times; vip</p>
+        <p>{this.state.tickets[1].vip * this.state.event.prices.vip}</p>
       </div>
     );
-    let vvip = this.state.tickets[0].vvip && (
+    let vvip = this.state.tickets[2].vvip && (
       <div className={classes.ticket_item}>
-        <p>{this.state.tickets[0].vvip} &times; general</p>
-        <p>{this.state.tickets[0].vvip * this.state.event.prices.vip * 2}</p>
+        <p>{this.state.tickets[2].vvip} &times; general</p>
+        <p>{this.state.tickets[2].vvip * this.state.event.prices.vip * 2}</p>
       </div>
     );
     let tickets = (
@@ -315,7 +315,7 @@ class SeeTickets extends Component {
                 />
               </div>
               <div className={classes.checkout_summaryWrapper}>
-                <p>Order summary</p>
+                <p className={classes.oderSummary_header}>Order summary</p>
                 <div className={classes.order_summary_tickets}>{tickets}</div>
               </div>
             </div>

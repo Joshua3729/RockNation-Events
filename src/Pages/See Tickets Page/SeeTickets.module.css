@@ -191,6 +191,8 @@
   background-color: rgba(83, 107, 141, 0.2);
   width: 100%;
   height: 60%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .top_gutter {
@@ -240,4 +242,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.oderSummary_header {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
