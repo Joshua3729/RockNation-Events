@@ -136,19 +136,19 @@ class SeeTickets extends Component {
 
   render() {
     let page = <LoadingModal />;
-    let general = this.state.tickets[0].general && (
+    let general = this.state.tickets[0].general > 0 && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[0].general} &times; general</p>
         <p>{this.state.tickets[0].general * this.state.event.prices.general}</p>
       </div>
     );
-    let vip = this.state.tickets[1].vip && (
+    let vip = this.state.tickets[1].vip > 0 && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[1].vip} &times; vip</p>
         <p>{this.state.tickets[1].vip * this.state.event.prices.vip}</p>
       </div>
     );
-    let vvip = this.state.tickets[2].vvip && (
+    let vvip = this.state.tickets[2].vvip > 0 && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[2].vvip} &times; general</p>
         <p>{this.state.tickets[2].vvip * this.state.event.prices.vip * 2}</p>
@@ -316,7 +316,10 @@ class SeeTickets extends Component {
               </div>
               <div className={classes.checkout_summaryWrapper}>
                 <p className={classes.oderSummary_header}>Order summary</p>
-                <div className={classes.order_summary_tickets}>{tickets}</div>
+                <div className={classes.order_summary_tickets}>
+                  {tickets}
+                  <div className={classes.line_divider}></div>
+                </div>
               </div>
             </div>
           </div>
