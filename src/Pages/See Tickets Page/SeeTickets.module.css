@@ -203,19 +203,26 @@
 }
 .bottom_gutter {
   position: absolute;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 20px;
   bottom: 0;
   left: 0;
   height: 100px;
   width: 100%;
   background-color: white;
   box-shadow: 0px -15px 10px -15px rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
 }
 .modal_header {
   font-size: 25px;
   font-weight: 700;
 }
 .place_order {
+  padding: 10px 20px;
   background-color: #27374d;
   color: white;
   border: none;
+  border-radius: 5px;
 }
