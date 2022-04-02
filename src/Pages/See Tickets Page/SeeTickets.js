@@ -312,13 +312,17 @@ class SeeTickets extends Component {
                       classes.credit_debit_wrapper,
                       classes.payment_option,
                     ].join(" ")}
-                  ></div>
+                  >
+                    <div className={classes.payment_option_gutter}></div>
+                  </div>
                   <div
                     className={[
                       classes.paypal_wrapper,
                       classes.payment_option,
                     ].join(" ")}
-                  ></div>
+                  >
+                    <div className={classes.payment_option_gutter}></div>
+                  </div>
                 </div>
               </div>
               <div className={classes.bottom_gutter}>
