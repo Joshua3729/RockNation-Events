@@ -297,3 +297,12 @@
 .debitCard_wrapper input {
   margin-right: 10px;
 }
+.icon {
+  font-size: 30px;
+}
+.icon2 {
+  color: #3b7bbf;
+}
+.icon1 {
+  color: rgb(168, 168, 168);
+}

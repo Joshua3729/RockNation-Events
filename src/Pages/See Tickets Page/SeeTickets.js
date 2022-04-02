@@ -322,7 +322,9 @@ class SeeTickets extends Component {
                         />
                         <p>Credit or Debit card</p>
                       </div>
-                      <div className={classes.icon}>ICON</div>
+                      <div className={[classes.icon, classes.icon1].join(" ")}>
+                        <i className="fa fa-thin fa-credit-card"></i>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -340,7 +342,9 @@ class SeeTickets extends Component {
                         />
                         <p>PayPal</p>
                       </div>
-                      <div className={classes.icon}>ICON</div>
+                      <div className={[classes.icon, classes.icon2].join(" ")}>
+                        <i className="fa fa-brands fa-cc-paypal"></i>
+                      </div>
                     </div>
                   </div>
                   <div
@@ -358,7 +362,7 @@ class SeeTickets extends Component {
                         />
                         <p>Cash on delivery</p>
                       </div>
-                      <div className={classes.icon}>ICON</div>
+                      <div className={classes.icon}></div>
                     </div>
                   </div>
                 </div>
