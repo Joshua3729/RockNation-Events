@@ -333,21 +333,27 @@ class SeeTickets extends Component {
                         placeholder="Card number"
                       />
                       <div className={classes.cardInfo_wrapper}>
-                        <input
-                          type="text"
-                          className={classes.expirationDate}
-                          placeholder="Expiration Date"
-                        />
-                        <input
-                          type="text"
-                          className={classes.CSC}
-                          placeholder="CSC"
-                        />
-                        <input
-                          type="text"
-                          className={classes.Zip}
-                          placeholder="Zip/Postal"
-                        />
+                        <div className={classes.cardInfo_item}>
+                          <input
+                            type="text"
+                            className={classes.expirationDate}
+                            placeholder="Expiration Date"
+                          />
+                        </div>
+                        <div className={classes.cardInfo_item}>
+                          <input
+                            type="text"
+                            className={classes.CSC}
+                            placeholder="CSC"
+                          />
+                        </div>
+                        <div className={classes.cardInfo_item}>
+                          <input
+                            type="text"
+                            className={classes.Zip}
+                            placeholder="Zip/Postal"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
