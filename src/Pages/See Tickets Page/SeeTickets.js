@@ -313,7 +313,13 @@ class SeeTickets extends Component {
                       classes.payment_option,
                     ].join(" ")}
                   >
-                    <div className={classes.payment_option_gutter}></div>
+                    <div className={classes.payment_option_gutter}>
+                      <div className={classes.debitCard_wrapper}>
+                        <input type="radio" />
+                        <p>Credit or Debit card</p>
+                      </div>
+                      <div className={classes.icon}>ICON</div>
+                    </div>
                   </div>
                   <div
                     className={[
@@ -321,7 +327,13 @@ class SeeTickets extends Component {
                       classes.payment_option,
                     ].join(" ")}
                   >
-                    <div className={classes.payment_option_gutter}></div>
+                    <div className={classes.payment_option_gutter}>
+                      <div className={classes.debitCard_wrapper}>
+                        <input type="radio" />
+                        <p>PayPal</p>
+                      </div>
+                      <div className={classes.icon}>ICON</div>
+                    </div>
                   </div>
                 </div>
               </div>
