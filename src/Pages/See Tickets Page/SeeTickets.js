@@ -319,6 +319,19 @@ class SeeTickets extends Component {
                 <div className={classes.order_summary_tickets}>
                   {tickets}
                   <div className={classes.line_divider}></div>
+                  <div className={classes.subtotal_wrapper}>
+                    <div className={classes.ticket_item}>
+                      <p>Subtotal</p>
+                      <p>{this.state.totalCost}</p>
+                    </div>
+                    <div className={classes.ticket_item}>
+                      <p>fees</p> <p>R100</p>
+                    </div>
+                    <div className={classes.ticket_item}>
+                      <p>Delivery fee</p>
+                      <p>R 50</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
