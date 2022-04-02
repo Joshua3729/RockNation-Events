@@ -306,6 +306,20 @@ class SeeTickets extends Component {
               </div>
               <div className={classes.payment_optionWrapper}>
                 <h3 className={classes.secondary_header}>Payment method</h3>
+                <div className={classes.payment_forms}>
+                  <div
+                    className={[
+                      classes.credit_debit_wrapper,
+                      classes.payment_option,
+                    ].join(" ")}
+                  ></div>
+                  <div
+                    className={[
+                      classes.paypal_wrapper,
+                      classes.payment_option,
+                    ].join(" ")}
+                  ></div>
+                </div>
               </div>
               <div className={classes.bottom_gutter}>
                 <button className={classes.place_order}>Place Order</button>
