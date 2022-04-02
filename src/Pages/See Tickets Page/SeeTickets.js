@@ -315,7 +315,11 @@ class SeeTickets extends Component {
                   >
                     <div className={classes.payment_option_gutter}>
                       <div className={classes.debitCard_wrapper}>
-                        <input type="radio" />
+                        <input
+                          type="radio"
+                          name="payment_option"
+                          value="credit_card"
+                        />
                         <p>Credit or Debit card</p>
                       </div>
                       <div className={classes.icon}>ICON</div>
@@ -329,8 +333,30 @@ class SeeTickets extends Component {
                   >
                     <div className={classes.payment_option_gutter}>
                       <div className={classes.debitCard_wrapper}>
-                        <input type="radio" />
+                        <input
+                          type="radio"
+                          name="payment_option"
+                          value="paypal"
+                        />
                         <p>PayPal</p>
+                      </div>
+                      <div className={classes.icon}>ICON</div>
+                    </div>
+                  </div>
+                  <div
+                    className={[
+                      classes.cashOnDelivery_wrapper,
+                      classes.payment_option,
+                    ].join(" ")}
+                  >
+                    <div className={classes.payment_option_gutter}>
+                      <div className={classes.debitCard_wrapper}>
+                        <input
+                          type="radio"
+                          name="payment_option"
+                          value="cashOnDelivery"
+                        />
+                        <p>Cash on delivery</p>
                       </div>
                       <div className={classes.icon}>ICON</div>
                     </div>

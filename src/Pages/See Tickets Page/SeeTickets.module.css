@@ -274,12 +274,14 @@
 }
 .payment_option {
   width: 100%;
-  border: rgb(168, 168, 168) solid 0.03px;
+  border-left: rgb(168, 168, 168) solid 0.03px;
+  border-bottom: rgb(168, 168, 168) solid 0.03px;
+  border-right: rgb(168, 168, 168) solid 0.03px;
   padding: 20px;
   box-sizing: border-box;
 }
-.payment_option:last-child {
-  border-top: none;
+.payment_option:first-child {
+  border-top: rgb(168, 168, 168) solid 0.03px;
 }
 .payment_option_gutter {
   width: 100%;
