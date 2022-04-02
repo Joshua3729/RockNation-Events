@@ -306,3 +306,21 @@
 .icon1 {
   color: rgb(168, 168, 168);
 }
+.cardNumber {
+  margin-left: 25px;
+  width: calc(100% - 25px);
+  padding: 15px 10px;
+  font-size: 15px;
+  box-sizing: border-box;
+  border: rgb(168, 168, 168) solid 0.03px;
+}
+.form_info {
+  margin-top: 20px;
+}
+.cardInfo_wrapper {
+  margin: 10px 0 0 25px;
+  width: calc(100% - 25px);
+  display: grid;
+  grid-template-columns: 3fr 1fr 2fr;
+  grid-gap: 10px;
+}

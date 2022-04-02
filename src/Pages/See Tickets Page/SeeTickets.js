@@ -326,6 +326,30 @@ class SeeTickets extends Component {
                         <i className="fa fa-thin fa-credit-card"></i>
                       </div>
                     </div>
+                    <div className={classes.form_info}>
+                      <input
+                        type="text"
+                        className={classes.cardNumber}
+                        placeholder="Card number"
+                      />
+                      <div className={classes.cardInfo_wrapper}>
+                        <input
+                          type="text"
+                          className={classes.expirationDate}
+                          placeholder="Expiration Date"
+                        />
+                        <input
+                          type="text"
+                          className={classes.CSC}
+                          placeholder="CSC"
+                        />
+                        <input
+                          type="text"
+                          className={classes.Zip}
+                          placeholder="Zip/Postal"
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div
                     className={[
@@ -362,7 +386,9 @@ class SeeTickets extends Component {
                         />
                         <p>Cash on delivery</p>
                       </div>
-                      <div className={classes.icon}></div>
+                      <div className={[classes.icon, classes.icon1].join(" ")}>
+                        <i className="fa fa-regular fa-truck"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
