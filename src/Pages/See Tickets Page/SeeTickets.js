@@ -139,19 +139,21 @@ class SeeTickets extends Component {
     let general = this.state.tickets[0].general > 0 && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[0].general} &times; general</p>
-        <p>{this.state.tickets[0].general * this.state.event.prices.general}</p>
+        <p>
+          R{this.state.tickets[0].general * this.state.event.prices.general}
+        </p>
       </div>
     );
     let vip = this.state.tickets[1].vip > 0 && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[1].vip} &times; vip</p>
-        <p>{this.state.tickets[1].vip * this.state.event.prices.vip}</p>
+        <p>R{this.state.tickets[1].vip * this.state.event.prices.vip}</p>
       </div>
     );
     let vvip = this.state.tickets[2].vvip > 0 && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[2].vvip} &times; general</p>
-        <p>{this.state.tickets[2].vvip * this.state.event.prices.vip * 2}</p>
+        <p>R{this.state.tickets[2].vvip * this.state.event.prices.vip * 2}</p>
       </div>
     );
     let tickets = (
@@ -322,15 +324,20 @@ class SeeTickets extends Component {
                   <div className={classes.subtotal_wrapper}>
                     <div className={classes.ticket_item}>
                       <p>Subtotal</p>
-                      <p>{this.state.totalCost}</p>
+                      <p>R{this.state.totalCost}</p>
                     </div>
                     <div className={classes.ticket_item}>
                       <p>fees</p> <p>R100</p>
                     </div>
                     <div className={classes.ticket_item}>
                       <p>Delivery fee</p>
-                      <p>R 50</p>
+                      <p>R50</p>
                     </div>
+                  </div>
+                  <div className={classes.line_divider}></div>
+                  <div className={classes.total_wrapper}>
+                    <p>Total</p>
+                    <p>R{this.state.totalCost + 150}</p>
                   </div>
                 </div>
               </div>
