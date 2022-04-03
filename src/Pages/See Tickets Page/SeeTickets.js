@@ -13,6 +13,7 @@ class SeeTickets extends Component {
     totalCost: 0,
     tickets: [{ general: 0 }, { vip: 0 }, { vvip: 0 }],
     showPaymentModal: false,
+    userAddress: null,
   };
   componentDidMount() {
     const id = this.props.match?.params.id;
@@ -135,6 +136,10 @@ class SeeTickets extends Component {
   };
 
   render() {
+    let userAddress;
+    if (this.props.isAuth)
+      userAddress = JSON.parse(localStorage.getItem("userAddress"));
+    console.log(userAddress);
     let page = <LoadingModal />;
     let general = this.state.tickets[0].general > 0 && (
       <div className={classes.ticket_item}>
@@ -395,6 +400,14 @@ class SeeTickets extends Component {
                       <div className={[classes.icon, classes.icon1].join(" ")}>
                         <i className="fa fa-regular fa-truck"></i>
                       </div>
+                    </div>
+                    <div className={classes.userAdress_wrapper}>
+                      <input type="text" value={userAddress?.homeAddress} />
+                      <input type="text" value={userAddress?.street} />
+                      <input type="text" value={userAddress?.surbub} />
+                      <input type="text" value={userAddress?.homeAddress} />
+                      <input type="text" value={userAddress?.zipCode} />
+                      <input type="text" value={userAddress?.country} />
                     </div>
                   </div>
                 </div>
