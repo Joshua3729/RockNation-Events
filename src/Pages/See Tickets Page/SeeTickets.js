@@ -14,6 +14,7 @@ class SeeTickets extends Component {
     tickets: [{ general: 0 }, { vip: 0 }, { vvip: 0 }],
     showPaymentModal: false,
     userAddress: null,
+    paymentOption: "credit_card",
   };
   componentDidMount() {
     const id = this.props.match?.params.id;
@@ -133,6 +134,11 @@ class SeeTickets extends Component {
           totalCost: newTotalCost,
         };
       });
+  };
+
+  paymentOptionHandler = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
   };
 
   render() {
