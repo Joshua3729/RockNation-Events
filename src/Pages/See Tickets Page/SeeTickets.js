@@ -433,6 +433,14 @@ class SeeTickets extends Component {
                         <label htmlFor="homeAddress">Home Address:</label>
                         <input type="text" value={userAddress?.country} />
                       </div>
+                      <div className={classes.agreement_wrapper}>
+                        <input type="checkbox" value="agree" />
+                        <p>
+                          You agree that you are going to settle the bill upon
+                          the delivery and if you dont you will your debt will
+                          be escalated with credit bureau
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
