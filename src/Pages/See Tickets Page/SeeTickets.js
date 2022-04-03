@@ -333,27 +333,21 @@ class SeeTickets extends Component {
                         placeholder="Card number"
                       />
                       <div className={classes.cardInfo_wrapper}>
-                        <div className={classes.cardInfo_item}>
-                          <input
-                            type="text"
-                            className={classes.expirationDate}
-                            placeholder="Expiration Date"
-                          />
-                        </div>
-                        <div className={classes.cardInfo_item}>
-                          <input
-                            type="text"
-                            className={classes.CSC}
-                            placeholder="CSC"
-                          />
-                        </div>
-                        <div className={classes.cardInfo_item}>
-                          <input
-                            type="text"
-                            className={classes.Zip}
-                            placeholder="Zip/Postal"
-                          />
-                        </div>
+                        <input
+                          type="text"
+                          className={classes.expirationDate}
+                          placeholder="Expiration Date"
+                        />
+                        <input
+                          type="text"
+                          className={classes.CSC}
+                          placeholder="CSC"
+                        />
+                        <input
+                          type="text"
+                          className={classes.Zip}
+                          placeholder="Zip/Postal"
+                        />
                       </div>
                     </div>
                   </div>
@@ -375,6 +369,12 @@ class SeeTickets extends Component {
                       <div className={[classes.icon, classes.icon2].join(" ")}>
                         <i className="fa fa-brands fa-cc-paypal"></i>
                       </div>
+                    </div>
+                    <div className={classes.paypal_item_wrapper}>
+                      <p className={classes.message}>
+                        Sign in to your PayPal account to complete the purchase
+                      </p>
+                      <button className={classes.paypal_button}>PayPal</button>
                     </div>
                   </div>
                   <div

@@ -319,16 +319,30 @@
 }
 .cardInfo_wrapper {
   margin: 20px 0 0 25px;
-  width: calc(100% - 40px);
+  width: calc(100% - 25px);
   display: grid;
-  grid-template-columns: 3fr 1fr 2fr;
-  grid-gap: 20px;
-  background-color: red;
-  box-sizing: border-box;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 18px;
 }
 .cardInfo_wrapper input {
   padding: 15px 10px;
   font-size: 15px;
   border: rgb(168, 168, 168) solid 0.03px;
-  opacity: 0.5;
+}
+.paypal_item_wrapper {
+  margin: 20px 0 0 25px;
+  width: calc(100% - 25px);
+}
+.paypal_button {
+  border: none;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: #3b7bbf;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 10px;
+  font-style: italic;
+  width: 250px;
+  border-radius: 5px;
 }
