@@ -347,7 +347,7 @@
   width: 300px;
   border-radius: 5px;
 }
-.userAdress_wrapper input {
+.address_item input {
   width: 100%;
   padding: 15px 10px;
   font-size: 15px;
@@ -358,4 +358,16 @@
 }
 .address_item label {
   margin-bottom: 10px;
+}
+.agreement_wrapper {
+  display: flex;
+  align-items: center;
+}
+.agreement_wrapper input {
+  margin-right: 20px;
+}
+
+.agreement_wrapper p {
+  font-size: 10px;
+  color: grey;
 }

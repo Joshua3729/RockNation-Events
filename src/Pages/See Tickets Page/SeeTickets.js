@@ -437,8 +437,8 @@ class SeeTickets extends Component {
                         <input type="checkbox" value="agree" />
                         <p>
                           You agree that you are going to settle the bill upon
-                          the delivery and if you dont you will your debt will
-                          be escalated with credit bureau
+                          the delivery and if you dont then your debt plus 30%
+                          penalty should be escalated to credit bureau
                         </p>
                       </div>
                     </div>
