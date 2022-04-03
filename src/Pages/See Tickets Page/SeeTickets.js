@@ -329,6 +329,7 @@ class SeeTickets extends Component {
                           type="radio"
                           name="payment_option"
                           value="credit_card"
+                          defaultChecked
                         />
                         <p>Credit or Debit card</p>
                       </div>
@@ -336,30 +337,32 @@ class SeeTickets extends Component {
                         <i className="fa fa-thin fa-credit-card"></i>
                       </div>
                     </div>
-                    <div className={classes.form_info}>
-                      <input
-                        type="text"
-                        className={classes.cardNumber}
-                        placeholder="Card number"
-                      />
-                      <div className={classes.cardInfo_wrapper}>
+                    {this.state.paymentOption === "credit_card" && (
+                      <div className={classes.form_info}>
                         <input
                           type="text"
-                          className={classes.expirationDate}
-                          placeholder="Expiration Date"
+                          className={classes.cardNumber}
+                          placeholder="Card number"
                         />
-                        <input
-                          type="text"
-                          className={classes.CSC}
-                          placeholder="CSC"
-                        />
-                        <input
-                          type="text"
-                          className={classes.Zip}
-                          placeholder="Zip/Postal"
-                        />
+                        <div className={classes.cardInfo_wrapper}>
+                          <input
+                            type="text"
+                            className={classes.expirationDate}
+                            placeholder="Expiration Date"
+                          />
+                          <input
+                            type="text"
+                            className={classes.CSC}
+                            placeholder="CSC"
+                          />
+                          <input
+                            type="text"
+                            className={classes.Zip}
+                            placeholder="Zip/Postal"
+                          />
+                        </div>
                       </div>
-                    </div>
+                    )}
                   </div>
                   <div
                     className={[
@@ -380,12 +383,17 @@ class SeeTickets extends Component {
                         <i className="fa fa-brands fa-cc-paypal"></i>
                       </div>
                     </div>
-                    <div className={classes.paypal_item_wrapper}>
-                      <p className={classes.message}>
-                        Sign in to your PayPal account to complete the purchase
-                      </p>
-                      <button className={classes.paypal_button}>PayPal</button>
-                    </div>
+                    {this.state.paymentOption === "paypal" && (
+                      <div className={classes.paypal_item_wrapper}>
+                        <p className={classes.message}>
+                          Sign in to your PayPal account to complete the
+                          purchase
+                        </p>
+                        <button className={classes.paypal_button}>
+                          PayPal
+                        </button>
+                      </div>
+                    )}
                   </div>
                   <div
                     className={[
@@ -406,48 +414,50 @@ class SeeTickets extends Component {
                         <i className="fa fa-regular fa-truck"></i>
                       </div>
                     </div>
-                    <div className={classes.userAdress_wrapper}>
-                      <div className={classes.address_item}>
-                        <label htmlFor="homeAddress">Home Address:</label>
-                        <input
-                          type="text"
-                          value={userAddress?.homeAddress}
-                          name="homeAddress"
-                        />
+                    {this.state.paymentOption === "cashOnDelivery" && (
+                      <div className={classes.userAdress_wrapper}>
+                        <div className={classes.address_item}>
+                          <label htmlFor="homeAddress">Home Address:</label>
+                          <input
+                            type="text"
+                            value={userAddress?.homeAddress}
+                            name="homeAddress"
+                          />
+                        </div>
+                        <div className={classes.address_item}>
+                          <label htmlFor="street">Street:</label>
+                          <input
+                            type="text"
+                            value={userAddress?.street}
+                            name="street"
+                          />
+                        </div>
+                        <div className={classes.address_item}>
+                          <label htmlFor="suburb">Suburb:</label>
+                          <input
+                            type="text"
+                            value={userAddress?.suburb}
+                            name="suburb"
+                          />
+                        </div>
+                        <div className={classes.address_item}>
+                          <label htmlFor="homeAddress">Home Address:</label>
+                          <input type="text" value={userAddress?.zipCode} />
+                        </div>
+                        <div className={classes.address_item}>
+                          <label htmlFor="homeAddress">Home Address:</label>
+                          <input type="text" value={userAddress?.country} />
+                        </div>
+                        <div className={classes.agreement_wrapper}>
+                          <input type="checkbox" value="agree" />
+                          <p>
+                            You agree that you are going to settle the bill upon
+                            the delivery and if you dont then your debt plus 30%
+                            penalty should be escalated to credit bureau
+                          </p>
+                        </div>
                       </div>
-                      <div className={classes.address_item}>
-                        <label htmlFor="street">Street:</label>
-                        <input
-                          type="text"
-                          value={userAddress?.street}
-                          name="street"
-                        />
-                      </div>
-                      <div className={classes.address_item}>
-                        <label htmlFor="suburb">Suburb:</label>
-                        <input
-                          type="text"
-                          value={userAddress?.suburb}
-                          name="suburb"
-                        />
-                      </div>
-                      <div className={classes.address_item}>
-                        <label htmlFor="homeAddress">Home Address:</label>
-                        <input type="text" value={userAddress?.zipCode} />
-                      </div>
-                      <div className={classes.address_item}>
-                        <label htmlFor="homeAddress">Home Address:</label>
-                        <input type="text" value={userAddress?.country} />
-                      </div>
-                      <div className={classes.agreement_wrapper}>
-                        <input type="checkbox" value="agree" />
-                        <p>
-                          You agree that you are going to settle the bill upon
-                          the delivery and if you dont then your debt plus 30%
-                          penalty should be escalated to credit bureau
-                        </p>
-                      </div>
-                    </div>
+                    )}
                   </div>
                 </div>
               </div>
