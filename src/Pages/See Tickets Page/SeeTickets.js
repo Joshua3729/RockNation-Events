@@ -138,7 +138,7 @@ class SeeTickets extends Component {
 
   paymentOptionHandler = (e) => {
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    this.setState({ paymentOption: value });
   };
 
   render() {
@@ -330,6 +330,7 @@ class SeeTickets extends Component {
                           name="payment_option"
                           value="credit_card"
                           defaultChecked
+                          onChange={(e) => this.paymentOptionHandler(e)}
                         />
                         <p>Credit or Debit card</p>
                       </div>
@@ -376,6 +377,7 @@ class SeeTickets extends Component {
                           type="radio"
                           name="payment_option"
                           value="paypal"
+                          onChange={(e) => this.paymentOptionHandler(e)}
                         />
                         <p>PayPal</p>
                       </div>
@@ -407,6 +409,7 @@ class SeeTickets extends Component {
                           type="radio"
                           name="payment_option"
                           value="cashOnDelivery"
+                          onChange={(e) => this.paymentOptionHandler(e)}
                         />
                         <p>Cash on delivery</p>
                       </div>
