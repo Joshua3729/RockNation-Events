@@ -347,3 +347,11 @@
   width: 300px;
   border-radius: 5px;
 }
+.userAdress_wrapper input {
+  width: 100%;
+  padding: 15px 10px;
+  font-size: 15px;
+  border: rgb(168, 168, 168) solid 0.03px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}

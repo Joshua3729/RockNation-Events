@@ -139,7 +139,6 @@ class SeeTickets extends Component {
     let userAddress;
     if (this.props.isAuth)
       userAddress = JSON.parse(localStorage.getItem("userAddress"));
-    console.log(userAddress);
     let page = <LoadingModal />;
     let general = this.state.tickets[0].general > 0 && (
       <div className={classes.ticket_item}>
@@ -404,8 +403,7 @@ class SeeTickets extends Component {
                     <div className={classes.userAdress_wrapper}>
                       <input type="text" value={userAddress?.homeAddress} />
                       <input type="text" value={userAddress?.street} />
-                      <input type="text" value={userAddress?.surbub} />
-                      <input type="text" value={userAddress?.homeAddress} />
+                      <input type="text" value={userAddress?.suburb} />
                       <input type="text" value={userAddress?.zipCode} />
                       <input type="text" value={userAddress?.country} />
                     </div>
