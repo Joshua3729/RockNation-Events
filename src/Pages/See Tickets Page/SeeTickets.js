@@ -401,11 +401,30 @@ class SeeTickets extends Component {
                       </div>
                     </div>
                     <div className={classes.userAdress_wrapper}>
-                      <input type="text" value={userAddress?.homeAddress} />
-                      <input type="text" value={userAddress?.street} />
-                      <input type="text" value={userAddress?.suburb} />
-                      <input type="text" value={userAddress?.zipCode} />
-                      <input type="text" value={userAddress?.country} />
+                      <div className={classes.address_item}>
+                        <label htmlFor="homeAddress">Home Address:</label>
+                        <input
+                          type="text"
+                          value={userAddress?.homeAddress}
+                          name="homeAddress"
+                        />
+                      </div>
+                      <div className={classes.address_item}>
+                        <label htmlFor="homeAddress">Home Address:</label>
+                        <input type="text" value={userAddress?.street} />
+                      </div>
+                      <div className={classes.address_item}>
+                        <label htmlFor="homeAddress">Home Address:</label>
+                        <input type="text" value={userAddress?.suburb} />
+                      </div>
+                      <div className={classes.address_item}>
+                        <label htmlFor="homeAddress">Home Address:</label>
+                        <input type="text" value={userAddress?.zipCode} />
+                      </div>
+                      <div className={classes.address_item}>
+                        <label htmlFor="homeAddress">Home Address:</label>
+                        <input type="text" value={userAddress?.country} />
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -355,3 +355,6 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 }
+.userAdress_wrapper label {
+  margin-bottom: 10px;
+}
