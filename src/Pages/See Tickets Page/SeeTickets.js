@@ -410,12 +410,20 @@ class SeeTickets extends Component {
                         />
                       </div>
                       <div className={classes.address_item}>
-                        <label htmlFor="homeAddress">Home Address:</label>
-                        <input type="text" value={userAddress?.street} />
+                        <label htmlFor="street">Street:</label>
+                        <input
+                          type="text"
+                          value={userAddress?.street}
+                          name="street"
+                        />
                       </div>
                       <div className={classes.address_item}>
-                        <label htmlFor="homeAddress">Home Address:</label>
-                        <input type="text" value={userAddress?.suburb} />
+                        <label htmlFor="suburb">Suburb:</label>
+                        <input
+                          type="text"
+                          value={userAddress?.suburb}
+                          name="suburb"
+                        />
                       </div>
                       <div className={classes.address_item}>
                         <label htmlFor="homeAddress">Home Address:</label>
