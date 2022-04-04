@@ -119,6 +119,35 @@ class App extends Component {
     search: false,
   };
   componentDidMount() {
+    // const fullname = localStorage.getItem("fullname");
+    // const token = localStorage.getItem("token");
+    // const expiryDate = localStorage.getItem("expiryDate");
+    // const imageUrl = localStorage.getItem("imageUrl");
+    // const userAddress = localStorage.getItem("userAddress");
+    // if (!token || !expiryDate) {
+    //   return;
+    // }
+    // if (new Date(expiryDate) <= new Date()) {
+    //   this.logoutHandler();
+    //   return;
+    // }
+    // const userId = localStorage.getItem("userId");
+    // const remainingMilliseconds =
+    //   new Date(expiryDate).getTime() - new Date().getTime();
+    // this.setState({
+    //   isAuth: true,
+    //   token: token,
+    //   userId: userId,
+    //   fullname: fullname,
+    //   userImage: imageUrl,
+    //   userAddress: userAddress,
+    // });
+    // this.setAutoLogout(remainingMilliseconds);
+    // alert(remainingMilliseconds);
+    // console.log("top");
+  }
+
+  checkForLoginStatus = () => {
     const fullname = localStorage.getItem("fullname");
     const token = localStorage.getItem("token");
     const expiryDate = localStorage.getItem("expiryDate");
@@ -143,7 +172,8 @@ class App extends Component {
       userAddress: userAddress,
     });
     this.setAutoLogout(remainingMilliseconds);
-  }
+  };
+
   homeHandler = () => {
     this.setState({ search: false });
     this.props.history.push({
@@ -234,6 +264,8 @@ class App extends Component {
   };
 
   setAutoLogout = (milliseconds) => {
+    console.log(milliseconds);
+    console.log("top");
     setTimeout(() => {
       this.logoutHandler();
     }, milliseconds);
