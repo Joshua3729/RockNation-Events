@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from "react";
+import { withRouter } from "react-router-dom";
+
 import classes from "./SeeTickets.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import the_o2 from "../../Components/Image/the_o2.png";
@@ -16,6 +18,7 @@ class SeeTickets extends Component {
     userAddress: null,
     paymentOption: "credit_card",
   };
+
   componentDidMount() {
     const id = this.props.match?.params.id;
     const query = new URLSearchParams(this.props.location.search);
@@ -509,4 +512,4 @@ class SeeTickets extends Component {
   }
 }
 
-export default SeeTickets;
+export default withRouter(SeeTickets);

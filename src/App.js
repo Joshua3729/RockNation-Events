@@ -119,32 +119,32 @@ class App extends Component {
     search: false,
   };
   componentDidMount() {
-    // const fullname = localStorage.getItem("fullname");
-    // const token = localStorage.getItem("token");
-    // const expiryDate = localStorage.getItem("expiryDate");
-    // const imageUrl = localStorage.getItem("imageUrl");
-    // const userAddress = localStorage.getItem("userAddress");
-    // if (!token || !expiryDate) {
-    //   return;
-    // }
-    // if (new Date(expiryDate) <= new Date()) {
-    //   this.logoutHandler();
-    //   return;
-    // }
-    // const userId = localStorage.getItem("userId");
-    // const remainingMilliseconds =
-    //   new Date(expiryDate).getTime() - new Date().getTime();
-    // this.setState({
-    //   isAuth: true,
-    //   token: token,
-    //   userId: userId,
-    //   fullname: fullname,
-    //   userImage: imageUrl,
-    //   userAddress: userAddress,
-    // });
-    // this.setAutoLogout(remainingMilliseconds);
-    // alert(remainingMilliseconds);
-    // console.log("top");
+    const fullname = localStorage.getItem("fullname");
+    const token = localStorage.getItem("token");
+    const expiryDate = localStorage.getItem("expiryDate");
+    const imageUrl = localStorage.getItem("imageUrl");
+    const userAddress = localStorage.getItem("userAddress");
+    if (!token || !expiryDate) {
+      return;
+    }
+    if (new Date(expiryDate) <= new Date()) {
+      this.logoutHandler();
+      return;
+    }
+    const userId = localStorage.getItem("userId");
+    const remainingMilliseconds =
+      new Date(expiryDate).getTime() - new Date().getTime();
+    this.setState({
+      isAuth: true,
+      token: token,
+      userId: userId,
+      fullname: fullname,
+      userImage: imageUrl,
+      userAddress: userAddress,
+    });
+    this.setAutoLogout(remainingMilliseconds);
+    alert(remainingMilliseconds);
+    console.log("top");
   }
 
   checkForLoginStatus = () => {
@@ -172,6 +172,7 @@ class App extends Component {
       userAddress: userAddress,
     });
     this.setAutoLogout(remainingMilliseconds);
+    alert(remainingMilliseconds);
   };
 
   homeHandler = () => {
@@ -735,6 +736,7 @@ class App extends Component {
               userImage={this.state.userImage}
               goToHome={this.homeHandler}
               search={this.searchHandler}
+              checkForLoginStatus={this.checkForLoginStatus}
             />
           )}
         />
@@ -1116,6 +1118,7 @@ class App extends Component {
                 userImage={this.state.userImage}
                 goToHome={this.homeHandler}
                 search={this.searchHandler}
+                checkForLoginStatus={this.checkForLoginStatus}
               />
             )}
           />
