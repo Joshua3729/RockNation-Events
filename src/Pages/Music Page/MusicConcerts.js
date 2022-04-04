@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { withRouter } from "react-router-dom";
 import classes from "./MusicConcerts.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
@@ -93,4 +94,4 @@ class MusicConcerts extends Component {
   }
 }
 
-export default MusicConcerts;
+export default withRouter(MusicConcerts);
