@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { withRouter } from "react-router-dom";
 import classes from "./SportsPage.module.css";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import Navigation from "../../Components/Navigation/Navigation";
@@ -99,4 +100,4 @@ class ComedyPage extends Component {
   }
 }
 
-export default ComedyPage;
+export default withRouter(ComedyPage);
