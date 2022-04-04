@@ -5,6 +5,7 @@ import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import video from "../../Assets/Video/AD.mp4";
 import upcoming_arts from "../../Components/Image/upcoming.png";
+import { withRouter } from "react-router-dom";
 
 class ArtsAndTheater extends Component {
   state = {
@@ -97,4 +98,4 @@ class ArtsAndTheater extends Component {
     );
   }
 }
-export default ArtsAndTheater;
+export default withRouter(ArtsAndTheater);
