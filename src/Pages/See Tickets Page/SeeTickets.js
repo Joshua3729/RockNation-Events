@@ -496,7 +496,16 @@ class SeeTickets extends Component {
                 </div>
               </div>
               <div className={classes.bottom_gutter}>
-                <button className={classes.place_order}>Place Order</button>
+                <button
+                  className={classes.place_order}
+                  onClick={this.placeOrderHandler(
+                    this.state.event,
+                    this.state.shipping_address,
+                    this.state.tickets
+                  )}
+                >
+                  Place Order
+                </button>
               </div>
             </div>
             <div className={classes.right_side}>
