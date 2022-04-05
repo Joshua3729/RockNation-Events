@@ -16,6 +16,7 @@ class SeeTickets extends Component {
     showPaymentModal: false,
     userAddress: null,
     paymentOption: "credit_card",
+    placeOrderLoading: false,
   };
 
   componentDidMount() {
@@ -144,6 +145,7 @@ class SeeTickets extends Component {
   };
 
   placeOrderHandler = (event, shipping_address, tickets) => {
+    this.setState({ placeOrderLoading: true });
     fetch("http://localhost:5000/feed/events/buyticket", {
       method: "POST",
       headers: {
@@ -162,7 +164,10 @@ class SeeTickets extends Component {
         }
         return res.json();
       })
-      .then((res) => {})
+      .then((res) => {
+        console.log(res);
+        this.setState({ placeOrderLoading: false });
+      })
       .catch((err) => {
         console.log(err);
       });
@@ -498,13 +503,14 @@ class SeeTickets extends Component {
               <div className={classes.bottom_gutter}>
                 <button
                   className={classes.place_order}
-                  onClick={this.placeOrderHandler(
+                  onClick={this.placeOrderHandler.bind(
+                    this,
                     this.state.event,
-                    this.state.shipping_address,
+                    this.state.userAddress,
                     this.state.tickets
                   )}
                 >
-                  Place Order
+                  {this.state.placeOrderLoading ? "Loading.." : "Place Order"}
                 </button>
               </div>
             </div>
