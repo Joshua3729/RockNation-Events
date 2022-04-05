@@ -143,6 +143,31 @@ class SeeTickets extends Component {
     this.setState({ paymentOption: value });
   };
 
+  placeOrderHandler = (event, shipping_address, tickets) => {
+    fetch("http://localhost:5000/feed/events/buyticket", {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer " + this.props.token,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        shipping_address: shipping_address,
+        event: event,
+        tickets: tickets,
+      }),
+    })
+      .then((res) => {
+        if (res.status !== 200 && res.status !== 201) {
+          throw new Error("Creating or editing a post failed!");
+        }
+        return res.json();
+      })
+      .then((res) => {})
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   render() {
     let userAddress;
     if (this.props.isAuth)
