@@ -506,7 +506,7 @@ class SeeTickets extends Component {
                   onClick={this.placeOrderHandler.bind(
                     this,
                     this.state.event,
-                    this.state.userAddress,
+                    userAddress,
                     this.state.tickets
                   )}
                 >
