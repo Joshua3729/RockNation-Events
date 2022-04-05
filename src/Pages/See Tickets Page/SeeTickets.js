@@ -295,7 +295,11 @@ class SeeTickets extends Component {
                 <button
                   className={classes.checkout_btn}
                   disabled={this.state.totalCost === 0}
-                  onClick={this.openPaymentModalHandler}
+                  onClick={
+                    this.props.isAuth
+                      ? this.openPaymentModalHandler
+                      : this.props.loginModal
+                  }
                 >
                   Checkout
                 </button>
