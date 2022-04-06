@@ -149,32 +149,36 @@ class SeeTickets extends Component {
   };
 
   placeOrderHandler = (event, shipping_address, tickets) => {
-    this.setState({ placeOrderLoading: true });
-    fetch("http://localhost:5000/feed/events/buyticket", {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer " + this.props.token,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        shipping_address: shipping_address,
-        event: event,
-        tickets: tickets,
-      }),
-    })
-      .then((res) => {
-        if (res.status !== 200 && res.status !== 201) {
-          throw new Error("Creating or editing a post failed!");
-        }
-        return res.json();
+    if (this.state.agreedToTheConditions) {
+      this.setState({ placeOrderLoading: true });
+      fetch("http://localhost:5000/feed/events/buyticket", {
+        method: "POST",
+        headers: {
+          Authorization: "Bearer " + this.props.token,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          shipping_address: shipping_address,
+          event: event,
+          tickets: tickets,
+        }),
       })
-      .then((res) => {
-        console.log(res);
-        this.setState({ placeOrderLoading: false });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        .then((res) => {
+          if (res.status !== 200 && res.status !== 201) {
+            throw new Error("Creating or editing a post failed!");
+          }
+          return res.json();
+        })
+        .then((res) => {
+          console.log(res);
+          this.setState({ placeOrderLoading: false });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else if (this.state.paymentOption === "cashOnDelivery") {
+      alert("Check the agreement checkbox");
+    }
   };
 
   render() {
