@@ -44,7 +44,17 @@ class topSelling extends Component {
       EventsArtsAndTheater = this.props.artsandtheater.map((event, i) => {
         if (i < 8) {
           return (
-            <div className={classes.card_wrapper} key={i}>
+            <div
+              className={classes.card_wrapper}
+              key={i}
+              onClick={this.goToLink.bind(
+                this,
+                event.eventName,
+                event._id,
+                event.venue,
+                event.artistName
+              )}
+            >
               <EventCard event={event} />
             </div>
           );
@@ -53,7 +63,17 @@ class topSelling extends Component {
       EventsFamily = this.props.family.map((event, i) => {
         if (i < 8) {
           return (
-            <div className={classes.card_wrapper} key={i}>
+            <div
+              className={classes.card_wrapper}
+              key={i}
+              onClick={this.goToLink.bind(
+                this,
+                event.eventName,
+                event._id,
+                event.venue,
+                event.artistName
+              )}
+            >
               <EventCard event={event} />
             </div>
           );
@@ -62,7 +82,17 @@ class topSelling extends Component {
       Sports = this.props.sports.map((event, i) => {
         if (i < 8) {
           return (
-            <div className={classes.card_wrapper} key={i}>
+            <div
+              className={classes.card_wrapper}
+              key={i}
+              onClick={this.goToLink.bind(
+                this,
+                event.eventName,
+                event._id,
+                event.venue,
+                event.artistName
+              )}
+            >
               <EventCard event={event} />
             </div>
           );
