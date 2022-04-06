@@ -13,6 +13,7 @@ class ViewEvents extends Component {
     venueDetails: [],
     events: null,
     artists: null,
+    teams: null,
     venues: null,
     name: "",
     type: null,
@@ -28,7 +29,7 @@ class ViewEvents extends Component {
     }
     let type = queryParams[0];
     let event_type = queryParams[1];
-    if (type === "artist") {
+    if (type === "artist" || type === "team") {
       fetch(
         `http://localhost:5000/feed/artist?name=${name.split(" ").join("%20")}`
       )
@@ -67,40 +68,40 @@ class ViewEvents extends Component {
           });
         })
         .catch((err) => console.log(err));
-
-      fetch(`http://localhost:5000/feed/artists/${event_type}/${id}`)
-        .then((res) => {
-          if (res.status !== 200) {
-            throw new Error("Failed to fetch artists.");
-          }
-          return res.json();
-        })
-        .then((resData) => {
-          console.log(resData);
-          this.setState({
-            artists: resData.artists,
+      if (type === "artist")
+        fetch(`http://localhost:5000/feed/artists/${event_type}/${id}`)
+          .then((res) => {
+            if (res.status !== 200) {
+              throw new Error("Failed to fetch artists.");
+            }
+            return res.json();
+          })
+          .then((resData) => {
+            console.log(resData);
+            this.setState({
+              artists: resData.artists,
+            });
+          })
+          .catch((err) => {
+            console.log(err);
           });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-
-      fetch(`http://localhost:5000/feed/teams/${event_type}/${id}`)
-        .then((res) => {
-          if (res.status !== 200) {
-            throw new Error("Failed to fetch teams.");
-          }
-          return res.json();
-        })
-        .then((resData) => {
-          console.log(resData);
-          this.setState({
-            teams: resData.teams,
+      else
+        fetch(`http://localhost:5000/feed/teams/${event_type}/${id}`)
+          .then((res) => {
+            if (res.status !== 200) {
+              throw new Error("Failed to fetch teams.");
+            }
+            return res.json();
+          })
+          .then((resData) => {
+            console.log(resData);
+            this.setState({
+              teams: resData.teams,
+            });
+          })
+          .catch((err) => {
+            console.log(err);
           });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
     } else if (type === "venue") {
       fetch(
         `http://localhost:5000/feed/venue?name=${name.split(" ").join("%20")}`
@@ -195,7 +196,10 @@ class ViewEvents extends Component {
     );
     let recommendations = null;
 
-    if (this.state.events && (this.state.artists || this.state.venues)) {
+    if (
+      this.state.events &&
+      (this.state.artists || this.state.venues || this.state.teams)
+    ) {
       events = this.state.events.map((event, i) => {
         return <EventInfo key={i} event={event} hideImage={true} />;
       });
