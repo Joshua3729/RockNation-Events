@@ -84,6 +84,23 @@ class ViewEvents extends Component {
         .catch((err) => {
           console.log(err);
         });
+
+      fetch(`http://localhost:5000/feed/teams/${event_type}/${id}`)
+        .then((res) => {
+          if (res.status !== 200) {
+            throw new Error("Failed to fetch teams.");
+          }
+          return res.json();
+        })
+        .then((resData) => {
+          console.log(resData);
+          this.setState({
+            teams: resData.teams,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else if (type === "venue") {
       fetch(
         `http://localhost:5000/feed/venue?name=${name.split(" ").join("%20")}`
@@ -185,7 +202,7 @@ class ViewEvents extends Component {
 
       recommendations = (
         <Recommendations
-          entities={this.state.artists || this.state.venues}
+          entities={this.state.artists || this.state.venues || this.state.teams}
           viewEntity={this.viewEntity}
           type={this.state.type}
         />
