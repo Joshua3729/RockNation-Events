@@ -202,7 +202,7 @@ class SeeTickets extends Component {
     );
     let vvip = this.state.tickets[2].vvip > 0 && (
       <div className={classes.ticket_item}>
-        <p>{this.state.tickets[2].vvip} &times; general</p>
+        <p>{this.state.tickets[2].vvip} &times; vvip</p>
         <p>R{this.state.tickets[2].vvip * this.state.event.prices.vip * 2}</p>
       </div>
     );
@@ -469,6 +469,7 @@ class SeeTickets extends Component {
                             type="text"
                             value={userAddress?.homeAddress}
                             name="homeAddress"
+                            readOnly
                           />
                         </div>
                         <div className={classes.address_item}>
@@ -477,6 +478,7 @@ class SeeTickets extends Component {
                             type="text"
                             value={userAddress?.street}
                             name="street"
+                            readOnly
                           />
                         </div>
                         <div className={classes.address_item}>
@@ -485,15 +487,24 @@ class SeeTickets extends Component {
                             type="text"
                             value={userAddress?.suburb}
                             name="suburb"
+                            readOnly
                           />
                         </div>
                         <div className={classes.address_item}>
                           <label htmlFor="homeAddress">Home Address:</label>
-                          <input type="text" value={userAddress?.zipCode} />
+                          <input
+                            type="text"
+                            value={userAddress?.zipCode}
+                            readOnly
+                          />
                         </div>
                         <div className={classes.address_item}>
                           <label htmlFor="homeAddress">Home Address:</label>
-                          <input type="text" value={userAddress?.country} />
+                          <input
+                            type="text"
+                            value={userAddress?.country}
+                            readOnly
+                          />
                         </div>
                         <div className={classes.agreement_wrapper}>
                           <input
