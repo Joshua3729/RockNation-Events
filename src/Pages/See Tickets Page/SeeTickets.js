@@ -17,6 +17,7 @@ class SeeTickets extends Component {
     userAddress: null,
     paymentOption: "credit_card",
     placeOrderLoading: false,
+    agreedToTheConditions: false,
   };
 
   componentDidMount() {
@@ -88,11 +89,14 @@ class SeeTickets extends Component {
   closePaymentModalHandler = () => {
     this.setState({ showPaymentModal: false });
   };
-
+  agree;
   openPaymentModalHandler = () => {
     this.setState({ showPaymentModal: true });
   };
-
+  cashOnDeliveryAgreement = (e) => {
+    console.log(e.target.checked);
+    this.setState({ agreedToTheConditions: e.target.checked });
+  };
   quantityHandler = (e) => {
     const value = e.target.value;
     const name = e.target.name;
@@ -488,7 +492,11 @@ class SeeTickets extends Component {
                           <input type="text" value={userAddress?.country} />
                         </div>
                         <div className={classes.agreement_wrapper}>
-                          <input type="checkbox" value="agree" />
+                          <input
+                            type="checkbox"
+                            value="agree"
+                            onClick={(e) => this.cashOnDeliveryAgreement(e)}
+                          />
                           <p>
                             You agree that you are going to settle the bill upon
                             the delivery and if you dont then your debt plus 30%
