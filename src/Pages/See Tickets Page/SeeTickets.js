@@ -232,10 +232,7 @@ class SeeTickets extends Component {
             <div className={classes.gutter}></div>
             <div className={classes.innerWrapper}>
               <div className={classes.img_wrapper}>
-                <img
-                  // src="https://media.globalcitizen.org/thumbnails/bc/df/bcdf3412-5ec9-4ddd-ba4d-d409623b225c/billieeilish.jpg__1600x900_q85_crop_subsampling-2.jpg"
-                  src={this.state.artist.big_img}
-                />
+                <img src={this.state.artist.big_img} />
               </div>
               <div className={classes.event_info}>
                 <p className={classes.event_name}>
@@ -252,7 +249,7 @@ class SeeTickets extends Component {
           <div className={classes.SeeTickets}>
             <div className={classes.venue_map_wrapper}>
               <div className={classes.map_wrapper}>
-                <img src={the_o2} alt="" />
+                <img src={this.state.venue.seat_map} alt="" />
               </div>
             </div>
             <div className={classes.ticket_picker}>
