@@ -25,7 +25,11 @@ const artistInfo = (props) => {
       <div className={classes.aboutArtistWrapper}>
         <div
           className={classes.name}
-          onClick={props.viewEntity.bind(this, props.event, "artist")}
+          onClick={props.viewEntity.bind(
+            this,
+            props.event,
+            props.event.event_type === "concerts" ? "artist" : "team"
+          )}
           style={{ fontSize: props.searchSuggestion && "15px" }}
         >
           {props.event.name}
