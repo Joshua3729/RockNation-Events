@@ -45,13 +45,7 @@
   width: 100%;
   height: 100%;
 }
-.AdCard video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-  /* position: fixed; */
-  z-index: 100;
-}
+
 @media only screen and (max-width: 950px) {
   .eventsWrapper {
     grid-template-columns: 1fr;
