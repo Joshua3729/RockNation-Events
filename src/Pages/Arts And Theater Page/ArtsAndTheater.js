@@ -5,6 +5,7 @@ import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import upcoming_arts from "../../Components/Image/upcoming.png";
 import { withRouter } from "react-router-dom";
+import AdCard from "../../Components/AdCard/AdCard";
 
 class ArtsAndTheater extends Component {
   state = {
@@ -88,6 +89,7 @@ class ArtsAndTheater extends Component {
             <div className={classes.eventsWrapper}>
               <div className={classes.events}>{events}</div>
             </div>
+            <AdCard />
           </div>
         </section>
       </Fragment>
