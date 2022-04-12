@@ -249,7 +249,7 @@ class SeeTickets extends Component {
           <div className={classes.SeeTickets}>
             <div className={classes.venue_map_wrapper}>
               <div className={classes.map_wrapper}>
-                <img src={this.state.venue.seat_map} alt="" />
+                <img src={this.state.venue.seat_map} alt="Seat map" />
               </div>
             </div>
             <div className={classes.ticket_picker}>
