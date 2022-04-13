@@ -78,7 +78,6 @@ class SeeTickets extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           venue: resData[0],
         });
