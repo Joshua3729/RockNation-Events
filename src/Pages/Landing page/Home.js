@@ -2,13 +2,11 @@ import React, { Component, Fragment } from "react";
 import ComingSoon from "../../Components/Coming Soon/ComingSoon";
 import Hero from "../../Components/HeroSection/Hero";
 import TopSelling from "../../Components/TopSelling/TopSelling";
-import Aux from "../../hoc/Auxiliary/Auxiliary";
 import Amax from "../../Components/Amax/Amax";
 import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import RecentlyViewed from "../../Components/RecentlyViewed/RecentlyViewed";
-import classes from "./Home.module.css";
 
 class Home extends Component {
   state = {
