@@ -81,7 +81,7 @@ class SeeTickets extends Component {
   }
 
   closePaymentModalHandler = () => {
-    this.setState({ showPaymentModal: false });
+    this.setState({ showPaymentModal: false, open_modal_dialog: false });
   };
   openPaymentModalDialogHandler = () => {
     this.setState({ open_modal_dialog: true });
@@ -89,7 +89,6 @@ class SeeTickets extends Component {
   closeDialogHandler = () => {
     this.setState({ open_modal_dialog: false });
   };
-  agree;
   openPaymentModalHandler = () => {
     this.setState({ showPaymentModal: true });
   };

@@ -392,15 +392,21 @@
   width: calc(50% - 10px);
   border: none;
   font-weight: 700;
+  cursor: pointer;
   box-sizing: border-box;
 }
 .yes_btn {
   margin-right: 20px;
   background-color: green;
 }
-
+.yes_btn:hover {
+  background-color: #40ca40;
+}
 .no_btn {
   background-color: red;
+}
+.no_btn:hover {
+  background-color: rgb(218, 57, 57);
 }
 .dialog_message {
   font-size: 20px;
