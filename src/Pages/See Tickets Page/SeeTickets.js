@@ -38,7 +38,6 @@ class SeeTickets extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           event: resData.event,
         });
@@ -57,18 +56,14 @@ class SeeTickets extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           artist: resData[0],
         });
       })
       .catch((err) => console.log(err));
+    console.log(1 + " " + venueName);
 
-    fetch(
-      `http://localhost:5000/feed/venue?name=${venueName
-        .split(" ")
-        .join("%20")}`
-    )
+    fetch(`http://localhost:5000/feed/venue/${venueName}`)
       .then((res) => {
         if (res.status !== 200) {
           throw new Error("Failed to search.");
@@ -77,8 +72,11 @@ class SeeTickets extends Component {
         return res.json();
       })
       .then((resData) => {
+        console.log(resData);
+        console.log(2 + " " + venueName);
+        console.log(resData.venue.length);
         this.setState({
-          venue: resData[0],
+          venue: resData.venue[0],
         });
       })
       .catch((err) => console.log(err));
