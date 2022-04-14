@@ -17,7 +17,7 @@ class SeeTickets extends Component {
     paymentOption: "credit_card",
     placeOrderLoading: false,
     agreedToTheConditions: false,
-    close_modal_dialog: false,
+    open_modal_dialog: false,
   };
 
   componentDidMount() {
@@ -83,8 +83,11 @@ class SeeTickets extends Component {
   closePaymentModalHandler = () => {
     this.setState({ showPaymentModal: false });
   };
-  closePaymentModalDialogHandler = () => {
-    this.setState({ close_modal_dialog: true });
+  openPaymentModalDialogHandler = () => {
+    this.setState({ open_modal_dialog: true });
+  };
+  closeDialogHandler = () => {
+    this.setState({ open_modal_dialog: false });
   };
   agree;
   openPaymentModalHandler = () => {
@@ -344,7 +347,7 @@ class SeeTickets extends Component {
       );
     }
 
-    !this.state.close_modal_dialog
+    !this.state.open_modal_dialog
       ? (modal_content = (
           <div className={classes.modal_innerWrapper}>
             <div className={classes.left_side}>
@@ -576,8 +579,18 @@ class SeeTickets extends Component {
                 Do you want to close the checkout modal?
               </p>
               <div className={classes.buttons_wrapper}>
-                <button className={classes.yes_btn}>YES</button>
-                <button className={classes.no_btn}>NO</button>
+                <button
+                  className={classes.yes_btn}
+                  onClick={this.closePaymentModalHandler}
+                >
+                  YES
+                </button>
+                <button
+                  className={classes.no_btn}
+                  onClick={this.closeDialogHandler}
+                >
+                  NO
+                </button>
               </div>
             </div>
           </div>
@@ -586,7 +599,7 @@ class SeeTickets extends Component {
       <Fragment>
         <Modal
           show={this.state.showPaymentModal}
-          clicked={this.closePaymentModalDialogHandler}
+          clicked={this.openPaymentModalDialogHandler}
         >
           {modal_content}
         </Modal>

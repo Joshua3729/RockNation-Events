@@ -390,12 +390,18 @@
   padding: 10px 20px;
   color: white;
   width: calc(50% - 10px);
+  border: none;
+  font-weight: 700;
   box-sizing: border-box;
 }
 .yes_btn {
   margin-right: 20px;
   background-color: green;
 }
+
 .no_btn {
   background-color: red;
+}
+.dialog_message {
+  font-size: 20px;
 }
