@@ -17,6 +17,7 @@ class SeeTickets extends Component {
     paymentOption: "credit_card",
     placeOrderLoading: false,
     agreedToTheConditions: false,
+    close_modal_dialog: false,
   };
 
   componentDidMount() {
@@ -176,173 +177,10 @@ class SeeTickets extends Component {
 
   render() {
     let userAddress;
-    if (this.props.isAuth)
-      userAddress = JSON.parse(localStorage.getItem("userAddress"));
-    let page = <LoadingModal />;
-    let general = this.state.tickets[0].general > 0 && (
-      <div className={classes.ticket_item}>
-        <p>{this.state.tickets[0].general} &times; general</p>
-        <p>
-          R{this.state.tickets[0].general * this.state.event.prices.general}
-        </p>
-      </div>
-    );
-    let vip = this.state.tickets[1].vip > 0 && (
-      <div className={classes.ticket_item}>
-        <p>{this.state.tickets[1].vip} &times; vip</p>
-        <p>R{this.state.tickets[1].vip * this.state.event.prices.vip}</p>
-      </div>
-    );
-    let vvip = this.state.tickets[2].vvip > 0 && (
-      <div className={classes.ticket_item}>
-        <p>{this.state.tickets[2].vvip} &times; vvip</p>
-        <p>R{this.state.tickets[2].vvip * this.state.event.prices.vip * 2}</p>
-      </div>
-    );
-    let tickets = (
-      <Fragment>
-        {general}
-        {vip}
-        {vvip}
-      </Fragment>
-    );
+    let modal_content;
 
-    if (this.state.event && this.state.artist && this.state.venue) {
-      page = (
-        <Fragment>
-          <Navigation
-            scrollEffect={false}
-            searchBar={true}
-            isAuth={this.props.isAuth}
-            logout={this.props.logout}
-            login={this.props.loginModal}
-            fullname={this.props.fullname}
-            userImage={this.props.userImage}
-            home={this.props.goToHome}
-            search={this.props.search}
-          />
-          <div className={classes.banner}>
-            <div className={classes.gutter}></div>
-            <div className={classes.innerWrapper}>
-              <div className={classes.img_wrapper}>
-                <img src={this.state.artist.big_img} />
-              </div>
-              <div className={classes.event_info}>
-                <p className={classes.event_name}>
-                  {this.state.event.eventName}
-                </p>
-                <p className={classes.event_date}>Thu • june 16 • 2022</p>
-
-                <p className={classes.event_venue}>
-                  {`${this.state.venue.name}, ${this.state.venue.city}, ${this.state.venue.country}`}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className={classes.SeeTickets}>
-            <div className={classes.venue_map_wrapper}>
-              <div className={classes.map_wrapper}>
-                <img src={this.state.venue.seat_map} alt="Seat map" />
-              </div>
-            </div>
-            <div className={classes.ticket_picker}>
-              <div className={classes.header_wrapper}>
-                <h3 className={classes.header}>Choose Your Tickets</h3>
-              </div>
-              <div className={classes.ticket_picker_gutter}></div>
-              <div className={classes.tickets}>
-                <div className={classes.ticket_type_wrapper}>
-                  <div className={classes.text_wrapper}>
-                    <p className={classes.label}>General Admission</p>
-                    <p className={classes.prices}>
-                      R {this.state.event.prices.general}
-                    </p>
-                  </div>
-                  <div className={classes.form_input}>
-                    <select
-                      name="general"
-                      className={classes.select}
-                      defaultValue={this.state.quantity}
-                      onChange={this.quantityHandler}
-                    >
-                      <option value={0}>0</option>
-                      <option value={1}>1</option>
-                      <option value={2}>2</option>
-                      <option value={3}>3</option>
-                    </select>
-                  </div>
-                </div>
-                <div className={classes.ticket_type_wrapper}>
-                  <div className={classes.text_wrapper}>
-                    <p className={classes.label}>V.I.P</p>
-                    <p className={classes.prices}>
-                      R {this.state.event.prices.vip}
-                    </p>
-                  </div>
-                  <div className={classes.form_input}>
-                    <select
-                      name="vip"
-                      className={classes.select}
-                      defaultValue={this.state.quantity}
-                      onChange={this.quantityHandler}
-                    >
-                      <option value={0}>0</option>
-                      <option value={1}>1</option>
-                      <option value={2}>2</option>
-                      <option value={3}>3</option>
-                    </select>
-                  </div>
-                </div>
-                <div className={classes.ticket_type_wrapper}>
-                  <div className={classes.text_wrapper}>
-                    <p className={classes.label}>V.V.I.P</p>
-                    <p className={classes.prices}>
-                      R {this.state.event.prices.vip * 1.5}
-                    </p>
-                  </div>
-                  <div className={classes.form_input}>
-                    <select
-                      name="vvip"
-                      className={classes.select}
-                      defaultValue={this.state.quantity}
-                      onChange={this.quantityHandler}
-                    >
-                      <option value={0}>0</option>
-                      <option value={1}>1</option>
-                      <option value={2}>2</option>
-                      <option value={3}>3</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div className={classes.summary_wrapper}>
-                <div className={classes.summary_text}>
-                  <p>Total Cost:</p>
-                  <p>R {this.state.totalCost}</p>
-                </div>
-                <button
-                  className={classes.checkout_btn}
-                  disabled={this.state.totalCost === 0}
-                  onClick={
-                    this.props.isAuth
-                      ? this.openPaymentModalHandler
-                      : this.props.loginModal
-                  }
-                >
-                  Checkout
-                </button>
-              </div>
-            </div>
-          </div>
-        </Fragment>
-      );
-    }
-    return (
-      <Fragment>
-        <Modal
-          show={this.state.showPaymentModal}
-          clicked={this.closePaymentModalHandler}
-        >
+    !this.state.close_modal_dialog
+      ? (modal_content = (
           <div className={classes.modal_innerWrapper}>
             <div className={classes.left_side}>
               <div className={classes.top_gutter}>
@@ -561,6 +399,177 @@ class SeeTickets extends Component {
               </div>
             </div>
           </div>
+        ))
+      : (modal_content = null);
+
+    if (this.props.isAuth)
+      userAddress = JSON.parse(localStorage.getItem("userAddress"));
+    let page = <LoadingModal />;
+    let general = this.state.tickets[0].general > 0 && (
+      <div className={classes.ticket_item}>
+        <p>{this.state.tickets[0].general} &times; general</p>
+        <p>
+          R{this.state.tickets[0].general * this.state.event.prices.general}
+        </p>
+      </div>
+    );
+    let vip = this.state.tickets[1].vip > 0 && (
+      <div className={classes.ticket_item}>
+        <p>{this.state.tickets[1].vip} &times; vip</p>
+        <p>R{this.state.tickets[1].vip * this.state.event.prices.vip}</p>
+      </div>
+    );
+    let vvip = this.state.tickets[2].vvip > 0 && (
+      <div className={classes.ticket_item}>
+        <p>{this.state.tickets[2].vvip} &times; vvip</p>
+        <p>R{this.state.tickets[2].vvip * this.state.event.prices.vip * 2}</p>
+      </div>
+    );
+    let tickets = (
+      <Fragment>
+        {general}
+        {vip}
+        {vvip}
+      </Fragment>
+    );
+
+    if (this.state.event && this.state.artist && this.state.venue) {
+      page = (
+        <Fragment>
+          <Navigation
+            scrollEffect={false}
+            searchBar={true}
+            isAuth={this.props.isAuth}
+            logout={this.props.logout}
+            login={this.props.loginModal}
+            fullname={this.props.fullname}
+            userImage={this.props.userImage}
+            home={this.props.goToHome}
+            search={this.props.search}
+          />
+          <div className={classes.banner}>
+            <div className={classes.gutter}></div>
+            <div className={classes.innerWrapper}>
+              <div className={classes.img_wrapper}>
+                <img src={this.state.artist.big_img} />
+              </div>
+              <div className={classes.event_info}>
+                <p className={classes.event_name}>
+                  {this.state.event.eventName}
+                </p>
+                <p className={classes.event_date}>Thu • june 16 • 2022</p>
+
+                <p className={classes.event_venue}>
+                  {`${this.state.venue.name}, ${this.state.venue.city}, ${this.state.venue.country}`}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className={classes.SeeTickets}>
+            <div className={classes.venue_map_wrapper}>
+              <div className={classes.map_wrapper}>
+                <img src={this.state.venue.seat_map} alt="Seat map" />
+              </div>
+            </div>
+            <div className={classes.ticket_picker}>
+              <div className={classes.header_wrapper}>
+                <h3 className={classes.header}>Choose Your Tickets</h3>
+              </div>
+              <div className={classes.ticket_picker_gutter}></div>
+              <div className={classes.tickets}>
+                <div className={classes.ticket_type_wrapper}>
+                  <div className={classes.text_wrapper}>
+                    <p className={classes.label}>General Admission</p>
+                    <p className={classes.prices}>
+                      R {this.state.event.prices.general}
+                    </p>
+                  </div>
+                  <div className={classes.form_input}>
+                    <select
+                      name="general"
+                      className={classes.select}
+                      defaultValue={this.state.quantity}
+                      onChange={this.quantityHandler}
+                    >
+                      <option value={0}>0</option>
+                      <option value={1}>1</option>
+                      <option value={2}>2</option>
+                      <option value={3}>3</option>
+                    </select>
+                  </div>
+                </div>
+                <div className={classes.ticket_type_wrapper}>
+                  <div className={classes.text_wrapper}>
+                    <p className={classes.label}>V.I.P</p>
+                    <p className={classes.prices}>
+                      R {this.state.event.prices.vip}
+                    </p>
+                  </div>
+                  <div className={classes.form_input}>
+                    <select
+                      name="vip"
+                      className={classes.select}
+                      defaultValue={this.state.quantity}
+                      onChange={this.quantityHandler}
+                    >
+                      <option value={0}>0</option>
+                      <option value={1}>1</option>
+                      <option value={2}>2</option>
+                      <option value={3}>3</option>
+                    </select>
+                  </div>
+                </div>
+                <div className={classes.ticket_type_wrapper}>
+                  <div className={classes.text_wrapper}>
+                    <p className={classes.label}>V.V.I.P</p>
+                    <p className={classes.prices}>
+                      R {this.state.event.prices.vip * 1.5}
+                    </p>
+                  </div>
+                  <div className={classes.form_input}>
+                    <select
+                      name="vvip"
+                      className={classes.select}
+                      defaultValue={this.state.quantity}
+                      onChange={this.quantityHandler}
+                    >
+                      <option value={0}>0</option>
+                      <option value={1}>1</option>
+                      <option value={2}>2</option>
+                      <option value={3}>3</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div className={classes.summary_wrapper}>
+                <div className={classes.summary_text}>
+                  <p>Total Cost:</p>
+                  <p>R {this.state.totalCost}</p>
+                </div>
+                <button
+                  className={classes.checkout_btn}
+                  disabled={this.state.totalCost === 0}
+                  onClick={
+                    this.props.isAuth
+                      ? this.openPaymentModalHandler
+                      : this.props.loginModal
+                  }
+                >
+                  Checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </Fragment>
+      );
+    }
+    return (
+      <Fragment>
+        <Modal
+          show={this.state.showPaymentModal}
+          clicked={this.closePaymentModalHandler}
+        >
+          {modal_content}
         </Modal>
         {page}
       </Fragment>
