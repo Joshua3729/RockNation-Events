@@ -29,6 +29,9 @@ class SeeTickets extends Component {
     }
     const artistName = queryParams[0];
     const venueName = queryParams[1];
+    const payment_option = queryParams[2];
+
+    console.log(payment_option);
 
     fetch(`http://localhost:5000/feed/event/${id}`)
       .then((res) => {
@@ -145,6 +148,19 @@ class SeeTickets extends Component {
   paymentOptionHandler = (e) => {
     const { name, value } = e.target;
     this.setState({ paymentOption: value });
+    const query = new URLSearchParams(this.props.location.search);
+    let queryParams = [];
+    let attributes = [];
+    for (let param of query.entries()) {
+      queryParams.push(param[1]);
+      attributes.push(param[0]);
+    }
+    const artistName = queryParams[0];
+    const venueName = queryParams[1];
+
+    this.props.history.push({
+      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${value}`,
+    });
   };
 
   placeOrderHandler = (event, shipping_address, tickets) => {
@@ -368,7 +384,7 @@ class SeeTickets extends Component {
                           type="radio"
                           name="payment_option"
                           value="credit_card"
-                          defaultChecked
+                          checked={this.state.paymentOption}
                           onChange={(e) => this.paymentOptionHandler(e)}
                         />
                         <p>Credit or Debit card</p>
