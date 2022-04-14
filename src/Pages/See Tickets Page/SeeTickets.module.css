@@ -380,3 +380,22 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.buttons_wrapper {
+  display: flex;
+  margin: 30px auto 0 auto;
+  width: 80%;
+}
+.no_btn,
+.yes_btn {
+  padding: 10px 20px;
+  color: white;
+  width: calc(50% - 10px);
+  box-sizing: border-box;
+}
+.yes_btn {
+  margin-right: 20px;
+  background-color: green;
+}
+.no_btn {
+  background-color: red;
+}
