@@ -371,3 +371,12 @@
   font-size: 10px;
   color: grey;
 }
+.dialog_modal {
+  position: relative;
+}
+.Dialog_innerWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

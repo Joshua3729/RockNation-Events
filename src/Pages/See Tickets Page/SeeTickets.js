@@ -83,6 +83,9 @@ class SeeTickets extends Component {
   closePaymentModalHandler = () => {
     this.setState({ showPaymentModal: false });
   };
+  closePaymentModalDialogHandler = () => {
+    this.setState({ close_modal_dialog: true });
+  };
   agree;
   openPaymentModalHandler = () => {
     this.setState({ showPaymentModal: true });
@@ -562,12 +565,28 @@ class SeeTickets extends Component {
             </div>
           </div>
         ))
-      : (modal_content = null);
+      : (modal_content = (
+          <div
+            className={[classes.modal_innerWrapper, classes.dialog_modal].join(
+              " "
+            )}
+          >
+            <div className={classes.Dialog_innerWrapper}>
+              <p className={classes.dialog_message}>
+                Do you want to close the checkout modal?
+              </p>
+              <div className={classes.buttons_wrapper}>
+                <button className={classes.yes_btn}>YES</button>
+                <button className={classes.no_btn}>NO</button>
+              </div>
+            </div>
+          </div>
+        ));
     return (
       <Fragment>
         <Modal
           show={this.state.showPaymentModal}
-          clicked={this.closePaymentModalHandler}
+          clicked={this.closePaymentModalDialogHandler}
         >
           {modal_content}
         </Modal>
