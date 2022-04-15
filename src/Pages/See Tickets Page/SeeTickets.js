@@ -107,7 +107,20 @@ class SeeTickets extends Component {
   }
 
   closePaymentModalHandler = () => {
+    const query = new URLSearchParams(this.props.location.search);
+    let queryParams = [];
+    let attributes = [];
+    for (let param of query.entries()) {
+      queryParams.push(param[1]);
+      attributes.push(param[0]);
+    }
+    const artistName = queryParams[0];
+    const venueName = queryParams[1];
+
     this.setState({ showPaymentModal: false, open_modal_dialog: false });
+    this.props.history.push({
+      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}`,
+    });
   };
   openPaymentModalDialogHandler = () => {
     this.setState({ open_modal_dialog: true });
