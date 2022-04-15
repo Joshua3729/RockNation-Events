@@ -129,8 +129,20 @@ class SeeTickets extends Component {
     this.setState({ open_modal_dialog: false });
   };
   openPaymentModalHandler = (tickets) => {
+    let queryParams = [];
+    let attributes = [];
+    for (let param of query.entries()) {
+      queryParams.push(param[1]);
+      attributes.push(param[0]);
+    }
+    const artistName = queryParams[0];
+    const venueName = queryParams[1];
+
     localStorage.setItem("tickets", JSON.stringify(tickets));
     this.setState({ showPaymentModal: true });
+    this.props.history.push({
+      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&payment_option=credit_card`,
+    });
   };
   cashOnDeliveryAgreement = (e) => {
     console.log(e.target.checked);
