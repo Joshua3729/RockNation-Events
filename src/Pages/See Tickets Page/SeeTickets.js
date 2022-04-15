@@ -4,6 +4,7 @@ import classes from "./SeeTickets.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import Modal from "../../Components/Modal/Modal";
+import sports_banner from "../../Components/Image/sports_banner.jpeg";
 
 class SeeTickets extends Component {
   state = {
@@ -31,18 +32,17 @@ class SeeTickets extends Component {
     const venueName = queryParams[1];
     const payment_option = queryParams[2];
     let tickets = JSON.parse(localStorage.getItem("tickets"));
-
     if (payment_option) {
       if (tickets) {
         this.setState({
           paymentOption: payment_option,
-          showPaymentModal: true,
+          showPaymentModal: this.props.isAuth,
           tickets: tickets,
         });
       } else {
         this.setState({
           paymentOption: payment_option,
-          showPaymentModal: true,
+          showPaymentModal: this.props.isAuth,
         });
       }
     } else if (tickets) {
@@ -281,7 +281,13 @@ class SeeTickets extends Component {
       </Fragment>
     );
 
+    let event_banner;
+
     if (this.state.event && this.state.artist && this.state.venue) {
+      if (this.state.event.category === "sports") event_banner = sports_banner;
+      if (this.state.event.category === "concerts")
+        event_banner = concert_banner;
+
       page = (
         <Fragment>
           <Navigation
@@ -607,10 +613,7 @@ class SeeTickets extends Component {
             </div>
             <div className={classes.right_side}>
               <div className={classes.small_banner}>
-                <img
-                  src="https://thumbs.dreamstime.com/b/live-music-concert-poster-festival-banner-live-music-concert-poster-festival-banner-vector-illustration-98105876.jpg"
-                  alt="banner"
-                />
+                <img src={event_banner} alt="banner" />
               </div>
               <div className={classes.checkout_summaryWrapper}>
                 <p className={classes.oderSummary_header}>Order summary</p>
