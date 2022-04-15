@@ -34,10 +34,18 @@ class SeeTickets extends Component {
 
     if (payment_option) {
       if (tickets) {
-        this.setState({
-          paymentOption: payment_option,
-          showPaymentModal: true,
-          tickets: tickets,
+        this.setState((prevState) => {
+          let prices = prevState.event.prices;
+          let totalCost =
+            tickets.general * prices.general +
+            tickets.vip * prices.vip +
+            tickets.vvip * prices.vip * 1.5;
+          return {
+            paymentOption: payment_option,
+            showPaymentModal: true,
+            tickets: tickets,
+            totalCost: totalCost,
+          };
         });
       } else {
         this.setState({
@@ -46,7 +54,17 @@ class SeeTickets extends Component {
         });
       }
     } else if (tickets) {
-      this.setState({ tickets: tickets });
+      this.setState((prevState) => {
+        let prices = prevState.event.prices;
+        let totalCost =
+          tickets.general * prices.general +
+          tickets.vip * prices.vip +
+          tickets.vvip * prices.vip * 1.5;
+        return {
+          tickets: tickets,
+          totalCost: totalCost,
+        };
+      });
     }
 
     fetch(`http://localhost:5000/feed/event/${id}`)
@@ -303,7 +321,7 @@ class SeeTickets extends Component {
                     <select
                       name="general"
                       className={classes.select}
-                      defaultValue={this.state.quantity}
+                      defaultValue={this.state.tickets[0].general}
                       onChange={this.quantityHandler}
                     >
                       <option value={0}>0</option>
