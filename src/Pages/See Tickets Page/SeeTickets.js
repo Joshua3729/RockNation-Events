@@ -122,6 +122,8 @@ class SeeTickets extends Component {
     this.props.history.push({
       search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}`,
     });
+
+    localStorage.removeItem("tickets");
   };
   openPaymentModalDialogHandler = () => {
     this.setState({ open_modal_dialog: true });
