@@ -30,7 +30,24 @@ class SeeTickets extends Component {
     const artistName = queryParams[0];
     const venueName = queryParams[1];
     const payment_option = queryParams[2];
-    if (payment_option) this.setState({ paymentOption: payment_option });
+    let tickets = JSON.parse(localStorage.getItem("tickets"));
+
+    if (payment_option) {
+      if (tickets) {
+        this.setState({
+          paymentOption: payment_option,
+          showPaymentModal: true,
+          tickets: tickets,
+        });
+      } else {
+        this.setState({
+          paymentOption: payment_option,
+          showPaymentModal: true,
+        });
+      }
+    } else if (tickets) {
+      this.setState({ tickets: tickets });
+    }
 
     fetch(`http://localhost:5000/feed/event/${id}`)
       .then((res) => {
@@ -91,7 +108,8 @@ class SeeTickets extends Component {
   closeDialogHandler = () => {
     this.setState({ open_modal_dialog: false });
   };
-  openPaymentModalHandler = () => {
+  openPaymentModalHandler = (tickets) => {
+    localStorage.setItem("tickets", JSON.stringify(tickets));
     this.setState({ showPaymentModal: true });
   };
   cashOnDeliveryAgreement = (e) => {
@@ -158,7 +176,7 @@ class SeeTickets extends Component {
     const venueName = queryParams[1];
 
     this.props.history.push({
-      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&$payment_option=${value}`,
+      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&payment_option=${value}`,
     });
   };
 
@@ -206,20 +224,20 @@ class SeeTickets extends Component {
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[0].general} &times; general</p>
         <p>
-          R{this.state.tickets[0].general * this.state.event.prices.general}
+          R{this.state.tickets[0].general * this.state.event?.prices.general}
         </p>
       </div>
     );
     let vip = this.state.tickets[1].vip > 0 && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[1].vip} &times; vip</p>
-        <p>R{this.state.tickets[1].vip * this.state.event.prices.vip}</p>
+        <p>R{this.state.tickets[1].vip * this.state.event?.prices.vip}</p>
       </div>
     );
     let vvip = this.state.tickets[2].vvip > 0 && (
       <div className={classes.ticket_item}>
         <p>{this.state.tickets[2].vvip} &times; vvip</p>
-        <p>R{this.state.tickets[2].vvip * this.state.event.prices.vip * 2}</p>
+        <p>R{this.state.tickets[2].vvip * this.state.event?.prices.vip * 2}</p>
       </div>
     );
     let tickets = (
@@ -348,7 +366,10 @@ class SeeTickets extends Component {
                   disabled={this.state.totalCost === 0}
                   onClick={
                     this.props.isAuth
-                      ? this.openPaymentModalHandler
+                      ? this.openPaymentModalHandler.bind(
+                          this,
+                          this.state.tickets
+                        )
                       : this.props.loginModal
                   }
                 >
