@@ -89,7 +89,6 @@ class SeeTickets extends Component {
         });
       })
       .catch((err) => console.log(err));
-    console.log(1 + " " + venueName);
 
     fetch(`http://localhost:5000/feed/venue/${venueName}`)
       .then((res) => {
@@ -332,7 +331,7 @@ class SeeTickets extends Component {
                     <select
                       name="vip"
                       className={classes.select}
-                      defaultValue={this.state.quantity}
+                      defaultValue={this.state.tickets[1].vip}
                       onChange={this.quantityHandler}
                     >
                       <option value={0}>0</option>
@@ -353,7 +352,7 @@ class SeeTickets extends Component {
                     <select
                       name="vvip"
                       className={classes.select}
-                      defaultValue={this.state.quantity}
+                      defaultValue={this.state.tickets[2].vvip}
                       onChange={this.quantityHandler}
                     >
                       <option value={0}>0</option>
