@@ -4,7 +4,8 @@ import classes from "./SeeTickets.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import Modal from "../../Components/Modal/Modal";
-import sports_banner from "../../Components/Image/sports_banner.jpeg";
+import sports_banner from "../../Components/Image/sports_banner.jpg";
+import concert_banner from "../../Components/Image/concert_banner.jpg";
 
 class SeeTickets extends Component {
   state = {
