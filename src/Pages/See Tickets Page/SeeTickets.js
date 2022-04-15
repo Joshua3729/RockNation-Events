@@ -34,18 +34,10 @@ class SeeTickets extends Component {
 
     if (payment_option) {
       if (tickets) {
-        this.setState((prevState) => {
-          let prices = prevState.event.prices;
-          let totalCost =
-            tickets.general * prices.general +
-            tickets.vip * prices.vip +
-            tickets.vvip * prices.vip * 1.5;
-          return {
-            paymentOption: payment_option,
-            showPaymentModal: true,
-            tickets: tickets,
-            totalCost: totalCost,
-          };
+        this.setState({
+          paymentOption: payment_option,
+          showPaymentModal: true,
+          tickets: tickets,
         });
       } else {
         this.setState({
@@ -54,17 +46,7 @@ class SeeTickets extends Component {
         });
       }
     } else if (tickets) {
-      this.setState((prevState) => {
-        let prices = prevState.event.prices;
-        let totalCost =
-          tickets.general * prices.general +
-          tickets.vip * prices.vip +
-          tickets.vvip * prices.vip * 1.5;
-        return {
-          tickets: tickets,
-          totalCost: totalCost,
-        };
-      });
+      this.setState({ tickets: tickets });
     }
 
     fetch(`http://localhost:5000/feed/event/${id}`)
@@ -76,8 +58,16 @@ class SeeTickets extends Component {
         return res.json();
       })
       .then((resData) => {
+        let event = resData.event;
+        let totalCost = 0;
+        if (tickets)
+          totalCost =
+            tickets[0].general * event.prices.general +
+            tickets[1].vip * event.prices.vip +
+            tickets[2].vvip * event.prices.vip * 1.5;
         this.setState({
-          event: resData.event,
+          event: event,
+          totalCost: totalCost,
         });
       })
       .catch((err) => console.log(err));
