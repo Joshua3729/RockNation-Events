@@ -30,8 +30,7 @@ class SeeTickets extends Component {
     const artistName = queryParams[0];
     const venueName = queryParams[1];
     const payment_option = queryParams[2];
-
-    console.log(payment_option);
+    if (payment_option) this.setState({ paymentOption: payment_option });
 
     fetch(`http://localhost:5000/feed/event/${id}`)
       .then((res) => {
@@ -159,7 +158,7 @@ class SeeTickets extends Component {
     const venueName = queryParams[1];
 
     this.props.history.push({
-      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${value}`,
+      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&$payment_option=${value}`,
     });
   };
 
@@ -384,7 +383,7 @@ class SeeTickets extends Component {
                           type="radio"
                           name="payment_option"
                           value="credit_card"
-                          checked={this.state.paymentOption}
+                          checked={this.state.paymentOption === "credit_card"}
                           onChange={(e) => this.paymentOptionHandler(e)}
                         />
                         <p>Credit or Debit card</p>
@@ -432,6 +431,7 @@ class SeeTickets extends Component {
                           type="radio"
                           name="payment_option"
                           value="paypal"
+                          checked={this.state.paymentOption === "paypal"}
                           onChange={(e) => this.paymentOptionHandler(e)}
                         />
                         <p>PayPal</p>
@@ -464,6 +464,9 @@ class SeeTickets extends Component {
                           type="radio"
                           name="payment_option"
                           value="cashOnDelivery"
+                          checked={
+                            this.state.paymentOption === "cashOnDelivery"
+                          }
                           onChange={(e) => this.paymentOptionHandler(e)}
                         />
                         <p>Cash on delivery</p>
