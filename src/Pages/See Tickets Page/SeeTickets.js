@@ -20,6 +20,7 @@ class SeeTickets extends Component {
     placeOrderLoading: false,
     agreedToTheConditions: false,
     open_modal_dialog: false,
+    event_type: null,
   };
 
   componentDidMount() {
@@ -31,23 +32,26 @@ class SeeTickets extends Component {
     }
     const artistName = queryParams[0];
     const venueName = queryParams[1];
-    const payment_option = queryParams[2];
+    const event_type = queryParams[2];
+    const payment_option = queryParams[3];
     let tickets = JSON.parse(localStorage.getItem("tickets"));
     if (payment_option) {
       if (tickets) {
         this.setState({
           paymentOption: payment_option,
           showPaymentModal: this.props.isAuth,
+          event_type: event_type,
           tickets: tickets,
         });
       } else {
         this.setState({
           paymentOption: payment_option,
           showPaymentModal: this.props.isAuth,
+          event_type: event_type,
         });
       }
     } else if (tickets) {
-      this.setState({ tickets: tickets });
+      this.setState({ tickets: tickets, event_type: event_type });
     }
 
     fetch(`http://localhost:5000/feed/event/${id}`)
@@ -117,10 +121,11 @@ class SeeTickets extends Component {
     }
     const artistName = queryParams[0];
     const venueName = queryParams[1];
+    const eventType = queryParams[2];
 
     this.setState({ showPaymentModal: false, open_modal_dialog: false });
     this.props.history.push({
-      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}`,
+      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}`,
     });
 
     localStorage.removeItem("tickets");
@@ -141,11 +146,12 @@ class SeeTickets extends Component {
     }
     const artistName = queryParams[0];
     const venueName = queryParams[1];
+    const eventType = queryParams[2];
 
     localStorage.setItem("tickets", JSON.stringify(tickets));
     this.setState({ showPaymentModal: true });
     this.props.history.push({
-      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&payment_option=credit_card`,
+      search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}&payment_option=credit_card`,
     });
   };
   cashOnDeliveryAgreement = (e) => {
@@ -287,10 +293,6 @@ class SeeTickets extends Component {
     let event_banner;
 
     if (this.state.event && this.state.artist && this.state.venue) {
-      if (this.state.event.category === "sports") event_banner = sports_banner;
-      if (this.state.event.category === "concerts")
-        event_banner = concert_banner;
-
       page = (
         <Fragment>
           <Navigation
@@ -423,7 +425,8 @@ class SeeTickets extends Component {
         </Fragment>
       );
     }
-
+    if (this.state.event_type === "sports") event_banner = sports_banner;
+    if (this.state.event_type === "concerts") event_banner = concert_banner;
     !this.state.open_modal_dialog
       ? (modal_content = (
           <div className={classes.modal_innerWrapper}>
