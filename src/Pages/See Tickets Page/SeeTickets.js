@@ -129,6 +129,7 @@ class SeeTickets extends Component {
     this.setState({ open_modal_dialog: false });
   };
   openPaymentModalHandler = (tickets) => {
+    const query = new URLSearchParams(this.props.location.search);
     let queryParams = [];
     let attributes = [];
     for (let param of query.entries()) {
