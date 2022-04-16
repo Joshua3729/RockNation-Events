@@ -38,7 +38,6 @@ class SeeTickets extends Component {
       (ticket) => ticket.id === id
     )[0]?.tickets;
 
-    console.log(tickets);
     if (payment_option) {
       if (tickets) {
         this.setState({
@@ -170,7 +169,6 @@ class SeeTickets extends Component {
     });
   };
   cashOnDeliveryAgreement = (e) => {
-    console.log(e.target.checked);
     this.setState({ agreedToTheConditions: e.target.checked });
   };
   quantityHandler = (e) => {
@@ -259,7 +257,6 @@ class SeeTickets extends Component {
           return res.json();
         })
         .then((res) => {
-          console.log(res);
           this.setState({ placeOrderLoading: false });
         })
         .catch((err) => {

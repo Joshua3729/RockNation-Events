@@ -172,7 +172,6 @@ class App extends Component {
     e.preventDefault();
 
     this.setState({ authLoading: true });
-    console.log(userData);
     fetch("http://localhost:5000/auth/login", {
       method: "POST",
       headers: {
@@ -235,8 +234,6 @@ class App extends Component {
   };
 
   setAutoLogout = (milliseconds) => {
-    console.log(milliseconds);
-    console.log("top");
     setTimeout(() => {
       this.logoutHandler();
     }, milliseconds);
@@ -265,7 +262,6 @@ class App extends Component {
     formData.append("homeAddress", userData.homeAddress.value);
     formData.append("street", userData.street.value);
     formData.append("image", userData.image.value);
-    console.log(formData);
     fetch("http://localhost:5000/auth/signup", {
       method: "POST",
       body: formData,
