@@ -36,7 +36,7 @@ class SeeTickets extends Component {
     const payment_option = queryParams[3];
     let tickets = JSON.parse(localStorage.getItem("tickets"))?.filter(
       (ticket) => ticket.id === id
-    );
+    )[0]?.tickets;
 
     console.log(tickets);
     if (payment_option) {
