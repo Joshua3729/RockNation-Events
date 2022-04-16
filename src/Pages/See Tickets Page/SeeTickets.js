@@ -34,7 +34,11 @@ class SeeTickets extends Component {
     const venueName = queryParams[1];
     const event_type = queryParams[2];
     const payment_option = queryParams[3];
-    let tickets = JSON.parse(localStorage.getItem("tickets"));
+    let tickets = JSON.parse(localStorage.getItem("tickets"))?.filter(
+      (ticket) => ticket.id === id
+    );
+
+    console.log(tickets);
     if (payment_option) {
       if (tickets) {
         this.setState({
@@ -137,6 +141,7 @@ class SeeTickets extends Component {
     this.setState({ open_modal_dialog: false });
   };
   openPaymentModalHandler = (tickets) => {
+    const id = this.props.match?.params.id;
     const query = new URLSearchParams(this.props.location.search);
     let queryParams = [];
     let attributes = [];
@@ -147,8 +152,11 @@ class SeeTickets extends Component {
     const artistName = queryParams[0];
     const venueName = queryParams[1];
     const eventType = queryParams[2];
+    const ticketsData = JSON.parse(localStorage.getItem("tickets")) || [];
 
-    localStorage.setItem("tickets", JSON.stringify(tickets));
+    ticketsData.push({ id: id, tickets: tickets });
+
+    localStorage.setItem("tickets", JSON.stringify(ticketsData));
     this.setState({ showPaymentModal: true });
     this.props.history.push({
       search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}&payment_option=credit_card`,
