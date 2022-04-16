@@ -116,6 +116,7 @@ class SeeTickets extends Component {
   }
 
   closePaymentModalHandler = () => {
+    const id = this.props.match?.params.id;
     const query = new URLSearchParams(this.props.location.search);
     let queryParams = [];
     let attributes = [];
@@ -126,13 +127,15 @@ class SeeTickets extends Component {
     const artistName = queryParams[0];
     const venueName = queryParams[1];
     const eventType = queryParams[2];
+    const ticketsData = JSON.parse(localStorage.getItem("tickets")).filter(
+      (ticketData) => ticketData.id !== id
+    );
+    localStorage.setItem("tickets", JSON.stringify(ticketsData));
 
     this.setState({ showPaymentModal: false, open_modal_dialog: false });
     this.props.history.push({
       search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}`,
     });
-
-    localStorage.removeItem("tickets");
   };
   openPaymentModalDialogHandler = () => {
     this.setState({ open_modal_dialog: true });
