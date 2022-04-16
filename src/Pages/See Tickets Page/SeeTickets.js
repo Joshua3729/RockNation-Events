@@ -153,10 +153,14 @@ class SeeTickets extends Component {
     const venueName = queryParams[1];
     const eventType = queryParams[2];
     const ticketsData = JSON.parse(localStorage.getItem("tickets")) || [];
+    if (
+      ticketsData.length === 0 ||
+      !ticketsData.some((ticketData) => ticketData.id === id)
+    ) {
+      ticketsData.push({ id: id, tickets: tickets });
 
-    ticketsData.push({ id: id, tickets: tickets });
-
-    localStorage.setItem("tickets", JSON.stringify(ticketsData));
+      localStorage.setItem("tickets", JSON.stringify(ticketsData));
+    }
     this.setState({ showPaymentModal: true });
     this.props.history.push({
       search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}&payment_option=credit_card`,
