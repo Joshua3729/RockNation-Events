@@ -409,7 +409,9 @@ class App extends Component {
               </div>
               <div className={classes.userDetails}>
                 <div className={classes.formItemWrapper_signup}>
-                  <label htmlFor="FirstName">First Name</label>
+                  <label htmlFor="FirstName" className={classes.label}>
+                    First Name
+                  </label>
                   <input
                     type="name"
                     name="firstname"
@@ -419,7 +421,9 @@ class App extends Component {
                   />
                 </div>
                 <div className={classes.formItemWrapper_signup}>
-                  <label htmlFor="FirstName">Last Name</label>
+                  <label htmlFor="FirstName" className={classes.label}>
+                    Last Name
+                  </label>
                   <input
                     type="name"
                     name="lastname"
@@ -431,7 +435,9 @@ class App extends Component {
               </div>
               <div className={classes.userDetails}>
                 <div className={classes.formItemWrapper_signup}>
-                  <label htmlFor="FirstName">Country of Residence</label>
+                  <label htmlFor="FirstName" className={classes.label}>
+                    Country of Residence
+                  </label>
                   <input
                     type="name"
                     name="country"
@@ -441,7 +447,9 @@ class App extends Component {
                   />
                 </div>
                 <div className={classes.formItemWrapper_signup}>
-                  <label htmlFor="FirstName">Zip Postal Code</label>
+                  <label htmlFor="FirstName" className={classes.label}>
+                    Zip Postal Code
+                  </label>
                   <input
                     type="name"
                     name="zipcode"
@@ -453,7 +461,9 @@ class App extends Component {
               </div>
               <div className={classes.userDetails}>
                 <div className={classes.formItemWrapper_signup}>
-                  <label htmlFor="Suburb">Suburb</label>
+                  <label htmlFor="Suburb" className={classes.label}>
+                    Suburb
+                  </label>
                   <input
                     type="name"
                     name="suburb"
@@ -463,7 +473,9 @@ class App extends Component {
                   />
                 </div>
                 <div className={classes.formItemWrapper_signup}>
-                  <label htmlFor="HomeAddress">Home Address</label>
+                  <label htmlFor="HomeAddress" className={classes.label}>
+                    Home Address
+                  </label>
                   <input
                     type="name"
                     name="Address"
@@ -475,7 +487,9 @@ class App extends Component {
               </div>
               <div className={classes.userDetails}>
                 <div className={classes.formItemWrapper_signup}>
-                  <label htmlFor="Street">Street</label>
+                  <label htmlFor="Street" className={classes.label}>
+                    Street
+                  </label>
                   <input
                     type="name"
                     name="street"
