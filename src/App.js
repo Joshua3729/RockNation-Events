@@ -362,9 +362,7 @@ class App extends Component {
     let loginModal = this.state.needToSignUp ? (
       <div className={classes.logInModal}>
         <div className={classes.leftpane}>
-          <h1 className={classes.welcome}>
-            Welcome <br /> To the LiveNation Events family
-          </h1>
+          <h1 className={classes.welcome}>Welcome to our family</h1>
           <p className={classes.loginDescription}>
             Discover millions of events from your favourite artists -- plus
             secure effortless ticketing and many more
