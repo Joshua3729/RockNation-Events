@@ -48,6 +48,9 @@
   font-size: 17px;
   /* text-transform: uppercase; */
 }
+.termsOfUse {
+  font-size: 12px;
+}
 .SignInHeader {
   font-size: 35px;
   font-weight: 700;
@@ -69,7 +72,7 @@
   margin-right: 10px;
 }
 .SignInForm {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .formItemWrapper {
   display: flex;
@@ -83,13 +86,15 @@
   padding: 10px 5px;
 }
 .LogIn {
-  padding: 10px 20px;
+  padding: 15px;
   border: none;
   color: white;
   background-color: #00b4b3;
   width: 100%;
   margin-top: 30px;
-  border-radius: 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
 }
 .LogIn:hover {

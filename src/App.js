@@ -507,7 +507,7 @@ class App extends Component {
                   </div>
                 )}
               </div>
-              <p>
+              <p className={classes.termsOfUse}>
                 By continuing past this page you agree with RockNation Events{" "}
                 <span style={{ color: "#00b4b3" }}>Terms of Use</span> and
                 understand that your information is going to be used as
@@ -567,7 +567,7 @@ class App extends Component {
                   }
                 />
               </div>
-              <p>
+              <p className={classes.termsOfUse}>
                 By continuing past this page you agree with RockNation Events{" "}
                 <span style={{ color: "#00b4b3" }}>Terms of Use</span> and
                 understand that your information is going to be used as
