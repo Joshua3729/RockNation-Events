@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap");
+
 .logInModal {
   display: flex;
   width: 900px;
@@ -7,6 +9,7 @@
   background-color: blue;
 }
 .leftpane {
+  font-family: "Lato", sans-serif;
   width: 40%;
   height: 100%;
   background-color: red;
@@ -102,12 +105,14 @@
   background-color: #68ecec;
 }
 .SignUpPane {
+  font-family: "Lato", sans-serif;
   box-sizing: border-box;
   padding: 30px 40px;
   height: 100%;
   overflow-y: scroll;
 }
 .SignInPane {
+  font-family: "Lato", sans-serif;
   padding: 30px 40px;
 }
 .formItemWrapper_signup {
