@@ -363,7 +363,7 @@ class App extends Component {
       <div className={classes.logInModal}>
         <div className={classes.leftpane}>
           <h1 className={classes.welcome}>
-            Welcome <br /> To the Power-Brains Events family
+            Welcome <br /> To the LiveNation Events family
           </h1>
           <p className={classes.loginDescription}>
             Discover millions of events from your favourite artists -- plus
@@ -375,7 +375,7 @@ class App extends Component {
             <p className={classes.SignInHeader}>Sign Up</p>
             <div className={classes.SignUpHeaderWrapper}>
               <p className={classes.SignUpHeader}>
-                Already have a Power-Brains Events Acount?
+                Already have a LiveNation Events Acount?
               </p>
               <button onClick={this.needToSignInhandler}>Sign in</button>
             </div>
@@ -508,7 +508,7 @@ class App extends Component {
                 )}
               </div>
               <p>
-                By continuing past this page you agree with PowerBrains Events{" "}
+                By continuing past this page you agree with RockNation Events{" "}
                 <span style={{ color: "#00b4b3" }}>Terms of Use</span> and
                 understand that your information is going to be used as
                 described in our{" "}
@@ -527,14 +527,14 @@ class App extends Component {
           </h1>
           <p className={classes.loginDescription}>
             Discover millions of events from your favourite artists -- plus
-            secure effortless ticketing and many more with PowerBrains Events
+            secure effortless ticketing and many more with RockNation Events
           </p>
         </div>
         <div className={classes.rightpane}>
           <div className={classes.SignInPane}>
             <p className={classes.SignInHeader}>Sign in</p>
             <div className={classes.SignUpHeaderWrapper}>
-              <p className={classes.SignUpHeader}>New to PowerBrains Events?</p>
+              <p className={classes.SignUpHeader}>New to RockNation Events?</p>
               <button onClick={this.needToSignUphandler}>Sign Up</button>
             </div>
             <form
@@ -568,7 +568,7 @@ class App extends Component {
                 />
               </div>
               <p>
-                By continuing past this page you agree with PowerBrains Events{" "}
+                By continuing past this page you agree with RockNation Events{" "}
                 <span style={{ color: "#00b4b3" }}>Terms of Use</span> and
                 understand that your information is going to be used as
                 described in our{" "}
