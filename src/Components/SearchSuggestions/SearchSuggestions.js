@@ -18,7 +18,7 @@ const searchSuggestion = (props) => {
   if (props.searchSuggestionData && props.showRecentlyViewed) {
     searchSuggestion_items = props.searchSuggestionData.map((entity, i) => {
       let searchSuggestion_item = null;
-      if (entity.type == "artist")
+      if (entity.type === "artist" || entity.type === "team")
         searchSuggestion_item = (
           <ArtistInfo
             key={i}
