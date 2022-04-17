@@ -49,7 +49,8 @@
   /* text-transform: uppercase; */
 }
 .termsOfUse {
-  font-size: 12px;
+  font-size: 13px;
+  line-height: 1.7;
 }
 .SignInHeader {
   font-size: 35px;
@@ -83,7 +84,7 @@
   margin-bottom: 10px;
 }
 .formItemWrapper input {
-  padding: 10px 5px;
+  padding: 15px 7.5px;
 }
 .LogIn {
   padding: 15px;
@@ -102,12 +103,12 @@
 }
 .SignUpPane {
   box-sizing: border-box;
-  padding: 50px 40px;
+  padding: 30px 40px;
   height: 100%;
   overflow-y: scroll;
 }
 .SignInPane {
-  padding: 50px 40px;
+  padding: 30px 40px;
 }
 .formItemWrapper_signup {
   width: 100%;
@@ -123,7 +124,7 @@
 }
 .formItemWrapper_signup input {
   box-sizing: border-box;
-  padding: 10px 5px;
+  padding: 15px 7.5px;
 }
 .chooseImageTextWrapper {
   text-align: center;
