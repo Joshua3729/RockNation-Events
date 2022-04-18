@@ -17,7 +17,6 @@ import FilePicker from "./Components/Filepicker/FilePicker";
 import { generateBase64FromImage } from "./util/image";
 import Image from "./Components/ImagePreview/Image";
 import SingleEvent from "./Components/SingleEvent/SingleEvent";
-import Footer from "./Components/Footer/Footer";
 import UserProfile from "./Pages/User Profile/UserProfile";
 import MusicConcerts from "./Pages/Music Page/MusicConcerts";
 import ScrollToTop from "./util/ScrollToTop";
