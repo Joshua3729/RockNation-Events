@@ -44,17 +44,15 @@
   align-items: center;
 }
 .Logo {
-  font-weight: 900;
+  font-weight: 700;
   font-size: 30px;
-  font-style: italic;
   margin-right: 10px;
   font-family: "Righteous", cursive;
 }
 .miniLogo {
   font-family: "Righteous", cursive;
-  font-weight: 900;
+  font-weight: 300;
   font-size: 15px;
-  font-style: italic;
 }
 .sociallinks {
   list-style: none;
