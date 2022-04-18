@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom";
 import Spinner from "../../Components/UI/Spinner/Spinner";
 import Recommendations from "../../Components/Recommendations/Recommendations";
 import { Link } from "react-router-dom";
+import Footer from "../../Components/Footer/Footer";
 
 class ViewEvents extends Component {
   state = {
@@ -272,6 +273,7 @@ class ViewEvents extends Component {
           </div>
           {recommendations}
         </section>
+        <Footer />
       </Fragment>
     );
   }
