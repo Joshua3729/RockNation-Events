@@ -108,15 +108,22 @@ const searchSuggestion = (props) => {
         </div>
       </div>
     );
-  }
-  if (
-    props.searchresultEvents.length > 0 &&
-    props.searchresultArtists.length > 0 &&
-    props.searchresultVenues.length > 0
-  ) {
-    searchSuggestion_items = (
-      <img src={not_found} className={classes.not_found} alt="" />
-    );
+    if (
+      props.searchresultEvents.length === 0 ||
+      props.searchresultArtists.length === 0 ||
+      props.searchresultVenues.length === 0
+    ) {
+      searchSuggestion_items = (
+        <div className={classes.empty_state}>
+          <img
+            src={not_found}
+            className={classes.not_found}
+            alt="empty state"
+          />
+          <p>No Results</p>
+        </div>
+      );
+    }
   }
 
   return (

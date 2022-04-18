@@ -12,6 +12,10 @@
   box-sizing: border-box;
 }
 .not_found {
+  width: 100%;
+}
+.empty_state {
+  width: 80px;
   position: absolute;
   top: 50%;
   left: 50%;
