@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&family=Righteous&display=swap");
+
 .Footer {
   padding: 30px;
   background-color: #27374d;
@@ -42,14 +44,14 @@
   align-items: center;
 }
 .Logo {
-  font-family: "Lato", sans-serif;
   font-weight: 900;
   font-size: 30px;
   font-style: italic;
   margin-right: 10px;
+  font-family: "Righteous", cursive;
 }
 .miniLogo {
-  font-family: "Lato", sans-serif;
+  font-family: "Righteous", cursive;
   font-weight: 900;
   font-size: 15px;
   font-style: italic;

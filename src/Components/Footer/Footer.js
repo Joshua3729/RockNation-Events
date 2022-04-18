@@ -45,10 +45,10 @@ const footer = () => {
         </div>
       </div>
       <div className={classes.copyrightWrapper}>
-        <p className={classes.Logo}> POWERBRAINS EVENTS</p>
+        <p className={classes.Logo}> rocknation events</p>
         <p className={classes.agreement}>
           By continuing past this page, you agree with{" "}
-          <span className={classes.miniLogo}>POWERBRAINS EVENTS</span> Terms of
+          <span className={classes.miniLogo}>rocknation events</span> Terms of
           use
         </p>
         <ul className={classes.sociallinks}>
