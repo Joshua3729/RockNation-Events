@@ -117,6 +117,7 @@ class App extends Component {
     userImage: null,
     searchresult: [],
     search: false,
+    showPassword: false,
   };
   componentDidMount() {
     const fullname = localStorage.getItem("fullname");
@@ -404,13 +405,21 @@ class App extends Component {
                 <label htmlFor="password" className={classes.label}>
                   Password
                 </label>
-                <input
-                  type="password"
-                  name="password-signup"
-                  onChange={(e) =>
-                    this.inputChangeHandler("password", e.target.value)
-                  }
-                />
+                <div className={classes.password_wrapper}>
+                  <input
+                    type={this.state.showPassword ? "text" : "password"}
+                    name="password-signup"
+                    onChange={(e) =>
+                      this.inputChangeHandler("password", e.target.value)
+                    }
+                  />
+                  <p
+                    className={classes.showHide_btn}
+                    onClick={this.showPasswordHandler}
+                  >
+                    {this.state.showPassword ? "Hide" : "Show"}
+                  </p>
+                </div>
               </div>
               <div className={classes.userDetails}>
                 <div className={classes.formItemWrapper_signup}>
