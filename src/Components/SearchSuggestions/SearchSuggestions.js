@@ -47,62 +47,62 @@ const searchSuggestion = (props) => {
     !props.showRecentlyViewed
   ) {
     events =
-      props.searchresultEvents.length > 0 ? (
-        props.searchresultEvents.map((event, i) => {
-          return (
-            <EventInfo
-              key={i}
-              event={event}
-              viewEntity={props.viewEntity}
-              searchSuggestion={true}
-            />
-          );
-        })
-      ) : (
-        <div className={classes.empty}>Not Found</div>
-      );
+      props.searchresultEvents.length > 0
+        ? props.searchresultEvents.map((event, i) => {
+            return (
+              <EventInfo
+                key={i}
+                event={event}
+                viewEntity={props.viewEntity}
+                searchSuggestion={true}
+              />
+            );
+          })
+        : null;
     artists =
-      props.searchresultArtists.length > 0 ? (
-        props.searchresultArtists.map((event, i) => {
-          return (
-            <ArtistInfo
-              key={i}
-              event={event}
-              viewEntity={props.viewEntity}
-              searchSuggestion={true}
-            />
-          );
-        })
-      ) : (
-        <div className={classes.empty}>Not Found</div>
-      );
+      props.searchresultArtists.length > 0
+        ? props.searchresultArtists.map((event, i) => {
+            return (
+              <ArtistInfo
+                key={i}
+                event={event}
+                viewEntity={props.viewEntity}
+                searchSuggestion={true}
+              />
+            );
+          })
+        : null;
     venues =
-      props.searchresultVenues.length > 0 ? (
-        props.searchresultVenues.map((event, i) => {
-          return (
-            <VenueInfo
-              key={i}
-              event={event}
-              viewEntity={props.viewEntity}
-              searchSuggestion={true}
-            />
-          );
-        })
-      ) : (
-        <div className={classes.empty}>Not Found</div>
-      );
+      props.searchresultVenues.length > 0
+        ? props.searchresultVenues.map((event, i) => {
+            return (
+              <VenueInfo
+                key={i}
+                event={event}
+                viewEntity={props.viewEntity}
+                searchSuggestion={true}
+              />
+            );
+          })
+        : null;
     searchSuggestion_items = (
       <div className={classes.searchSuggestion_items}>
         <div className={classes.searchSuggestion_item}>
-          <p className={classes.header2}>Events</p>
+          {props.searchresultEvents.length > 0 && (
+            <p className={classes.header2}>Events</p>
+          )}
           {events}
         </div>
         <div className={classes.searchSuggestion_item}>
-          <p className={classes.header2}>Artists</p>
+          {props.searchresultArtists.length > 0 && (
+            <p className={classes.header2}>Artists</p>
+          )}
           {artists}
         </div>
         <div className={classes.searchSuggestion_item}>
-          <p className={classes.header2}>venues</p>
+          {props.searchresultVenues.length > 0 && (
+            <p className={classes.header2}>Venues</p>
+          )}
           {venues}
         </div>
       </div>
