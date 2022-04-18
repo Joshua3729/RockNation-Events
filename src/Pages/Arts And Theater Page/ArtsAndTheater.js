@@ -6,6 +6,7 @@ import SlideShow from "../../Components/SlideShow/SlideShow";
 import upcoming_arts from "../../Components/Image/upcoming.png";
 import { withRouter } from "react-router-dom";
 import AdCard from "../../Components/AdCard/AdCard";
+import Footer from "../../Components/Footer/Footer";
 
 class ArtsAndTheater extends Component {
   state = {
@@ -92,6 +93,7 @@ class ArtsAndTheater extends Component {
             <AdCard />
           </div>
         </section>
+        <Footer />
       </Fragment>
     );
   }
