@@ -201,8 +201,25 @@
   .label {
     font-size: 15px;
   }
-  /* .SignInHeader,
-  .SignUpHeader {
-    font-size: 20px;
-  } */
+}
+.password_wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 60px;
+}
+.password_wrapper input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 15px);
+}
+.showHide_btn {
+  position: absolute;
+  right: 7.5px;
+  top: 15px;
+  cursor: pointer;
+  color: lightgray;
+}
+.showHide_btn:hover {
+  color: black;
 }
