@@ -4,6 +4,7 @@ import ArtistInfo from "../ArtistInfo/ArtistInfo";
 import VenueInfo from "../VenueInfo/VenueInfo";
 import EventInfo from "../EventInfo/EventInfo";
 import Spinner from "../UI/Spinner/Spinner";
+import not_found from "../Image/not_found.svg";
 
 const searchSuggestion = (props) => {
   let searchSuggestion_items = (
@@ -106,6 +107,15 @@ const searchSuggestion = (props) => {
           {venues}
         </div>
       </div>
+    );
+  }
+  if (
+    props.searchresultEvents.length > 0 &&
+    props.searchresultArtists.length > 0 &&
+    props.searchresultVenues.length > 0
+  ) {
+    searchSuggestion_items = (
+      <img src={not_found} className={classes.not_found} alt="" />
     );
   }
 
