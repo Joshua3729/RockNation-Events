@@ -6,6 +6,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import sports from "../../Components/Image/sports.png";
 import AdCard from "../../Components/AdCard/AdCard";
+import Footer from "../../Components/Footer/Footer";
 
 class ComedyPage extends Component {
   state = {
@@ -95,6 +96,7 @@ class ComedyPage extends Component {
             </div>
           </div>
         </section>
+        <Footer />
       </Fragment>
     );
   }
