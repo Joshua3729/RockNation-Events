@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom";
 import ArtistInfo from "../../Components/ArtistInfo/ArtistInfo";
 import VenueInfo from "../../Components/VenueInfo/VenueInfo";
 import Spinner from "../../Components/UI/Spinner/Spinner";
+import Footer from "../../Components/Footer/Footer";
 
 class SearchResults extends Component {
   state = {
@@ -253,6 +254,7 @@ class SearchResults extends Component {
             </div>
           </div>
         </section>
+        <Footer />
       </Fragment>
     );
   }
