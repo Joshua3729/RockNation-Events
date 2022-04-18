@@ -377,7 +377,7 @@ class App extends Component {
         </div>
         <div className={classes.rightpane}>
           <div className={classes.SignUpPane}>
-            <p className={classes.SignInHeader}>Sign Up</p>
+            <p className={classes.SignInHeader}>Sign up</p>
             <div className={classes.SignUpHeaderWrapper}>
               <p className={classes.SignUpHeader}>
                 Already have a LiveNation Events Acount?
@@ -541,7 +541,7 @@ class App extends Component {
                 described in our{" "}
                 <span style={{ color: "#00b4b3" }}>Privacy Policy</span>
               </p>
-              <button className={classes.LogIn}>Sign Up</button>
+              <button className={classes.LogIn}>Sign up</button>
             </form>
           </div>
         </div>
@@ -562,7 +562,7 @@ class App extends Component {
             <p className={classes.SignInHeader}>Sign in</p>
             <div className={classes.SignUpHeaderWrapper}>
               <p className={classes.SignUpHeader}>New to RockNation Events?</p>
-              <button onClick={this.needToSignUphandler}>Sign Up</button>
+              <button onClick={this.needToSignUphandler}>Sign up</button>
             </div>
             <form
               className={classes.SignInForm}
