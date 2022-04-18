@@ -357,6 +357,13 @@ class App extends Component {
   needToSignInhandler = () => {
     this.setState({ needToSignUp: false });
   };
+  showPasswordHandler = () => {
+    this.setState((prevState) => {
+      return {
+        showPassword: !prevState.showPassword,
+      };
+    });
+  };
 
   render() {
     let loginModal = this.state.needToSignUp ? (
