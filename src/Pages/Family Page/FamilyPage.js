@@ -5,6 +5,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import AdCard from "../../Components/AdCard/AdCard";
+import Footer from "../../Components/Footer/Footer";
 
 class FamilyPage extends Component {
   state = {
@@ -89,6 +90,7 @@ class FamilyPage extends Component {
             </div>
           </div>
         </section>
+        <Footer />
       </Fragment>
     );
   }
