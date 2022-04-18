@@ -7,6 +7,7 @@ import Navigation from "../../Components/Navigation/Navigation";
 import Categories from "../../Components/Categories/Categories";
 import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import RecentlyViewed from "../../Components/RecentlyViewed/RecentlyViewed";
+import Footer from "../../Components/Footer/Footer";
 
 class Home extends Component {
   state = {
@@ -169,6 +170,7 @@ class Home extends Component {
             family={this.state.family}
           />
           <Amax />
+          <Footer />
         </Fragment>
       );
     return page;
