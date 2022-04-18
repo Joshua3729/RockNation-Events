@@ -587,13 +587,21 @@ class App extends Component {
                 <label htmlFor="password" className={classes.label}>
                   Password
                 </label>
-                <input
-                  type="password"
-                  name="password"
-                  onChange={(e) =>
-                    this.signinInputChangeHandler("password", e.target.value)
-                  }
-                />
+                <div className={classes.password_wrapper}>
+                  <input
+                    type={this.state.showPassword ? "text" : "password"}
+                    name="password-signup"
+                    onChange={(e) =>
+                      this.inputChangeHandler("password", e.target.value)
+                    }
+                  />
+                  <p
+                    className={classes.showHide_btn}
+                    onClick={this.showPasswordHandler}
+                  >
+                    {this.state.showPassword ? "Hide" : "Show"}
+                  </p>
+                </div>
               </div>
               <p className={classes.termsOfUse}>
                 By continuing past this page you agree with RockNation Events{" "}
