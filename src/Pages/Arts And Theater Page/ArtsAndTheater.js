@@ -7,6 +7,7 @@ import upcoming_arts from "../../Components/Image/upcoming.png";
 import { withRouter } from "react-router-dom";
 import AdCard from "../../Components/AdCard/AdCard";
 import Footer from "../../Components/Footer/Footer";
+import { goToLink } from "../../util/goToLink";
 
 class ArtsAndTheater extends Component {
   state = {
@@ -39,7 +40,14 @@ class ArtsAndTheater extends Component {
 
     if (this.state.events)
       events = this.state.events.map((event, i) => {
-        return <EventInfo key={i} event={event} />;
+        return (
+          <EventInfo
+            key={i}
+            event={event}
+            goToHome={goToLink}
+            organizer={"team"}
+          />
+        );
       });
     return (
       <Fragment>
