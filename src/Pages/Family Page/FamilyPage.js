@@ -6,6 +6,7 @@ import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import AdCard from "../../Components/AdCard/AdCard";
 import Footer from "../../Components/Footer/Footer";
+import { goToLink } from "../../util/goToLink";
 
 class FamilyPage extends Component {
   state = {
@@ -39,7 +40,7 @@ class FamilyPage extends Component {
 
     if (this.state.events.length > 0)
       events = this.state.events.map((event, i) => {
-        return <EventInfo key={i} event={event} />;
+        return <EventInfo key={i} event={event} goToHome={goToLink} />;
       });
     return (
       <Fragment>
