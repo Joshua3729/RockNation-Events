@@ -67,12 +67,12 @@ const eventInfo = (props) => {
             onClick={props.goToLink.bind(
               this,
 
-              event.eventName,
-              event._id,
+              props.event.eventName,
+              props.event._id,
               props.organizer,
-              event.venue,
-              event.artistName,
-              event.category
+              props.event.venue,
+              props.event.artistName,
+              props.event.category
             )}
           >
             See Tickets

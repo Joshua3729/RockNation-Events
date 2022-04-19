@@ -44,7 +44,7 @@ class FamilyPage extends Component {
           <EventInfo
             key={i}
             event={event}
-            goToHome={goToLink}
+            goToLink={goToLink}
             organizer={"team"}
           />
         );
