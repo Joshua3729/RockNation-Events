@@ -64,12 +64,12 @@ const eventInfo = (props) => {
         <div className={classes.btnWrapper}>
           <button
             className={classes.seeTickets}
-            onClick={this.goToLink.bind(
+            onClick={props.goToLink.bind(
               this,
 
               event.eventName,
               event._id,
-              this.props.organizer,
+              props.organizer,
               event.venue,
               event.artistName,
               event.category
