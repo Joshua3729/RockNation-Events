@@ -94,11 +94,15 @@ class ArtsAndTheater extends Component {
             />
           </div>
           <div className={classes.mainContent}>
-            <h2 className={classes.header}>All Arts & Theater Events (783)</h2>
-            <div className={classes.eventsWrapper}>
-              <div className={classes.events}>{events}</div>
+            <div className={classes.wrapper}>
+              <h2 className={classes.header}>
+                All Arts & Theater Events (783)
+              </h2>
+              <div className={classes.eventsWrapper}>
+                <div className={classes.events}>{events}</div>
+                <AdCard />
+              </div>
             </div>
-            <AdCard />
           </div>
         </section>
         <Footer />
