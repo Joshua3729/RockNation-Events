@@ -62,7 +62,21 @@ const eventInfo = (props) => {
           <p className={classes.venue}>{props.event.venue}</p>
         </div>
         <div className={classes.btnWrapper}>
-          <button className={classes.seeTickets}>See Tickets</button>
+          <button
+            className={classes.seeTickets}
+            onClick={this.goToLink.bind(
+              this,
+
+              event.eventName,
+              event._id,
+              this.props.organizer,
+              event.venue,
+              event.artistName,
+              event.category
+            )}
+          >
+            See Tickets
+          </button>
         </div>
       </div>
     );
