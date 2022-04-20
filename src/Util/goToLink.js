@@ -1,4 +1,5 @@
 export const goToLink = (
+  props,
   eventName,
   id,
   type,

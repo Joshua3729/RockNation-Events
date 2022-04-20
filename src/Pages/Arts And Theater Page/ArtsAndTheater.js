@@ -7,7 +7,6 @@ import upcoming_arts from "../../Components/Image/upcoming.png";
 import { withRouter } from "react-router-dom";
 import AdCard from "../../Components/AdCard/AdCard";
 import Footer from "../../Components/Footer/Footer";
-import { goToLink, hello } from "../../util/goToLink";
 
 class ArtsAndTheater extends Component {
   state = {
@@ -15,7 +14,6 @@ class ArtsAndTheater extends Component {
   };
 
   componentDidMount = () => {
-    hello();
     document.body.scrollTop = 0;
     console.log("step 1");
     fetch("http://localhost:5000/feed/events/artsandtheater")
@@ -47,7 +45,6 @@ class ArtsAndTheater extends Component {
             event={event}
             goToLink={goToLink}
             organizer={"team"}
-            hello={hello}
           />
         );
       });
