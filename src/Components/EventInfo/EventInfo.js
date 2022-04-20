@@ -66,7 +66,6 @@ const eventInfo = (props) => {
             className={classes.seeTickets}
             onClick={props.goToLink.bind(
               this,
-              props,
               props.event.eventName,
               props.event._id,
               props.organizer,
