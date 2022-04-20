@@ -11,7 +11,7 @@ import { goToLink, hello } from "../../util/goToLink";
 
 class ArtsAndTheater extends Component {
   state = {
-    events: null,
+    events: [],
   };
 
   componentDidMount = () => {
@@ -47,6 +47,7 @@ class ArtsAndTheater extends Component {
             event={event}
             goToLink={goToLink}
             organizer={"team"}
+            hello={hello}
           />
         );
       });

@@ -13,5 +13,5 @@ export const goToLink = (
 };
 
 export const hello = () => {
-  console.log("Hello world");
+  alert("hello & yep");
 };
