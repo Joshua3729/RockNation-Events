@@ -34,12 +34,26 @@ class ArtsAndTheater extends Component {
       .catch((err) => console.log(err));
   };
 
+  goToLink = (eventName, id, type, venueName, artistName, event_type) => {
+    this.props.history.push({
+      pathname: `/tickets/${eventName}/${id}`,
+      search: `?${type}=${artistName}&venue=${venueName}&event_type=${event_type}`,
+    });
+  };
+
   render() {
     let events = "loading";
 
     if (this.state.events)
       events = this.state.events.map((event, i) => {
-        return <EventInfo key={i} event={event} organizer={"team"} />;
+        return (
+          <EventInfo
+            key={i}
+            event={event}
+            organizer={"team"}
+            goToLink={this.goToLink}
+          />
+        );
       });
     return (
       <Fragment>
