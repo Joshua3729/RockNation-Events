@@ -109,8 +109,8 @@ const searchSuggestion = (props) => {
       </div>
     );
     if (
-      props.searchresultEvents.length === 0 ||
-      props.searchresultArtists.length === 0 ||
+      props.searchresultEvents.length === 0 &&
+      props.searchresultArtists.length === 0 &&
       props.searchresultVenues.length === 0
     ) {
       searchSuggestion_items = (

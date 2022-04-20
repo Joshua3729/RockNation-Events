@@ -83,7 +83,6 @@ class Navigation extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           searchresultArtists: resData,
           resultsLengthArtists: resData.length,
@@ -104,7 +103,6 @@ class Navigation extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           searchresultEvents: resData,
           resultsLengthEvents: resData.length,
@@ -125,7 +123,6 @@ class Navigation extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           searchresultVenues: resData,
           resultsLengthVenues: resData.length,
