@@ -6,7 +6,6 @@ import EventInfo from "../../Components/EventInfo/EventInfo";
 import SlideShow from "../../Components/SlideShow/SlideShow";
 import AdCard from "../../Components/AdCard/AdCard";
 import Footer from "../../Components/Footer/Footer";
-import { goToLink, hello } from "../../util/goToLink";
 
 class FamilyPage extends Component {
   state = {
