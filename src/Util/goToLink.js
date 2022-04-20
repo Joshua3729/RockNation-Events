@@ -11,3 +11,7 @@ export const goToLink = (
     search: `?${type}=${artistName}&venue=${venueName}&event_type=${event_type}`,
   });
 };
+
+export const hello = () => {
+  console.log("Hello world");
+};

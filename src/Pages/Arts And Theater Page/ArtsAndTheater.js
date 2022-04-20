@@ -7,7 +7,7 @@ import upcoming_arts from "../../Components/Image/upcoming.png";
 import { withRouter } from "react-router-dom";
 import AdCard from "../../Components/AdCard/AdCard";
 import Footer from "../../Components/Footer/Footer";
-import { goToLink } from "../../util/goToLink";
+import { goToLink, hello } from "../../util/goToLink";
 
 class ArtsAndTheater extends Component {
   state = {
@@ -15,6 +15,7 @@ class ArtsAndTheater extends Component {
   };
 
   componentDidMount = () => {
+    hello();
     document.body.scrollTop = 0;
     console.log("step 1");
     fetch("http://localhost:5000/feed/events/artsandtheater")
@@ -96,7 +97,7 @@ class ArtsAndTheater extends Component {
           <div className={classes.mainContent}>
             <div className={classes.wrapper}>
               <h2 className={classes.header}>
-                All Arts & Theater Events (783)
+                All Arts & Theater Events ({this.state.events.length})
               </h2>
               <div className={classes.eventsWrapper}>
                 <div className={classes.events}>{events}</div>
