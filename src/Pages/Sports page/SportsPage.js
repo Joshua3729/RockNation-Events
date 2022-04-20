@@ -49,7 +49,7 @@ class ComedyPage extends Component {
           <EventInfo
             key={i}
             event={event}
-            organizer={"team"}
+            organizer={"artist"}
             goToLink={this.goToLink}
           />
         );
