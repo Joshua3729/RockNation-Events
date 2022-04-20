@@ -39,14 +39,7 @@ class FamilyPage extends Component {
 
     if (this.state.events.length > 0)
       events = this.state.events.map((event, i) => {
-        return (
-          <EventInfo
-            key={i}
-            event={event}
-            goToLink={goToLink}
-            organizer={"team"}
-          />
-        );
+        return <EventInfo key={i} event={event} organizer={"team"} />;
       });
     return (
       <Fragment>
