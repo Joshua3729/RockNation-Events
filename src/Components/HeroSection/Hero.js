@@ -47,7 +47,7 @@ const Hero = () => {
                 placeholder="Search for evets, artists, venues"
               />
             </div>
-            <button className={classes.searchBtn}>Search</button>
+            <button className={classes.searchBtn}>Discover Events</button>
           </form>
         </div>
         <div className={classes.partnersBanner}>

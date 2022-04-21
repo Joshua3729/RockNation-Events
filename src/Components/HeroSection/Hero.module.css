@@ -128,13 +128,13 @@
   right: 20px;
   background-color: #fe8002;
   border: none;
-  padding: 10px 20px;
-  width: 120px;
+  padding: 5px 10px;
+  width: 150px;
   height: calc(100% - 40px);
   color: white;
   border-radius: 100px;
-  font-weight: 900;
-  font-size: 20px;
+  font-weight: 700;
+  font-size: 15px;
 }
 .locationPicker,
 .datePicker {
