@@ -14,9 +14,16 @@ const eventCard = (props) => {
       <div className={classes.eventInfo}>
         <div className={classes.artist}>{props.event.eventName}</div>
         <p className={classes.date}>23 February 2022</p>
-        <p className={classes.venue}>
-          {props.event.venue}, {props.event.city}
-        </p>
+        <div className={classes.location_wrapper}>
+          <img
+            src="https://resources.redbull.com/icons/flags/v2/FR@2x.png"
+            alt="country flag"
+            className={classes.flag}
+          />
+          <p className={classes.venue}>
+            {props.event.venue}, {props.event.city}
+          </p>
+        </div>
       </div>
     </div>
   );

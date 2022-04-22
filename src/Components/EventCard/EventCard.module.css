@@ -50,3 +50,11 @@
 .card:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
+.location_wrapper {
+  display: flex;
+  align-items: center;
+}
+.flag {
+  height: 14px;
+  margin-right: 10px;
+}
