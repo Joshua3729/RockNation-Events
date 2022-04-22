@@ -15,6 +15,7 @@ const ComingSoon = (props) => {
         <div className={classes.OurPicksGrid}>
           <div className={classes.card}>
             <EventCard
+              parent={"comming_soon"}
               event={{
                 cardImg: beiber,
                 eventName: "Justin Beiber: Turn On The Lights",
@@ -25,6 +26,7 @@ const ComingSoon = (props) => {
           </div>
           <div className={classes.card}>
             <EventCard
+              parent={"comming_soon"}
               event={{
                 cardImg: badbunny,
                 eventName: "Bad Bunny: Game on",
@@ -35,6 +37,7 @@ const ComingSoon = (props) => {
           </div>
           <div className={classes.card}>
             <EventCard
+              parent={"comming_soon"}
               event={{
                 cardImg: billie,
                 eventName: "Billy Eilish: Simphony tour",
@@ -45,6 +48,7 @@ const ComingSoon = (props) => {
           </div>
           <div className={classes.card}>
             <EventCard
+              parent={"comming_soon"}
               event={{
                 cardImg: khalid,
                 eventName: "Khalid: Bad Boys Tour",

@@ -4,7 +4,9 @@ import classes from "./EventCard.module.css";
 const eventCard = (props) => {
   return (
     <div
-      className={classes.card}
+      className={
+        props.parent === "comming_soon" ? classes.cardCommingSoon : classes.card
+      }
       style={{
         backgroundImage: `url(${props.event.cardImg})`,
       }}
