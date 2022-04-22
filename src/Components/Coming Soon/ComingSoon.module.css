@@ -57,7 +57,7 @@
   background-size: cover;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+  transition: transform 0.3s;
 }
 .header {
   color: white;
@@ -91,7 +91,9 @@
   margin-top: 20px;
   width: calc(100% - 10px);
 }
-
+.card:hover {
+  transform: scale(1.1);
+}
 @media only screen and (max-width: 1200px) {
   /*Tablets [601px -> 1200px]*/
 
