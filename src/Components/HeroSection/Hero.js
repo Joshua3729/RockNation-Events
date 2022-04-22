@@ -103,9 +103,6 @@ const Hero = () => {
             </form>
           </div>
         </div>
-        {/* <div className={classes.searchTool_wrapper}> */}
-
-        {/* </div> */}
       </div>
     </div>
   );
