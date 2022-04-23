@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap");
+
 .recentlyViewed_section {
   padding: 50px 50px 0 50px;
+  font-family: "Lato", sans-serif;
 }
 .recentlyViewed_wrapper {
   display: block;
