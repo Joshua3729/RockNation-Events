@@ -35,7 +35,10 @@
 .sectionDescription2 a {
   color: #27374d;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
+}
+.sectionDescription2 a:hover {
+  color: #637691;
 }
 .EventLabel_wrapper {
   display: flex;
