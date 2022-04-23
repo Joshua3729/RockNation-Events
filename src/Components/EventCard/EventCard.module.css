@@ -50,11 +50,18 @@
 .card:hover {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
 }
+.date_wrapper,
 .location_wrapper {
   display: flex;
   align-items: center;
 }
 .flag {
   height: 14px;
+  margin-right: 10px;
+}
+.date_icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 0;
   margin-right: 10px;
 }
