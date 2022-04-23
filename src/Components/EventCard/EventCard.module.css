@@ -42,6 +42,8 @@
 .venue {
   font-size: 15px;
   color: #717488;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .description {
   margin-top: 20px;
