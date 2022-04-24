@@ -34,7 +34,9 @@ const eventCard = (props) => {
             className={classes.flag}
           />
           <p className={classes.venue}>
-            {`${props.event.venue}, ${props.event.city}`.slice(0, 32)}
+            {props.event.venue}, {props.event.city}
+          </p>
+          <p style={{ color: "#717488" }}>
             {props.event.venue.length + props.event.city.length > 32
               ? "..."
               : null}
