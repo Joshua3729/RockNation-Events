@@ -64,7 +64,7 @@ const scrollingHorizontally = (props) => {
   return (
     <div className={classes.parent}>
       {cards}
-      <div className={classes.scroll_card}>
+      <div className={classes.viewAll_wrapper}>
         <button className={classes.viewAll_btn}>{">"}</button>
         View All
       </div>
