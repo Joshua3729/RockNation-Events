@@ -114,12 +114,12 @@ class topSelling extends Component {
         }
       });
 
-      horizontalConcerts = <HorizontalScroll events={this.states.concerts} />;
-      horizontalSports = <HorizontalScroll events={this.states.sports} />;
+      horizontalConcerts = <HorizontalScroll events={this.props.concerts} />;
+      horizontalSports = <HorizontalScroll events={this.props.sports} />;
       horizontalArtsAndTheater = (
-        <HorizontalScroll events={this.states.artsandtheater} />
+        <HorizontalScroll events={this.props.artsandtheater} />
       );
-      horizontalFamily = <HorizontalScroll events={this.states.family} />;
+      horizontalFamily = <HorizontalScroll events={this.props.family} />;
     }
     return (
       <Aux>
@@ -131,12 +131,14 @@ class topSelling extends Component {
                 <p>Concerts</p> <Link to="/concerts">See All Concerts</Link>
               </div>
               <div className={classes.grid}>{cards}</div>
+              {horizontalConcerts}
             </div>
             <div className={classes.ArtsAndTheaterWrapper}>
               <div className={classes.sectionDescription2}>
                 <p>Sports</p> <Link to="/sports">See All Sports</Link>
               </div>
               <div className={classes.grid}>{Sports}</div>
+              {horizontalSports}
             </div>
             <div className={classes.ArtsAndTheaterWrapper}>
               <div className={classes.sectionDescription2}>
@@ -144,6 +146,7 @@ class topSelling extends Component {
                 <Link to="/artsandtheater">See All Arts & Theater</Link>
               </div>
               <div className={classes.grid}>{EventsArtsAndTheater}</div>
+              {horizontalArtsAndTheater}
             </div>
 
             <div className={classes.Family}>
@@ -151,6 +154,7 @@ class topSelling extends Component {
                 <p>Family</p> <Link to="/family">See All Family</Link>
               </div>
               <div className={classes.grid}>{EventsFamily}</div>
+              {horizontalFamily}
             </div>
           </div>
         </section>
