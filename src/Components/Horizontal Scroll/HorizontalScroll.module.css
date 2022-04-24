@@ -29,3 +29,10 @@
     margin-left: 20px;
   }
 }
+@media only screen and (max-width: 900px) {
+  /*Tablets [601px -> 1200px]*/
+
+  .scroll_card:first-child {
+    margin-left: 30px;
+  }
+}
