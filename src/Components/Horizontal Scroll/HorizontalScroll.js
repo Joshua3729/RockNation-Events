@@ -5,8 +5,10 @@ import beiber from "../Image/top_picks/beiber.jpg";
 import badbunny from "../Image/top_picks/badbunny.jpg";
 import billie from "../Image/top_picks/billie.jpg";
 import khalid from "../Image/top_picks/khalid.jpg";
+import { Link } from "react-router-dom";
 
 const scrollingHorizontally = (props) => {
+  let view_all = null;
   let cards = (
     <>
       <div className={classes.scroll_card}>
@@ -60,16 +62,19 @@ const scrollingHorizontally = (props) => {
         </div>
       );
     });
+    view_all = (
+      <div className={classes.viewAll_wrapper}>
+        <Link to={props.more_link} className={classes.viewAll_btn}>
+          <i class="fa fa-solid fa-angle-right"></i>
+        </Link>
+        View all
+      </div>
+    );
   }
   return (
     <div className={classes.parent}>
       {cards}
-      <div className={classes.viewAll_wrapper}>
-        <button className={classes.viewAll_btn}>
-          <i class="fa fa-solid fa-angle-right"></i>
-        </button>
-        View all
-      </div>
+      {view_all}
     </div>
   );
 };
