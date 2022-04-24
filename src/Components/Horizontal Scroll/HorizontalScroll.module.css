@@ -26,7 +26,7 @@
   /*Tablets [601px -> 1200px]*/
 
   .scroll_card:first-child {
-    margin-left: 20px;
+    margin-left: 20px !important;
   }
 }
 @media only screen and (max-width: 900px) {
