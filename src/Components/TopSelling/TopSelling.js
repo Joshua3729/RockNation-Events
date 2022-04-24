@@ -4,6 +4,7 @@ import axios from "axios";
 import Aux from "../../hoc/Auxiliary/Auxiliary";
 import { Link } from "react-router-dom";
 import EventCard from "../EventCard/EventCard";
+import HorizontalScroll from "../Horizontal Scroll/HorizontalScroll";
 import { withRouter } from "react-router-dom";
 
 class topSelling extends Component {
@@ -18,6 +19,10 @@ class topSelling extends Component {
     let EventsArtsAndTheater = null;
     let Sports = null;
     let EventsFamily = null;
+    let horizontalConcerts = null;
+    let horizontalSports = null;
+    let horizontalArtsAndTheater = null;
+    let horizontalFamily = null;
     if (
       this.props.concerts &&
       this.props.artsandtheater &&
@@ -108,6 +113,13 @@ class topSelling extends Component {
           );
         }
       });
+
+      horizontalConcerts = <HorizontalScroll events={this.states.concerts} />;
+      horizontalSports = <HorizontalScroll events={this.states.sports} />;
+      horizontalArtsAndTheater = (
+        <HorizontalScroll events={this.states.artsandtheater} />
+      );
+      horizontalFamily = <HorizontalScroll events={this.states.family} />;
     }
     return (
       <Aux>
