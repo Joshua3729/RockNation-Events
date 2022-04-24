@@ -88,14 +88,6 @@
   }
 }
 
-@media only screen and (max-width: 350px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr) !important;
-  }
-  .card_wrapper {
-    height: 400px;
-  }
-}
 @media only screen and (max-width: 425px) {
   /*Small smartphones [325px -> 425px]*/
 
