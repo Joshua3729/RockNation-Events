@@ -64,27 +64,10 @@
     padding: 0 30px 100px 30px;
   }
 }
-@media only screen and (max-width: 950px) {
-  /*Big smartphones [426px -> 600px]*/
-  .grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .card_wrapper {
-    height: 500px;
-  }
-}
+
 @media only screen and (max-width: 750px) {
   .sectionDescription2 a {
     display: none;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .grid {
-    grid-template-columns: repeat(1, 1fr) !important;
-  }
-  .card_wrapper {
-    height: 500px;
   }
 }
 
@@ -99,9 +82,7 @@
   .TopSelling {
     padding: 50px 20px 50px 20px;
   }
-  .grid {
-    grid-gap: 20px;
-  }
+
   .sectionDescription {
     margin: 0 20px 0 20px !important;
   }
