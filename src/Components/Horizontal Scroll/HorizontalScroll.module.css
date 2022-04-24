@@ -1,6 +1,7 @@
 .parent {
   overflow-x: auto;
   display: none;
+  height: 410px;
 }
 .parent::-webkit-scrollbar {
   width: 0;

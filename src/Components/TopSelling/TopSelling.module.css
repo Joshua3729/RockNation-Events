@@ -121,4 +121,11 @@
   .grid {
     display: none;
   }
+  .TopSelling {
+    padding: 0 0 100px 0;
+  }
+  .sectionDescription,
+  .sectionDescription2 {
+    margin-left: 50px;
+  }
 }

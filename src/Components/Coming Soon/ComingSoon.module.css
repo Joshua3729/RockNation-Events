@@ -36,7 +36,8 @@
 .upcomingEvents {
   font-family: "Lato", sans-serif;
 
-  background-color: rgb(0, 0, 0, 0.97);
+  /* background-color: rgb(0, 0, 0, 0.97); */
+  background-color: white;
   width: 100%;
   padding: 50px;
   box-sizing: border-box;
