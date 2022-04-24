@@ -12,6 +12,19 @@
   height: 400px;
   margin-right: 20px;
 }
+.viewAll_wrapper {
+  height: 400px;
+  min-width: 300px;
+  background-color: aqua;
+  margin-right: 20px;
+}
+.viewAll_btn {
+  border: none;
+  border-radius: 50%;
+  background-color: lightgray;
+  color: black;
+}
+
 .scroll_card:first-child {
   margin-left: 50px;
 }

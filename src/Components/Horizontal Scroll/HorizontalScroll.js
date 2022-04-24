@@ -61,7 +61,15 @@ const scrollingHorizontally = (props) => {
       );
     });
   }
-  return <div className={classes.parent}>{cards}</div>;
+  return (
+    <div className={classes.parent}>
+      {cards}
+      <div className={classes.scroll_card}>
+        <button className={classes.viewAll_btn}>{">"}</button>
+        View All
+      </div>
+    </div>
+  );
 };
 
 export default scrollingHorizontally;
