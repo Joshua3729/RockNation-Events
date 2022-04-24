@@ -65,8 +65,10 @@ const scrollingHorizontally = (props) => {
     <div className={classes.parent}>
       {cards}
       <div className={classes.viewAll_wrapper}>
-        <button className={classes.viewAll_btn}>{">"}</button>
-        View All
+        <button className={classes.viewAll_btn}>
+          <i class="fa fa-solid fa-angle-right"></i>
+        </button>
+        View all
       </div>
     </div>
   );
