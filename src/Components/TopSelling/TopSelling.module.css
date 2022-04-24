@@ -50,10 +50,7 @@
 }
 @media only screen and (max-width: 900px) {
   /*Tablets [601px -> 1200px]*/
-  /* .grid {
-    grid-template-columns: repeat(2, 1fr);
 
-  } */
   .sectionDescription {
     margin: 0 30px 0 30px !important;
   }
