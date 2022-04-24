@@ -119,6 +119,6 @@
 @media only screen and (max-width: 1200px) {
   /*Big smartphones [426px -> 600px]*/
   .grid {
-    grid-template-columns: repeat(3, 1fr);
+    display: none;
   }
 }
