@@ -115,19 +115,32 @@ class topSelling extends Component {
       });
 
       horizontalConcerts = (
-        <HorizontalScroll events={this.props.concerts} parent={"top_selling"} />
+        <HorizontalScroll
+          events={this.props.concerts}
+          parent={"top_selling"}
+          more_link={"/concerts"}
+        />
       );
       horizontalSports = (
-        <HorizontalScroll events={this.props.sports} parent={"top_selling"} />
+        <HorizontalScroll
+          events={this.props.sports}
+          parent={"top_selling"}
+          more_link={"/sports"}
+        />
       );
       horizontalArtsAndTheater = (
         <HorizontalScroll
           events={this.props.artsandtheater}
           parent={"top_selling"}
+          more_link={"/artsandtheater"}
         />
       );
       horizontalFamily = (
-        <HorizontalScroll events={this.props.family} parent={"top_selling"} />
+        <HorizontalScroll
+          events={this.props.family}
+          parent={"top_selling"}
+          more_link={"/family"}
+        />
       );
     }
     return (
