@@ -7,8 +7,8 @@ import billie from "../Image/top_picks/billie.jpg";
 import khalid from "../Image/top_picks/khalid.jpg";
 
 const scrollingHorizontally = (props) => {
-  return (
-    <div className={classes.parent}>
+  let cards = (
+    <>
       <div className={classes.scroll_card}>
         <EventCard
           event={{
@@ -49,8 +49,19 @@ const scrollingHorizontally = (props) => {
           }}
         />
       </div>
-    </div>
+    </>
   );
+
+  if (props.parent === "top_selling") {
+    cards = props.events.map((event) => {
+      return (
+        <div className={classes.scroll_card} key={event._id}>
+          <EventCard event={event} />
+        </div>
+      );
+    });
+  }
+  return <div className={classes.parent}>{cards}</div>;
 };
 
 export default scrollingHorizontally;
