@@ -473,7 +473,8 @@ class Navigation extends Component {
               style={{
                 transform: this.state.openSearchTray
                   ? "translateY(0)"
-                  : "translateY(-100%)",
+                  : "translateY(-200%)",
+                opacity: this.state.openSearchTray ? "1" : "0",
               }}
             >
               <form onSubmit={this.props.submit} id="form">

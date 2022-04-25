@@ -130,13 +130,9 @@
     height: 190px;
   }
   .EventLabel {
-    font-size: 15px;
+    font-size: 20px;
     padding: 10px;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .EventLabel {
     top: unset;
-    bottom: 10px;
+    bottom: 20px;
   }
 }

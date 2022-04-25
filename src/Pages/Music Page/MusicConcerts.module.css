@@ -86,4 +86,7 @@
   .banner {
     height: 40vh;
   }
+  .header {
+    font-size: 20px;
+  }
 }
