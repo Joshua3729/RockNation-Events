@@ -194,6 +194,12 @@
 }
 @media only screen and (max-width: 700px) {
   /*Big smartphones [426px -> 600px]*/
+  .slide2 {
+    display: none;
+  }
+  .slide2Small {
+    display: inline-block;
+  }
   .slide2Small {
     height: 50vh;
   }
@@ -251,12 +257,19 @@
   .slide2Small {
     height: 40vh;
   }
-}
-@media only screen and (max-width: 700px) {
-  .slide2 {
-    display: none;
+  .eventInfo {
+    min-width: unset;
+    width: 200px;
+    padding: 10px;
   }
-  .slide2Small {
-    display: inline-block;
+  .date,
+  .city,
+  .eventName {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .getTickets {
+    padding: 5px 10px;
+    font-size: 15px;
   }
 }
