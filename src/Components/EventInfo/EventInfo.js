@@ -58,7 +58,7 @@ const eventInfo = (props) => {
           <div className={classes.time}>Thu . 6:30PM</div>
         </div>
         <div className={classes.vanueWrapper}>
-          <p className={classes.eventName}>{props.event.eventName}</p>
+          <div className={classes.eventName}>{props.event.eventName}</div>
           <p className={classes.venue}>{props.event.venue}</p>
         </div>
         <div className={classes.btnWrapper}>

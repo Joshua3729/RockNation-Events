@@ -67,7 +67,18 @@
   background-color: lightgray;
 }
 .eventName {
+  display: block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  background-color: red;
   color: rgb(38, 38, 38);
+}
+.vanueWrapper {
+  min-width: 0;
+  background-color: blue;
+  height: 80px;
 }
 .event2 {
   width: 100%;
