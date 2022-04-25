@@ -244,6 +244,9 @@ class Navigation extends Component {
               <button
                 className={classes.openSearch}
                 onClick={this.openSearchTrayHandler}
+                style={{
+                  color: this.state.scroll ? "rgb(38,38,38" : "white",
+                }}
               >
                 <i className="fas fa-times"></i>
               </button>

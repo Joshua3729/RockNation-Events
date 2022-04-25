@@ -48,6 +48,12 @@ const Hero = () => {
               />
             </div>
             <button className={classes.searchBtn}>Discover Events</button>
+            <button className={classes.discover_events}>
+              <img
+                src="https://assets.prod.bandsintown.com/images/loupe.svg"
+                alt=""
+              />
+            </button>
           </form>
         </div>
         <div className={classes.partnersBanner}>
