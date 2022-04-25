@@ -241,11 +241,12 @@ class Navigation extends Component {
                 />
               </button>
             ) : (
-              <i
-                className="fas fa-times"
+              <button
+                className={classes.openSearch}
                 onClick={this.openSearchTrayHandler}
-                style={{ color: "grey", fontSize: "23px" }}
-              ></i>
+              >
+                <i className="fas fa-times"></i>
+              </button>
             ))}
           <div className={classes.leftNavLinks}>
             <div className={classes.Logo}>
