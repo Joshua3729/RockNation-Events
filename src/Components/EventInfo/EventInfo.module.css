@@ -120,3 +120,31 @@
 .name:hover {
   color: blue;
 }
+@media only screen and (max-width: 750px) {
+  /*Small smartphones [325px -> 425px]*/
+  .imgWrapper {
+    display: none;
+  }
+  .event {
+    grid-template-columns: 2fr 4fr 2fr;
+  }
+  .eventName {
+    font-size: 17px;
+  }
+  .venue {
+    font-size: 15px;
+  }
+  .date {
+    font-size: 17px;
+  }
+}
+@media only screen and (max-width: 750px) {
+  /*Small smartphones [325px -> 425px]*/
+
+  .event {
+    grid-template-columns: 2fr 4fr;
+  }
+  .btnWrapper {
+    display: none;
+  }
+}
