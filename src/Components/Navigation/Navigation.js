@@ -438,7 +438,13 @@ class Navigation extends Component {
             />
           </ul>
         </div>
-        <div className={this.props.scrollEffect ? null : classes.gutter}></div>
+        <div
+          className={
+            this.props.scrollEffect
+              ? [classes.gutter, classes.hide].join(" ")
+              : classes.gutter
+          }
+        ></div>
         <div
           className={classes.sideTray}
           style={{
