@@ -155,9 +155,7 @@
   /*Small smartphones [325px -> 425px]*/
 
   .event {
-    grid-template-columns: 2fr 4fr;
-    grid-gap: 10px;
-    padding: 10px;
+    display: none;
   }
   .btnWrapper {
     display: none;

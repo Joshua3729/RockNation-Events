@@ -93,19 +93,34 @@ const SlideShow = (props) => {
           <img className={classes.bannerImg} src={slide.img} alt="" />
         </div>
       ) : (
-        <div
-          className={classes.slide2}
-          style={{ backgroundImage: `url(${slide.img})` }}
-        >
-          <div className={classes.backDrop}></div>
+        <>
+          <div
+            className={classes.slide2}
+            style={{ backgroundImage: `url(${slide.img})` }}
+          >
+            <div className={classes.backDrop}></div>
 
-          <div className={classes.eventInfo}>
-            <h2 className={classes.eventName}>{slide.eventName}</h2>
-            <p className={classes.date}>Sun, 30 Aug 2021</p>
-            <p className={classes.city}>Gauteng</p>
-            <button className={classes.getTickets}>Get Tickets</button>
+            <div className={classes.eventInfo}>
+              <h2 className={classes.eventName}>{slide.eventName}</h2>
+              <p className={classes.date}>Sun, 30 Aug 2021</p>
+              <p className={classes.city}>Gauteng</p>
+              <button className={classes.getTickets}>Get Tickets</button>
+            </div>
           </div>
-        </div>
+
+          <div className={classes.slide2Small}>
+            <div className={classes.backDrop}></div>
+            <div className={classes.imageWrapper}>
+              <img src={slide.img} alt="artist" className={classes.slideImg} />
+            </div>
+            <div className={classes.eventInfo}>
+              <h2 className={classes.eventName}>{slide.eventName}</h2>
+              <p className={classes.date}>Sun, 30 Aug 2021</p>
+              <p className={classes.city}>Gauteng</p>
+              <button className={classes.getTickets}>Get Tickets</button>
+            </div>
+          </div>
+        </>
       )
     );
   }
