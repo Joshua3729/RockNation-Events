@@ -64,7 +64,7 @@
   z-index: 100;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1060px) {
   .eventsWrapper {
     grid-template-columns: 1fr;
   }
@@ -72,5 +72,8 @@
 @media only screen and (max-width: 1200px) {
   .mainContent {
     padding: 20px;
+  }
+  .eventsWrapper {
+    grid-gap: 20px;
   }
 }
