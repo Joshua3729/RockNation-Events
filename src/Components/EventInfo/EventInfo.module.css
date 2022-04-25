@@ -1,3 +1,12 @@
+.eventSmall {
+  display: none;
+  grid-template-columns: 2fr 4fr;
+  grid-gap: 10px;
+  padding: 10px;
+  border-bottom: solid 1px lightgray;
+  box-sizing: border-box;
+}
+
 .event {
   width: 100%;
   display: grid;
@@ -9,6 +18,7 @@
   padding: 10px 20px;
   box-sizing: border-box;
 }
+
 .hideImgEvents {
   width: 100%;
   display: grid;
@@ -152,10 +162,7 @@
   .btnWrapper {
     display: none;
   }
-  .eventName {
-    display: none;
-  }
-  .smallScreen {
-    display: block;
+  .eventSmall {
+    display: grid;
   }
 }

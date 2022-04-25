@@ -42,56 +42,70 @@ const eventInfo = (props) => {
     );
   } else {
     eventInfo = (
-      <div className={props.hideImage ? classes.hideImgEvents : classes.event}>
-        {props.hideImage ? null : (
-          <div className={classes.imgWrapper}>
-            <img
-              src={props.event.eventImg}
-              alt=""
-              className={classes.eventImg}
-            />
-          </div>
-        )}
+      <>
+        <div
+          className={props.hideImage ? classes.hideImgEvents : classes.event}
+        >
+          {props.hideImage ? null : (
+            <div className={classes.imgWrapper}>
+              <img
+                src={props.event.eventImg}
+                alt=""
+                className={classes.eventImg}
+              />
+            </div>
+          )}
 
-        <div className={classes.dateWrapper}>
-          <p className={classes.date}>FEB 10</p>
-          <div className={classes.time}>Thu . 6:30PM</div>
-        </div>
-        <div className={classes.vanueWrapper}>
-          <div className={classes.eventName}>{props.event.eventName}</div>
-          <div
-            className={[classes.eventName, classes.smallScreen].join(" ")}
-            onClick={props.goToLink.bind(
-              this,
-              props.event.eventName,
-              props.event._id,
-              props.organizer,
-              props.event.venue,
-              props.event.artistName,
-              props.event.category
-            )}
-          >
-            {props.event.eventName}
+          <div className={classes.dateWrapper}>
+            <p className={classes.date}>FEB 10</p>
+            <div className={classes.time}>Thu . 6:30PM</div>
           </div>
-          <p className={classes.venue}>{props.event.venue}</p>
+          <div className={classes.vanueWrapper}>
+            <div className={classes.eventName}>{props.event.eventName}</div>
+
+            <p className={classes.venue}>{props.event.venue}</p>
+          </div>
+          <div className={classes.btnWrapper}>
+            <button
+              className={classes.seeTickets}
+              onClick={props.goToLink.bind(
+                this,
+                props.event.eventName,
+                props.event._id,
+                props.organizer,
+                props.event.venue,
+                props.event.artistName,
+                props.event.category
+              )}
+            >
+              See Tickets
+            </button>
+          </div>
         </div>
-        <div className={classes.btnWrapper}>
-          <button
-            className={classes.seeTickets}
-            onClick={props.goToLink.bind(
-              this,
-              props.event.eventName,
-              props.event._id,
-              props.organizer,
-              props.event.venue,
-              props.event.artistName,
-              props.event.category
-            )}
-          >
-            See Tickets
-          </button>
+
+        <div
+          className={classes.eventSmall}
+          onClick={props.goToLink.bind(
+            this,
+            props.event.eventName,
+            props.event._id,
+            props.organizer,
+            props.event.venue,
+            props.event.artistName,
+            props.event.category
+          )}
+        >
+          <div className={classes.dateWrapper}>
+            <p className={classes.date}>FEB 10</p>
+            <div className={classes.time}>Thu . 6:30PM</div>
+          </div>
+          <div className={classes.vanueWrapper}>
+            <div className={classes.eventName}>{props.event.eventName}</div>
+
+            <p className={classes.venue}>{props.event.venue}</p>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
   return eventInfo;
