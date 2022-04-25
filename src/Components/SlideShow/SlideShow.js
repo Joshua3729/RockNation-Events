@@ -89,7 +89,7 @@ const SlideShow = (props) => {
   if (props.parent == "musicConcerts") {
     slides = props.images.map((slide, index) =>
       index == 0 ? (
-        <div className={classes.slide2}>
+        <div className={classes.slide2Small}>
           <img className={classes.bannerImg} src={slide.img} alt="" />
         </div>
       ) : (
@@ -110,9 +110,9 @@ const SlideShow = (props) => {
 
           <div className={classes.slide2Small}>
             <div className={classes.backDrop}></div>
-            <div className={classes.imageWrapper}>
-              <img src={slide.img} alt="artist" className={classes.slideImg} />
-            </div>
+            {/* <div className={classes.imageWrapper}> */}
+            <img src={slide.img} alt="artist" className={classes.slideImg} />
+            {/* </div> */}
             <div className={classes.eventInfo}>
               <h2 className={classes.eventName}>{slide.eventName}</h2>
               <p className={classes.date}>Sun, 30 Aug 2021</p>
