@@ -185,19 +185,7 @@ class SearchResults extends Component {
           if (this.state.resultsLengthEvents > 0)
             events = this.state.searchresultEvents.map((event, i) => {
               return (
-                <EventInfo
-                  key={i}
-                  event={event}
-                  onClick={this.goToLink.bind(
-                    this,
-                    event.eventName,
-                    event._id,
-                    "team",
-                    event.venue,
-                    event.artistName,
-                    event.category
-                  )}
-                />
+                <EventInfo key={i} event={event} goToLink={this.goToLink} />
               );
             });
           else events = <p>No venues found</p>;

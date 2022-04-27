@@ -162,6 +162,13 @@ class Navigation extends Component {
     this.props.history.go();
   };
 
+  goToLink = (eventName, id, type, venueName, artistName, event_type) => {
+    this.props.history.push({
+      pathname: `/tickets/${eventName}/${id}`,
+      search: `?${type}=${artistName}&venue=${venueName}&event_type=${event_type}`,
+    });
+  };
+
   render() {
     if (this.props.scrollEffect) {
       window.addEventListener("scroll", this.changeNavBarBG);
