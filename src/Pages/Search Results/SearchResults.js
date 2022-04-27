@@ -95,6 +95,14 @@ class SearchResults extends Component {
       })
       .catch((err) => console.log(err));
   };
+
+  goToLink = (eventName, id, type, venueName, artistName, event_type) => {
+    this.props.history.push({
+      pathname: `/tickets/${eventName}/${id}`,
+      search: `?${type}=${artistName}&venue=${venueName}&event_type=${event_type}`,
+    });
+  };
+
   tabChangeHandler = (tabName) => {
     const query = new URLSearchParams(this.props.location.search);
     let queryParams = [];
@@ -177,7 +185,19 @@ class SearchResults extends Component {
           if (this.state.resultsLengthEvents > 0)
             events = this.state.searchresultEvents.map((event, i) => {
               return (
-                <EventInfo key={i} event={event} viewEntity={this.viewEntity} />
+                <EventInfo
+                  key={i}
+                  event={event}
+                  onClick={this.goToLink.bind(
+                    this,
+                    event.eventName,
+                    event._id,
+                    "team",
+                    event.venue,
+                    event.artistName,
+                    event.category
+                  )}
+                />
               );
             });
           else events = <p>No venues found</p>;
@@ -197,7 +217,19 @@ class SearchResults extends Component {
         default:
           events = this.state.searchresultArtists.map((event, i) => {
             return (
-              <EventInfo key={i} event={event} viewEntity={this.viewEntity} />
+              <EventInfo
+                key={i}
+                event={event}
+                onClick={this.goToLink.bind(
+                  this,
+                  event.eventName,
+                  event._id,
+                  "team",
+                  event.venue,
+                  event.artistName,
+                  event.category
+                )}
+              />
             );
           });
           break;
