@@ -89,9 +89,14 @@ const SlideShow = (props) => {
   if (props.parent == "musicConcerts") {
     slides = props.images.map((slide, index) =>
       index == 0 ? (
-        <div className={classes.slide2Small}>
-          <img className={classes.bannerImg} src={slide.img} alt="" />
-        </div>
+        <>
+          <div className={classes.slide2Small}>
+            <img className={classes.bannerImg} src={slide.img} alt="" />
+          </div>
+          <div className={classes.slide2}>
+            <img className={classes.bannerImg} src={slide.img} alt="" />
+          </div>
+        </>
       ) : (
         <>
           <div
