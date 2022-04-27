@@ -202,7 +202,14 @@ class ViewEvents extends Component {
       (this.state.artists || this.state.venues || this.state.teams)
     ) {
       events = this.state.events.map((event, i) => {
-        return <EventInfo key={i} event={event} hideImage={true} />;
+        return (
+          <EventInfo
+            key={i}
+            event={event}
+            hideImage={true}
+            viewEntity={this.viewEntity}
+          />
+        );
       });
 
       recommendations = (

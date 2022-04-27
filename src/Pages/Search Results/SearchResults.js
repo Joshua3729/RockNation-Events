@@ -194,7 +194,9 @@ class SearchResults extends Component {
 
         default:
           events = this.state.searchresultArtists.map((event, i) => {
-            return <EventInfo key={i} event={event} />;
+            return (
+              <EventInfo key={i} event={event} viewEntity={this.viewEntity} />
+            );
           });
           break;
       }
