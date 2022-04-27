@@ -3,7 +3,6 @@ import classes from "./EventInfo.module.css";
 
 const eventInfo = (props) => {
   let eventInfo = null;
-  console.log(props.searchSuggestion);
   if (props.searchSuggestion) {
     eventInfo = (
       <div
@@ -35,7 +34,7 @@ const eventInfo = (props) => {
               props.event.artistName,
               props.event.category
             )}
-            style={{ fontSize: props.searchSuggestion && "15px", color: "red" }}
+            style={{ fontSize: props.searchSuggestion && "15px" }}
           >
             {props.event.eventName}
           </div>

@@ -51,7 +51,12 @@ const searchSuggestion = (props) => {
       props.searchresultEvents.length > 0
         ? props.searchresultEvents.map((event, i) => {
             return (
-              <EventInfo key={i} event={event} goToLink={props.goToLink} />
+              <EventInfo
+                key={i}
+                event={event}
+                goToLink={props.goToLink}
+                searchSuggestion={true}
+              />
             );
           })
         : null;
