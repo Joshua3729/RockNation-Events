@@ -3,6 +3,7 @@ import classes from "./EventInfo.module.css";
 
 const eventInfo = (props) => {
   let eventInfo = null;
+  console.log(props.searchSuggestion);
   if (props.searchSuggestion) {
     eventInfo = (
       <div
@@ -25,7 +26,7 @@ const eventInfo = (props) => {
         <div className={classes.aboutArtistWrapper}>
           <div
             className={classes.name}
-            onClick={props.goToLink.bind(
+            onClick={props.goToLink?.bind(
               this,
               props.event.eventName,
               props.event._id,
@@ -76,7 +77,7 @@ const eventInfo = (props) => {
           <div className={classes.btnWrapper}>
             <button
               className={classes.seeTickets}
-              onClick={props.goToLink.bind(
+              onClick={props.goToLink?.bind(
                 this,
                 props.event.eventName,
                 props.event._id,

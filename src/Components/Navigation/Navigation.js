@@ -301,6 +301,7 @@ class Navigation extends Component {
                     resultsLengthEvents={this.state.resultsLengthEvents}
                     showRecentlyViewed={this.state.showRecentlyViewed}
                     viewEntity={this.viewEntity}
+                    goToLink={this.goToLink}
                   />
                 )}
               </div>
