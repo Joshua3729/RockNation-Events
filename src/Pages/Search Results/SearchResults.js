@@ -176,7 +176,9 @@ class SearchResults extends Component {
         case "events":
           if (this.state.resultsLengthEvents > 0)
             events = this.state.searchresultEvents.map((event, i) => {
-              return <EventInfo key={i} event={event} />;
+              return (
+                <EventInfo key={i} event={event} viewEntity={this.viewEntity} />
+              );
             });
           else events = <p>No venues found</p>;
 

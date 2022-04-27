@@ -25,8 +25,16 @@ const eventInfo = (props) => {
         <div className={classes.aboutArtistWrapper}>
           <div
             className={classes.name}
-            onClick={props.viewEntity.bind(this, props.event, "artist")}
-            style={{ fontSize: props.searchSuggestion && "15px" }}
+            onClick={props.goToLink.bind(
+              this,
+              props.event.eventName,
+              props.event._id,
+              props.organizer,
+              props.event.venue,
+              props.event.artistName,
+              props.event.category
+            )}
+            style={{ fontSize: props.searchSuggestion && "15px", color: "red" }}
           >
             {props.event.eventName}
           </div>
