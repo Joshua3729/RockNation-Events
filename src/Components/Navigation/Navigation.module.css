@@ -372,7 +372,7 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1160px) {
   /*Small smartphones [325px -> 425px]*/
   .show {
     display: block;

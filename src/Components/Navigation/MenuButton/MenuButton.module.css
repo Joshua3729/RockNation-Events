@@ -31,7 +31,7 @@
   -webkit-transform: rotate(45deg) translate(-8px, -8px);
   transform: rotate(45deg) translate(-8px, -8px);
 }
-@media (max-width: 950px) {
+@media (max-width: 1160px) {
   .container {
     display: inline-block;
   }
