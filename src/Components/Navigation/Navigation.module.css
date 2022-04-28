@@ -277,16 +277,16 @@
   left: 0;
   width: 80%;
   height: 100vh;
-  background-color: rgb(39, 55, 77);
+  background-color: white;
   z-index: 1000;
   transition: all 0.4s;
   padding: 50px;
   box-sizing: border-box;
 }
 .drawerWrapper {
-  color: white;
+  color: #27374d;
   list-style: none;
-  text-align: center;
+  text-align: left;
 }
 .drawerWrapper li {
   padding: 10px 20px;

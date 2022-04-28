@@ -471,12 +471,16 @@ class Navigation extends Component {
                 <Link to="/profile">Profile</Link>
               </li>
             ) : (
-              <Fragment>
-                <li onClick={this.props.login}>Sign In</li>
-                <li>Sign Up</li>
-              </Fragment>
+              <li onClick={this.props.login}>
+                <i class="fa fa-solid fa-arrow-right-to-bracket"></i> Sign In
+              </li>
             )}
-            <li>Concerts</li>
+            <li>
+              <i className=" fab fa-solid fa-arrow-right-to-bracket"></i>{" "}
+              Concerts
+            </li>
+            <i className="fa-solid fa-arrow-right-to-bracket"></i>
+
             <li>Sports</li>
             <li>Arts and Theater</li>
             <li>Family</li>
