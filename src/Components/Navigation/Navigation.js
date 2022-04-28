@@ -467,21 +467,22 @@ class Navigation extends Component {
         >
           <ul className={classes.drawerWrapper}>
             {this.props.isAuth ? (
-              <Fragment>
-                <li>
-                  <Link to="/profile">Profile</Link>
-                </li>
-                <li onClick={this.props.logout}>Sign Out</li>
-              </Fragment>
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
             ) : (
               <Fragment>
                 <li onClick={this.props.login}>Sign In</li>
                 <li>Sign Up</li>
               </Fragment>
             )}
-            <li>About</li>
-            <li>Contact</li>
+            <li>Concerts</li>
+            <li>Sports</li>
+            <li>Arts and Theater</li>
+            <li>Family</li>
+            <li>Sell</li>
             <li>Help</li>
+            {this.props.isAuth && <li>Logout</li>}
           </ul>
         </div>
         {(this.props.searchBar || this.state.scroll) && (
