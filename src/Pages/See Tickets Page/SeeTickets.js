@@ -22,6 +22,7 @@ class SeeTickets extends Component {
     agreedToTheConditions: false,
     open_modal_dialog: false,
     event_type: null,
+    sdkReady: false,
   };
 
   componentDidMount() {
@@ -64,7 +65,16 @@ class SeeTickets extends Component {
 
         return res.json();
       })
-      .then((resData) => {})
+      .then((resData) => {
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = `https://www.paypal.com/sdk/js?client-id=${resData}`;
+        script.async = true;
+        script.onload = () => {
+          this.setState({ sdkReady: true });
+        };
+        document.body.appendChild(script);
+      })
       .catch((err) => console.log(err));
 
     fetch(`http://localhost:5000/feed/event/${id}`)
