@@ -37,7 +37,6 @@ class SeeTickets extends Component {
     let tickets = JSON.parse(localStorage.getItem("tickets"))?.filter(
       (ticket) => ticket.id === id
     )[0]?.tickets;
-
     if (payment_option) {
       if (tickets) {
         this.setState({
@@ -163,7 +162,7 @@ class SeeTickets extends Component {
 
       localStorage.setItem("tickets", JSON.stringify(ticketsData));
     }
-    this.setState({ showPaymentModal: true });
+    this.setState({ showPaymentModal: true, event_type: eventType });
     this.props.history.push({
       search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}&payment_option=credit_card`,
     });
@@ -270,7 +269,7 @@ class SeeTickets extends Component {
   render() {
     let userAddress;
     let modal_content;
-
+    console.log(this.state.event_type);
     if (this.props.isAuth)
       userAddress = JSON.parse(localStorage.getItem("userAddress"));
     let page = <LoadingModal />;
