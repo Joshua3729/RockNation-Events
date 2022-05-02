@@ -453,8 +453,8 @@ class Navigation extends Component {
         <div
           className={
             this.props.scrollEffect
-              ? [classes.gutter, classes.hide].join(" ")
-              : classes.gutter
+              ? [classes.page_gutter, classes.hide].join(" ")
+              : classes.page_gutter
           }
         ></div>
         <div
