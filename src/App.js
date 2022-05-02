@@ -170,7 +170,6 @@ class App extends Component {
   };
   signinHandler = (e, userData) => {
     e.preventDefault();
-
     this.setState({ authLoading: true });
     fetch("http://localhost:5000/auth/login", {
       method: "POST",
@@ -193,7 +192,6 @@ class App extends Component {
         return res.json();
       })
       .then((resData) => {
-        console.log(resData);
         this.setState({
           isAuth: true,
           token: resData.token,
@@ -591,7 +589,7 @@ class App extends Component {
                     type={this.state.showPassword ? "text" : "password"}
                     name="password-signup"
                     onChange={(e) =>
-                      this.inputChangeHandler("password", e.target.value)
+                      this.signinInputChangeHandler("password", e.target.value)
                     }
                   />
                   <p
