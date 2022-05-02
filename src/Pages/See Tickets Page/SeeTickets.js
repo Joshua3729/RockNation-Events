@@ -114,32 +114,39 @@ class SeeTickets extends Component {
       })
       .catch((err) => console.log(err));
   }
-  ComponentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (
       prevState.order === this.state.order ||
       prevState.orderId == this.state.orderId ||
       prevState.sdkReady === this.state.sdkReady
     ) {
-      fetch(`${URL}/feed/config/paypal`)
-        .then((res) => {
-          if (res.status !== 200) {
-            throw new Error("Failed to get  paypal client id.");
-          }
+      const addPayPalScript = () => {
+        fetch(`${URL}/feed/config/paypal`)
+          .then((res) => {
+            if (res.status !== 200) {
+              throw new Error("Failed to get  paypal client id.");
+            }
 
-          return res.json();
-        })
-        .then((resData) => {
-          const script = document.createElement("script");
-          script.type = "text/javascript";
-          script.src = `https://www.paypal.com/sdk/js?client-id=${resData}`;
-          script.async = true;
-          script.onload = () => {
-            this.setState({ sdkReady: true });
-          };
-          document.body.appendChild(script);
-        })
-        .catch((err) => console.log(err));
-      if (!order._id) {
+            return res.json();
+          })
+          .then((resData) => {
+            const script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = `https://www.paypal.com/sdk/js?client-id=${resData}`;
+            script.async = true;
+            script.onload = () => {
+              this.setState({ sdkReady: true });
+            };
+            document.body.appendChild(script);
+          })
+          .catch((err) => console.log(err));
+      };
+      if (!this.state.order?.isPayed) {
+        if (!window.paypal) {
+          addPayPalScript();
+        } else {
+          this.setState({ sdkReady: true });
+        }
       }
     }
   }
