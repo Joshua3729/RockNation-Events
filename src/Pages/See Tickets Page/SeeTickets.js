@@ -6,6 +6,7 @@ import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import Modal from "../../Components/Modal/Modal";
 import sports_banner from "../../Components/Image/sports_banner.jpg";
 import concert_banner from "../../Components/Image/concert_banner.jpg";
+import { URL } from "../../util/Url";
 
 class SeeTickets extends Component {
   state = {
@@ -55,6 +56,16 @@ class SeeTickets extends Component {
     } else if (tickets) {
       this.setState({ tickets: tickets, event_type: event_type });
     }
+    fetch(`${URL}/feed/config/paypal`)
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to get  paypal client id.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {})
+      .catch((err) => console.log(err));
 
     fetch(`http://localhost:5000/feed/event/${id}`)
       .then((res) => {
