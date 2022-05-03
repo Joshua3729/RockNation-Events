@@ -334,15 +334,20 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   overflow: hidden;
 }
 .userAdress_wrapper,
 .paypal_item_wrapper {
+  position: relative;
   margin: 20px 0 0 25px;
   width: calc(100% - 25px);
 }
+.paypal_item_wrapper {
+  min-height: 50px;
+}
+
 .paypal_button {
   border: none;
   padding: 10px 20px;

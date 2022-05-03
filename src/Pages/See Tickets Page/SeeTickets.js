@@ -8,7 +8,7 @@ import sports_banner from "../../Components/Image/sports_banner.jpg";
 import concert_banner from "../../Components/Image/concert_banner.jpg";
 import Spinner from "../../Components/UI/Spinner/Spinner";
 import { URL } from "../../util/Url";
-import PaypalButton from "react-paypal-button-v2";
+import { PayPalButton } from "react-paypal-button-v2";
 
 class SeeTickets extends Component {
   state = {
@@ -116,41 +116,10 @@ class SeeTickets extends Component {
       })
       .catch((err) => console.log(err));
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (
-      prevState.showPaymentModal !== this.state.showPaymentModal ||
-      prevState.sdkReady !== this.state.sdkReady
-    ) {
-      const addPayPalScript = () => {
-        fetch(`${URL}/feed/config/paypal`)
-          .then((res) => {
-            if (res.status !== 200) {
-              throw new Error("Failed to get  paypal client id.");
-            }
 
-            return res.json();
-          })
-          .then((resData) => {
-            const script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = `https://www.paypal.com/sdk/js?client-id=${resData}`;
-            script.async = true;
-            script.onload = () => {
-              this.setState({ sdkReady: true });
-            };
-            document.body.appendChild(script);
-          })
-          .catch((err) => console.log(err));
-      };
-      if (this.state.showPaymentModal) {
-        if (!window.paypal) {
-          addPayPalScript();
-        } else {
-          this.setState({ sdkReady: true });
-        }
-      }
-    }
-  }
+  successPaymentHandler = () => {
+    alert("succeeded");
+  };
 
   closePaymentModalHandler = () => {
     const id = this.props.match?.params.id;
@@ -205,6 +174,26 @@ class SeeTickets extends Component {
     this.props.history.push({
       search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}&payment_option=credit_card`,
     });
+
+    fetch(`${URL}/feed/config/paypal`)
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to get  paypal client id.");
+        }
+
+        return res.text();
+      })
+      .then((resData) => {
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.src = `https://www.paypal.com/sdk/js?client-id=${resData}`;
+        script.async = true;
+        script.onload = () => {
+          this.setState({ sdkReady: true });
+        };
+        document.body.appendChild(script);
+      })
+      .catch((err) => console.log(err));
   };
   cashOnDeliveryAgreement = (e) => {
     this.setState({ agreedToTheConditions: e.target.checked });
@@ -561,23 +550,26 @@ class SeeTickets extends Component {
                         <i className="fa fa-brands fa-cc-paypal"></i>
                       </div>
                     </div>
-                    {this.state.paymentOption === "paypal" &&
-                      (!this.state.sdkReady ? (
-                        <div className={classes.spinnerWrapper}>
-                          <Spinner />
-                        </div>
-                      ) : (
-                        <div className={classes.paypal_item_wrapper}>
-                          <p className={classes.message}>
-                            Sign in to your PayPal account to complete the
-                            purchase
-                          </p>
-                          <PaypalButton
-                            amount={this.state.totalCost}
-                            onSuccess={this.successPaymentHandler}
-                          ></PaypalButton>
-                        </div>
-                      ))}
+                    {this.state.paymentOption === "paypal" && (
+                      <div className={classes.paypal_item_wrapper}>
+                        {!this.state.sdkReady ? (
+                          <div className={classes.spinnerWrapper}>
+                            <Spinner />
+                          </div>
+                        ) : (
+                          <Fragment>
+                            <p className={classes.message}>
+                              Sign in to your PayPal account to complete the
+                              purchase
+                            </p>
+                            <PayPalButton
+                              amount={this.state.totalCost}
+                              onSuccess={this.successPaymentHandler}
+                            ></PayPalButton>
+                          </Fragment>
+                        )}
+                      </div>
+                    )}
                   </div>
                   <div
                     className={[
