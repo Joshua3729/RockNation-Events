@@ -119,10 +119,6 @@ class SeeTickets extends Component {
       .catch((err) => console.log(err));
   }
 
-  successPaymentHandler = () => {
-    alert("succeeded");
-  };
-
   closePaymentModalHandler = () => {
     const id = this.props.match?.params.id;
     const query = new URLSearchParams(this.props.location.search);
@@ -266,7 +262,7 @@ class SeeTickets extends Component {
   };
 
   placeOrderHandler = (event, shipping_address, tickets) => {
-    if (this.state.agreedToTheConditions) {
+    const order = () => {
       this.setState({ placeOrderLoading: true });
       fetch("http://localhost:5000/feed/events/buyticket", {
         method: "POST",
@@ -288,12 +284,18 @@ class SeeTickets extends Component {
         })
         .then((res) => {
           this.setState({ placeOrderLoading: false });
+          alert("Tickets bought successfully");
         })
         .catch((err) => {
           console.log(err);
         });
+    };
+    if (this.state.agreedToTheConditions) {
+      order();
     } else if (this.state.paymentOption === "cashOnDelivery") {
       alert("Check the agreement checkbox");
+    } else if (this.state.paymentOption === "paypal") {
+      order();
     }
   };
 
@@ -306,16 +308,22 @@ class SeeTickets extends Component {
       </div>
     );
 
-    if (this.state.showPaymentModal && this.state.sdkReady) {
-      button = (
-        <PayPalButton
-          amount={this.state.totalCost}
-          onSuccess={this.successPaymentHandler}
-        ></PayPalButton>
-      );
-    }
-    if (this.props.isAuth)
+    if (this.props.isAuth) {
       userAddress = JSON.parse(localStorage.getItem("userAddress"));
+      if (this.state.showPaymentModal && this.state.sdkReady) {
+        button = (
+          <PayPalButton
+            amount={this.state.totalCost + 150}
+            onSuccess={this.placeOrderHandler.bind(
+              this,
+              this.state.event,
+              userAddress,
+              this.state.tickets
+            )}
+          ></PayPalButton>
+        );
+      }
+    }
     let page = <LoadingModal />;
     let general = this.state.tickets[0].general > 0 && (
       <div className={classes.ticket_item}>
