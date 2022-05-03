@@ -46,6 +46,7 @@ class SeeTickets extends Component {
         this.setState({
           paymentOption: payment_option,
           showPaymentModal: this.props.isAuth,
+          sdkReady: this.props.isAuth,
           event_type: event_type,
           tickets: tickets,
         });
@@ -53,6 +54,7 @@ class SeeTickets extends Component {
         this.setState({
           paymentOption: payment_option,
           showPaymentModal: this.props.isAuth,
+          sdkReady: this.props.isAuth,
           event_type: event_type,
         });
       }
@@ -174,26 +176,27 @@ class SeeTickets extends Component {
     this.props.history.push({
       search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}&payment_option=credit_card`,
     });
+    if (!window.paypal)
+      fetch(`${URL}/feed/config/paypal`)
+        .then((res) => {
+          if (res.status !== 200) {
+            throw new Error("Failed to get  paypal client id.");
+          }
 
-    fetch(`${URL}/feed/config/paypal`)
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to get  paypal client id.");
-        }
-
-        return res.text();
-      })
-      .then((resData) => {
-        const script = document.createElement("script");
-        script.type = "text/javascript";
-        script.src = `https://www.paypal.com/sdk/js?client-id=${resData}`;
-        script.async = true;
-        script.onload = () => {
-          this.setState({ sdkReady: true });
-        };
-        document.body.appendChild(script);
-      })
-      .catch((err) => console.log(err));
+          return res.text();
+        })
+        .then((resData) => {
+          const script = document.createElement("script");
+          script.type = "text/javascript";
+          script.src = `https://www.paypal.com/sdk/js?client-id=${resData}`;
+          script.async = true;
+          script.onload = () => {
+            this.setState({ sdkReady: true });
+          };
+          document.body.appendChild(script);
+        })
+        .catch((err) => console.log(err));
+    else this.setState({ sdkReady: true });
   };
   cashOnDeliveryAgreement = (e) => {
     this.setState({ agreedToTheConditions: e.target.checked });
@@ -297,6 +300,20 @@ class SeeTickets extends Component {
   render() {
     let userAddress;
     let modal_content;
+    let button = (
+      <div className={classes.spinnerWrapper}>
+        <Spinner />
+      </div>
+    );
+
+    if (this.state.showPaymentModal && this.state.sdkReady) {
+      button = (
+        <PayPalButton
+          amount={this.state.totalCost}
+          onSuccess={this.successPaymentHandler}
+        ></PayPalButton>
+      );
+    }
     if (this.props.isAuth)
       userAddress = JSON.parse(localStorage.getItem("userAddress"));
     let page = <LoadingModal />;
@@ -552,22 +569,13 @@ class SeeTickets extends Component {
                     </div>
                     {this.state.paymentOption === "paypal" && (
                       <div className={classes.paypal_item_wrapper}>
-                        {!this.state.sdkReady ? (
-                          <div className={classes.spinnerWrapper}>
-                            <Spinner />
-                          </div>
-                        ) : (
-                          <Fragment>
-                            <p className={classes.message}>
-                              Sign in to your PayPal account to complete the
-                              purchase
-                            </p>
-                            <PayPalButton
-                              amount={this.state.totalCost}
-                              onSuccess={this.successPaymentHandler}
-                            ></PayPalButton>
-                          </Fragment>
-                        )}
+                        <p className={classes.message}>
+                          Sign in to your PayPal account to complete the
+                          purchase
+                        </p>
+                        <div className={classes.paypal_btn_wrapper}>
+                          {button}
+                        </div>
                       </div>
                     )}
                   </div>

@@ -340,11 +340,12 @@
 }
 .userAdress_wrapper,
 .paypal_item_wrapper {
-  position: relative;
   margin: 20px 0 0 25px;
   width: calc(100% - 25px);
 }
-.paypal_item_wrapper {
+.paypal_btn_wrapper {
+  margin-top: 20px;
+  position: relative;
   min-height: 50px;
 }
 
