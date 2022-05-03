@@ -116,9 +116,8 @@ class SeeTickets extends Component {
   }
   componentDidUpdate(prevProps, prevState) {
     if (
-      prevState.order === this.state.order ||
-      prevState.orderId == this.state.orderId ||
-      prevState.sdkReady === this.state.sdkReady
+      prevState.showPaymentModal !== this.state.showPaymentModal ||
+      aprevState.sdkReady !== this.state.sdkReady
     ) {
       const addPayPalScript = () => {
         fetch(`${URL}/feed/config/paypal`)
