@@ -330,7 +330,14 @@
   border: rgb(168, 168, 168) solid 0.03px;
   box-sizing: border-box;
 }
-
+.spinnerWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+}
 .userAdress_wrapper,
 .paypal_item_wrapper {
   margin: 20px 0 0 25px;

@@ -6,7 +6,9 @@ import LoadingModal from "../../Components/Loading Modal/LoadingModal";
 import Modal from "../../Components/Modal/Modal";
 import sports_banner from "../../Components/Image/sports_banner.jpg";
 import concert_banner from "../../Components/Image/concert_banner.jpg";
+import Spinner from "../../Components/UI/Spinner/Spinner";
 import { URL } from "../../util/Url";
+import PaypalButton from "react-paypal-button-v2";
 
 class SeeTickets extends Component {
   state = {
@@ -117,7 +119,7 @@ class SeeTickets extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (
       prevState.showPaymentModal !== this.state.showPaymentModal ||
-      aprevState.sdkReady !== this.state.sdkReady
+      prevState.sdkReady !== this.state.sdkReady
     ) {
       const addPayPalScript = () => {
         fetch(`${URL}/feed/config/paypal`)
@@ -140,7 +142,7 @@ class SeeTickets extends Component {
           })
           .catch((err) => console.log(err));
       };
-      if (!this.state.order?.isPayed) {
+      if (this.state.showPaymentModal) {
         if (!window.paypal) {
           addPayPalScript();
         } else {
@@ -559,17 +561,23 @@ class SeeTickets extends Component {
                         <i className="fa fa-brands fa-cc-paypal"></i>
                       </div>
                     </div>
-                    {this.state.paymentOption === "paypal" && (
-                      <div className={classes.paypal_item_wrapper}>
-                        <p className={classes.message}>
-                          Sign in to your PayPal account to complete the
-                          purchase
-                        </p>
-                        <button className={classes.paypal_button}>
-                          PayPal
-                        </button>
-                      </div>
-                    )}
+                    {this.state.paymentOption === "paypal" &&
+                      (!this.state.sdkReady ? (
+                        <div className={classes.spinnerWrapper}>
+                          <Spinner />
+                        </div>
+                      ) : (
+                        <div className={classes.paypal_item_wrapper}>
+                          <p className={classes.message}>
+                            Sign in to your PayPal account to complete the
+                            purchase
+                          </p>
+                          <PaypalButton
+                            amount={this.state.totalCost}
+                            onSuccess={this.successPaymentHandler}
+                          ></PaypalButton>
+                        </div>
+                      ))}
                   </div>
                   <div
                     className={[
