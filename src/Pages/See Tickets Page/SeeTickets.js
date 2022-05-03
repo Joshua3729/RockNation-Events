@@ -134,11 +134,14 @@ class SeeTickets extends Component {
     const ticketsData = JSON.parse(localStorage.getItem("tickets")).filter(
       (ticketData) => ticketData.id !== id
     );
-    localStorage.setItem("tickets", JSON.stringify(ticketsData));
 
-    this.setState({ showPaymentModal: false, open_modal_dialog: false });
+    localStorage.setItem("tickets", JSON.stringify(ticketsData));
     this.props.history.push({
       search: `?${attributes[0]}=${artistName}&${attributes[1]}=${venueName}&${attributes[2]}=${eventType}`,
+    });
+    this.setState({
+      showPaymentModal: false,
+      open_modal_dialog: false,
     });
   };
   openPaymentModalDialogHandler = () => {
