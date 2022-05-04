@@ -122,7 +122,15 @@ class SeeTickets extends Component {
       })
       .catch((err) => console.log(err));
   }
+  getDateHandler = (dateArg) => {
+    const date = new Date(dateArg);
 
+    const day = date.getDate();
+    const month = date.toLocaleString("en-us", { month: "long" });
+    const year = date.getFullYear();
+
+    return `${day} ${month} ${year}`;
+  };
   closePaymentModalHandler = () => {
     const id = this.props.match?.params.id;
     const query = new URLSearchParams(this.props.location.search);
@@ -293,8 +301,9 @@ class SeeTickets extends Component {
           if (this.state.paymentOption === "paypal") {
             this.setState({
               placeOrderLoading: false,
-              orderData: res,
+              orderData: res.orderData,
               show_success_modal: true,
+              showPaymentModal: false,
             });
           }
         })
@@ -781,8 +790,8 @@ class SeeTickets extends Component {
               src={delivery}
               alt="delivery icon"
             />
-            <p>{`Order ID: ${this.state.orderData._id}`}</p>
-            <p>{`Estimated delivery date: ${this.state.orderData.date}`}</p>
+            <p>{`Order ID: ${this.state.orderData?._id}`}</p>
+            <p>{`Estimated delivery date: ${this.state.orderData?.deliveryDate}`}</p>
             <button className={classes.goToHome_btn}>GO TO HOME</button>
           </div>
         </Modal>
