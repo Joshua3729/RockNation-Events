@@ -342,7 +342,7 @@
 .payment_success_modal {
   font-family: "Lato", sans-serif;
   width: 400px;
-  height: 400px;
+  height: 420px;
   background-color: white;
   text-align: center;
   padding: 20px;
@@ -368,6 +368,20 @@
 }
 .delivery_icon {
   width: 100px;
+}
+.goToHome_btn {
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background-color: #25ae88;
+  color: white;
+  font-size: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.goToHome_btn:hover {
+  background-color: #40ca40;
 }
 .paypal_btn_wrapper {
   margin-top: 20px;

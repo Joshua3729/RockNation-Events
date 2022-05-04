@@ -776,7 +776,7 @@ class SeeTickets extends Component {
             />
             <p>Order id: dehgaggshjsj</p>
             <p>Estimated delivery date: 20 May 2022</p>
-            <button className={classes.goToHome_btn}>Go to home</button>
+            <button className={classes.goToHome_btn}>GO TO HOME</button>
           </div>
         </Modal>
         {page}
