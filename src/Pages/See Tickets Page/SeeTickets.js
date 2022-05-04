@@ -7,6 +7,8 @@ import Modal from "../../Components/Modal/Modal";
 import sports_banner from "../../Components/Image/sports_banner.jpg";
 import concert_banner from "../../Components/Image/concert_banner.jpg";
 import Spinner from "../../Components/UI/Spinner/Spinner";
+import success from "../../Components/Image/success.png";
+import delivery from "../../Components/Image/delivery.png";
 import { URL } from "../../util/Url";
 import { PayPalButton } from "react-paypal-button-v2";
 
@@ -758,12 +760,23 @@ class SeeTickets extends Component {
         </Modal>
         <Modal show={true} clicked={this.openPaymentModalDialogHandler}>
           <div className={classes.payment_success_modal}>
+            <img
+              className={classes.success_icon}
+              src={success}
+              alt="success icon"
+            />
             <h2 className={classes.paymen_success_header}>
               Payment Successful
             </h2>
             <p>Thank you for shopping with us </p>
+            <img
+              className={classes.delivery_icon}
+              src={delivery}
+              alt="delivery icon"
+            />
             <p>Order id: dehgaggshjsj</p>
             <p>Estimated delivery date: 20 May 2022</p>
+            <button className={classes.goToHome_btn}>Go to home</button>
           </div>
         </Modal>
         {page}
