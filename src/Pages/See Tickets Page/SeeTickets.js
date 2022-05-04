@@ -27,6 +27,8 @@ class SeeTickets extends Component {
     open_modal_dialog: false,
     event_type: null,
     sdkReady: false,
+    show_success_modal: false,
+    orderData: null,
   };
 
   componentDidMount() {
@@ -288,8 +290,13 @@ class SeeTickets extends Component {
           return res.json();
         })
         .then((res) => {
-          this.setState({ placeOrderLoading: false });
-          alert("Tickets bought successfully");
+          if (this.state.paymentOption === "paypal") {
+            this.setState({
+              placeOrderLoading: false,
+              orderData: res,
+              show_success_modal: true,
+            });
+          }
         })
         .catch((err) => {
           console.log(err);
@@ -758,7 +765,7 @@ class SeeTickets extends Component {
         >
           {modal_content}
         </Modal>
-        <Modal show={true} clicked={this.openPaymentModalDialogHandler}>
+        <Modal show={this.state.show_success_modal}>
           <div className={classes.payment_success_modal}>
             <img
               className={classes.success_icon}
@@ -774,8 +781,8 @@ class SeeTickets extends Component {
               src={delivery}
               alt="delivery icon"
             />
-            <p>Order id: dehgaggshjsj</p>
-            <p>Estimated delivery date: 20 May 2022</p>
+            <p>{`Order ID: ${this.state.orderData._id}`}</p>
+            <p>{`Estimated delivery date: ${this.state.orderData.date}`}</p>
             <button className={classes.goToHome_btn}>GO TO HOME</button>
           </div>
         </Modal>
