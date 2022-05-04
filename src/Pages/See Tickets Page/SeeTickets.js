@@ -756,6 +756,16 @@ class SeeTickets extends Component {
         >
           {modal_content}
         </Modal>
+        <Modal show={true} clicked={this.openPaymentModalDialogHandler}>
+          <div className={classes.payment_success_modal}>
+            <h2 className={classes.paymen_success_header}>
+              Payment Successful
+            </h2>
+            <p>Thank you for shopping with us. </p>
+            <p>order id: dehgaggshjsj</p>
+            <p>estimated delivery date: 20 May 2022</p>
+          </div>
+        </Modal>
         {page}
       </Fragment>
     );

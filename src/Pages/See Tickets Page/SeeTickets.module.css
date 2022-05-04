@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap");
 .SeeTickets {
   height: calc(100vh - 73.5px - 100px);
   display: flex;
@@ -337,6 +338,16 @@
   width: 30px;
   height: 30px;
   overflow: hidden;
+}
+.payment_success_modal {
+  font-family: "Lato", sans-serif;
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  color: rgb(38, 38, 38);
+  box-sizing: border-box;
 }
 .userAdress_wrapper,
 .paypal_item_wrapper {
