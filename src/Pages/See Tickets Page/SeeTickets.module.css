@@ -342,7 +342,7 @@
 .payment_success_modal {
   font-family: "Lato", sans-serif;
   width: 400px;
-  height: 420px;
+  min-height: 400px;
   background-color: white;
   text-align: center;
   padding: 20px;

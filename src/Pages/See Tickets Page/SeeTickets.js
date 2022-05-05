@@ -766,6 +766,7 @@ class SeeTickets extends Component {
             </div>
           </div>
         ));
+
     return (
       <Fragment>
         <Modal
@@ -791,7 +792,9 @@ class SeeTickets extends Component {
               alt="delivery icon"
             />
             <p>{`Order ID: ${this.state.orderData?._id}`}</p>
-            <p>{`Estimated delivery date: ${this.state.orderData?.deliveryDate}`}</p>
+            <p>{`Estimated delivery date: ${this.getDateHandler(
+              this.state.orderData?.deliveryDate
+            )}`}</p>
             <button className={classes.goToHome_btn}>GO TO HOME</button>
           </div>
         </Modal>
