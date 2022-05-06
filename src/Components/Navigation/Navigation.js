@@ -199,6 +199,7 @@ class Navigation extends Component {
                   Signed in as <span>{this.props.fullname}</span>
                 </p>
               </li>
+              <li className={classes.devider}></li>
               <li className={classes.userDetailsTray_item}>
                 <Link to="/profile" className={classes.userTray_item}>
                   Your Profile
