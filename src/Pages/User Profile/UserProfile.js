@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react";
 import classes from "./UserProfile.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
+import Footer from "../../Components/Footer/Footer";
 
 class UserProfile extends Component {
   render() {
@@ -20,6 +21,7 @@ class UserProfile extends Component {
         <div className={classes.UserProfile}>
           <h1>User Profile</h1>
         </div>
+        <Footer />
       </Fragment>
     );
   }
