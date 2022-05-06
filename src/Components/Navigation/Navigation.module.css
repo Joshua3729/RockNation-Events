@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
 .Navigation {
+  font-family: "Lato", sans-serif;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
@@ -184,13 +187,11 @@
   top: 50px;
   right: -20px;
   width: 180px;
-  height: 220px;
   background-color: white;
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 50%);
 }
 .userDetailsTray ul {
   list-style: none;
-  padding: 10px;
   box-sizing: border-box;
   border-radius: 4px;
 }
@@ -210,11 +211,23 @@
   box-sizing: border-box;
   cursor: pointer;
   color: rgb(38, 38, 38);
-  margin-bottom: 10px;
   font-weight: unset;
 }
-.userDetailsTray li:hover {
-  background-color: lightblue;
+.userDetailsTray_item:hover {
+  background-color: #0969da;
+  color: white;
+}
+.userDetailsTray_item:hover .logout {
+  color: inherit;
+}
+.userDetailsTray_item:hover a {
+  color: inherit;
+}
+
+.userDetailsTray_item:first-child:hover {
+  background-color: unset;
+  color: unset;
+  cursor: unset;
 }
 .userDetailsTray a {
   color: rgb(38, 38, 38);
@@ -222,6 +235,17 @@
 }
 .userDetailsTray a:hover {
   background-color: unset !important;
+}
+.userDetailsTray_item span {
+  font-weight: 700;
+}
+.userDetailsTray_item:first-child {
+  padding: 20px 20px 10px 20px;
+  border-bottom: lightgray 1px solid;
+  line-height: 1.6;
+}
+.userDetailsTray_item {
+  padding: 10px 20px;
 }
 .logoWrapper {
   width: 150px;

@@ -193,13 +193,18 @@ class Navigation extends Component {
 
         <div className={classes.userDetailsTray}>
           <ul>
-            <li>
+            <li className={classes.userDetailsTray_item}>
+              <p>
+                Sign in as <span>{this.props.fullname}</span>
+              </p>
+            </li>
+            <li className={classes.userDetailsTray_item}>
               <Link to="/profile" className={classes.userTray_item}>
                 Profile
               </Link>
             </li>
-            <li>Tickets</li>
-            <li>
+            <li className={classes.userDetailsTray_item}>Tickets</li>
+            <li className={classes.userDetailsTray_item}>
               <button className={classes.logout} onClick={this.props.logout}>
                 Log out
               </button>
