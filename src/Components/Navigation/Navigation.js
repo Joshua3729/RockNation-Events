@@ -191,26 +191,31 @@ class Navigation extends Component {
           />
         </div>
 
-        <div className={classes.userDetailsTray}>
-          <ul>
-            <li className={classes.userDetailsTray_item}>
-              <p>
-                Sign in as <span>{this.props.fullname}</span>
-              </p>
-            </li>
-            <li className={classes.userDetailsTray_item}>
-              <Link to="/profile" className={classes.userTray_item}>
-                Profile
-              </Link>
-            </li>
-            <li className={classes.userDetailsTray_item}>Tickets</li>
-            <li className={classes.userDetailsTray_item}>
-              <button className={classes.logout} onClick={this.props.logout}>
-                Log out
-              </button>
-            </li>
-          </ul>
-        </div>
+        {this.state.openTray && (
+          <div className={classes.userDetailsTray}>
+            <ul>
+              <li className={classes.userDetailsTray_item}>
+                <p>
+                  Signed in as <span>{this.props.fullname}</span>
+                </p>
+              </li>
+              <li className={classes.userDetailsTray_item}>
+                <Link to="/profile" className={classes.userTray_item}>
+                  Your Profile
+                </Link>
+              </li>
+              <li className={classes.userDetailsTray_item}>Tickets(0)</li>
+              <li className={classes.userDetailsTray_item}>Gift cards</li>
+              <li className={classes.userDetailsTray_item}>Credits</li>
+              <li className={classes.devider}></li>
+              <li className={classes.userDetailsTray_item}>
+                <button className={classes.logout} onClick={this.props.logout}>
+                  Sign out
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     ) : (
       <li
