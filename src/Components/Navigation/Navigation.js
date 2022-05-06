@@ -193,8 +193,6 @@ class Navigation extends Component {
 
         <div className={classes.userDetailsTray}>
           <ul>
-            <div className={classes.pointer}></div>
-
             <li>
               <Link to="/profile" className={classes.userTray_item}>
                 Profile
