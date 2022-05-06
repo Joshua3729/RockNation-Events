@@ -3,3 +3,13 @@
 .UserProfile {
   height: 100vh;
 }
+.profile_img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.userDetails_wrapper {
+  display: flex;
+  align-items: center;
+}
