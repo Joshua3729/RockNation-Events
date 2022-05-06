@@ -189,14 +189,7 @@ class Navigation extends Component {
         </div>
 
         <div className={classes.userDetailsTray}>
-          <div className={classes.gutter}></div>
-          <ul
-            className={
-              this.state.openTray
-                ? classes.openTray
-                : classes.userDetailsTrayLinks
-            }
-          >
+          <ul>
             <div className={classes.pointer}></div>
 
             <li>

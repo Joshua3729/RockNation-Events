@@ -183,20 +183,16 @@
   position: absolute;
   top: 110%;
   right: 0px;
-  width: 160px;
-  height: 170px;
+  width: 180px;
+  height: 220px;
+  background-color: white;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 50%);
 }
 .userDetailsTray ul {
-  width: 150px;
-  margin: 0 auto;
-  height: 150px;
-  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 50%);
-  transition: all 0.5s;
   list-style: none;
   padding: 10px;
   box-sizing: border-box;
-  border-radius: 7px;
-  background-color: white;
+  border-radius: 4px;
 }
 .pointer {
   background-color: #d0d7de;
@@ -208,10 +204,7 @@
   width: 10px;
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
-.gutter {
-  width: 100%;
-  height: 10px;
-}
+
 .openTray {
   transform: translateY(0);
 }
