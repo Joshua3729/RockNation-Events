@@ -185,7 +185,10 @@ class Navigation extends Component {
     let navLink = this.props.isAuth ? (
       <div className={classes.userDetailsWrapper}>
         <div className={classes.userImgWrapper} onClick={this.openTrayHandler}>
-          <img src={"http://localhost:5000/" + this.props.userImage} alt="" />
+          <img
+            src={"http://localhost:5000/" + this.props.userImage}
+            alt="user profile"
+          />
         </div>
 
         <div className={classes.userDetailsTray}>

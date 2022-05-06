@@ -181,8 +181,8 @@
 .userDetailsTray {
   overflow-y: hidden;
   position: absolute;
-  top: 110%;
-  right: 0px;
+  top: 50px;
+  right: -20px;
   width: 180px;
   height: 220px;
   background-color: white;
@@ -205,9 +205,6 @@
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
-.openTray {
-  transform: translateY(0);
-}
 .logout {
   background-color: transparent;
   border: none;
@@ -219,7 +216,7 @@
 }
 .userDetailsTray li {
   width: 100%;
-  text-align: center;
+  text-align: left;
   box-sizing: border-box;
   cursor: pointer;
   color: rgb(38, 38, 38);
@@ -231,6 +228,7 @@
 }
 .userDetailsTray a {
   color: rgb(38, 38, 38);
+  padding: 0 !important;
 }
 .userDetailsTray a:hover {
   background-color: unset !important;
