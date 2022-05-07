@@ -164,22 +164,22 @@
   position: relative;
 }
 .userImgWrapper {
-  width: 30px;
-  height: 30px;
-  background-color: lightgray;
-  border-radius: 50%;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
   margin-left: 20px;
   cursor: pointer;
-  border: 2px white solid;
 }
-.userImgWrapper:hover {
+.userImgWrapper img:hover {
   border: 2px blue solid;
 }
 
 .userImgWrapper img {
-  width: 100%;
-  height: 100%;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+  background-color: lightgray;
+  border-radius: 50%;
+  border: 2px white solid;
 }
 .userDetailsTray {
   overflow-y: hidden;

@@ -189,6 +189,12 @@ class Navigation extends Component {
             src={"http://localhost:5000/" + this.props.userImage}
             alt="user profile"
           />
+          <i
+            class="fa fa-solid fa-caret-down"
+            style={{
+              color: this.state.scroll ? "rgb(38,38,38" : "white",
+            }}
+          ></i>
         </div>
 
         {this.state.openTray && (
