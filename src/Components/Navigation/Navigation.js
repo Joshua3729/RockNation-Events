@@ -190,9 +190,9 @@ class Navigation extends Component {
             alt="user profile"
           />
           <i
-            class="fa fa-solid fa-caret-down"
+            className="fa fa-solid fa-caret-down"
             style={{
-              color: this.state.scroll ? "rgb(38,38,38" : "white",
+              color: this.state.scroll ? "rgb(38,38,38)" : "white",
             }}
           ></i>
         </div>

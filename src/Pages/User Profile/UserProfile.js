@@ -21,7 +21,8 @@ class UserProfile extends Component {
         <div className={classes.UserProfile}>
           <div className={classes.innerWrapper}>
             <div className={classes.userDetails_wrapper}>
-              <img
+              <div className={classes.userDetails_background}></div>
+              {/* <img
                 className={classes.profile_img}
                 src={"http://localhost:5000/" + this.props.userImage}
               />
@@ -34,7 +35,7 @@ class UserProfile extends Component {
                   <span className={classes.seperator}>•</span>
                   <p className={classes.stats_items}>0 follows</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
