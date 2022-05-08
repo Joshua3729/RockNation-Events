@@ -11,6 +11,7 @@
   max-width: 1440px;
   box-sizing: border-box;
   margin: 0 auto;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 .profile_img {
   width: 100px;
@@ -21,6 +22,7 @@
 .inner_userDetails_wrapper {
   display: flex;
   align-items: center;
+  margin-left: 30px;
 }
 .userDetails_wrapper {
   position: relative;
@@ -42,9 +44,10 @@
 .userDetails_background {
   position: absolute;
   top: 0;
-  right: -48px;
+  right: 0;
+  width: 100%;
   bottom: 0;
-  left: -48px;
+  left: 0;
   overflow: hidden;
   background-color: #eeedf2;
   z-index: 0;
@@ -52,6 +55,7 @@
 .userDetails_background_image:after {
   content: "";
   position: absolute;
+
   top: 0;
   right: 0;
   bottom: 0;
@@ -83,14 +87,27 @@
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
-  color: rgb(38, 38, 38);
+  color: #1e0a3c;
 }
 .stats_wrapper {
   display: flex;
   margin-top: 10px;
-  color: #4b4d63;
+  color: #39364f;
 }
 .seperator,
 .stats_items {
   margin-right: 10px;
+}
+.emptyState {
+  width: 70px;
+  height: 70px;
+}
+.emptyState_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: lightgray;
+  border-radius: 50%;
 }
