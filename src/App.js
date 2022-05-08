@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-import EventSearcher from "./Components/EventSearcher/EventSearcher";
 import Home from "./Pages/Landing page/Home";
 import {
   Route,
@@ -659,36 +658,7 @@ class App extends Component {
             )}
           />
         )}
-        <Route
-          path="/eventmanager"
-          exact
-          render={(props) => (
-            <EventSearcher
-              {...props}
-              loginModal={this.openModalHandler}
-              isAuth={this.state.isAuth}
-              token={this.state.token}
-              logout={this.logoutHandler}
-              fullname={this.state.fullname}
-              userImage={this.state.userImage}
-            />
-          )}
-        />
-        <Route
-          path="/eventmanager/:name"
-          exact
-          render={(props) => (
-            <EventSearcher
-              {...props}
-              loginModal={this.openModalHandler}
-              isAuth={this.state.isAuth}
-              token={this.state.token}
-              logout={this.logoutHandler}
-              fullname={this.state.fullname}
-              userImage={this.state.userImage}
-            />
-          )}
-        />
+
         <Route
           path="/ticket"
           exact
@@ -903,36 +873,7 @@ class App extends Component {
               )}
             />
           )}
-          <Route
-            path="/eventmanager"
-            exact
-            render={(props) => (
-              <EventSearcher
-                {...props}
-                loginModal={this.openModalHandler}
-                isAuth={this.state.isAuth}
-                token={this.state.token}
-                logout={this.logoutHandler}
-                fullname={this.state.fullname}
-                userImage={this.state.userImage}
-              />
-            )}
-          />
-          <Route
-            path="/eventmanager/:name"
-            exact
-            render={(props) => (
-              <EventSearcher
-                {...props}
-                loginModal={this.openModalHandler}
-                isAuth={this.state.isAuth}
-                token={this.state.token}
-                logout={this.logoutHandler}
-                fullname={this.state.fullname}
-                userImage={this.state.userImage}
-              />
-            )}
-          />
+
           <Route
             path="/ticket"
             exact

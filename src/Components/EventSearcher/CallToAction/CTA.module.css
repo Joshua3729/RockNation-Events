@@ -1,9 +1,0 @@
-.Message {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-weight: 900;
-  color: #27374d;
-  text-align: center;
-}
