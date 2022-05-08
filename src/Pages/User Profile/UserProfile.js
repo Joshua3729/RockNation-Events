@@ -43,7 +43,7 @@ class UserProfile extends Component {
             </div>
             <div className={classes.dashboard_wrapper}>
               <div className={classes.orders_wrapper}>
-                <p>Orders</p>
+                <h4 className={classes.section_header}>Orders</h4>
                 <div className={classes.inner_orders_wrapper}>
                   <p className={classes.orders_header}>
                     Looking for your tickets?
@@ -95,6 +95,14 @@ class UserProfile extends Component {
                       </svg>
                     </div>
                   </div>
+                  <p className={classes.emptyState_text}>No upcoming orders</p>
+                </div>
+              </div>
+              <div className={classes.intrests_wrapper}>
+                <div className={classes.intrests_links}>
+                  <h4 className={classes.section_header}>
+                    Intrests<i className="fa fa-solid fa-chevron-right"></i>
+                  </h4>
                 </div>
               </div>
             </div>

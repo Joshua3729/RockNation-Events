@@ -2,7 +2,7 @@
 
 .UserProfile {
   font-family: "Lato", sans-serif;
-  padding: 50px;
+  padding: 0 50px 50px 50px;
 }
 .innerWrapper {
   background-color: white;
@@ -114,8 +114,41 @@
 }
 .inner_orders_wrapper {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .dashboard_wrapper {
-  padding: 30px;
+  width: 50%;
+  margin: 0 auto;
+  color: #39364f;
+}
+.section_header {
+  font-family: 20px;
+}
+.orders_header,
+.orders_cta,
+.verify_email_btn {
+  margin-bottom: 10px;
+}
+.orders_header {
+  font-weight: 700;
+}
+.orders_cta {
+  font-size: 15px;
+}
+.verify_email_btn {
+  margin-bottom: 30px;
+}
+.emptyState_text {
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.intrests_wrapper {
+  padding: 40px 0 50px 0;
+  /* background-color: #1e0a3c; */
+}
+.intrests_links i {
+  margin-left: 10px;
+  font-size: 12px;
 }
