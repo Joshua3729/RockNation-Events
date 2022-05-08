@@ -160,3 +160,10 @@
   margin-top: unset;
   border-top: unset;
 }
+.verify_email_btn {
+  border: 2px lightgray solid;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 15px 30px;
+  background-color: transparent;
+}
