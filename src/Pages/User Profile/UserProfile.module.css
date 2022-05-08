@@ -2,11 +2,11 @@
 
 .UserProfile {
   font-family: "Lato", sans-serif;
-  padding: 0 50px 50px 50px;
+  padding: 0 50px;
 }
 .innerWrapper {
   background-color: white;
-  height: 100vh;
+  min-height: 100vh;
   display: block;
   max-width: 1440px;
   box-sizing: border-box;
@@ -120,6 +120,7 @@
   width: 50%;
   margin: 0 auto;
   color: #39364f;
+  padding-bottom: 50px;
 }
 .section_header {
   font-family: 20px;
@@ -146,9 +147,16 @@
 
 .intrests_wrapper {
   padding: 40px 0 50px 0;
+  border-top: lightgray 1px solid;
+  border-bottom: lightgray 1px solid;
+  margin-top: 50px;
   /* background-color: #1e0a3c; */
 }
 .intrests_links i {
   margin-left: 10px;
   font-size: 12px;
+}
+.intrests_wrapper:last-child {
+  margin-top: unset;
+  border-top: unset;
 }

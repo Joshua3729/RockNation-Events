@@ -105,6 +105,13 @@ class UserProfile extends Component {
                   </h4>
                 </div>
               </div>
+              <div className={classes.intrests_wrapper}>
+                <div className={classes.intrests_links}>
+                  <h4 className={classes.section_header}>
+                    Collections<i className="fa fa-solid fa-chevron-right"></i>
+                  </h4>
+                </div>
+              </div>
             </div>
           </div>
         </div>
