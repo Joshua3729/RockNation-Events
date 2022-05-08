@@ -45,6 +45,15 @@ class UserProfile extends Component {
               <div className={classes.orders_wrapper}>
                 <p>Orders</p>
                 <div className={classes.inner_orders_wrapper}>
+                  <p className={classes.orders_header}>
+                    Looking for your tickets?
+                  </p>
+                  <p className={classes.orders_cta}>
+                    You need to verify your email to view transfers and gifts.
+                  </p>
+                  <button className={classes.verify_email_btn}>
+                    Verify your email
+                  </button>
                   <div className={classes.emptyState_wrapper}>
                     <div className={classes.emptyState}>
                       <svg viewBox="0 0 144 144">

@@ -104,10 +104,18 @@
 }
 .emptyState_wrapper {
   display: flex;
+  margin: 0 auto;
   align-items: center;
   justify-content: center;
   width: 80px;
   height: 80px;
   background-color: lightgray;
   border-radius: 50%;
+}
+.inner_orders_wrapper {
+  text-align: center;
+  margin-top: 20px;
+}
+.dashboard_wrapper {
+  padding: 30px;
 }
