@@ -24,6 +24,7 @@ import FamilyPage from "./Pages/Family Page/FamilyPage";
 import SearchResults from "./Pages/Search Results/SearchResults";
 import ViewEvents from "./Pages/ViewEvents Page/ViewEvents";
 import SeeTickets from "./Pages/See Tickets Page/SeeTickets";
+import SellPage from "./Pages/Sell Page/Sell";
 
 class App extends Component {
   state = {
@@ -879,6 +880,21 @@ class App extends Component {
             exact
             render={(props) => (
               <TicketPage
+                {...props}
+                loginModal={this.openModalHandler}
+                isAuth={this.state.isAuth}
+                token={this.state.token}
+                logout={this.logoutHandler}
+                fullname={this.state.fullname}
+                userImage={this.state.userImage}
+              />
+            )}
+          />
+          <Route
+            path="/sell"
+            exact
+            render={(props) => (
+              <SellPage
                 {...props}
                 loginModal={this.openModalHandler}
                 isAuth={this.state.isAuth}
