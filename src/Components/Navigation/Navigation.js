@@ -440,6 +440,7 @@ class Navigation extends Component {
                 style={{
                   color: this.state.scroll ? "rgb(38,38,38" : "white",
                 }}
+                to="/sell"
               >
                 Sell
               </Link>
