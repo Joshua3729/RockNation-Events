@@ -4,6 +4,33 @@ import Navigation from "../../Components/Navigation/Navigation";
 import Footer from "../../Components/Footer/Footer";
 
 class UserProfile extends Component {
+  state = {
+    ticket_orders: null,
+    number: null,
+  };
+  componentDidMount() {
+    if (this.props.isAuth) {
+      fetch("http://localhost:5000/feed/ticket-orders", {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+        .then((res) => {
+          if (res.status !== 200) {
+            throw new Error("Failed to get ticket orders.");
+          }
+
+          return res.json();
+        })
+        .then((resData) => {
+          this.setState({
+            ticket_orders: resData.ticket_orders,
+            numberOfOrders: resData.ticket_orders.length,
+          });
+        })
+        .catch((err) => console.log(err));
+    }
+  }
   render() {
     const orders = <p>Loading</p>;
     if (this.state.numberOfOrders === 0) {
