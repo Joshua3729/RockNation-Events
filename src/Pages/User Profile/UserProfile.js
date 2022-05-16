@@ -12,7 +12,7 @@ class UserProfile extends Component {
     if (this.props.isAuth) {
       fetch("http://localhost:5000/feed/ticket-orders", {
         headers: {
-          Authorization: "Bearer " + token,
+          Authorization: "Bearer " + this.props.token,
         },
       })
         .then((res) => {
