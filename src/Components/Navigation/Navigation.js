@@ -34,6 +34,9 @@ class Navigation extends Component {
     if (recentlyViewedData) {
       this.setState({ searchSuggestionData: recentlyViewedData });
     }
+
+    const token = localStorage.getItem("token");
+
     if (this.props.isAuth) {
       fetch("http://localhost:5000/feed/number-of-tickets", {
         headers: {
@@ -230,7 +233,9 @@ class Navigation extends Component {
                   Your Profile
                 </Link>
               </li>
-              <li className={classes.userDetailsTray_item}>Tickets(0)</li>
+              <li className={classes.userDetailsTray_item}>
+                Tickets({this.state.numberOfTickets})
+              </li>
               <li className={classes.userDetailsTray_item}>Gift cards</li>
               <li className={classes.userDetailsTray_item}>Credits</li>
               <li className={classes.devider}></li>
