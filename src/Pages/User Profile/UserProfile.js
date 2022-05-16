@@ -2,13 +2,16 @@ import React, { Component, Fragment } from "react";
 import classes from "./UserProfile.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import Footer from "../../Components/Footer/Footer";
+import loading from "../../Components/UI/loading/loading";
 
 class UserProfile extends Component {
   state = {
     ticket_orders: null,
-    number: null,
+    numberOfOrders: null,
+    loading: true,
   };
   componentDidMount() {
+    console.log("below");
     if (this.props.isAuth) {
       fetch("http://localhost:5000/feed/ticket-orders", {
         headers: {
@@ -23,17 +26,19 @@ class UserProfile extends Component {
           return res.json();
         })
         .then((resData) => {
+          console.log(resData);
           this.setState({
             ticket_orders: resData.ticket_orders,
             numberOfOrders: resData.ticket_orders.length,
+            loading: false,
           });
         })
         .catch((err) => console.log(err));
     }
   }
   render() {
-    const orders = <p>Loading</p>;
-    if (this.state.numberOfOrders === 0) {
+    let orders = <p>Loading</p>;
+    if (this.state.numberOfOrders === 0 && !this.state.loading) {
       orders = (
         <div className={classes.inner_orders_wrapper}>
           <p className={classes.orders_header}>Looking for your tickets?</p>
@@ -88,7 +93,7 @@ class UserProfile extends Component {
         </div>
       );
     } else if (this.state.numberOfOrders > 0) {
-      orders = this.state.orders.map((order) => {
+      orders = this.state.ticket_orders.map((order) => {
         return <div className={classes.orders}>{order._id}</div>;
       });
     }
