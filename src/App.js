@@ -117,6 +117,7 @@ class App extends Component {
     searchresult: [],
     search: false,
     showPassword: false,
+    numberOfTickets: 0,
   };
   componentDidMount() {
     const fullname = localStorage.getItem("fullname");
@@ -229,6 +230,19 @@ class App extends Component {
           error: err,
         });
       });
+
+    fetch("http://localhost:5000/feed/number-of-tickets")
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to number tickets.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log("number of tickets " + resData);
+      })
+      .catch((err) => console.log(err));
   };
 
   setAutoLogout = (milliseconds) => {
