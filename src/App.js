@@ -135,14 +135,32 @@ class App extends Component {
     const userId = localStorage.getItem("userId");
     const remainingMilliseconds =
       new Date(expiryDate).getTime() - new Date().getTime();
-    this.setState({
-      isAuth: true,
-      token: token,
-      userId: userId,
-      fullname: fullname,
-      userImage: imageUrl,
-      userAddress: userAddress,
-    });
+    console.log("see below");
+    fetch("http://localhost:5000/feed/number-of-tickets", {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((res) => {
+        if (res.status !== 200) {
+          throw new Error("Failed to number tickets.");
+        }
+
+        return res.json();
+      })
+      .then((resData) => {
+        console.log("number of tickets " + resData.tickets);
+        this.setState({
+          isAuth: true,
+          token: token,
+          userId: userId,
+          fullname: fullname,
+          userImage: imageUrl,
+          userAddress: userAddress,
+        });
+      })
+      .catch((err) => console.log(err));
+
     this.setAutoLogout(remainingMilliseconds);
   }
 
@@ -230,22 +248,6 @@ class App extends Component {
           error: err,
         });
       });
-
-    fetch("http://localhost:5000/feed/number-of-tickets",{
-      headers: {
-        Authorization: "Bearer " + this.props.token,
-      },)
-      .then((res) => {
-        if (res.status !== 200) {
-          throw new Error("Failed to number tickets.");
-        }
-
-        return res.json();
-      })
-      .then((resData) => {
-        console.log("number of tickets " + resData);
-      })
-      .catch((err) => console.log(err));
   };
 
   setAutoLogout = (milliseconds) => {
