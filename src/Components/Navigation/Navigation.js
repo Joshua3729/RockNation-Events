@@ -25,6 +25,7 @@ class Navigation extends Component {
     searchresultVenues: null,
     resultsLengthVenues: null,
     showRecentlyViewed: true,
+    numberOfTickets: 0,
   };
   componentDidMount() {
     let recentlyViewedData = JSON.parse(
@@ -32,6 +33,24 @@ class Navigation extends Component {
     );
     if (recentlyViewedData) {
       this.setState({ searchSuggestionData: recentlyViewedData });
+    }
+    if (this.props.isAuth) {
+      fetch("http://localhost:5000/feed/number-of-tickets", {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      })
+        .then((res) => {
+          if (res.status !== 200) {
+            throw new Error("Failed to number tickets.");
+          }
+
+          return res.json();
+        })
+        .then((resData) => {
+          this.setState({ numberOfTickets: resData.tickets });
+        })
+        .catch((err) => console.log(err));
     }
   }
   changeNavBarBG = () => {
