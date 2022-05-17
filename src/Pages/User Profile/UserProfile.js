@@ -3,6 +3,7 @@ import classes from "./UserProfile.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import Footer from "../../Components/Footer/Footer";
 import loading from "../../Components/UI/loading/loading";
+import OrderItem from "../../Components/OrderItem/OrderItem";
 
 class UserProfile extends Component {
   state = {
@@ -94,7 +95,7 @@ class UserProfile extends Component {
       );
     } else if (this.state.numberOfOrders > 0) {
       orders = this.state.ticket_orders.map((order) => {
-        return <div className={classes.orders}>{order._id}</div>;
+        return <OrderItem order_item={order} />;
       });
     }
     return (

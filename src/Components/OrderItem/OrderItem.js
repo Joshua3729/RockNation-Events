@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./OrderItem.module.css";
 
 const orderItem = (props) => {
-  const order_item = props.orderItem;
+  const order_item = props.order_item;
   return (
     <div className={classes.OrderItem}>
       <div className={classes.order_subItem}>{order_item._id}</div>
