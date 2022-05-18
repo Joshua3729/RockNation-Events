@@ -137,6 +137,14 @@ class UserProfile extends Component {
             <div className={classes.dashboard_wrapper}>
               <div className={classes.orders_wrapper}>
                 <h4 className={classes.section_header}>Orders</h4>
+                <div className={classes.tableHeader}>
+                  <div className={classes.tableHeader_item}>Order ID</div>
+                  <div className={classes.tableHeader_item}>Created Date</div>
+                  <div className={classes.tableHeader_item}>Name</div>
+                  <div className={classes.tableHeader_item}>Fulfillment</div>
+                  <div className={classes.tableHeader_item}>Price</div>
+                  <div className={classes.tableHeader_item}>Status</div>
+                </div>
                 {orders}
               </div>
               <div className={classes.intrests_wrapper}>

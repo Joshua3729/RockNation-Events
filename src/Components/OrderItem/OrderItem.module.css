@@ -2,12 +2,19 @@
   width: 100%;
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr;
   box-sizing: border-box;
   background-color: white;
   padding: 10px;
-  grid-gap: 5px;
+  grid-gap: 10px;
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
+.order_subItem:first-child {
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
 .order_subItem {
+  text-align: center;
 }
