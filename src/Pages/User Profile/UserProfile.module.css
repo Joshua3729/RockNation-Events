@@ -178,7 +178,8 @@
   box-sizing: border-box;
   background-color: white;
   padding: 10px;
-  grid-gap: 10px;
+  grid-gap: 20px;
+  margin-top: 20px;
 }
 .tableHeader_item {
   text-align: center;

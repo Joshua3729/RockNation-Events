@@ -6,7 +6,7 @@
   box-sizing: border-box;
   background-color: white;
   padding: 10px;
-  grid-gap: 10px;
+  grid-gap: 20px;
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 .order_subItem:first-child {
