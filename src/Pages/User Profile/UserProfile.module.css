@@ -116,8 +116,11 @@
   text-align: center;
   margin-top: 40px;
 }
+.orders_wrapper {
+  width: 100%;
+}
 .dashboard_wrapper {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   color: #39364f;
   padding-bottom: 50px;

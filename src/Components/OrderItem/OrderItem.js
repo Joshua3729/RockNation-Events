@@ -9,9 +9,7 @@ const orderItem = (props) => {
       <div className={classes.order_subItem}>12 June 2022</div>
       <div className={classes.order_subItem}>{order_item.event.name}</div>
       <div className={classes.order_subItem}>{`${order_item.delivered}`}</div>
-      <div className={classes.order_subItem}>
-        {order_item.totalPrice}hhhhhhhhhhhhhhh
-      </div>
+      <div className={classes.order_subItem}>${order_item.totalPrice}</div>
       <div className={classes.order_subItem}>Paid</div>
     </div>
   );

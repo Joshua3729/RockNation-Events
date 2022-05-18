@@ -1,12 +1,13 @@
 .OrderItem {
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr 2fr 1fr;
-  padding: 10px;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr;
   box-sizing: border-box;
   background-color: white;
+  padding: 10px;
   grid-gap: 5px;
+  box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 .order_subItem {
-  background-color: aqua;
 }
