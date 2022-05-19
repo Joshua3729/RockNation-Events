@@ -16,6 +16,7 @@ const orderItem = (props) => {
         )}
       </div>
       <div className={classes.order_subItem}>${order_item.totalPrice}</div>
+      <div className={classes.order_subItem}>20 June 2022</div>
       <div className={classes.order_subItem}>
         <p className={classes.fulfillied}>Paid</p>
       </div>
