@@ -174,7 +174,7 @@
   width: 100%;
   display: grid;
   align-items: center;
-  grid-template-columns: 2fr 1fr 2fr 2fr 1fr 2fr 1fr;
+  grid-template-columns: 2fr 2fr 2fr 2fr 1fr 2fr 1fr;
   box-sizing: border-box;
   background-color: white;
   padding: 10px;

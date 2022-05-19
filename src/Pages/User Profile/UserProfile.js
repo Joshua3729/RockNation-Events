@@ -106,6 +106,7 @@ class UserProfile extends Component {
             <div className={classes.tableHeader_item}>Name</div>
             <div className={classes.tableHeader_item}>Fulfillment</div>
             <div className={classes.tableHeader_item}>Price</div>
+            <div className={classes.tableHeader_item}>Delivery Date</div>
             <div className={classes.tableHeader_item}>Status</div>
           </div>
           {this.state.ticket_orders.map((order) => {
