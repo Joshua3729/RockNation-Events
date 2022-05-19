@@ -160,12 +160,12 @@ class UserProfile extends Component {
                   <p className={classes.username}>{this.props.fullname}</p>
                   <div className={classes.stats_wrapper}>
                     <p className={classes.stats_items}>
-                      {this.state.numberOfTickets} orders{" "}
+                      {this.state.numberOfTickets} order(s)
                     </p>
                     <span className={classes.seperator}>•</span>
-                    <p className={classes.stats_items}>0 likes</p>
+                    <p className={classes.stats_items}>0 like(s)</p>
                     <span className={classes.seperator}>•</span>
-                    <p className={classes.stats_items}>0 follows</p>
+                    <p className={classes.stats_items}>0 follow(s)</p>
                   </div>
                 </div>
               </div>
