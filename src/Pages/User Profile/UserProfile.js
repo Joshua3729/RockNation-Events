@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import classes from "./UserProfile.module.css";
 import Navigation from "../../Components/Navigation/Navigation";
 import Footer from "../../Components/Footer/Footer";
-import loading from "../../Components/UI/loading/loading";
+import Loading from "../../Components/UI/loading/loading";
 import OrderItem from "../../Components/OrderItem/OrderItem";
 
 class UserProfile extends Component {
@@ -38,7 +38,11 @@ class UserProfile extends Component {
     }
   }
   render() {
-    let orders = <p>Loading</p>;
+    let orders = (
+      <div className={classes.loading}>
+        <Loading />
+      </div>
+    );
     if (this.state.numberOfOrders === 0 && !this.state.loading) {
       orders = (
         <div className={classes.inner_orders_wrapper}>
