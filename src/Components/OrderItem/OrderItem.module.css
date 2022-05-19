@@ -2,7 +2,7 @@
   width: 100%;
   display: grid;
   align-items: center;
-  grid-template-columns: 2fr 1fr 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr 2fr 1fr 1fr;
   box-sizing: border-box;
   background-color: white;
   padding: 10px;
@@ -13,8 +13,25 @@
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
+  color: #5a8ce5;
 }
 
 .order_subItem {
   text-align: center;
+}
+.fulfillied,
+.pending {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+}
+
+.fulfillied {
+  background-color: #36c48e;
+}
+
+.pending {
+  background-color: #ad72d5;
 }
