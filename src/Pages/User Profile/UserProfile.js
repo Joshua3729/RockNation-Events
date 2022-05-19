@@ -9,6 +9,7 @@ class UserProfile extends Component {
   state = {
     ticket_orders: null,
     numberOfOrders: null,
+    numberOfTickets: 0,
     loading: true,
   };
   componentDidMount() {
@@ -33,6 +34,22 @@ class UserProfile extends Component {
             numberOfOrders: resData.ticket_orders.length,
             loading: false,
           });
+        })
+        .catch((err) => console.log(err));
+      fetch("http://localhost:5000/feed/number-of-tickets", {
+        headers: {
+          Authorization: "Bearer " + this.props.token,
+        },
+      })
+        .then((res) => {
+          if (res.status !== 200) {
+            throw new Error("Failed to number tickets.");
+          }
+
+          return res.json();
+        })
+        .then((resData) => {
+          this.setState({ numberOfTickets: resData.tickets });
         })
         .catch((err) => console.log(err));
     }
@@ -142,7 +159,9 @@ class UserProfile extends Component {
                 <div className={classes.userDetails_item_wrapper}>
                   <p className={classes.username}>{this.props.fullname}</p>
                   <div className={classes.stats_wrapper}>
-                    <p className={classes.stats_items}>0 orders </p>
+                    <p className={classes.stats_items}>
+                      {this.state.numberOfTickets} orders{" "}
+                    </p>
                     <span className={classes.seperator}>•</span>
                     <p className={classes.stats_items}>0 likes</p>
                     <span className={classes.seperator}>•</span>
