@@ -50,23 +50,27 @@
   left: 0;
   overflow: hidden;
   background-color: #eeedf2;
+  background-image: url(https://w0.peakpx.com/wallpaper/798/4/HD-wallpaper-paris-night-eiffel-tower-road-traffic-lights-france.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   z-index: 0;
 }
 .userDetails_background_image:after {
   content: "";
   position: absolute;
-
+  width: 100%;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  background: -webkit-gradient(
+  /* background: -webkit-gradient(
     linear,
     left top,
     left bottom,
     color-stop(-100%, transparent),
     to(#fff)
-  );
+  ); */
+
   /* background: linear-gradient(transparent -100%,#fff); */
 }
 .userDetails_background:after {
