@@ -16,7 +16,9 @@ const orderItem = (props) => {
         )}
       </div>
       <div className={classes.order_subItem}>${order_item.totalPrice}</div>
-      <div className={classes.order_subItem}>Paid</div>
+      <div className={classes.order_subItem}>
+        <p className={classes.fulfillied}>Paid</p>
+      </div>
     </div>
   );
 };
