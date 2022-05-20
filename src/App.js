@@ -988,6 +988,7 @@ class App extends Component {
                 fullname={this.state.fullname}
                 userImage={this.state.userImage}
                 userAddress={this.state.userAddress}
+                goToHome={this.homeHandler}
               />
             )}
           />
