@@ -29,7 +29,7 @@ const eventInfo = (props) => {
               this,
               props.event.eventName,
               props.event._id,
-              props.organizer,
+              props.event.category == "concerts" ? "artist" : "team",
               props.event.venue,
               props.event.artistName,
               props.event.category
@@ -80,7 +80,7 @@ const eventInfo = (props) => {
                 this,
                 props.event.eventName,
                 props.event._id,
-                props.organizer,
+                props.category,
                 props.event.venue,
                 props.event.artistName,
                 props.event.category
