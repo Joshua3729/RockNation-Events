@@ -93,7 +93,7 @@ const eventInfo = (props) => {
 
         <div
           className={classes.eventSmall}
-          onClick={props.goToLink.bind(
+          onClick={props.goToLink?.bind(
             this,
             props.event.eventName,
             props.event._id,
