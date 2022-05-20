@@ -116,7 +116,7 @@ class UserProfile extends Component {
       );
     } else if (this.state.numberOfOrders > 0) {
       orders = (
-        <Fragment>
+        <div className={classes.orders_innerWrapper}>
           <div className={classes.tableHeader}>
             <div className={classes.tableHeader_item}>Order ID</div>
             <div className={classes.tableHeader_item}>Created</div>
@@ -129,7 +129,7 @@ class UserProfile extends Component {
           {this.state.ticket_orders.map((order) => {
             return <OrderItem order_item={order} />;
           })}
-        </Fragment>
+        </div>
       );
     }
     return (
