@@ -8,6 +8,7 @@
   padding: 10px;
   grid-gap: 20px;
   box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
+  margin-bottom: 20px;
 }
 .order_subItem:first-child {
   white-space: nowrap;
@@ -34,4 +35,7 @@
 
 .pending {
   background-color: #ad72d5;
+}
+.OrderItem:last-child {
+  margin-bottom: 0;
 }
