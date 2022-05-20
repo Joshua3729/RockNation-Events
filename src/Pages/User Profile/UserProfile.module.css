@@ -125,7 +125,7 @@
   width: 100%;
 }
 .dashboard_wrapper {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   color: #39364f;
   padding-bottom: 50px;
@@ -157,7 +157,6 @@
   padding: 40px 0 50px 0;
   border-top: lightgray 1px solid;
   border-bottom: lightgray 1px solid;
-  margin-top: 50px;
   /* background-color: #1e0a3c; */
 }
 .intrests_links i {
@@ -181,7 +180,6 @@
   align-items: center;
   grid-template-columns: 2fr 2fr 2fr 2fr 1fr 2fr 1fr;
   box-sizing: border-box;
-  background-color: white;
   padding: 10px;
   grid-gap: 20px;
   margin-top: 20px;
@@ -197,4 +195,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.orders_innerWrapper {
+  padding: 50px 30px;
+  background-color: #f6f7f8;
+  margin-top: 20px;
 }
